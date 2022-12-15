@@ -1,0 +1,30 @@
+<RequestOrder> 
+  <clientID>K10101010</clientID>  
+  <logisticProviderID>YTO</logisticProviderID>  
+  <customerId>K10101010</customerId>  
+  <txLogisticID>K10101010_66675667</txLogisticID>  
+  <orderType>1</orderType>  
+  <serviceType>1</serviceType>  
+  <goodsValue>2</goodsValue>  
+  <remark>??: br / ????:??????? , ?????,</remark>  
+  <agencyFund>123</agencyFund>  
+  <itemsValue>123</itemsValue>  
+  <sender> 
+    <name>YOHO! ??????????????</name>  
+    <postCode/>  
+    <phone>4008899647</phone>  
+    <mobile>4008899646</mobile>  
+    <prov>???</prov>  
+    <city>???</city>  
+    <address>????????????????9?????YOHO!??????</address> 
+  </sender>  
+  <receiver> 
+    <name>??</name>  
+    <phone>3213100</phone>  
+    <mobile>1565875971</mobile>  
+    <prov>??</prov>  
+    <city>??</city>  
+    <address>?????</address> 
+  </receiver>  
+  <items></items>
+</RequestOrder>

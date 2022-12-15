@@ -1,0 +1,63 @@
+?<!--
+**  $Id$
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
+
+<Contents name="Vidalian ohje" html="index.html">
+  <Topic id="running" name="Tor-ohjelman k?ytt?" html="running.html">
+    <Topic id="starting" name="K?ynnist?minen ja pys?ytt?minen" html="running.html" section="starting"/>
+    <Topic id="monitoring" name="Tor-ohjelman tilan tarkkaileminen" html="running.html" section="monitoring"/>
+  </Topic>
+  <Topic id="log" name="Tapahtumaloki" html="log.html">
+    <Topic id="basic" name="Perustietoa" html="log.html" section="basic"/>
+    <Topic id="severities" name="Tapahtumien t?rkeys" html="log.html" section="severities"/>
+    <Topic id="logfile" name="Tapahtumien tallennus" html="log.html" section="tofile"/>
+  </Topic>
+  <Topic id="netview" name="Verkkokartta" html="netview.html">
+    <Topic id="overview" name="Yleist?" html="netview.html" section="overview"/>
+    <Topic id="netmap" name="Verkkokartta" html="netview.html" section="netmap"/>
+    <Topic id="status" name="Reitittimien tila" html="netview.html" section="status"/>
+    <Topic id="details" name="Reitittimien tiedot" html="netview.html" section="details"/>
+  </Topic>
+  <Topic id="config" name="Vidalian ja Tor-ohjelman asetukset" html="config.html">
+    <Topic id="general" name="Yleiset-asetukset" html="config.html" section="general"/>
+    <Topic id="network" name="Verkkoasetukset" html="config.html" section="network"/>
+    <Topic id="server" name="Reititinasetukset" html="config.html" section="server"/>
+    <Topic id="appearance" name="Ulkoasun asetukset" html="config.html" section="appearance"/>
+    <Topic id="advanced" name="Lis?asetukset" html="config.html" section="advanced"/>
+    <Topic id="services" name="Piilopalvelut" html="config.html" section="services"/> 
+  </Topic>
+  <Topic id="server" name="Reitittimen asentaminen" html="server.html">
+    <Topic id="basic" name="Yleiset-asetukset" html="server.html" section="basic"/>
+    <Topic id="bandwidth" name="Nopeudenrajoittaminen" html="server.html" section="bandwidth"/>
+    <Topic id="exitpolicy" name="Poistumisk?yt?nn?t" html="server.html" section="exitpolicy"/>
+    <Topic id="upnp" name="Porttien l?pivienti" html="server.html" section="upnp"/>
+  </Topic>
+  <Topic id="bridges" name="Siltareitittimet" html="bridges.html">
+    <Topic id="about" name="Mit? ovat siltareitittimet?" html="bridges.html" section="about"/>
+    <Topic id="finding" name="Miten l?yd?n siltareitittimen?" html="bridges.html" section="finding"/>
+  </Topic>
+  <Topic id="services" name="Piilopalvelut" html="services.html">
+    <Topic id="about" name="Mik? on piilopalvelu?" html="services.html" section="about"/>
+    <Topic id="provide" name="Miten voin luoda piilopalvelun?" html="services.html" section="provide"/>
+    <Topic id="data" name="Mit? tietoa tarvitsee tarjoa?" html="services.html" section="data"/>
+    <Topic id="buttons" name="Mihin jokaista nappulaa k?ytet??n?" html="services.html" section="buttons"/>
+    <Topic id="advanced" name="Miten voin m??ritt?? piilopalveluiden lis?asetuksia?" html="services.html" section="advanced"/>
+    <Topic id="client" name="Miten Vidalia auttaa k?ytt??kseen muita piilopalveluita?" html="services.html" section="client"/>
+  </Topic>
+  <Topic id="troubleshooting" name="Vianetsint?" html="troubleshooting.html">
+    <Topic id="start" name="Tor ei k?ynnisty" html="troubleshooting.html" section="start"/>
+    <Topic id="connect" name="Vidalia ei yhdist? Tor-ohjelmaan" html="troubleshooting.html" section="connect"/>
+    <Topic id="torexited" name="Tor lopetti yll?tt?en" html="troubleshooting.html" section="torexited"/>
+    <Topic id="stop" name="Tor ei pys?hdy" html="troubleshooting.html" section="stop"/>
+  </Topic>
+  <Topic id="links" name="Hy?dyllisi? linkkej?" html="links.html"/>
+</Contents>
+

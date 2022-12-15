@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aggregator on Caleb Cushing&#39;s blog</title>
+    <link>http://blog.xenoterracide.com/tags/aggregator/index.xml</link>
+    <description>Recent content in Aggregator on Caleb Cushing&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://blog.xenoterracide.com/tags/aggregator/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Say Perl</title>
+      <link>http://blog.xenoterracide.com/post/say-perl/</link>
+      <pubDate>Sat, 27 Mar 2010 02:08:00 +0000</pubDate>
+      
+      <guid>http://blog.xenoterracide.com/post/say-perl/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://sayperl.org/&#34;&gt;SayPerl&lt;/a&gt; launched yesterday. It&amp;rsquo;s essentially aggregated perl blogs translated through google&amp;rsquo;s translation service into english. Very awesome. 3 things could make it better.&lt;br /&gt;&lt;br /&gt;1) An atom/rss feed &lt;br /&gt;2) instead of clicking on &amp;lsquo;spanish&amp;rsquo; and listing all the feeds that were written in spanish&amp;hellip; click on spanish (or make it espanol) and have it show all the feeds translated into spanish.&lt;br /&gt;3) It&amp;rsquo;s newest post is a while ago&amp;hellip; so it&amp;rsquo;s update speed could be a bit better.&lt;br /&gt;&lt;br /&gt;But all in all very good, I like. Fix #1 and I&amp;rsquo;ll switch my perl feeds to it.&lt;div class=&#34;blogger-post-footer&#34;&gt;&lt;br /&gt;&amp;ndash;&lt;br /&gt;
+This &lt;span xmlns:dc=&#34;http://purl.org/dc/elements/1.1/&#34; href=&#34;http://purl.org/dc/dcmitype/Text&#34; rel=&#34;dc:type&#34;&gt;work&lt;/span&gt; by &lt;a xmlns:cc=&#34;http://creativecommons.org/ns#&#34; href=&#34;http://www.xenoterracide.com&#34; property=&#34;cc:attributionName&#34; rel=&#34;cc:attributionURL&#34;&gt;Caleb Cushing&lt;/a&gt; is licensed under a &lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/3.0/&#34;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License&lt;/a&gt;.&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

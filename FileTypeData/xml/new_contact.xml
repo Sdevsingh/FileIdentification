@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:padding="5sp"
+            android:textSize="14sp"
+            android:text="First Name" />
+        <EditText android:id="@+id/contact_f_name"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:padding="5sp"
+            android:textSize="14sp"
+            android:text="Last Name" />
+        <EditText android:id="@+id/contact_l_name"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:padding="5sp"
+            android:textSize="14sp"
+            android:text="Phone Number" />
+        <EditText android:id="@+id/contact_m_num"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:inputType="phone"
+            android:singleLine="true" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="Shared secret key" />
+        <EditText android:id="@+id/contact_key"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:inputType="textPassword"
+            android:singleLine="true" />
+
+        <Button android:id="@+id/contact_submit_button"
+            android:text="@+string/contact_form_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</ScrollView>

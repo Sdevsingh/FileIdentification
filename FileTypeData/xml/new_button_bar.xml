@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/button_bar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:focusable="false"    
+    android:visibility="gone"
+    android:orientation="vertical" >
+
+    <com.vicinitysoftware.android.memoryloss.TextViewButton
+        android:id="@+id/button_launch"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"
+        android:background="@android:color/holo_blue_dark"
+        android:clickable="true"
+        android:padding="5dp"
+        android:text="@string/launch_help"
+        android:textAppearance="@style/textButtonBar" />
+
+    <com.vicinitysoftware.android.memoryloss.TextViewButton
+        android:id="@+id/button_playstore"
+        android:layout_width="fill_parent"
+        android:padding="5dp"
+        android:layout_height="80dp"
+        android:background="@android:color/holo_blue_dark"
+        android:clickable="true"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"
+        android:text="@string/playstore_help"
+        android:textAppearance="@style/textButtonBar" />
+
+    <com.vicinitysoftware.android.memoryloss.TextViewButton
+        android:id="@+id/button_uninstall"
+        android:padding="5dp"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:background="@android:color/holo_red_dark"
+        android:clickable="true"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"
+        android:text="@string/uninstall_help"
+        android:textAppearance="@style/textButtonBar" />
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<command-def	xmlns="http://www.unix4j.org/command-def" 
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:schemaLocation="http://www.unix4j.org/command-def command-def.xsd">
+	
+	<command name="echo" class="org.unix4j.unix.Echo" package="org.unix4j.unix.echo"/>
+	<name>
+		echo - write arguments to standard output
+	</name>
+	<synopsis>
+		ORIGINAL: echo [string ...]
+		CURRENT: echo [-n][string ...]
+	</synopsis>
+	<description ref="echo.html"/>
+	<notes/>
+	<methods>
+		<method args="args" usesStandardInput="false">
+			 Writes any of the specified strings, separated by single blank 
+			 ({@code ' '}) characters to the standard output suppressing the
+			 trailing line ending if the {@code "-n"} option is specified.			 
+		</method>
+		<method args="options,string" usesStandardInput="false">
+			 Writes the specified string followed by a newline character to 
+			 the standard output suppressing the trailing line ending if the
+			 {@code -n} option is specified.
+		</method>
+		<method args="options,strings" usesStandardInput="false">
+			 Writes any of the specified strings, separated by single blank 
+			 ({@code ' '}) characters to the standard output suppressing the
+			 trailing line ending if the {@code -n} option is specified.
+		</method>
+	</methods>
+	<options>
+		<option name="noNewline" acronym="n">
+			Do not print the trailing newline character(s).
+		</option>
+	</options>
+	<operands default="strings">
+		<operand name="string" type="String">
+			A string to be written to standard output.		
+		</operand>
+		<operand name="strings" type="String...">
+			Strings to be written to standard output, separated by single blank 
+			characters.	
+		</operand>
+		<operand name="args" type="String...">
+			String arguments defining the options for the command and the 
+			strings to be written to the output. Options can be specified by 
+			acronym (with a leading dash "-") or by long name (with two leading 
+			dashes "--"). 
+		</operand>
+		<operand name="options" type="EchoOptions">
+			Options for the echo command.
+		</operand>
+	</operands>
+</command-def>

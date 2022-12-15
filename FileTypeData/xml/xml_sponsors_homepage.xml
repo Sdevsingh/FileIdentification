@@ -1,0 +1,86 @@
+<mockup version="1.0" skin="sketch">
+  <controls>
+    <control controlID="196" controlTypeID="com.balsamiq.mockups::Title" x="143" y="10" w="-1" h="-1" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>PennNYC</text>
+      </controlProperties>
+    </control>
+    <control controlID="197" controlTypeID="com.balsamiq.mockups::VSplitter" x="142" y="466" w="711" h="-1" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="198" controlTypeID="com.balsamiq.mockups::Label" x="716" y="478" w="-1" h="-1" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>powered%20by%20Groupped</text>
+      </controlProperties>
+    </control>
+    <control controlID="199" controlTypeID="com.balsamiq.mockups::TextInput" x="653" y="35" w="-1" h="-1" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>LOGIN</text>
+      </controlProperties>
+    </control>
+    <control controlID="200" controlTypeID="com.balsamiq.mockups::TextInput" x="710" y="35" w="-1" h="-1" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>PASSWORD</text>
+      </controlProperties>
+    </control>
+    <control controlID="201" controlTypeID="com.balsamiq.mockups::Button" x="814" y="37" w="-1" h="-1" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>selected</state>
+        <text>GO</text>
+      </controlProperties>
+    </control>
+    <control controlID="202" controlTypeID="com.balsamiq.mockups::ButtonBar" x="143" y="78" w="-1" h="-1" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>4</selectedIndex>
+        <text>Home%2CAbout%2C%20News%2C%20Events%2C%20Sponsors%2C%20Membership</text>
+      </controlProperties>
+    </control>
+    <control controlID="203" controlTypeID="com.balsamiq.mockups::VSplitter" x="143" y="107" w="711" h="-1" zOrder="7" locked="false" isInGroup="-1"/>
+    <control controlID="206" controlTypeID="com.balsamiq.mockups::Label" x="767" y="79" w="-1" h="-1" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>or</text>
+      </controlProperties>
+    </control>
+    <control controlID="207" controlTypeID="com.balsamiq.mockups::Link" x="801" y="79" w="-1" h="-1" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sign%20up%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="208" controlTypeID="com.balsamiq.mockups::List" x="162" y="154" w="491" h="297" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>PennNYC%20is%20sponsored%20by%20...</text>
+      </controlProperties>
+    </control>
+    <control controlID="217" controlTypeID="com.balsamiq.mockups::Canvas" x="656" y="124" w="197" h="187" zOrder="11" locked="false" isInGroup="-1"/>
+    <control controlID="218" controlTypeID="com.balsamiq.mockups::Label" x="663" y="129" w="-1" h="-1" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Recent%20Mailing%20list%20Activity</text>
+      </controlProperties>
+    </control>
+    <control controlID="219" controlTypeID="com.balsamiq.mockups::List" x="665" y="154" w="-1" h="-1" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Item%20One%0AItem%20Two%0AItem%20Three</text>
+      </controlProperties>
+    </control>
+    <control controlID="220" controlTypeID="com.balsamiq.mockups::Canvas" x="655" y="311" w="197" h="146" zOrder="14" locked="false" isInGroup="-1"/>
+    <control controlID="221" controlTypeID="com.balsamiq.mockups::Label" x="663" y="319" w="178" h="123" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sponsor%20ad%20for%20non-free%20group%20and%20other%20ads%20for%20free%20groups</text>
+      </controlProperties>
+    </control>
+    <control controlID="222" controlTypeID="com.balsamiq.mockups::StickyNote" x="856" y="114" w="322" h="343" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>This%20is%20a%20typical%20sponsors%20page.%20Blank%20article%20that%20can%20contain%20whatever%20you%20want.%20This%20could%20also%20be%20replaced%20by%20any%20other%20page%20groups%20may%20want.%0A%20%0AAlso%2C%20the%20recent%20mailing%20list%20activity%20box%20is%20configurable%20in%20the%20same%20way.</text>
+      </controlProperties>
+    </control>
+    <control controlID="214" controlTypeID="com.balsamiq.mockups::Canvas" x="147" y="122" w="511" h="329" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+      </controlProperties>
+    </control>
+    <control controlID="204" controlTypeID="com.balsamiq.mockups::Label" x="151" y="122" w="125" h="32" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Our%20Sponsors</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

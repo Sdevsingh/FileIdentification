@@ -1,0 +1,15 @@
+<configuration name="cdr_csv.conf" description="CDR CSV Format">
+  <settings>
+    <param name="default-template" value="firmafon"/>
+    <!-- never ever let FS rotate CDRs, as it may cause integrity issues. ~hv -->
+    <!-- see https://github.com/firmafon/mainframe/issues/1566 -->
+    <param name="rotate-on-hup" value="false"/>
+    <param name="legs" value="ab"/>
+    <param name="master-file-only" value="true"/>
+  </settings>
+
+  <templates>
+    <template name="firmafon">"${caller_id_name}","${caller_id_number}","${destination_number}","${rdnis}","${src_gateway}","${dst_gateway}","${context}","${start_stamp}","${answer_stamp}","${end_stamp}","${duration}","${billsec}","${hangup_cause}","${uuid}","${bleg_uuid}","${accountcode}","${read_codec}","${write_codec}","${privacy_hide_number}","${sip_h_X-Firmafon-Click2Call}"</template>
+  </templates>
+</configuration>
+

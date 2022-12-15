@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<cooker version="0.0.1">
+    <project name="textmms" version="0.1" options="default">
+        <target name="textmms" type="bin" lang="c">
+            <cflags>-g -O2 -pipe -std=gnu99 -W -Wall -pedantic -I../include/ -I/sw/include/</cflags>
+            <linkflags>-lm -lpthread -lncurses -L/sw/lib/ -lvorbisfile  -lmad -lFLAC -lao -lid3tag</linkflags>
+
+            <file>common.c</file>
+            <file>state.c</file>
+            <file>debug.c</file>
+            <file>rand.c</file>
+            <file>timeval.c</file>
+            <file>str.c</file>
+
+            <file>mdir.c</file>
+            <file>opts.c</file>
+            <file>types.c</file>
+            <file>cfg.c</file>
+            <file>cmdline.c</file>
+	    
+            <file>track.c</file>
+            <file>node.c</file>
+	    
+            <file>util.c</file>
+            <file>curses.c</file>
+            <file>semaphore.c</file>
+            <file>strand.c</file>
+            
+            <file>buffer.c</file>
+            <file>decode.c</file>
+            <file>fft.c</file>
+            <file>meters.c</file>
+            <file>uibuf.c</file>
+            <file>output.c</file>
+
+            <file>fmts/wav.c</file>
+            <file>fmts/ogg.c</file>
+            <file>fmts/vorbis.c</file>
+            <file>fmts/bstdfile.c</file>
+            <file>fmts/id3.c</file>
+            <file>fmts/mp3.c</file>
+            <file>fmts/flac.c</file>
+            <file>fmt.c</file>
+            
+            <file>playlist.c</file>
+            <file>win.c</file>
+            <file>win_ctrl.c</file>
+            <file>win_pl.c</file>
+            <file>win_msg.c</file>
+            <file>win_vis.c</file>
+            <file>ui.c</file>
+            
+            <file>transport.c</file>
+            <file>actions.c</file>
+            <file>textmms.c</file>
+        </target>
+    </project>
+</cooker>

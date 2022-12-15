@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on blog@hotsyk.dev</title>
+    <link>https://hotsyk.dev/post/</link>
+    <description>Recent content in Posts on blog@hotsyk.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Mar 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://hotsyk.dev/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reclaim</title>
+      <link>https://hotsyk.dev/reclaim/</link>
+      <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hotsyk.dev/reclaim/</guid>
+      <description>At the beginning of the year, I&amp;rsquo;ve started an experiment with reclaiming my time from social networks. Besides setting time limits to Instagram and Twitter apps on the phone, I&amp;rsquo;ve also deleted facebook application, unfollowed everyone in facebook and deleted all my content there. I was pretty surprised with the results I&amp;rsquo;ve got. Previously, I often found myself reloading FB feed to get new or missed posts. That now makes absolutely no sense, as I always see &amp;ldquo;No new posts.</description>
+    </item>
+    
+  </channel>
+</rss>

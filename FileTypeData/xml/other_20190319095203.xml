@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="AppInspectionProfilesVisibleTreeState">
+    <entry key="Default">
+      <profile-state />
+    </entry>
+  </component>
+  <component name="CodeDependencyConfig">
+    <option name="MODULE_GRAPH_LIBRARY_VISIBILITY" value="true" />
+    <option name="PACKAGE_GRAPH_LIBRARY_VISIBILITY" value="true" />
+    <option name="CLASS_GRAPH_LIBRARY_VISIBILITY" value="true" />
+    <option name="CLASS_GRAPH_EXCEPTION_VISIBILITY" value="true" />
+    <option name="CLASS_NEIGHBOR_GRAPH_LIBRARY_VISIBILITY" value="true" />
+    <option name="CLASS_NEIGHBOR_GRAPH_TEST_VISIBILITY" value="true" />
+    <option name="CLASS_NEIGHBOR_GRAPH_EXCEPTION_VISIBILITY" value="true" />
+    <option name="CLASS_NEIGHBOR_GRAPH_DEPENDENCY_VISIBILITY" value="true" />
+    <option name="CLASS_NEIGHBOR_GRAPH_DEPENDENT_VISIBILITY" value="true" />
+    <option name="CLASS_NEIGHBOR_GRAPH_CROSSLINK_VISIBILITY" value="true" />
+    <option name="PACKAGE_NEIGHBOR_GRAPH_LIBRARY_VISIBILITY" value="true" />
+    <option name="PACKAGE_NEIGHBOR_GRAPH_DEPENDENCY_VISIBILITY" value="true" />
+    <option name="PACKAGE_NEIGHBOR_GRAPH_DEPENDENT_VISIBILITY" value="true" />
+    <option name="PACKAGE_NEIGHBOR_GRAPH_CROSSLINK_VISIBILITY" value="true" />
+    <option name="MODULE_NEIGHBOR_GRAPH_LIBRARY_VISIBILITY" value="true" />
+    <option name="MODULE_NEIGHBOR_GRAPH_DEPENDENCY_VISIBILITY" value="true" />
+    <option name="MODULE_NEIGHBOR_GRAPH_DEPENDENT_VISIBILITY" value="true" />
+    <option name="MODULE_NEIGHBOR_GRAPH_CROSSLINK_VISIBILITY" value="true" />
+    <option name="CALCULATE_METRICS_CYCLES" value="true" />
+  </component>
+  <component name="CodeStyleSchemes">
+    <option name="CURRENT_SCHEME_NAME" value="Default" />
+  </component>
+  <component name="Error Report Configurable">
+    <option name="JIRA_LOGIN" value="" />
+    <option name="JIRA_PASSWORD_CRYPT" value="" />
+    <option name="KEEP_JIRA_PASSWORD" value="false" />
+  </component>
+  <component name="GlobalAntConfiguration">
+    <filtersTableLayout />
+    <propertiesTableLayout />
+    <registeredAnts />
+  </component>
+  <component name="HttpConfigurable">
+    <option name="USE_HTTP_PROXY" value="false" />
+    <option name="PROXY_HOST" value="" />
+    <option name="PROXY_PORT" value="80" />
+    <option name="PROXY_AUTHENTICATION" value="false" />
+    <option name="PROXY_LOGIN" value="" />
+    <option name="PROXY_PASSWORD_CRYPT" value="" />
+    <option name="KEEP_PROXY_PASSWORD" value="false" />
+  </component>
+  <component name="PluginManagerConfigurable" proportions="" version="1">
+    <option name="AVAILABLE_SORT_COLUMN" value="1" />
+    <option name="INSTALLED_SORT_COLUMN" value="1" />
+    <option name="CART_SORT_COLUMN" value="0" />
+    <option name="AVAILABLE_SORT_COLUMN_ORDER" value="2" />
+    <option name="INSTALLED_SORT_COLUMN_ORDER" value="2" />
+    <option name="CART_SORT_COLUMN_ORDER" value="1" />
+    <available>
+      <option name="myProportion" />
+    </available>
+    <installed>
+      <option name="myProportion" />
+    </installed>
+  </component>
+  <component name="TemplateSettings">
+    <defaultShortcut shortcut="TAB" />
+  </component>
+  <component name="TodoConfiguration">
+    <pattern icon="default" useCustomColors="false" case-sensitive="false" pattern="\btodo\b.*">
+      <option name="FOREGROUND" value="ff" />
+      <option name="BACKGROUND" />
+      <option name="FONT_TYPE" value="3" />
+      <option name="EFFECT_COLOR" />
+      <option name="EFFECT_TYPE" value="0" />
+      <option name="ERROR_STRIPE_COLOR" value="ff" />
+    </pattern>
+  </component>
+  <component name="UpdatesConfigurable">
+    <option name="myPluginHosts">
+      <value>
+        <list size="0" />
+      </value>
+    </option>
+    <option name="myKnownUpdateChannels">
+      <value>
+        <list size="0" />
+      </value>
+    </option>
+    <option name="CHECK_NEEDED" value="true" />
+    <option name="CHECK_PERIOD" value="Weekly" />
+    <option name="LAST_TIME_CHECKED" value="1285632316742" />
+  </component>
+  <component name="VimPlugin">
+    <state enabled="true" />
+    <globalmarks />
+    <filemarks />
+    <jumps />
+    <registers />
+    <search>
+      <last-dir>0</last-dir>
+      <show-last>false</show-last>
+    </search>
+    <history>
+      <history-search />
+      <history-cmd />
+      <history-expr />
+      <history-input />
+    </history>
+  </component>
+</application>
+

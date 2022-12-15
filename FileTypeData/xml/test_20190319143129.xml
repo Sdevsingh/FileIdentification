@@ -1,0 +1,8 @@
+<Response>
+  <Say>SeaWorld Parks Time Clock.</Say>
+  <Pause length="1"/>
+  <Gather input="speech dtmf" timeout="3" numDigits="8">
+    <Say>Please say or enter your 8 digit Empl ID.</Say>
+  </Gather>
+  <Say>We didn't receive any input. Goodbye!</Say>
+</Response>

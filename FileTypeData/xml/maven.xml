@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) 2005  Dustin Sallings (dustin@spy.net) -->
+
+<project default="spy:deploy"
+	xmlns:j="jelly:core"
+	xmlns:m="jelly:maven"
+	xmlns:u="jelly:util"
+	xmlns:ant="jelly:ant"
+	xmlns:deploy="deploy">
+
+	<goal name="dist" prereqs="war,javadoc">
+		<zip zipfile="${maven.build.dir}/photoservlet-${git.short.version}.zip"
+			basedir="${maven.build.dir}" excludes="**">
+			<zipfileset dir="${maven.build.dir}/docs" prefix="doc/api"
+				includes="**"/>
+			<zipfileset dir="${basedir}" prefix="" includes="contrib/*"/>
+			<zipfileset dir="${basedir}" prefix="" includes="etc/photo.sql"/>
+			<zipfileset dir="${basedir}" prefix="" includes="etc/photo.conf"/>
+			<zipfileset dir="${basedir}" prefix="" includes="etc/jpeglicense.txt"/>
+			<zipfileset dir="${basedir}" prefix="" includes="etc/resin.conf"/>
+			<zipfileset dir="${maven.build.dir}" prefix="" includes="photo.war"/>
+			<zipfileset dir="${basedir}" prefix="" includes="doc/HOWTO"/>
+		</zip>
+	</goal>
+
+	<preGoal name="war:init">
+		<xmlvalidate failonerror="yes">
+			<fileset dir="${maven.src.dir}"
+				includes="**/*.xml" excludes="**/resin-web.xml"/>
+		</xmlvalidate>
+	</preGoal>
+
+	<!-- Build info -->
+	<preGoal name="war:init">
+		<attainGoal name="git:versions"/>
+		<attainGoal name="spy:buildprops"/>
+	</preGoal>
+
+	<preGoal name="war:init">
+		<ant:filter token="INSTANCE" value="photo"/>
+		<ant:copy file="${basedir}/etc/photo.conf"
+			tofile="${maven.build.dir}/photo/WEB-INF/photo.conf"
+			filtering="true"/>
+	</preGoal>
+
+	<goal name="spy:deploy" prereqs="war">
+
+		<mkdir dir="${maven.build.dir}/war"/>
+
+		<j:set var="wars" value="photo,jasonphoto,photodemo,tphoto,trishphoto" />
+		<j:set var="buildwars" value="${wars}"/>
+		<u:tokenize var="buildwars" delim=",">${buildwars}</u:tokenize>
+		<j:forEach items="${buildwars}" var="war">
+			Building ${war}.war
+			<j:set var="confsrc" value="${basedir}/etc/photo.conf"/>
+			<u:available file="${basedir}/etc/photo.${war}.conf">
+				<j:set var="confsrc" value="${basedir}/etc/photo.${war}.conf"/>
+			</u:available>
+			<echo>Using ${confsrc}</echo>
+
+			<!-- Need to delete the photo.conf so the correct one will be used. -->
+			<ant:delete file="${maven.build.dir}/photo/WEB-INF/photo.conf"/>
+
+			<ant:filter token="INSTANCE" value="${war}"/>
+			<ant:copy file="${confsrc}"
+				tofile="${maven.build.dir}/photo/WEB-INF/photo.conf"
+				filtering="true"/>
+
+			<jar jarfile="${maven.build.dir}/war/${war}.war"
+				basedir="${maven.build.dir}/photo">
+			</jar>
+
+			<delete file="${maven.build.dir}/photo/WEB-INF/photo.conf"/>
+		</j:forEach>
+
+	</goal>
+
+	<preGoal name="java:compile">
+		<attainGoal name="spy:spt"/>
+		<attainGoal name="aspectj"/>
+	</preGoal>
+
+</project>

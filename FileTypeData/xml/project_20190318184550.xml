@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+
+<!-- Copyright (c) 2005  Dustin Sallings (dustin@spy.net)
+-->
+
+<project>
+
+	<pomVersion>3</pomVersion>
+	<groupId>spy</groupId>
+	<artifactId>photo</artifactId>
+	<currentVersion>4.3</currentVersion>
+	<organization>
+		<name>SPY Internetworking</name>
+		<url>http://bleu.west.spy.net/~dustin/</url>
+	</organization>
+	<inceptionYear>1997</inceptionYear>
+	<package>net.spy.photo</package>
+
+	<name>PhotoServlet</name>
+	<description>
+		The Spy Photo Album
+	</description>
+
+	<shortDescription>PhotoServlet</shortDescription>
+
+	<developers>
+    <developer>
+		  <name>Dustin Sallings</name>
+		  <id>dustin</id>
+		  <email>dustin@spy.net</email>
+		  <organization>SPY Internetworking</organization>
+    </developer>
+	</developers>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>struts</groupId>
+			<artifactId>struts</artifactId>
+			<version>1.2.9</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<!-- Struts dependencies -->
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2</version>
+			<url>http://jakarta.apache.org/commons/collections.html</url>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1</version>
+			<url>http://jakarta.apache.org/commons/logging.html</url>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.7.0</version>
+			<url>http://jakarta.apache.org/commons/beanutils.html</url>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>1.7</version>
+			<url>http://jakarta.apache.org/commons/digester/index.html</url>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.1.1</version>
+			<url>http://jakarta.apache.org/commons/fileupload/</url>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.2</version>
+			<url>http://jakarta.apache.org/commons/io/</url>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>antlr</groupId>
+			<artifactId>antlr</artifactId>
+			<version>2.7.6</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.3.0</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>oro</groupId>
+			<artifactId>oro</artifactId>
+			<version>2.0.8</version>
+			<url>http://jakarta.apache.org/oro/</url>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<!-- /struts dependencies -->
+
+		<dependency>
+			<groupId>jaf</groupId>
+			<artifactId>activation</artifactId>
+			<jar>activation.jar</jar>
+		</dependency>
+		<dependency>
+			<groupId>javamail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>spy</groupId>
+			<artifactId>spy</artifactId>
+			<version>2.4</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>spy</groupId>
+			<artifactId>jwebkit</artifactId>
+			<version>3.2.1</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>spy</groupId>
+			<artifactId>authkit</artifactId>
+			<version>2.2.4</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>spy</groupId>
+			<artifactId>xmlkit</artifactId>
+			<version>2.2.3</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>spy</groupId>
+			<artifactId>spyxmlrpc</artifactId>
+			<version>2.2</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>spy</groupId>
+			<artifactId>s3lib</artifactId>
+			<version>1.0</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>spy</groupId>
+			<artifactId>memcached</artifactId>
+			<version>2.4rc1</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>spy</groupId>
+			<artifactId>maven-git-plugin</artifactId>
+			<version>1.0</version>
+			<type>plugin</type>
+		</dependency>
+		<dependency>
+			<groupId>spy</groupId>
+			<artifactId>maven-spy-build-plugin</artifactId>
+			<version>1.12</version>
+			<type>plugin</type>
+		</dependency>
+
+		<!-- Hadoop interface -->
+		<dependency>
+			<groupId>hadoop</groupId>
+			<artifactId>hadoop</artifactId>
+			<version>0.12.4-dev-core</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+
+		<!-- Drew Noakes' metadata extractor -->
+		<dependency>
+			<groupId>drewnoakes</groupId>
+			<artifactId>metadata-extractor</artifactId>
+			<version>2.3.0</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+
+		<dependency>
+			<groupId>xmlrpc</groupId>
+			<artifactId>xmlrpc</artifactId>
+			<version>2.0</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.3</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.1.2</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>servletapi</groupId>
+			<artifactId>servletapi</artifactId>
+			<version>2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jboss</groupId>
+			<artifactId>jboss-j2ee</artifactId>
+			<version>4.0.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.5.3</version>
+			<properties><war.bundle>true</war.bundle></properties>
+		</dependency>
+
+		<!--
+		<dependency>
+			<groupId>aspectj</groupId>
+			<artifactId>aspectjtools</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+		-->
+
+		<dependency>
+			<groupId>maven-plugins</groupId>
+			<artifactId>maven-cobertura-plugin</artifactId>
+			<version>1.0</version>
+			<type>plugin</type>
+			<url>http://maven-plugins.sourceforge.net/maven-cobertura-plugin/</url>
+		</dependency>
+
+		<dependency>
+			<groupId>maven</groupId>
+			<artifactId>maven-aspectj-plugin</artifactId>
+			<version>4.0</version>
+			<type>plugin</type>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<sourceDirectory>${basedir}/src/java</sourceDirectory>
+		<aspectSourceDirectory>src/aspectj</aspectSourceDirectory>
+		<unitTestSourceDirectory>${basedir}/src/test</unitTestSourceDirectory>
+		<resources>
+			<resource>
+				<directory>${maven.build.dir}/src</directory>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>${basedir}/contrib</directory>
+				<includes>
+					<include>searchfun.js</include>
+					<include>search.html</include>
+					<include>prototype.js</include>
+					<include>offline.css</include>
+					<include>image.html</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+
+	<reports>
+		<report>maven-cobertura-plugin</report>
+		<report>maven-checkstyle-plugin</report>
+		<report>maven-javadoc-plugin</report>
+		<report>maven-jdepend-plugin</report>
+		<report>maven-junit-report-plugin</report>
+		<report>maven-multiproject-plugin</report>
+		<report>maven-pmd-plugin</report>
+		<report>maven-simian-plugin</report>
+		<report>maven-tasklist-plugin</report>
+	</reports>
+
+</project>

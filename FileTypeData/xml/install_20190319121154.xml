@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <code>v0.4</code>
+    <id>opencart_kyash</id>
+    <name>Kyash Payment Gateway</name>
+    <version>1.2</version>
+    <author>Bilent Services Pvt Ltd</author>
+    <link>https://www.kyash.com</link>
+    <file path="catalog/controller/api/order.php">
+        <operation>
+            <search index="1,3"><![CDATA[
+            $json['success'] = $this->language->get('text_success');
+            ]]></search>
+            <add position="replace"><![CDATA[
+            $json['success'] = $this->language->get('text_success');
+
+            //Begin Kyash
+            $this->load->model('payment/kyash');
+            $response = $this->model_payment_kyash->update($order_id);
+            if(!empty($response)) $json['success'] .= $response;
+            //End Kyash
+            ]]></add>
+        </operation>
+    </file>
+    <file path="catalog/view/theme/default/template/common/success.tpl">
+        <operation>
+            <search><![CDATA[
+            <?php echo $content_bottom; ?></div>
+            ]]></search>
+            <add position="replace"><![CDATA[
+            <!-- Begin Kyash -->
+            <?php if(isset($kyash_content)) { echo $kyash_content; } ?>
+            <!-- End Kyash -->
+            <?php echo $content_bottom; ?></div>
+            ]]></add>
+        </operation>
+    </file>
+    <file path="catalog/controller/checkout/success.php">
+        <operation>
+            <search><![CDATA[
+            $this->cart->clear();
+            ]]></search>
+            <add position="replace"><![CDATA[
+            //Begin Kyash
+            $data['order_id'] = $this->session->data['order_id'];
+            //End Kyash
+
+            $this->cart->clear();
+            ]]></add>
+        </operation>
+        <operation>
+            <search><![CDATA[
+            if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/success.tpl')) {
+            ]]></search>
+            <add position="replace"><![CDATA[
+            //Begin Kyash
+            $this->load->model('payment/kyash');
+            if (isset($data['order_id'])) {
+                $data['kyash_content'] = $this->model_payment_kyash->getSuccessContent($data['order_id']);
+            }
+            //End Kyash
+
+            if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/success.tpl')) {
+            ]]></add>
+        </operation>
+    </file>
+    <file path="catalog/controller/account/success.php">
+        <operation>
+            <search><![CDATA[
+            $data['header'] = $this->load->controller('common/header');
+            ]]></search>
+            <add position="replace"><![CDATA[
+            $data['header'] = $this->load->controller('common/header');
+
+            //Begin Kyash
+            $data['kyash_content'] = '';
+            //End Kyash
+            ]]></add>
+        </operation>
+    </file>
+    <file path="catalog/controller/account/success.php">
+        <operation info="New variable catalog/controller/account/success.php">
+            <search><![CDATA[
+            $this->response->setOutput($this->render());
+            ]]></search>
+            <add position="replace"><![CDATA[
+            //Begin Kyash
+            $this->data['kyash_content'] = '';
+
+            $this->response->setOutput($this->render());
+            //End Kyash
+            ]]></add>
+        </operation>
+    </file>
+</modification>

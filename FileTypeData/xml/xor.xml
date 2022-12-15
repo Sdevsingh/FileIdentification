@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf8"?>
+<relation name="XOR">
+  <attributes>
+    <attribute>element1</attribute>
+    <attribute>element2</attribute>
+    <attribute>class</attribute>
+  </attributes>
+  <data>
+    <pattern>
+      <element>0</element>
+      <element>0</element>
+      <element>0</element>
+    </pattern>
+    <pattern>
+      <element>0</element>
+      <element>1</element>
+      <element>1</element>
+    </pattern>
+    <pattern>
+      <element>1</element>
+      <element>0</element>
+      <element>1</element>
+    </pattern>
+    <pattern>
+      <element>1</element>
+      <element>1</element>
+      <element>0</element>
+    </pattern>
+  </data>
+</relation>

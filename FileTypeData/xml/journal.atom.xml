@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>michael jones | dev blog</title><link href="http://michaeljones.github.io/blog/" rel="alternate"></link><link href="http://michaeljones.github.io/blog/feeds/journal.atom.xml" rel="self"></link><id>http://michaeljones.github.io/blog/</id><updated>2013-12-09T00:00:00+13:00</updated><entry><title>Journal - Day 27</title><link href="http://michaeljones.github.io/blog/posts/2013/12/09/journal-day-27/" rel="alternate"></link><updated>2013-12-09T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-12-09:blog/posts/2013/12/09/journal-day-27/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Triage issues in the Breathe github project. Figure out what is outstanding
+and what is fixed but neglected.&lt;/li&gt;
+&lt;li&gt;Read chapter 10 of Real World Haskell.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Triaged.&lt;/li&gt;
+&lt;li&gt;Read.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 26</title><link href="http://michaeljones.github.io/blog/posts/2013/12/05/journal-day-26/" rel="alternate"></link><updated>2013-12-05T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-12-05:blog/posts/2013/12/05/journal-day-26/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Read chapter 9 of Real World Haskell.&lt;/li&gt;
+&lt;li&gt;Figure out how to replace the text in Group widget in the Jump interface once
+we have information back from the Github API.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Read chapter 9 of Real World Haskell.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Did not get around to actually querying the Github API but created functions
+for formatting the information panel in the Jump UI which are ready to take
+the Github data.&lt;/p&gt;
+&lt;p&gt;Involved my first attempt to right something in the wild in the Maybe monad.
+I've done a lot in the IO Monad but I don't really understand the role of bind
+in that situation. Took a while to get a feel for it and how best to express
+the functions and whether they should know about the Maybe Monad or be lifted
+into it.&lt;/p&gt;
+&lt;p&gt;It also became a lesson in knowing when you want to recover from errors and
+when you want to just let the Nothing state of the Maybe propagate. I feel
+like my situation had places where bind was not the best choice and something
+which took a Nothing and propagated a default value would be preferable. Still
+interesting to experiment with it and feel how seemlessly it fits in to the
+Haskell experience.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 25</title><link href="http://michaeljones.github.io/blog/posts/2013/12/04/journal-day-25/" rel="alternate"></link><updated>2013-12-04T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-12-04:blog/posts/2013/12/04/journal-day-25/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Finish chapter 8 of Real World Haskell and read chapter 9.&lt;/li&gt;
+&lt;li&gt;Try to figure out how to have a panel in a vty-ui interface in which the
+content can easily be changed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Busy day so only finished chapter 8.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Discovered that vty-ui has a group concept for parts of the UI which need to
+switch between different widgets. Unfortunately the API involves the Group
+structure being parametrised on its contents so you can have a Group with
+different types of widgets in different pages within it.&lt;/p&gt;
+&lt;p&gt;Fortunately the FormattedText type in vty-ui will most likely prove
+sufficient for displaying some basic information.&lt;/p&gt;
+&lt;p&gt;In an attempt to see how one might deal with the situation in Haskell I came
+across &lt;a class="reference external" href="http://www.haskell.org/haskellwiki/Existential_type"&gt;Existential Types&lt;/a&gt; which seems like they would do the job and there
+is even a &lt;a class="reference external" href="http://lukepalmer.wordpress.com/2010/01/24/haskell-antipattern-existential-typeclass/"&gt;blog post&lt;/a&gt; referencing them in vty-ui but I can't see any trace in
+the current API.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 24</title><link href="http://michaeljones.github.io/blog/posts/2013/12/03/journal-day-24/" rel="alternate"></link><updated>2013-12-03T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-12-03:blog/posts/2013/12/03/journal-day-24/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Read chapter 8 of Real World Haskell.&lt;/li&gt;
+&lt;li&gt;Refactor &lt;tt class="docutils literal"&gt;jump&lt;/tt&gt; program source code to introduce modules.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Read half of chapter 8.&lt;/li&gt;
+&lt;li&gt;Refactored source code to split separate concerns into modules. This reduces
+the import clutter at the top of the &lt;tt class="docutils literal"&gt;Main.hs&lt;/tt&gt; and makes things a little
+more manageable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 23</title><link href="http://michaeljones.github.io/blog/posts/2013/12/02/journal-day-23/" rel="alternate"></link><updated>2013-12-02T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-12-02:blog/posts/2013/12/02/journal-day-23/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Read chapter 6 of Real World Haskell.&lt;/li&gt;
+&lt;li&gt;Attempt to debug why issue query with github hackage package is failing.&lt;/li&gt;
+&lt;li&gt;Attempt to install Autodesk Maya 2014 on Ubuntu 13.04.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Read chapter 6 and chapter 7.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Not exactly sure why the github package query was failing but grabbing the
+latest source for the package from github and using that instead seemed to
+resolve the issue. Adding source to a cabal sandbox can be done with the
+following steps:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+# In sandbox
+$ mkdir source-packages
+$ cd source-packages
+$ git clone https://github.com/fpco/github.git
+$ cd ..
+$ cabal sandbox add-source source-packages/github
+$ cabal install --dependencies-only
+&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Failed to get around to install Maya 2014.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 22</title><link href="http://michaeljones.github.io/blog/posts/2013/11/29/journal-day-22/" rel="alternate"></link><updated>2013-11-29T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-11-29:blog/posts/2013/11/29/journal-day-22/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Finish chapter 4 and read chapter 5 of Real World Haskell.&lt;/li&gt;
+&lt;li&gt;Investigate HTTP libraries in Haskell for requesting information from the
+Github Rest API.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Read chapters 4 &amp;amp; 5.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Looked into using the &lt;a class="reference external" href="http://hackage.haskell.org/package/HTTP"&gt;HTTP&lt;/a&gt; Haskell library but that doesn't handle HTTPs
+which is required for Github's API. Looked into &lt;a class="reference external" href="http://hackage.haskell.org/package/http-conduit"&gt;http-conduit&lt;/a&gt; which handles
+HTTPs but the &lt;a class="reference external" href="http://hackage.haskell.org/package/http-conduit-1.9.5.2/docs/Network-HTTP-Conduit.html#v:simpleHttp"&gt;simpleHttp&lt;/a&gt; function in that fails with only
+&lt;tt class="docutils literal"&gt;InternalIOException&lt;/tt&gt; which doesn't help much.&lt;/p&gt;
+&lt;p&gt;Ended up trying to use the &lt;a class="reference external" href="http://hackage.haskell.org/package/github"&gt;github&lt;/a&gt; package from Hackage which handles the HTTP
+requests for you but that seems to be tripping over the content of what is
+returned so needs more investigation to understand what is going on.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 21</title><link href="http://michaeljones.github.io/blog/posts/2013/11/28/journal-day-21/" rel="alternate"></link><updated>2013-11-28T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-11-28:blog/posts/2013/11/28/journal-day-21/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Finish chapter 3 and read chapters 4 &amp;amp; 5 of Real World Haskell.&lt;/li&gt;
+&lt;li&gt;Investigate adding Github issues and pull requests information to project
+browser.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Finished chapter 3 and half of chapter 4. I forgot how long they are.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Started initial investigations in github issues api. Primarily by looking
+through the &lt;a class="reference external" href="http://developer.github.com/v3/issues"&gt;developer documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Watched a talk called &lt;a class="reference external" href="http://www.infoq.com/presentations/8-lines-code-refactoring"&gt;8 Lines of Code&lt;/a&gt; which focussed on arguing against the
+use of layers of magic in Java code when the end goals can be achieved with
+sensible refactorings of the original code. A convincing argument arching over
+some concepts I am familiar with and pushing things a little further. I am a
+bit of fan of factories but can see the logic here of replacing them with
+lambdas where possible.&lt;/p&gt;
+&lt;p&gt;Factories, as I use them, are normally to bundle up some state and provide an
+interface for creating objects which need that state. Factory classes are the
+go to tool for this in languages which don't provide currying, closures or
+first class functions. In languages like C++98, objects are more composable
+than functions so it makes sense to make a lot of things into objects as
+composability is a key tool in handling complexity in a growing system. As
+such I use instances of Factory classes for managing object creation and other
+concepts. The talk's speaker argues that a Factory is an anti-pattern
+primarily based on the amount of boiler plate you have to churn out for one in
+C++ or particular Java. The preference for using closures or partially
+function application is based on the reward of stripping out this boiler plate
+whilst maintaining much the same functionality.&lt;/p&gt;
+&lt;p&gt;The only downside I can see involves wondering how these closures appear in
+stacktraces when things go wrong. Factories do provide a certain documentation
+of intent in that scenario. Balancing that is my experience knowing I've
+written quite a few nearly pointless factories in my time and stripping them
+away in favour of a single line function application where possible is a
+tempting prospect.&lt;/p&gt;
+&lt;p&gt;A similar theme is taken up by Jack Diederich in his &lt;a class="reference external" href="https://www.youtube.com/watch?v=o9pEzgHorH0"&gt;Stop Writing Classes&lt;/a&gt;
+talk where he rails against single method classes which can be replaced by
+closures and partial application. He is quite invested in this approach as the
+author of the functools module in the Python standard library. Personally, I
+think he takes some of the examples to extreme and loses the shape and self
+documenting nature that classes can bring to code in a quest for maximum reuse
+and minimal line counts.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Listened to the &lt;a class="reference external" href="http://mostlyerlang.com"&gt;Mostly Erlang&lt;/a&gt; podcast on &lt;a class="reference external" href="http://mostlyerlang.com/2013/11/27/023-yesod-and-fp-complete/"&gt;Yesod and FP Complete&lt;/a&gt;. It
+provides an interesting overview of the motivation behind Yesod and FP
+Complete along with some general Haskell banter. Excellent for general
+knowledge and building up a bigger picture of Haskell.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 20</title><link href="http://michaeljones.github.io/blog/posts/2013/11/27/journal-day-20/" rel="alternate"></link><updated>2013-11-27T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-11-27:blog/posts/2013/11/27/journal-day-20/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Review work on &lt;a class="reference external" href="http://github.com/michaeljones/breathe"&gt;Breathe&lt;/a&gt; from yesterday, merge results into master.&lt;/li&gt;
+&lt;li&gt;Review first chapter of &lt;a class="reference external" href="http://book.realworldhaskell.org/read/"&gt;Real World Haskell&lt;/a&gt; and read the next.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Merged &lt;a class="reference external" href="http://github.com/michaeljones/breathe"&gt;Breathe&lt;/a&gt; changes with a few additional clean ups into master and
+pushed.&lt;/li&gt;
+&lt;li&gt;Read first and second chapter of &lt;a class="reference external" href="http://book.realworldhaskell.org/read/"&gt;Real World Haskell&lt;/a&gt; and some of chapter 3.&lt;/li&gt;
+&lt;li&gt;Watched &lt;a class="reference external" href="https://www.youtube.com/watch?v=u404SLJj7ig"&gt;Code Rush&lt;/a&gt; documentary on Youtube. An interesting slice of history
+though I found it some what of a tease to the lack of detail on the technical
+side which left me with questions but it has an understandable focus for its
+intended audience and subject.&lt;/li&gt;
+&lt;li&gt;Came across &lt;a class="reference external" href="http://hello.processing.org/editor/"&gt;Hello Processing&lt;/a&gt; which looks pretty cool as an introduction to
+programming or at least I enjoyed the presentation of the first section.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 19</title><link href="http://michaeljones.github.io/blog/posts/2013/10/31/journal-day-19/" rel="alternate"></link><updated>2013-10-31T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-31:blog/posts/2013/10/31/journal-day-19/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Review work on &lt;a class="reference external" href="http://github.com/michaeljones/breathe"&gt;Breathe&lt;/a&gt; from yesterday, merge results into master and do a new
+PyPI release.&lt;/li&gt;
+&lt;li&gt;Read the first two chapters of Real World Haskell.&lt;/li&gt;
+&lt;li&gt;Do some test exploratory coding with the IORef type in Haskell.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Released &lt;a class="reference external" href="http://github.com/michaeljones/breathe"&gt;Breathe&lt;/a&gt; 1.1.0 on &lt;a class="reference external" href="https://pypi.python.org/pypi/breathe"&gt;PyPI&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Read the introduction and first chapter of &lt;a class="reference external" href="http://book.realworldhaskell.org/read/"&gt;Real World Haskell&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Written a basic example of working with the &lt;a class="reference external" href="http://hackage.haskell.org/package/base-4.6.0.1/docs/Data-IORef.html"&gt;IORef&lt;/a&gt; type:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="k"&gt;qualified&lt;/span&gt; &lt;span class="nn"&gt;Data.IORef&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;R&lt;/span&gt;
+
+&lt;span class="nf"&gt;main&lt;/span&gt; &lt;span class="ow"&gt;=&lt;/span&gt; &lt;span class="kr"&gt;do&lt;/span&gt;
+
+    &lt;span class="c1"&gt;-- Create a new IORef for handling a mutable number&lt;/span&gt;
+    &lt;span class="n"&gt;intioref&lt;/span&gt; &lt;span class="ow"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;R&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;newIORef&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;
+
+    &lt;span class="c1"&gt;-- Read the number&lt;/span&gt;
+    &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kt"&gt;R&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;readIORef&lt;/span&gt; &lt;span class="n"&gt;intioref&lt;/span&gt;
+
+    &lt;span class="c1"&gt;-- Print the number&lt;/span&gt;
+    &lt;span class="n"&gt;print&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;
+
+    &lt;span class="c1"&gt;-- Increment the number in place&lt;/span&gt;
+    &lt;span class="kt"&gt;R&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;writeIORef&lt;/span&gt; &lt;span class="n"&gt;intioref&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt; &lt;span class="n"&gt;succ&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;
+
+    &lt;span class="c1"&gt;-- Prin the number&lt;/span&gt;
+    &lt;span class="kt"&gt;R&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;readIORef&lt;/span&gt; &lt;span class="n"&gt;intioref&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;=&lt;/span&gt; &lt;span class="n"&gt;print&lt;/span&gt;
+
+    &lt;span class="n"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;I need to dig some more to attempt to understand what is actually going on and
+the best way to think about it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Wrote a simple &lt;a class="reference external" href="https://github.com/Everzen/RigControls/pull/4"&gt;undo stack&lt;/a&gt; for the &lt;a class="reference external" href="https://github.com/Everzen/RigControls"&gt;RigControls&lt;/a&gt; project.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 18</title><link href="http://michaeljones.github.io/blog/posts/2013/10/30/journal-day-18/" rel="alternate"></link><updated>2013-10-30T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-30:blog/posts/2013/10/30/journal-day-18/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Properly explore the idea of directives for &lt;a class="reference external" href="http://github.com/michaeljones/breathe"&gt;Breathe&lt;/a&gt; which automatically
+handle the doxygen generation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Rewrote the doxygenindex directive in Breathe to add a custom &lt;tt class="docutils literal"&gt;DoxygenNode&lt;/tt&gt;
+to the docutils document which is then picked up and processed by a custom
+Transform operation.&lt;/p&gt;
+&lt;p&gt;It was then possible to add an autodoxygenindex directive which output a
+&lt;tt class="docutils literal"&gt;DoxygenAutoNode&lt;/tt&gt; which could be processed, doxygen xml could be generated
+to a temporary folder and then the node would be replaced with an
+appropriately configured &lt;tt class="docutils literal"&gt;DoxygenNode&lt;/tt&gt; to fit with the standard processing.&lt;/p&gt;
+&lt;p&gt;The transforms are quite easy to work with and a really rather excellent part
+of the docutils infrastructure.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 17</title><link href="http://michaeljones.github.io/blog/posts/2013/10/29/journal-day-17/" rel="alternate"></link><updated>2013-10-29T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-29:blog/posts/2013/10/29/journal-day-17/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Continue with Yaml library example and article.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Finished Yaml library example and article though rapidly learnt how foolishly
+simple it was after further examination of the &lt;a class="reference external" href="http://hackage.haskell.org/package/yaml"&gt;yaml&lt;/a&gt; module. The &lt;tt class="docutils literal"&gt;FromJSON&lt;/tt&gt;
+functionality exposed by it is really rather fantastic.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Listened to &lt;a class="reference external" href="http://www.haskellcast.com/episode/003-simon-peyton-jones-on-ghc/"&gt;Haskell Cast 3&lt;/a&gt; with Simon Peyton Jones. Parts are over my head,
+but most is interesting and well layed out for the average programmer
+listener.&lt;/p&gt;
+&lt;p&gt;Includes some fascinating information about improving the national curriculum
+in the UK to include computer science education from a young age. My school
+experience included &lt;abbr&gt;ICT &amp;lt;Information Communcations Techology&amp;gt;&lt;/abbr&gt; which
+really just meant basic use of Word, Excel and Access. Not completely basic
+but very much end user level rather than understanding the machine and how to
+program it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 16</title><link href="http://michaeljones.github.io/blog/posts/2013/10/28/journal-day-16/" rel="alternate"></link><updated>2013-10-28T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-28:blog/posts/2013/10/28/journal-day-16/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Begin documenting and working through the issues I am encountering with using
+the Haskell yaml library.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;An still-in-progress article chronicling my flounding attempts as a beginner
+Haskell programmer. I am hopeful that it will be useful to others are my stage
+of development. If not, it is certainly useful to me.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>End of Week 3</title><link href="http://michaeljones.github.io/blog/posts/2013/10/27/end-of-week-3/" rel="alternate"></link><updated>2013-10-27T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-27:blog/posts/2013/10/27/end-of-week-3/</id><summary type="html">&lt;div class="section" id="weekend"&gt;
+&lt;h2&gt;Weekend&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Watched &lt;a class="reference external" href="http://yow.eventer.com/events/1004/talks/1054"&gt;Escape From the Ivory Tower&lt;/a&gt; presentation by Simon Peyton Jones. It
+is an approachable easy-listening style talk which gives the history of the
+development of Haskell and the goals of the language. No prior knowledge of
+the language required though, as always, it helps.&lt;/li&gt;
+&lt;li&gt;Wrote a &lt;a class="reference external" href="http://michaeljones.github.io/blog/posts/2013/10/27/setting-up-a-haskell-project/"&gt;blog post&lt;/a&gt; about stumbling through a Haskell Project set up. The
+content is perhaps better covered on the &lt;a class="reference external" href="http://www.haskell.org/haskellwiki/How_to_write_a_Haskell_program"&gt;Haskell Wiki&lt;/a&gt; though I found that too
+late.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="week-in-review"&gt;
+&lt;h2&gt;Week in Review&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Definitely making progress with Haskell but still nowhere near comfortable
+with it. Clueless on how to begin most tasks but at least I can slowly battle
+my way towards something. Work needs to continue both via exercising the
+knowledge I have and also by moving on to other tutorials. &lt;a class="reference external" href="http://book.realworldhaskell.org/"&gt;Real World
+Haskell&lt;/a&gt;
+&amp;amp; &lt;a class="reference external" href="https://www.fpcomplete.com/school/haskell-fast-hard"&gt;Learn Haskell Hard &amp;amp; Fast&lt;/a&gt; might be reasonable guides for this stage,
+especially the former&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Improved the performance of &lt;a class="reference external" href="https://github.com/EverZen/RigControls"&gt;RigControls&lt;/a&gt; and began to toy with the idea of
+tests but, as with any unfamiliar codebase which isn't designed for testing,
+there isn't an easy starting place. Might need more effort than first hoped.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Fixed an issue with &lt;a class="reference external" href="https://github.com/michaeljones/sphinx-to-github"&gt;Sphinx-to-Github&lt;/a&gt; regarding unicode handling. Gave me some
+motivation to read up on unicode a little more and the best practices
+surrounding it and its use in Python. Lessons learned:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Data is &lt;em&gt;decoded&lt;/em&gt; from a particular character-set into unicode point data and
+&lt;em&gt;encoded&lt;/em&gt; the other way.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;You have to write files with a particular encoding. You don't write unicode
+point data to a file, or rather you do, but in one of any number of
+character-sets. There isn't a default.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;You can't find out the encoding of a file unless it has a Byte Order Mark
+(BOM) which tells you. In which case, you need to worry about removing that
+BOM and not interpreting it as text.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Ideally you should know the encoding of the files you are trying to read, if
+you don't you're basicall left trying to guess. UTF-8 is a good first guess.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;You should try to decode as soon as possible so that you're handling
+proper unicode strings in your code rather than ASCII with potentially
+invalid bytes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Python 2.x attempts to read all files as ASCII by default which is the
+source of some head aches with Python 2.x and unicode.&lt;/p&gt;
+&lt;p&gt;You can convert either by decoding the string that you have read or by
+reading via &lt;tt class="docutils literal"&gt;codecs.open&lt;/tt&gt; which provides an option for the encoding as an
+argument.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Python 3.x defaults to reading files at UTF-8 by default and all standard
+strings or unicode by default with the &lt;tt class="docutils literal"&gt;bytestring&lt;/tt&gt; type there to handle
+encoded data.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;UTF-8 is best for content which is going to be largely ASCII.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;UTF-16 is best for some languages or purposes where the majority of the
+characters fits into 2 bytes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;UTF-32 is best for the rest. It is also the fastest to deal with as all
+characters takes the same amount of memory so indexing into the data is
+clean and obvious, however it takes up 4 times as much space as UTF-8 for
+ASCII characters.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 15</title><link href="http://michaeljones.github.io/blog/posts/2013/10/25/journal-day-15/" rel="alternate"></link><updated>2013-10-25T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-25:blog/posts/2013/10/25/journal-day-15/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Continue my quest to parse Yaml in Haskell. Or rather, use the data returned
+from the Yaml parser library I'm using (&lt;a class="reference external" href="http://hackage.haskell.org/package/yaml-0.8.5"&gt;yaml&lt;/a&gt;.)&lt;/li&gt;
+&lt;li&gt;Try to write at least one test for &lt;a class="reference external" href="http://github.com/EverZen/RigControls"&gt;RigControls&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Continued exploration of the Yaml library but without much success. Determined
+that perhaps it would be productive to journal my failings and hopefully
+eventual success at using this library. Sadly this decision came after a
+little progress so I will have to try to reproduce those first steps in an
+appropriately clueless way.&lt;/li&gt;
+&lt;li&gt;Failed to write any tests. Dammit.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 14</title><link href="http://michaeljones.github.io/blog/posts/2013/10/24/journal-day-14/" rel="alternate"></link><updated>2013-10-24T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-24:blog/posts/2013/10/24/journal-day-14/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Continue working on vty-ui example to at least emulate the functionality of my
+&lt;a class="reference external" href="https://github.com/michaeljones/dotfiles/blob/master/bin/jump"&gt;jump&lt;/a&gt; helper script.&lt;/li&gt;
+&lt;li&gt;Set up basic testsuite for the &lt;a class="reference external" href="https://github.com/Everzen/RigControls"&gt;RigControls&lt;/a&gt; project.&lt;/li&gt;
+&lt;li&gt;Improve &amp;amp; update information on michaeljones.github.io.&lt;/li&gt;
+&lt;li&gt;Grab the source code for &lt;a class="reference external" href="https://github.com/gibiansky/IHaskell"&gt;IHaskell&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;More work on the Jump project including starting to look at the &lt;a class="reference external" href="http://hackage.haskell.org/package/yaml"&gt;yaml&lt;/a&gt; package
+for reading my jump config file. As a beginner, I am finding it a struggle to
+start with new packages when they don't have a tutorial section. The tests
+only get you so far. A simple start guide would not go amiss.&lt;/p&gt;
+&lt;p&gt;Perhaps this will improve with experience. Perhaps Haskell APIs have a
+structure which I am not familiar enough with yet.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Installed &lt;a class="reference external" href="http://nose2.readthedocs.org/en/latest/index.html"&gt;nose2&lt;/a&gt; to the &lt;a class="reference external" href="https://github.com/Everzen/RigControls"&gt;RigControls&lt;/a&gt; virtualenv I have and wrote a trivial
+test to test that it was working.&lt;/p&gt;
+&lt;p&gt;Required getting PyQt4 working in the virtualenv which, for me, involved
+directly copying the system installed packages as recommended in this
+stackoverflow &lt;a class="reference external" href="http://stackoverflow.com/questions/1961997/is-it-possible-to-add-pyqt4-pyside-packages-on-a-virtualenv-sandbox"&gt;response&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Investigated Unicode best practices in response to a sphinx-to-github &lt;a class="reference external" href="https://github.com/michaeljones/sphinx-to-github/pull/7"&gt;ticket&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Updated my development copy of michaeljones.github.io to include more
+information for potential future employers. To act as more of a CV.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Did not grab the souce code for &lt;a class="reference external" href="https://github.com/gibiansky/IHaskell"&gt;IHaskell&lt;/a&gt;. Might give up on that one for the
+moment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 13</title><link href="http://michaeljones.github.io/blog/posts/2013/10/23/journal-day-13/" rel="alternate"></link><updated>2013-10-23T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-23:blog/posts/2013/10/23/journal-day-13/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Improve &amp;amp; update information on michaeljones.github.io.&lt;/li&gt;
+&lt;li&gt;Grab the source code for &lt;a class="reference external" href="http://gibiansky.github.io/IHaskell/"&gt;IHaskell&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Experiment with the &lt;a class="reference external" href="http://hackage.haskell.org/package/vty-ui"&gt;vty-ui&lt;/a&gt; library&lt;/li&gt;
+&lt;li&gt;Read the final chapter of Learn You a Haskell.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Did not update michaeljones.github.io.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Did not grab the source for &lt;a class="reference external" href="http://gibiansky.github.io/IHaskell/"&gt;IHaskell&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;I read the final chapter of Learn You a Haskell which is introducing the idea
+of Zippers. It doesn't really wrap up the tutorial with any kind of conclusion
+which makes it feel like there might be more to come. The FAQ also promises a
+set of accompanying exercises at some point but I think it might have been
+promising that for a while.&lt;/p&gt;
+&lt;p&gt;Still by far the best Haskell tutorial I've come across.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Read the majority of the documentation for the &lt;a class="reference external" href="http://hackage.haskell.org/package/vty-ui"&gt;vty-ui&lt;/a&gt; library and built a
+basic &lt;abbr&gt;TUI &amp;lt;Text User Interface&amp;gt;&lt;/abbr&gt; application which uses the List
+functionality from vty-ui. Quite exciting to be writing something new,
+interpreting compile errors and getting things to work. Still early days but
+feels great to be coding.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Watched a talk on &lt;a class="reference external" href="http://www.infoq.com/presentations/io-functional-side-effects"&gt;Purely Functional I/O&lt;/a&gt; which covers the pure nature of
+Haskell and introducing some pure ideas into Scala. It is a solid presentation
+which gently covered some very interesting ideas. Again, I wonder how people
+are meant to watch it without a basic understanding of Haskell but maybe it is
+fine. A couple of &lt;em&gt;Ah-Ha!&lt;/em&gt; moments for me: firstly his three stage code
+refactoring example, going from:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Cafe&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="n"&gt;buyCoffee&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cc&lt;/span&gt;&lt;span class="k"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;CreditCard&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="k"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Coffee&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;val&lt;/span&gt; &lt;span class="n"&gt;cup&lt;/span&gt; &lt;span class="k"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nc"&gt;Coffee&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;
+    &lt;span class="nc"&gt;Payments&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;charge&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cc&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;price&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;cup&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Where the payment mechanism is hard coded through a singleton which means
+limited modularity and difficulty in testing as you can't substitute a mock
+payments system. To:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Cafe&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="n"&gt;buyCoffee&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cc&lt;/span&gt;&lt;span class="k"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;CreditCard&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="k"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Payments&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="k"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;Coffee&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;val&lt;/span&gt; &lt;span class="n"&gt;cup&lt;/span&gt; &lt;span class="k"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nc"&gt;Coffee&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;charge&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cc&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;price&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;cup&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Where the payments mechanism is an explicit dependency of the method and has
+to be injected, which allows for greater modularity, but still isn't as
+flexible as it could be as you cannot easily combine payments. To:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Cafe&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+  &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="n"&gt;buyCoffee&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cc&lt;/span&gt;&lt;span class="k"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;CreditCard&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="k"&gt;:&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;Coffee&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;Charge&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="k"&gt;=&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;val&lt;/span&gt; &lt;span class="n"&gt;cup&lt;/span&gt; &lt;span class="k"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nc"&gt;Coffee&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt;
+    &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cup&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nc"&gt;Charge&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cc&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="n"&gt;cup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;price&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt;
+  &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In which the &lt;tt class="docutils literal"&gt;buyCoffee&lt;/tt&gt; mechanism is only responsible for returning a
+&lt;tt class="docutils literal"&gt;Charge&lt;/tt&gt; object which can be separately processed and combined if desired
+before the final payment is done.&lt;/p&gt;
+&lt;p&gt;I'm very used to the second set of code from a writing code to test as covered
+in &lt;a class="reference external" href="http://misko.hevery.com/"&gt;Mi?ko Hevery's&lt;/a&gt; &lt;a class="reference external" href="https://www.youtube.com/playlist?list=PLBDAB2BA83BB6588E"&gt;Clean Code&lt;/a&gt; Google Tech Talks, but the third set
+feels like it might just be another step forward and something well worth
+taking on board. The pure functional angle here is that the method only
+creates new objects it doesn't change any state but the pay offs are perhaps
+larger than I would associate with that simple statement.&lt;/p&gt;
+&lt;p&gt;The second &lt;em&gt;Ah-Ha!&lt;/em&gt; moment was hearing again how Haskell handles IO code and
+side-effects. I felt my understanding click a step deeper with this talk.
+Mostly his focus on the fact that IO is possible in a pure way and that is
+whilst Haskell has functions that perform IO and therefore have side-effects,
+they are never executed by the programmers code. Rather, the programmer has
+pure code which passes these IO performing functions around as data and then
+Haskell runtime, whatever is managing the execution of &lt;tt class="docutils literal"&gt;main&lt;/tt&gt;, ultimately
+executes them and passes their results back into the pure code as part of the
+evaluation of the program.&lt;/p&gt;
+&lt;p&gt;He emphasises that pure code is referentially transparent which means that
+every time you run a function with the same arguments it returns the same
+results. Haskell perhaps can be viewed as running pure functions which return
+functions which will do side-effecting actions, but as long as we're only
+talking about returning functions that, if run, would have side-effects, rather
+than actually running those functions ourselves then we are still pure. The
+functions are data that we're passing around which can be done in a manner
+oblivious to their underlying impure nature.&lt;/p&gt;
+&lt;p&gt;To keep a track of what is going on we label these functions with the IO type
+but that is little more than a convention aided by the type system. IO doesn't
+bestow magical powers on the functions.&lt;/p&gt;
+&lt;p&gt;This all may or may not be wrong but it is my current understanding.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 12</title><link href="http://michaeljones.github.io/blog/posts/2013/10/22/journal-day-12/" rel="alternate"></link><updated>2013-10-22T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-22:blog/posts/2013/10/22/journal-day-12/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Read &lt;a class="reference external" href="http://coldwa.st/e/blog/2013-08-20-Cabal-sandbox.html"&gt;cabal sandbox post&lt;/a&gt; and set up a sandbox area for my Haskell dev
+project. Cabal sandboxes are meant to mimic the Python virtualenv
+functionality.&lt;/li&gt;
+&lt;li&gt;Take a closer look at the &lt;a class="reference external" href="https://github.com/Everzen/RigControls"&gt;RigControls&lt;/a&gt; project and try to improve the curve
+performance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Read the cabal sandbox post and set up a basic sandbox area.&lt;/li&gt;
+&lt;li&gt;Talked through some changes to the &lt;a class="reference external" href="https://github.com/Everzen/RigControls"&gt;RigControls&lt;/a&gt; project with my brother.
+Conferring on coding style and some subtleties of Python.&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://github.com/Everzen/RigControls/pull/3"&gt;Improved curve performance&lt;/a&gt; in &lt;a class="reference external" href="https://github.com/Everzen/RigControls"&gt;RigControls&lt;/a&gt; by switching to a recalculate on
+demand rather than recalculate on change strategy.&lt;/li&gt;
+&lt;li&gt;Read the first page of the &lt;a class="reference external" href="https://www.fpcomplete.com/school/haskell-fast-hard/haskell-fast-hard-part-1"&gt;Learn Haskell Hard &amp;amp; Fast&lt;/a&gt; tutorial. In
+comparison to LYAH, it feels like it is going at a lightning pace and lacks
+the thoroughness required, however it might round out in future sections. It
+is certainly tempting to try to write a Haskell tutorial which explicitly
+skips over particular details early on in order to get to more practical
+examples. It will be interesting to see if this tutorial takes that approach.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 11</title><link href="http://michaeljones.github.io/blog/posts/2013/10/21/journal-day-11/" rel="alternate"></link><updated>2013-10-21T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-21:blog/posts/2013/10/21/journal-day-11/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Read through chapter 13 of Learn You a Haskell.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Read through the chapter of Learn You a Haskell. This is the first chapter
+where I'm beginning to feel unsure of how solid my understanding has been so
+far. It all just about holds together but I'm aware of how little practical
+application I've attempted with the knowledge so far.&lt;/li&gt;
+&lt;li&gt;Found a new &lt;a class="reference external" href="http://yannesposito.com/Scratch/en/blog/Haskell-the-Hard-Way/#introduction"&gt;Haskell tutorial&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Refactored use of &lt;tt class="docutils literal"&gt;eval&lt;/tt&gt; in the &lt;a class="reference external" href="https://github.com/Everzen/RigControls"&gt;RigControls&lt;/a&gt; project to use a dictorionary
+based factory instead.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>End of Week 2</title><link href="http://michaeljones.github.io/blog/posts/2013/10/20/end-of-week-2/" rel="alternate"></link><updated>2013-10-20T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-20:blog/posts/2013/10/20/end-of-week-2/</id><summary type="html">&lt;div class="section" id="weekend"&gt;
+&lt;h2&gt;Weekend&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Decided to start looking at the &lt;a class="reference external" href="https://github.com/coreyoconnor/vty"&gt;Vty&lt;/a&gt; module for Haskell based on the
+half-remembered fact that the &lt;a class="reference external" href="https://github.com/yi-editor/yi"&gt;Yi text editor&lt;/a&gt; uses it for its terminal
+front end.&lt;/li&gt;
+&lt;li&gt;Talked through my changes to &lt;a class="reference external" href="https://github.com/Everzen/RigControls"&gt;RigControls&lt;/a&gt; with my brother.&lt;/li&gt;
+&lt;li&gt;Found a &lt;a class="reference external" href="http://www.haskell.org/haskellwiki/All_About_Monads"&gt;monad tutorial&lt;/a&gt; on the Haskell wiki.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="week-in-review"&gt;
+&lt;h2&gt;Week in Review&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;My attitude towards learning Haskell has shifted as I begin to understand a
+little of its scope. Initial frustration at the helplessness I felt at not
+being able to get anything done has been replaced with an understanding that
+Haskell is not trivial to dive into and a little patience goes a long way.&lt;/p&gt;
+&lt;p&gt;In particular the Learn You a Haskell guide feels particularly brilliantly
+laid out and paced. The concepts are built up gradually in a very manageable
+way and, whilst I am finding it hard to think of interesting programs to write
+with the knowledge I have, there is a definite sense of progress which is
+enough to keep the enthusiasm going.&lt;/p&gt;
+&lt;p&gt;That said, my attempt at the weekend to pick up and write even the most basic
+program using the &lt;a class="reference external" href="https://github.com/coreyoconnor/vty"&gt;Vty&lt;/a&gt; module was an education in the different between theory
+and practice. It is one thing to read a guide book and quite another to find
+your way. Still, a little foolish googling and a few stackoverflow questions
+later and I am starting to see a little clearer.&lt;/p&gt;
+&lt;p&gt;A key issue was that the Vty module does not come with how-to style
+documentation [1] and going from the careful breaks downs of the Learn You a
+Haskell guide to the currently-still-alien pages of the library documentation
+on Haddock was a rather large step. Concepts that I had read about were now
+being presented with unfamiliar content and without the careful reminders
+needed to take it all on board. Still, progress was made, even if in the most
+basic sense and I am a little better equipped than before.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Getting into the &lt;a class="reference external" href="https://github.com/Everzen/RigControls"&gt;RigControls&lt;/a&gt; project is still primarily reminding me how
+little indepth experience I have with Qt. It is also curious to dive into an
+existing code base with the intention of cleaning it up some what. Nice to
+have the permission but a fresh lesson in how difficult it can be to tackle a
+new and relatively undocumented code base.&lt;/p&gt;
+&lt;p&gt;Possible refactoring would be aided by have test cases but I still have
+trouble understanding how to best tackle those in a GUI application.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Whilst I am curious to attempt to contribute to a large project like Libre
+Office, or perhaps 0ad, I am finding it a little daunting and easily telling
+myself that there is no rush with other commitments at the moment. I think
+that it fair. I'd be a fool to take on too much and fail to make significant
+progress in any direction.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Supporting incoming user requests on Breathe continues to be of interest. It
+feels productive to keep pushing it forward a little and to try to keep
+updates clean and useful. I still lack the motivation to take a crack at some
+larger issues and reports whilst I have other things to focus on but I am
+tempted to at least start working through the back log a little rather than
+only picking up new tickets.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="docutils footnote" frame="void" id="id1" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;[1]&lt;/td&gt;&lt;td&gt;It is possibly too low level for that with the &lt;a class="reference external" href="http://jtdaugherty.github.io/vty-ui/"&gt;Vty-UI&lt;/a&gt; library filling
+need for a widget library on top of the core Vty module.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 10</title><link href="http://michaeljones.github.io/blog/posts/2013/10/18/journal-day-10/" rel="alternate"></link><updated>2013-10-18T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-18:blog/posts/2013/10/18/journal-day-10/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Read through chapter 12 of Learn You a Haskell. Starting on the big scary
+&amp;quot;monads&amp;quot;&lt;/li&gt;
+&lt;li&gt;Grab the 0ad source code from &lt;a class="reference external" href="https://github.com/0ad/0ad"&gt;github&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Investigate the &lt;a class="reference external" href="http://librelist.com/browser//breathe/2013/10/17/doxygenclass-+-members-fails/"&gt;issue&lt;/a&gt; reported on the Breathe mailing list.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Finished chapter 12. Monads do not seem very scary when explained well. Of
+course, I might not have understood them at all.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;I grabbed the 0ad source code. The git repository is over a gigabyte of data.
+It is vaguely alarming. I haven't tried to compile it yet but spent a little
+time scanning over the directories to get a feel for the complexity. It is
+impressively larger than anything I've dealt with before.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Managed to get a fix out for the reported issue in Breathe will a little back
+and forth.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Watch a &lt;a class="reference external" href="https://www.youtube.com/watch?v=b9FagOVqxmI"&gt;Google TechTalk&lt;/a&gt; on Haskell. A brief introduction by &lt;a class="reference external" href="https://github.com/mzero"&gt;mzero&lt;/a&gt; which is
+really quite a whirlwind tour. I don't think I would recommend it as an
+introduction but it settled in very nicely to the stage of learning I'm at as
+a quick reinforcement of ideas that I have seen so far.&lt;/p&gt;
+&lt;p&gt;I think the time required to properly explain the various common abstractions
+in Haskell makes it enormously hard to do a deep and meaningful
+no-prior-knowledge-required talk about the language.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 9</title><link href="http://michaeljones.github.io/blog/posts/2013/10/17/journal-day-9/" rel="alternate"></link><updated>2013-10-17T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-17:blog/posts/2013/10/17/journal-day-9/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Finish chapter 11 of Learn You a Haskell.&lt;/li&gt;
+&lt;li&gt;Write a blog post about virtual env.&lt;/li&gt;
+&lt;li&gt;Grab source code for 0ad from &lt;a class="reference external" href="https://github.com/0ad/0ad"&gt;github&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Investigate Breathe ticket &lt;a class="reference external" href="https://github.com/michaeljones/breathe/issues/70"&gt;#70&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Finished chapter 11. Tackling Applicative Functors and Monoids. I am beginning
+to get the feeling that Haskell is not a complex language but there are a lot
+of best practices and design patterns, like Applicative Functors and Monoids,
+that they have built on top of base language which are all required for
+understanding the programs out there.&lt;/p&gt;
+&lt;p&gt;It is like having to learn C++ and the whole &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Design_Patterns"&gt;Gang of Four&lt;/a&gt; before starting
+on a C++ project. Sort of. It is harder, I think, as the C++ syntax is
+relatively minimal in some ways so you'd be able to understand a lot of the
+design patterns without learning them from reference. You might not know
+exactly why they are done but you could see what is happening. I feel like
+that is harder in Haskell but only because the abstractions they build up are
+in some ways more complex and in some ways expressed more tersely which makes
+them less approachable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Wrote &lt;a class="reference external" href="http://michaeljones.github.io/blog/posts/2013/10/17/discovering-virtualenv/"&gt;this blog post&lt;/a&gt; about virtual env. Part of me is appalled by the idea,
+I know how late I am to the virtual env game and none of this should be new
+news, however part of me understands that sometimes random blogs posts can be
+useful to the people who stumble across them and they are always helpful to
+their writer so I'm trying to embrace that style of thought.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Failed to grab the source code for 0ad. I did however play it for a bit and
+managed not to get slaughtered by the first wave of attack.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Failed to investigate Breathe ticket #70.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Forked and started some refactoring work on &lt;a class="reference external" href="https://github.com/Everzen/RigControls"&gt;rigcontrols&lt;/a&gt;. Trying to get a feel
+for the code base and the best direction forward for it. It is revealing my
+lack of familiarity with Qt though I have worked with quite a few basic Qt
+interfaces.&lt;/p&gt;
+&lt;p&gt;The interface is currently Qt 4.8 based. I would be enthusiastic to port it to
+Qt 5 purely out of interest but I don't think that is going to happen.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 8</title><link href="http://michaeljones.github.io/blog/posts/2013/10/16/journal-day-8/" rel="alternate"></link><updated>2013-10-16T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-16:blog/posts/2013/10/16/journal-day-8/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Finish chapter 9 of Learn You a Haskell and start on chapter 10.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Finished chapter 9, read chapter 10 and starter on chapter 11.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What can I say, it was a sunny day.&lt;/p&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 7</title><link href="http://michaeljones.github.io/blog/posts/2013/10/15/journal-day-7/" rel="alternate"></link><updated>2013-10-15T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-15:blog/posts/2013/10/15/journal-day-7/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Finish chapter 8 and read chapter 9 of Learn You a Haskell.&lt;/li&gt;
+&lt;li&gt;Figure out how to do something basic with the Yaml library.&lt;/li&gt;
+&lt;li&gt;Finish work on image support in Breathe.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Finished chapter 8 and read half of chapter 9. They are really long chapter, I
+swear.&lt;/li&gt;
+&lt;li&gt;I did not yet figure out some basics with Yaml library but editing one of the
+examples given in LYAH allowed me to feel a little more confident about my
+progress with the language.&lt;/li&gt;
+&lt;li&gt;Finished up the image support and closed the ticket. The user has further use
+cases but admits that they are non-standard.&lt;/li&gt;
+&lt;li&gt;Also played a little bit of 0ad and looked through the contribution pages. I
+have no idea why they are still on svn but they do at least have a github
+&lt;a class="reference external" href="https://github.com/0ad/0ad"&gt;mirror&lt;/a&gt;. I got beaten pretty hard by the AI and did a panic-quit rather than
+watch my town go down in flames.&lt;/li&gt;
+&lt;li&gt;Watched a &lt;a class="reference external" href="http://channel9.msdn.com/Blogs/Charles/Alexandrescu-Bright-Meijer-Moran-Pure-versus-Native-and-much-more"&gt;discussion&lt;/a&gt; on D &amp;amp; Haskell and their development and ecosystems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 6</title><link href="http://michaeljones.github.io/blog/posts/2013/10/14/journal-day-6/" rel="alternate"></link><updated>2013-10-14T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-14:blog/posts/2013/10/14/journal-day-6/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Finish chapter 6 and read chapter 7 from Learn You a Haskell.&lt;/li&gt;
+&lt;li&gt;Look into supporting the image syntax from Doxygen in Breathe. &lt;a class="reference external" href="https://github.com/michaeljones/breathe/issues/67"&gt;Ticket&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Compile a program which reads a yaml file using the &lt;a class="reference external" href="http://hackage.haskell.org/package/yaml"&gt;yaml&lt;/a&gt; library in Haskell.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Finished chapter 6, read chapter 7 and half of chapter 8. It is a really good
+book.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Made a first pass at supporting image syntax in Breathe. Pushed changes for
+review by user.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Compiled a program which pulls in the Yaml package but I have not figured out
+how to use it yet. I did learn about the &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;-package&lt;/span&gt;&lt;/tt&gt; flag for &lt;tt class="docutils literal"&gt;ghc&lt;/tt&gt; though
+which is a step:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+ghc -package yaml blah.hs
+&lt;/pre&gt;
+&lt;p&gt;Then you can do:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+import qualified Data.Yaml as Y
+&lt;/pre&gt;
+&lt;p&gt;In your actual program.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>End of Week 1</title><link href="http://michaeljones.github.io/blog/posts/2013/10/13/end-of-week-1/" rel="alternate"></link><updated>2013-10-13T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-13:blog/posts/2013/10/13/end-of-week-1/</id><summary type="html">&lt;div class="section" id="weekend"&gt;
+&lt;h2&gt;Weekend&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Worked through chapter 5 and half of chapter 6 of Learn You a Haskell.&lt;/li&gt;
+&lt;li&gt;Installed ghc-7.6.3 and haskell-platform-2013.2.0.0 using &lt;a class="reference external" href="http://askubuntu.com/questions/286764/how-to-install-haskell-platform-for-ubuntu-13-04/316465#316465"&gt;these&lt;/a&gt; instructions
+as Ubuntu seems to have made some potentially odd choices for the version of
+ghc they shipped on 13.04 so there isn't a packaged haskell-platform available
+for it.&lt;/li&gt;
+&lt;li&gt;Began to look at &lt;a class="reference external" href="http://cppreference.com"&gt;cppreference.com&lt;/a&gt; to see if there is anything I could
+contribution to the community driven project.&lt;/li&gt;
+&lt;li&gt;Downloaded &lt;a class="reference external" href="http://play0ad.com/"&gt;0ad&lt;/a&gt; from Ubuntu repositories with the intention of checking it out
+as an open source game.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="week-in-review"&gt;
+&lt;h2&gt;Week in Review&lt;/h2&gt;
+&lt;p&gt;I had such grand plans moving into this period of personal work. This first week
+has been an education in the realities of it all. Mostly:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;It is lonely to work from home all day. I am not an enormously social creature
+but I certainly miss having colleagues around.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Learning Haskell takes a long time. Coming from imperative programming
+languages, it feels like starting again. This is what people say so it
+should not have been surprising but I guess I'm not used to feeling
+unproductive in a programming environment.&lt;/p&gt;
+&lt;p&gt;That said, this is the third time I've tried to read through Haskell tutorials
+and work through some issues and it is beginning to feel a little more
+familiar, a little less alien. Completing basic tasks in the pure functional
+side of things is new feeling easy which is a start. IO and more complex
+programs still await.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;As mentioned &lt;a class="reference external" href="http://michaeljones.github.io/blog/posts/2013/10/10/journal-day-4/"&gt;previously&lt;/a&gt;, the guide I have followed for learning Haskell this
+week included more complex problems focussed on simple parts of the language
+than I feel I would like. I would rather be learning more about the language
+on simpler problems. I feel that if I'm trying to learn a language but
+spending significant time trying to understand the actual problem rather than
+its solution then I am focussing on the wrongs things.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;It is rewarding to engage with people on open source projects. It is fair to
+expect certain amount of effort on this part as well. Supporting open source
+projects is not customer service as much as guide collaboration.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="wishlist"&gt;
+&lt;h2&gt;Wishlist&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;More simple problems to tackle in Haskell. I think this is potentially
+difficult without introducing IO, but I would argue that it might make sense
+to introduce some very basic, even unexplained, IO in order to be able to
+tackle some more problems with the rest of the language.&lt;/li&gt;
+&lt;li&gt;I find myself wanting a Haskell style guide. It is hard to know, as a
+beginner, when to use &lt;tt class="docutils literal"&gt;where&lt;/tt&gt; vs &lt;tt class="docutils literal"&gt;let .. in&lt;/tt&gt;, when to declare another
+independent function vs using &lt;tt class="docutils literal"&gt;where&lt;/tt&gt;, etc., and how many function calls can
+be put in a row before it is deemed unreadable and other mechanisms, like local
+bindings, should be introduced to improve readability.&lt;/li&gt;
+&lt;li&gt;More talks on basic Haskell and introductions to the language. Simon
+Peyton-Jones' talks were great but initial googling is no uncovering any more.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 5</title><link href="http://michaeljones.github.io/blog/posts/2013/10/11/journal-day-5/" rel="alternate"></link><updated>2013-10-11T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-11:blog/posts/2013/10/11/journal-day-5/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Read first 6 chapters of Learn You a Haskell for Great Good.&lt;/li&gt;
+&lt;li&gt;Further investigate quickstart issue for Breathe.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Read the first 4 chapters of Learn You a Haskell.&lt;/li&gt;
+&lt;li&gt;Pushed a fix for a possible KeyError in the project handling code for Breathe.&lt;/li&gt;
+&lt;li&gt;Took a cursory look at contributing to the Libre Office project. Their
+&lt;a class="reference external" href="http://www.libreoffice.org/developers/"&gt;developers&lt;/a&gt; page is the place to start with their &lt;a class="reference external" href="https://wiki.documentfoundation.org/Easy_Hacks"&gt;easy hacks&lt;/a&gt; page being an
+early target, I imagine. I have no particular love for the Libre Office project,
+but a great deal of respect as I have used it often.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 4</title><link href="http://michaeljones.github.io/blog/posts/2013/10/10/journal-day-4/" rel="alternate"></link><updated>2013-10-10T00:00:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-10:blog/posts/2013/10/10/journal-day-4/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Work through the &lt;strong&gt;#31&lt;/strong&gt; to &lt;strong&gt;#41&lt;/strong&gt; Haskell problems.&lt;/li&gt;
+&lt;li&gt;Read first 6 chapters of Learn You a Haskell for Great Good.&lt;/li&gt;
+&lt;li&gt;Fix issue reported in the Breathe quick-start documentation.&lt;/li&gt;
+&lt;li&gt;Look into curses development in Haskell.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;I spent a long time looking at Haskell problem &lt;strong&gt;#27&lt;/strong&gt; and then went on to
+other things. I think it is an interesting problem and I should be able to do
+it, however it is beginning to frustrate me for other reasons.&lt;/p&gt;
+&lt;p&gt;The issue is my approach: I'm treating this list of problems as a good
+introduction to Haskell but it isn't really. It is a set of interesting
+problems of growing difficulty which can be solved with Haskell if you want.
+The issue is that they aren't designed to introduce you to different parts of
+the language and in particular they start asking complex problems which simple
+parts of the language instead of simple problems with increasingly complex
+parts of the language. I'm not learning Haskell here; I'm learning parts of
+mathematics instead. An excellent destination but not where I'm going.&lt;/p&gt;
+&lt;p&gt;The &lt;a class="reference external" href="http://stackoverflow.com/a/1016986"&gt;stackoverflow post&lt;/a&gt; which suggests
+these problems alse suggests the &lt;a class="reference external" href="http://projecteuler.net/"&gt;Project Euler&lt;/a&gt;
+problems another source to work through but they suffer from exactly the same
+issues.&lt;/p&gt;
+&lt;p&gt;Perhaps the average person interested in Haskell has a mathematical background
+and so these problems, which really aren't that hard, are more bread and
+butter to them. For me, I'm going to have to find another path. Perhaps
+focussing on Learn You a Haskell and then trying to replace some of my
+various workflow helper scripts with Haskell versions as a test.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Ironically, I did not get around to reading the Learn You a Haskell chapters.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;I could not reproduce the issue with the Breathe quickstart documentation,
+though more investigation might uncover it.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;I did not look into curses development.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I did go to the gym, tour the New Zealand parliament, have a singing lesson and
+have drinks with friends. Some days have other ideas than coding.&lt;/p&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 3</title><link href="http://michaeljones.github.io/blog/posts/2013/10/09/journal-day-3/" rel="alternate"></link><updated>2013-10-09T09:01:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-09:blog/posts/2013/10/09/journal-day-3/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Continue &lt;strong&gt;99 Haskell Problems&lt;/strong&gt; and reach #25.&lt;/li&gt;
+&lt;li&gt;Finish up work for Breathe ticket &lt;strong&gt;#65&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Listen to &lt;strong&gt;A Taste of Haskell - Part 2&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Reached Haskell Problem #26 but only by skipping the ones involving random
+numbers which I did at the recommendations of this post.&lt;/li&gt;
+&lt;li&gt;Finished up &lt;strong&gt;#65&lt;/strong&gt; on Breathe which turned out to be easier than expected. I
+still do not understand the constructors for the docutils node classes.&lt;/li&gt;
+&lt;li&gt;Watched the second part of &lt;a class="reference external" href="http://michaeljones.github.io/blog/posts/2013/10/07/video-taste-of-haskell-part-2/"&gt;A Taste of Haskell&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Also watched an &lt;a class="reference external" href="http://michaeljones.github.io/blog/posts/2013/10/09/video-rust-infoq/"&gt;introductory talk&lt;/a&gt; on Rust.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="todo"&gt;
+&lt;h2&gt;Todo&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Email docutils list for explanation of constructors.&lt;/li&gt;
+&lt;li&gt;Extend folder navigation script to source python virtualenv where desirable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 2</title><link href="http://michaeljones.github.io/blog/posts/2013/10/08/journal-day-2/" rel="alternate"></link><updated>2013-10-08T10:01:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-08:blog/posts/2013/10/08/journal-day-2/</id><summary type="html">&lt;div class="section" id="intentions"&gt;
+&lt;h2&gt;Intentions&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Continue 99 Haskell Problems and reach no. 20.&lt;/li&gt;
+&lt;li&gt;Chase up support tickets #65 &amp;amp; #66 on Breathe.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="section" id="results"&gt;
+&lt;h2&gt;Results&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Reached problem no. 17. Definitely learning a bit more about haskell whilst
+still only juggling lists in various ways. I would kill for some easily
+approachable code that did some real work but all in good time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Ticket #66 remains inactive.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Ticket #65 resulted in more work than anticipated as the problem is
+non-standard. Potential for interesting work for fixing it but it took a while
+to get back into the Breathe set up which I have neglected for a while.&lt;/p&gt;
+&lt;p&gt;Getting to play around with virtualenv a little more though which is something
+I've been late in picking up.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</summary></entry><entry><title>Journal - Day 1</title><link href="http://michaeljones.github.io/blog/posts/2013/10/07/journal-day-1/" rel="alternate"></link><updated>2013-10-07T15:01:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-07:blog/posts/2013/10/07/journal-day-1/</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;I have managed to get this &lt;a class="reference external" href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; based blog
+up. I choose Pelican because a simple google unearthed &lt;a class="reference external" href="http://pydanny.com/choosing-a-new-python-based-blog-engine.html"&gt;this&lt;/a&gt; from
+pydanny with a comment from Kenneth Reitz and that is enough of an endorsement
+for me.&lt;/p&gt;
+&lt;p&gt;Plus I like rst.&lt;/p&gt;
+&lt;p&gt;Things, like URLs, might chop and change for a bit whilst I figure this out.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Done the first 7 of the 99 Haskell Problems with a combination of half
+forgotten memories and referring to &lt;a class="reference external" href="http://learnyouahaskell.com/"&gt;Learn You a Haskell&lt;/a&gt;. My efforts are stumbling and awkward and
+nothing works first time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;I watched &lt;a class="reference external" href="http://michaeljones.github.io/blog/posts/2013/10/07/video-taste-of-haskell-part-1/"&gt;Simon Peyton-Jones - A Taste of Haskell Part I&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary></entry><entry><title>Beginning</title><link href="http://michaeljones.github.io/blog/posts/2013/10/07/beginning/" rel="alternate"></link><updated>2013-10-07T13:46:00+13:00</updated><author><name>Michael Jones</name></author><id>tag:michaeljones.github.io,2013-10-07:blog/posts/2013/10/07/beginning/</id><summary type="html">&lt;p&gt;I am embarking on some time for some personal projects and this blog is designed
+to mark my progress and keep on track. I am currently far from clear about what
+to work on but I have a few loose ideas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p class="first"&gt;Experiment with the &lt;a class="reference external" href="http://www.rust-lang.org/"&gt;Rust&lt;/a&gt; language and get a
+feel for how to compares with C++.&lt;/p&gt;
+&lt;p&gt;I am keen to pursue Rust as I have a reasonable and growing amount of
+experience with C++ and would love to see a replacement with equal power but
+less cruft.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Explore &lt;a class="reference external" href="http://clojure.org/"&gt;Clojure&lt;/a&gt; as a lisp and a language on the JVM.&lt;/p&gt;
+&lt;p&gt;I have been watching some of Rich Hickey's Greatest Hits and still yearn for
+that moment of enlightenment which legend suggests is brought on by
+understanding lisp.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Become familiar with Haskell and work through the &lt;a class="reference external" href="http://www.haskell.org/haskellwiki/H-99:_Ninety-Nine_Haskell_Problems"&gt;99 Haskell problems&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;More and more the functional approaches to coding intrigue me and feel like
+the correct way forward. What can be more functional than Haskell?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Continue to support &lt;a class="reference external" href="https://github.com/michaeljones/breathe"&gt;Breathe&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My Sphinx-Doxygen bridge project which has a small community of users and a
+low but steady stream of requests.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Push forward with development on build and environment system prototype built
+on &lt;a class="reference external" href="martine.github.io/ninja"&gt;Ninja&lt;/a&gt; and inspired by &lt;a class="reference external" href="https://github.com/nerdvegas/rez"&gt;Rez&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A prototype built at my last place of work seemed to have curious potential to
+it. I'd like to push it to the point where it succeeds or breaks.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Explore programming with audio.&lt;/p&gt;
+&lt;p&gt;I have a few musical outlets in my life and I find myself increasingly
+interested in how it is represented in data and how malleable it might be in
+that form.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Help with my brother's &lt;a class="reference external" href="https://github.com/Everzen/RigControls"&gt;Rig Controls&lt;/a&gt; project.&lt;/p&gt;
+&lt;p&gt;It has promise and a family connection.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;Improve my knowledge of Open GL &amp;amp; SDL.&lt;/p&gt;
+&lt;p&gt;I have been in graphics for too long without getting to grips with either.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</summary></entry></feed>

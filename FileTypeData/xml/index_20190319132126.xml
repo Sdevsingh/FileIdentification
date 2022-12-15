@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bash on Caleb Cushing&#39;s blog</title>
+    <link>http://blog.xenoterracide.com/tags/bash/index.xml</link>
+    <description>Recent content in Bash on Caleb Cushing&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://blog.xenoterracide.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>cat that displays tabs at 4 spaces</title>
+      <link>http://blog.xenoterracide.com/post/cat-that-displays-tabs-at-4-spaces/</link>
+      <pubDate>Sun, 25 Apr 2010 20:26:00 +0000</pubDate>
+      
+      <guid>http://blog.xenoterracide.com/post/cat-that-displays-tabs-at-4-spaces/</guid>
+      <description>&lt;p&gt;So in the tabs vs spaces war I&amp;rsquo;m squarely on the side of use tabs. tabs have meaning. tabs allow people to set there editor&amp;rsquo;s to whatever space display width their eyes are comfortable with as opposed to what yours are (e.g. you like 2 spaces I like 4). However, I&amp;rsquo;ve heard the argument what about when you cat the file, etc. Well it is actually a bit annoying&amp;hellip; so let&amp;rsquo;s fix it.&lt;br /&gt;&lt;br /&gt;my requirements when I type &lt;code&gt;cat foo&lt;/code&gt; if foo has tabs they will be displayed at 4 spaces, and I can still pass all cli options as I normally would to cat. To do this we&amp;rsquo;re going to create a shell function called &lt;code&gt;etcat()&lt;/code&gt;&lt;script src=&#34;http://gist.github.com/378838.js&#34;&gt;&lt;/script&gt;&lt;noscript&gt;&lt;pre&gt;&lt;code&gt;etcat() {&lt;br /&gt;    env cat &amp;ldquo;$@&amp;rdquo; | env expand -t 4;&lt;br /&gt;}&lt;/code&gt;&lt;/pre&gt;&lt;/noscript&gt;&lt;br /&gt;I&amp;rsquo;d like to note, that in order for this to work you &lt;em&gt;must&lt;/em&gt; use either an absolute path or a call to &lt;code&gt;env cat&lt;/code&gt; because otherwise the shell will attempt to call cat as a recursive function. I put this in my .alias file and sourced it.&lt;br /&gt;&lt;br /&gt;you can now put &lt;code&gt;alias cat=&amp;ldquo;etcat&amp;rdquo;&lt;/code&gt; in your aliases file, or run etcat. This is to protect you from any problems that could otherwise be caused by overriding cat in scripts you don&amp;rsquo;t control (not that I&amp;rsquo;m actually aware of any for this function).&lt;br /&gt;&lt;br /&gt;P.S. Thanks to @greybot on #bash for the incantation as I was having trouble with the &amp;ldquo;$@&amp;rdquo;&lt;br /&gt;&lt;br /&gt;UPDATE:&lt;br /&gt;changed name of function.&lt;div class=&#34;blogger-post-footer&#34;&gt;&lt;br /&gt;&amp;ndash;&lt;br /&gt;
+This &lt;span xmlns:dc=&#34;http://purl.org/dc/elements/1.1/&#34; href=&#34;http://purl.org/dc/dcmitype/Text&#34; rel=&#34;dc:type&#34;&gt;work&lt;/span&gt; by &lt;a xmlns:cc=&#34;http://creativecommons.org/ns#&#34; href=&#34;http://www.xenoterracide.com&#34; property=&#34;cc:attributionName&#34; rel=&#34;cc:attributionURL&#34;&gt;Caleb Cushing&lt;/a&gt; is licensed under a &lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/3.0/&#34;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License&lt;/a&gt;.&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>bash and konsole</title>
+      <link>http://blog.xenoterracide.com/post/bash-and-konsole/</link>
+      <pubDate>Tue, 16 Feb 2010 23:06:00 +0000</pubDate>
+      
+      <guid>http://blog.xenoterracide.com/post/bash-and-konsole/</guid>
+      <description>&lt;p&gt;So I&amp;rsquo;ve had lots of problems using a multi-tab xterminal, for the casual user I&amp;rsquo;m sure they&amp;rsquo;d not even notice them, or think I&amp;rsquo;m silly, but when you spend all day in a shell they become less so. &lt;br /&gt;&lt;br /&gt;&lt;h2&gt;History&lt;/h2&gt;&lt;br /&gt;one of the big problems I&amp;rsquo;ve had is with history. see when you close a shell then it writes the history. well if you have 5 tabs open each with with a super long history they&amp;rsquo;ll write those histories out in the order they close in. basically what happens is all the history saves at once so one of your open shells histories will be before another&amp;rsquo;s and if each has like 50 entries it can be quite a way back. In fact I&amp;rsquo;m sure I&amp;rsquo;ve had it happen where parts of my history was lost. So what do you do? you have to separate them per tab. One way to do this is with gnu screen. I don&amp;rsquo;t like screen&amp;rsquo;s history because it records the output of the terminal as well as the command, so this wasn&amp;rsquo;t a good solution for me. The solution is that each tab must have its own history file. Well how do we do that? before I get to it I have another problem.&lt;br /&gt;&lt;br /&gt;&lt;h2&gt;PS1, umask, and default group&lt;/h2&gt;I also have a need to have different settings depending on what I&amp;rsquo;m working on. If I&amp;rsquo;m working on files that need to be read and written to by my web server they need to have a different group and umask. first I solved this by su - to a different user, then I solved it by having different bashrc&amp;rsquo;s but neither fully solved the history problem.&lt;br /&gt;&lt;br /&gt;&lt;h2&gt;howto do it&lt;/h2&gt;first you have to have one konsole profile for each of the different settings you need. so I have one for web development called webdev. Then you have to add an environment variable to it I&amp;rsquo;m going to call it KONSOLE_PROFILE and set that to whatever your profile is called. Neither name really matters so long as they don&amp;rsquo;t conflict with others. Then you need to code your bashrc (or other shell to work with it). I have a shortened sample bashrc that you can use in a &lt;a href=&#34;http://gist.github.com/306270&#34;&gt;gist&lt;/a&gt;&lt;br /&gt;&lt;script src=&#34;http://gist.github.com/306270.js&#34;&gt;&lt;/script&gt;&lt;div class=&#34;blogger-post-footer&#34;&gt;&lt;br /&gt;&amp;ndash;&lt;br /&gt;
+This &lt;span xmlns:dc=&#34;http://purl.org/dc/elements/1.1/&#34; href=&#34;http://purl.org/dc/dcmitype/Text&#34; rel=&#34;dc:type&#34;&gt;work&lt;/span&gt; by &lt;a xmlns:cc=&#34;http://creativecommons.org/ns#&#34; href=&#34;http://www.xenoterracide.com&#34; property=&#34;cc:attributionName&#34; rel=&#34;cc:attributionURL&#34;&gt;Caleb Cushing&lt;/a&gt; is licensed under a &lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/3.0/&#34;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License&lt;/a&gt;.&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

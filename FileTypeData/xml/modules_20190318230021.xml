@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/App/App.iml" filepath="$PROJECT_DIR$/App/App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dl.iml" filepath="$PROJECT_DIR$/dl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../6w/wunderlist-java-sdk/wunderlist-java-sdk.iml" filepath="$PROJECT_DIR$/../6w/wunderlist-java-sdk/wunderlist-java-sdk.iml" />
+    </modules>
+  </component>
+</project>
+

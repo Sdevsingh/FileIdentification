@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>prueba1</id>
+    <name>prueba1</name>
+    <version>1.0</version>
+    <icon>appicon.png</icon>
+	<persistent-wifi>false</persistent-wifi>
+	<prerendered-icon>false</prerendered-icon>
+	<statusbar-style>opaque</statusbar-style>
+     <windows>
+        <window>
+            <id>buscar</id>
+            <url>buscar.html</url>
+            <backgroundcolor>#111</backgroundcolor>
+			<icon>ti://top rated</icon>
+            <barcolor>#000</barcolor>
+			<fullscreen>false</fullscreen>
+        </window>
+   <window>
+            <id>Hallazgo?</id>
+            <url>hallazgo.html</url>
+            <backgroundcolor>#111</backgroundcolor>
+			<icon>ti://top rated</icon>
+            <barcolor>#000</barcolor>
+			<fullscreen>false</fullscreen>
+        </window>
+
+   <window>
+            <id>iraperfil</id>
+            <url>iraperfil.html</url>
+            <backgroundcolor>#111</backgroundcolor>
+			<icon>ti://top rated</icon>
+            <barcolor>#000</barcolor>
+			<fullscreen>false</fullscreen>
+        </window>
+
+    </windows>
+<guid>d7f5141b-0352-40bf-8553-fd9f4e3db86d</guid>
+</ti:app>

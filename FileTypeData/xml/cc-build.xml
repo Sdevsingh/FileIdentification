@@ -1,0 +1,132 @@
+<!-- This a Ant build file whose sole purpose is to test 
+both a complete vanilla TSP build, and an XMLRPC TSP build,
+so as to be able to do continuous integration for the
+build of TSP, in a tool such as cruisecontrol  -->
+
+<project name="tsp" default="build" basedir="..">
+
+    <property name="build.dir" value="tsp_cc_build"/>
+    <property name="tsp.dir" value=".."/>
+
+    <macrodef name="cmake">
+                <attribute name="flags" default=""/>
+                <sequential>
+                        <exec dir="${build.dir}" executable="cmake" failonerror="true">
+                            <arg line="@{flags} ${tsp.dir}"/>
+                        </exec>
+                </sequential>
+    </macrodef>
+
+    <macrodef name="make">                
+                <sequential>
+                        <exec dir="${build.dir}" executable="make" failonerror="true"/>
+                </sequential>
+    </macrodef> 
+
+    <macrodef name="cvs-update">
+                <attribute name="workDir"/>
+                <sequential>
+                        <exec dir="@{workDir}" executable="cvs" failonerror="true">
+                                <arg line="update -dP "/>
+                        </exec>
+                </sequential>
+    </macrodef>
+
+    <target name="build" depends="update">
+        <antcall target="vanilla"/>
+        <antcall target="xmlrpc"/>
+    </target>
+
+    <target name="vanilla" depends="clean">
+        <cmake/>
+        <make/>
+    </target>
+
+    <target name="xmlrpc" depends="clean">
+        <cmake flags="-DBUILD_XMLRPC=ON"/>
+        <make/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <mkdir dir="${build.dir}"/>
+    </target>
+
+    <target name="update">
+        <cvs-update workDir="${basedir}"/>
+    </target>
+
+
+</project>
+
+
+<!--
+***********************************************
+Example of CruiseControl config.xml configuration file  :
+***********************************************
+
+<cruisecontrol>
+    <project name="tsp" buildafterfailed="false">
+
+        <listeners>
+            <currentbuildstatuslistener file="logs/${project.name}/status.txt"/>
+        </listeners>
+
+        <bootstrappers>
+            <cvsbootstrapper localWorkingCopy="projects/${project.name}/make" 
+                             file="cc-build.xml" />
+        </bootstrappers>
+
+        <modificationset quietperiod="30">
+            <cvs localWorkingCopy="projects/${project.name}"/>
+        </modificationset>
+
+        <schedule interval="300">
+            <ant anthome="apache-ant-1.6.5" 
+                buildfile="projects/${project.name}/make/cc-build.xml"
+                 />
+        </schedule>
+
+        <log>
+            <merge dir="projects/${project.name}/target/test-results"/>
+        </log>
+
+        <publishers>
+            <htmlemail mailhost="smtp.blablablablabla.fr"
+                reportsuccess="fixes"
+                returnaddress="foo@blablablablabla.fr"
+                subjectprefix="[CruiseControl]"    
+                skipusers="true" spamwhilebroken="true"
+                xsldir="webapps/cruisecontrol/xsl" 
+                css="webapps/cruisecontrol/css/cruisecontrol.css" 
+                >
+                <always address="foo@blablablablabla.fr"/>
+                <always address="bar@blablablablabla.fr"/>
+           </htmlemail>
+        </publishers>
+        
+    </project>
+</cruisecontrol>
+
+***********************************************
+How to create a continuous integration build for tsp in cruisecontrol ?
+***********************************************
+- install a binary distribution of cruise control
+- replace the config.xml file with the previous file. Change the email addresses
+of the 'returnaddress', and the 'always address'. You can add as many 'always address'
+as you want
+- go to the 'projects' directory of the cruisecontrol install and perform an anonymous
+check out of tsp :
+
+cd projects
+cvs -z3 -d:pserver:anonymous@cvs.savannah.nongnu.org:/sources/tsp co tsp
+
+- you can test the build without cruise control if Ant is available :
+go to projects/tsp/make and launch :
+
+ant -f cc-build.xml
+
+- If everything is OK, with the build, run the cruisecontrol.sh script. you're done,
+cruisecontrol is up and running.
+
+-->

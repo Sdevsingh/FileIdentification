@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.ioke</groupId>
+  <artifactId>ioke-lang</artifactId>
+  <packaging>jar</packaging>
+  <version>E-0.4.0-1</version>
+  <name>Ioke language runtime ikj</name>
+
+  <build>
+    <directory>target</directory>
+
+    <plugins>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.1</version>
+        <executions>
+          <execution>
+            <id>echodir</id>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <phase>package</phase>
+            <inherited>false</inherited>
+            <configuration>
+              <tasks>
+                <copy file="../../lib/ioke.jar" tofile="target/ioke-lang-E-0.4.0-1.jar" overwrite="true"/>
+              </tasks>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav</artifactId>
+        <version>1.0-beta-1</version>
+      </extension>
+    </extensions>
+  </build>
+
+  <!-- this is for deploying to codehouse -->
+  <distributionManagement>
+    <repository>
+      <id>codehaus.org</id>
+      <name>Ioke Central Repository</name>
+      <url>dav:https://dav.codehaus.org/repository/ioke/</url>
+    </repository>
+    <snapshotRepository>
+      <id>codehaus.org</id>
+      <name>Ioke Dev Repository</name>
+      <url>dav:https://dav.codehaus.org/snapshots.repository/ioke/</url>
+    </snapshotRepository>
+    <site>
+      <id>codehaus.org</id>
+      <url>dav:https://dav.codehaus.org/ioke/</url>
+    </site>
+  </distributionManagement>
+</project>

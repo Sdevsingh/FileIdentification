@@ -1,0 +1,12 @@
+<settings>
+  <proxies>
+    <proxy>
+      <id>cntlm</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>127.0.0.1</host>
+      <port>3128</port>
+      <nonProxyHosts>::1|127.0.0.1|localhost</nonProxyHosts>
+    </proxy>
+  </proxies>
+</settings>

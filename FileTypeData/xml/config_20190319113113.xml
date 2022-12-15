@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Training_Practice>
+            <version>0.1.0</version>
+        </Training_Practice>
+    </modules>
+
+    <default>
+        <contacts>
+            <email>
+                <recipient_email>student@example.com</recipient_email>
+            </email>
+        </contacts>
+    </default>
+    <stores>
+        <french>
+            <contacts>
+                <email>
+                    <recipient_email>student2@example.com</recipient_email>
+                </email>
+            </contacts>
+        </french>
+    </stores>
+</config>

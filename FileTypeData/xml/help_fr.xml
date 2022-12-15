@@ -1,0 +1,1544 @@
+<sylrplm_help >
+    Bienvenue dans l'application SYLRPLM d?velopp?e sur "Ruby On Rails" : #img=rails.png=img##lnk=http://www.railsfrance.org/=lnk#
+    <msg key="help_first_use" title="Prise en main">
+    	<ul><li title="Pr?ambule">Tout d'abord, nous vous invitons ? prendre connaissance des principales fonctionnalit?s de l'application: #lnk=/main/helpgeneral=lnk#.</li>
+    	<li title="Menus">Ensuite, pour une premi?re prise en main, vous pouvez parcourir, en tant que visiteur non connect?, les diff?rents menus pour consulter les donn?es g?r?es par l'application.</li>
+    	<li title="Connexion">Certains des menus vous demanderons de vous connecter car ils permettent de voir plus de donn?es et d'en modifier certaines.
+    	Vous pourrez alors soit donner un identifiant et un mot de passe que vous poss?dez ou indiquer celui que vous voulez cr?er.
+    	Ceci vous permettra, dans un premier temps en tant que consultant, de manipuler plus de donn?es.</li>
+    	<li title="Mod?le 3d">ATTENTION: Si vous voulez visualiser les exemples de mod?les 3D existants sur le site, il faut auparavant t?l?charger et installer le logiciel "OpenSCAD"
+    	? cette adresse:#lnk=http://www.openscad.org/downloads.html=lnk#
+    	La documentation est accessible ici: #lnk=http://en.wikibooks.org/wiki/OpenSCAD_User_Manual=lnk#
+    	Le sc?nario est le suivant: dans la vue "Structure", vous activez le menu "Mod?le 3D".
+    	#img=help/model3d_menu.png=img#
+    	Le syst?me fabrique le fichier et affiche la fen?tre de t?l?chargement (d?pendant de votre navigateur):
+    	#img=help/model3d_download.png=img#
+    	Si vous choisissez Ouvrir avec OpenSCAD, celui ci se lance et ouvre le fichier:
+    	#img=help/model3d_open.png=img#
+    	Quand vous ouvrez un fichier d'extension scad (type de fichier) avec OpenSCAD, le script de cr?ation est affich? ? gauche et la fen?tre graphique situ?e ? droite est vide.
+    	Il suffit alors d'activer le menu "Design/Compile and render (F6)" :
+    	#img=help/model3d_view3d.png=img#
+    	</li>
+    	</ul>
+    </msg>
+    <msg key="help_main_functions" title="Principales fonctionnalit?s">
+    	<msg key="help_functions_introduction" title="Que propose sylrplm ?">
+    	sylrplm est une application sp?cialis?e dans la gestion du cycle de vie de produits (PLM: Product Lifecycle Management).
+    	Elle unifie les activit?s de la soci?t? dans le but de structurer les donn?es autour du produit.
+    	sylrplm dispose d'une interface full-web, le serveur d'application pouvant lui m?me ?tre heberg? (cloud) ainsi que les "cofres forts" des donn?es.
+    	sylrplm est ?crit dans le langage ruby et est int?gr?e par le framework rails.
+    	Divers syst?mes de gestion de base de donn?e peuvent ?tre utilis?s (Postgresql, mysql, ...).
+    	Les quatres domaines regroupant l'ensemble des fonctionnalit?s de l'application sont:
+    	</msg>
+    	<msg key="help_end_user_functions" title="Fonctionnalit?s PLM">
+    		<ul>L'application s'articule autour de la gestion d'articles dans des structures configurables.
+    	Ces articles sont document?s et associ?s ? un ou des projets repondant aux besoins exprim?s par des clients.
+    	Tous ces objets ont un cycle de vie param?trable.
+    	Certaines fonctions (promotion, revision) sur les objets sont activables en utilisant un processus (signature, commentaires).
+	    		<li title="Gestion documentaire">
+	    			La gestion documentaire comprend les 2 composants suivants:
+	    			<ul>
+	    				<li title="Documents">
+			    			Les fonctions suivantes sont effectives sur les documents: Identification, cr?ation, ?dition, suppression, r?vision, duplication, cycle de vie.
+					    	Les documents peuvent ?tre associ?s aux articles, projets ou clients.
+					    	Un document peut avoir un ou plusieurs fichiers associ?s:
+			    		</li>
+			    		<li title="Fichiers">
+			    			Les fonctions d'identification, cr?ation, t?l?chargement et ?dition sous contr?le, suppression, r?vision sont effectives sur les fichiers.
+			    			Un ou plusieurs fichiers peuvent ?tre associ?s ? un document ou un article ou un projet ou un client pour l' "illustrer" (icone, miniature...).
+			    		</li>
+			    	</ul>
+		    	</li>
+		    	<li title="Gestion d' articles">
+		    		Identification, cr?ation, ?dition, suppression, r?vision, duplication, cycle de vie.
+					</li>
+					<li title="Configuration">
+		    			Notion de produit ayant des variantes (ligne produit) avec des crit?res d'exigences ou effectivit?s , chaque article r?pondant
+		    			ensuite ? une ou plusieurs de ces exigences.
+		    	</li>
+		    	<li title="Gestion de projets">
+		    		Identification, cr?ation, ?dition, suppression, r?vision, duplication, cycle de vie.
+		    	</li><li title="Gestion de clients">
+		    		Identification, cr?ation, ?dition, suppression, r?vision, duplication, cycle de vie.
+		    	</li>
+					<li title="Duplication">
+						Tous les objets peuvent ?tre facilement dupliqu?s.
+		    	</li>
+		    	<li title="Cycle de vie">
+		    		L'application g?re le cycle de vie des objets PLM:document,article,projet,client gr?ce aux notions de maturit? et de r?vision:#lnk=/help?help=help_lifecycle=lnk#
+		    	</li>
+			    	<li title="Structure">
+		    		Les relations entre les objets PLM sont affich?es sous forme de structure ou d'arbre dans l'onglet principal 'Structure'.
+		    		Il est alors possible d'?tendre ou r?duire celui ci et de modifier la relation ou d'afficher le fils ou de choisir une variante ou une vue ...
+		    		#img=help/module_structure.png=img#.
+		    	</li>
+		    	<li title="Mise en oeuvre de processus">
+		    		<ul title="Certaines fonctionnalit?s cit?es ci dessus sont mises en oeuvre sous contr?le de processus permettant:">
+							<li title="Controles">
+								Contr?le de validation(s) par des utilisateurs habilit?s.
+		    			</li>
+		    			<li title="Suivi">
+		    				Suivi des actions en cours.
+		    				Prise en compte des remarques.
+		    				Historisation du processus associ? aux modifications des objets.
+		    			</li>
+		    		</ul>
+		    		<ul title="Les 2 processus impl?ment?s sont les suivants, d'autres peuvent ?tre facilement ajout?s gr?ce au framework d?crit ci apr?s.">
+		    			<li title="Promotion">
+		    				Changement de statut sous contr?le du processus.
+		    				Suivi des remarques associ?s.
+		    			</li>
+		    			<li title="Revision">
+		    				Cr?ation d'une r?vision sous contr?le du processus.
+		    			</li>
+		    		</ul>
+		    	</li>
+		    	<li title="Tra?abilit?">
+		    		<ul title="L'application met en oeuvre les composants suivants pour assurer la tra?abilit? ">
+							<li title="Abonnement">
+								Un abonnement d?finit quels ?v?nements seront notifi?s aux utilisateurs concern?s.
+								Voir les fonctions d'administration du framework:#lnk=/help?help=help_framework_functions=lnk#.
+		    			</li>
+		    			<li title="Notification">
+		    				Chaque ?v?nement de cr?ation/modification/destruction est notifiable ? tel ou tel utilisateur suivant l'abonnement auquel il est associ?.
+		    				Les notifications conservent l'information concernant l'?v?nement et le ou les utilisateurs qui ont ?t? notifi?.
+		    				Voir aussi le chapitre sur les notifications:#lnk=/help?help=help_notifications=lnk#.
+		    			</li>
+		    			<li title="Planificateur de notification">
+		    				L'administrateur lance un planificateur qui va notifier les utilisateurs ? interval r?gulier.
+		    				Cet interval est modifiable par l'administrateur du site dans le fichier lib/tasks/sylrplm_tasks.rake: scheduler.cron '*/15 7-21 * * 1-5' do.
+		    			</li>
+		    			<li title="Logs">
+		    				Des fichiers logs accessible ? l'administrateur contiennent des informations sur le fonctionnement de l'application.
+		    			</li>
+		    		</ul>
+		    	</li>
+    		</ul>
+    	</msg>
+    	<msg key="help_share_functions" title="Fonctionnalit?s de partage">
+    		<ul>
+	    		<li title="Questions">
+	    			Identification, cr?ation, r?ponse, suppression.
+	    		</li>
+	    		<li title="Nouveaut?s">
+	    			Nouvelles de la part de l'?quipe de d?veloppement.
+	    		</li>
+	    		<li title="Discussions">
+	    			Une discussion peut ?tre associ? ? un objet PLM.
+	    			Identification, cr?ation, r?ponse, suppression.
+	    		</li>
+	    		<li title="Contacts">
+	    		</li>
+	    	</ul>
+	    </msg>
+    	<msg key="help_admin_functions" title="Fonctionnalit?s d'administration">
+    		<ul>
+	    		<li title="Gestion des utilisateurs">
+	    			Identification, cr?ation, ?dition, suppression, changement de mot de passe.
+	    		</li>
+	    		<li title="Gestion des r?les">
+	    			Identification, cr?ation, ?dition, suppression.
+	    		</li>
+	    		<li title="Gestion des groupes">
+	    			Identification, cr?ation, ?dition, suppression.
+	    		</li>
+	    		<li title="Gestion des droits d'acc?s (autorisations)">
+	    			Cr?ation, ?dition, suppression.
+	    			Un droit d'acc?s permet ? un r?le de pouvoir ex?cuter une m?thode d'un controlleur.
+	    			ex: edit sur PartsController permet l'?dition d'un article.
+	    		</li>
+	    		<li title="Gestion des volumes de stockage des fichiers">
+	    			Identification, cr?ation, ?dition, suppression.
+	    			#img=help/idea.png=img# Le volume permet de stocker les fichiers suivant un protocol donn?: file_system pour le syst?me de fichier, fog pour le cloud, database pour une table de la base de donn?e.
+	    		</li>
+	    	</ul>
+	    </msg>
+    	<msg key="help_framework_functions" title="Framework">
+	    	Les diff?rents composants de l'application sont param?trables en utilisant le framework inclus dans l'application.
+	    	<ul>
+		    	<li title="Celui ci comprend les possibilites suivantes">
+		    	<ul>
+		    		<li title="Param?trage des types">
+		    			Chaque objet d?crit ci dessus peut ?tre diff?renci? suivant diff?rents types d?pendants des besoins de l'entreprise.
+		    			Note: Certains param?tres de l'application peuvent ?tre modifi?s dans la base dans les objets 'Types d'objet' de type sylrplm_properties:
+		    		</li>
+		    		<li title="Param?trage des statuts">
+		    			Chaque type d' objet d?crit ci dessus peut avoir diff?rents statuts de maturit? d?pendants des besoins de l'entreprise.
+		    		</li>
+		    		<li title="Param?trage des valeurs par d?fauts et s?quence d'identification">
+		    			Une valeur par d?faut et/ou une s?quence de num?rotation peut ?tre d?finie sur chaque attribut de chaque objet d?crit ci dessus.
+		    		</li>
+		    		<li title="Param?trage des relations">
+		    			D?finition des relations possibles entre n'importe quel objet d?crit ci dessus.
+		    		</li>
+		    		<li title="Param?trage des vues">
+		    			D?finition des relations affichables dans l'exploration des objets.
+		    		</li>
+	    			<li title="Param?trage des colonnes des listes">
+		    			D?finition des colonnes ? afficher pour chaque liste d'objets.
+		    		</li>
+		    		<li title="D?finition des processus">
+		    			Les processus sont d?finis en langage ruby.
+		    		</li>
+		    		<li title="D?finition des abonnements">
+	    			Identification, cr?ation, ?dition, suppression.
+	    			Un abonnement d?finit quels ?v?nements seront notifi?s aux utilisateurs concern?s.
+						Chaque utilisateur peut d?finir l'abonnement qui le concerne.
+						Seul l'administrateur cr?e ou modifie les abonnements.
+						Chaque abonnement peut ?tre associ? ? plusieurs utilisateurs.
+						Un utilisateur ne peut avoir qu'un seul abonnement.
+	    		</li>
+		    	</ul>
+		    	</li>
+	    		<li title="Int?gration continue">
+			    	De plus, il est possible d'exporter et importer l'ensemble d'un param?trage ainsi qu'un ensemble de donn?es correspondant aux besoins d'un client.
+			    	#img=help/idea.png=img# De la m?me mani?re, des exemples de donn?es peuvent ?tre ainsi export?s et import?s afin de construire facilement des jeux d'essai ou de d?monstration.
+			    	Voir la partie "param?trage/domain" ci dessous, cette documentation montrant un premier exemple (sample.table).
+			    </li>
+	    	</ul>
+	    </msg>
+		</msg>
+    <msg key="help_presentation" title="Pr?sentation g?n?rale">
+        <msg key="help_screen_main" title="Ecran principal">
+        		Au lancement de l'application, l'?cran suivant s'affiche:
+            #img=help/screen_main.png=img#
+            Il comprend les 3 parties suivantes:
+        <ul>
+            <li title="Bandeau">Au d?marrage de l'application
+            	Le bandeau comprend plusieurs parties dont des informations sur la connexion en cours.
+            	#img=help/screen_banner_top1.png=img#.
+            	Le bouton "Se connecter" permet de se connecter explicitement.
+            	Indique le nom de l'utilisateur et son r?le ainsi que le r?le qu'il utilise et le projet auquelle il participe dans sa session.
+            	#img=help/screen_banner_top2.png=img#.
+            	L'imgae "se d?connecter" permet ensuite de se d?connecter.
+            </li>
+            <li title="Menus">
+            	Cette zone contient tous les menus de l'application:
+            	#img=help/screen_banner_menus.png=img#.
+            	Le d?tail est donn? dans la chapitre sur les modules: #jump=help_modules=jump#.
+           	</li>
+           	<li title="Fen?tres">
+           		#img=help/screen_banner_tabs.png=img#.
+           		Cette partie du bandeau permet de visualiser les deux parties des donn?es:
+           		<ul>
+		           	<li title="SYLRPLM">
+		            	Cette zone principale contient les diff?rentes vues des donn?es, par exemple voici la vue listant les articles :
+		            	#img=help/screen_content.png=img#.
+		            	Les diff?rentes vues, d?pendants des modules et menus, sont explicit?s dans cette documentation.
+		            	#img=help/module_date.png=img#.
+			        		Affiche la date courante.
+		           	</li>
+		           	<li title="Structure">
+			            #img=help/module_structure.png=img#.
+			            Affiche l'arbre repr?sentant la structure de l'objet avec ses relations suivant une vue et avec un filtrage possible suivant une variante.
+			            Le choix de la vue permet d'afficher seulement les relations qui lui sont associ?es.
+                  Voir le param?trage des vues pour exploiter cette notion.
+                  Le choix de la variante permet d'exploiter la notion de configuration de nomenclature (nomenclature configur?e).
+		        		</li>
+		           	<li title="Presse papiers">
+			            #img=help/module_pressepapier.png=img#.
+			            Indique les objets copi?s depuis les listes d'objets par le menu "Copier".
+			            Ces objets peuvent ?tre "coll?s" dans les autres objets par le menu "Explorer".
+			            Ils peuvent ?galement ?tre enlev? du presse papier en activant la croix rouge.
+		        		</li>
+           		</ul>
+           	</li>
+        </ul>
+        </msg>
+
+        <msg key="help_authorization" title="Autorisations/login">
+                Certains menus exigent que l'utilisateur ait certains droits sur les objets, il doit donc se connecter.
+                Cette connexion s'effectue en deux temps soit sur demande (voir bandeau), soit suite ? l'activation d'un menu :
+                <ul>
+                    <li title="Connexion">
+                    	#img=help/login_1.png=img#.
+	                    Valider le compte si vous avez d?ja un compte.
+	                    Sinon, demander un compte et apr?s avoir renseign? le nom et mot de passe que vous desirez, l'administrateur vous affectera le r?le consultant .
+	                    Vous pourrez alors vous connecter sur votre compte.
+	                    Attention: Pour le moment, il n'y a pas de notification explicite de la mise ? disposition du compte.
+                    </li>
+                    <li title="Choix du contexte">
+                    	#img=help/login_2.png=img#.
+                    </li>
+                </ul>
+        </msg>
+
+       <msg key="help_display_mode" title="Mode d'affichage">
+            Dans toutes les pages listant des objets, il existe plusieurs modes d'affichage.
+            #img=help/documents_display_modes.png=img#.
+            <ul>
+                <li title="D?tails">
+                    #img=help/documents_display_details.png=img#.
+                </li>
+                <li title="D?tails avec aper?u">
+                    #img=help/documents_display_details_thumbnail.png=img#.
+                </li>
+               <li title="Aper?u seul">
+                    #img=help/documents_display_thumbnail.png=img#.
+                </li>
+            </ul>
+        </msg>
+        <msg key="help_filter" title="Filtre">
+            Dans toutes les pages listant des objets, il est possible de ne voir qu'une partie de ceux ci.
+            Ceci en renseignant le filtre et en validant:
+            <ul>
+                <li title="Documents avant filtre">
+                    #img=help/documents_filtre_1.png=img#.
+                </li>
+                <li title="Documents apr?s filtre sur la fin de l'identifiant">
+                    #img=help/documents_filtre_2.png=img#.
+                </li>
+            </ul>
+        </msg>
+        <msg key="help_sort" title="Tri">
+            Dans toutes les pages listant des objets, il est possible de trier les objets suivant un crit?re.
+            Ceci en en activant l'ent?te de la colonne contenant l'attribut d?sir?:
+            <ul>
+                <li title="Documents avant tri">
+                    #img=help/documents_tri_1.png=img#.
+                </li>
+                <li title="Documents apr?s tri sur l'attribut 'Identifiant'">
+                    #img=help/documents_tri_2.png=img#;.
+                </li>
+            </ul>
+        </msg>
+        <msg key="help_pagination" title="Pagination">
+            Lorsque le nombre d'objets list?s d?passent la limite d?finie par la constante NB_ITEMS_PER_PAGE, voir la configuration:#jump=help_config=jump#.
+            , la page n'affiche que ce nombre maximum d'objets.
+            Il est possible de demander l'affichage des autres pages ? l'aide d'un bandeau de pagination:
+            <ul>
+                <li title="Liste des articles">
+                    #img=help/pagination_1.png=img#.
+                </li>
+                <li title="Apr?s appui sur 'Suivante'">
+                    #img=help/pagination_2.png=img#.
+                </li>
+            </ul>
+        </msg>
+        <msg key="help_duplication" title="Duplication">
+						Tous les objets peuvent ?tre facilement dupliqu?s
+						#img=help/module_duplication1.png=img#.
+						#img=help/module_duplication2.png=img#.
+						Le menu Duplication pr?sent dans la page listant les objets ou dans les pages d'?dition/exploration permet de dupliquer l'objet.
+		    </msg>
+        <msg key="help_notice_error" title="Informations et erreurs">
+            Apr?s chaque op?ration de modification d'un objet, une ou plusieurs lignes d' information apparaissent sur l'?cran suivant.
+            Elles indiquent le r?sultat de l'action pr?c?dente: succ?s, ?chec, information importante...
+            De plus, sp?cifiquement pour les ?crans de saisie d'attributs, un affichage des erreurs ?ventuelles de saisie s'affiche.
+            Voici un exemple pour la cr?ation d'un document.
+            <ul>
+                <li title="Page de cr?ation">#img=help/documents_new.png=img#.
+                </li>
+                <li title="Apr?s validation et cr?ation sans erreur (apr?s changement de th?me)">Notification de "Document 'ident' cr?e avec succ?s".
+								#img=help/documents_new_ok.png=img#.
+                </li>
+                <li title="Apr?s validation et cr?ation avec erreur ">Notification de "Document non cr?e' et affichage de l'erreur (il manque la d?signation).
+								#img=help/documents_new_ko.png=img#.
+                </li>
+            </ul>
+        </msg>
+        <msg key="help_notifications" title="Notifications">
+            	Chaque modification d'une donn?e (create/update/delete/add_*/del_*) est enregistr?e.
+            	<ul>A interval r?gulier et param?trable, une notification est cr?ee et envoy?e aux destinataires:
+ 								<li>Notifier les participants aux projets auxquelles appartiennent les objets modifies:
+            		  - remonter les relations pour trouver le ou les projets.
+            		  - conserver le chemin.
+            		  - lister les users du projet.
+            		  - leur envoyer un mail avec l'info du chemin et de l'action effectu?e.
+            		</li>
+            		<li>Notifier les groupes auxquels appartiennent les objets modifi?s:
+            		  - trouver les groupes.
+            		  - lister les users du groupe.
+            		  - leur envoyer un mail avec l'action effectu?e.
+            		</li>
+            	</ul>
+            	<msg key="help_notifications_attributs" title="Attributs">
+            		<ul>Les Attributs de l' objet notification, tous obligatoires sauf notify_date et notify_users, sont les suivants.
+            		<li> id</li>
+            		<li> forobject_type : document/part/project/customer</li>
+            		<li> forobject_id : id de l'objet modifie</li>
+            		<li> event_date : date de la modif</li>
+            		<li> event_type : type de la modif</li>
+            		<li> responsible_id : modifieur</li>
+           			<li> notify_date : date de la notification (null si pas encore fait)</li>
+           			Une notification ayant cette date renseign?e ne sera plus notifi?e.
+          			<li> notify_users : utilisateurs notifi?s (null si pas encore fait)</li>
+            	</ul>
+            	</msg>
+    		</msg>
+    		<msg key="help_domain" title="Domaine">
+            	La notion de domaine d'utilisation permet de definir l'ensemble des composants permettant de parametrer l'application
+            	suivant les exigences d'une organisation.
+            	Pour ceci, la plupart des objets comportent l'attribut Domaine qui permet de specifier le domaine pour lequel il a ?t? cr?e.
+            	Cas particulier: Le domaine nomm? "admin" comporte tous les objets indispensables au fonctionnement de l'application,
+            	En consequence, ces objets ne doivent pas etre supprimes.
+            	Voir le chapitre sur le param?trage pour maitriser son utilisation.
+        </msg>
+        <msg key="help_icones" title="Icones">
+            <ul>
+                <li title="D?connexion">#img=disconnect.png=img#</li>
+                <li title="Explorer un objet">#img=explorer.png=img#</li>
+                <li title="Editer un objet">#img=edit.png=img#</li>
+                <li title="R?viser un objet">#img=revise.png=img#</li>
+                <li title="Couper la relation d'un objet avec son 'p?re'">#img=cut.png=img#</li>
+                <li title="D?truire un objet">#img=destroy.png=img#</li>
+                <li title="Lancer le filtrage de la liste des objets">#img=filter.png=img#</li>
+                <li title="Copier un objet dans le presse papier">#img=copy.png=img#</li>
+                <li title="Coller les documents du presse papier">#img=paste_documents.png=img#</li>
+                <li title="Coller les articles du presse papier">#img=paste_parts.png=img#</li>
+                <li title="Coller les projets du presse papier">#img=paste_projects.png=img#</li>
+                <li title="Valider la cr?ation ou modification">#img=submit.png=img#</li>
+                <li title="Activer l'aide sur un menu">#img=help.png=img#</li>
+                <li title="Aller au chapitre principal">#img=help_main.png=img#</li>
+                <li title="Aller au chapitre suivant">#img=help_next.png=img#</li>
+                <li title="Aller au chapitre pr?cedent">#img=help_previous.png=img#</li>
+                <li title="Aller au chapitre sup?rieur">#img=help_upper.png=img#</li>
+                <li title="Aller au d?but de la documentation">#img=welcome.png=img#</li>
+            </ul>
+        </msg>
+    </msg>
+
+    <msg key="help_modules" title="Modules">
+        Les diff?rents modules de l'application sont:
+        <msg key="help_my_desk" title="Mon bureau">.
+        	#img=help/module_my_desk.png=img#.
+	        <ul>
+	        	<li title="Acceuil">
+	            Permet de visualiser cette page d'aide.
+	          </li>
+	          <li title="Mes actions">
+	          	Permet de voir les actions ? effectuer en fonction des processus en cours.
+	          </li>
+	          <li title="Mes notifications">
+	          	Permet de voir les notifications qui me sont adress?es.
+	          </li>
+	          <li title="Outils">
+	          	Affiche des informations sur la session et le compte de l'utilidsateur connect?.
+	          	Permet de param?trer le fonctionnement de l'application suivant des besoins personnels.
+	          	#img=help/module_tools.png=img#.
+		          <ul>
+			          <li title="Mon compte">
+			          	Les informations du compte sont affich?es.
+			          	Les fonctions suivantes sont disponibles.
+			          	<ul>
+			          		<li title="Editer mon compte">
+			          			Permet de modifier certaines informations de mon compte.
+			          		</li>
+			          		<li title="Modifier le mot de passe">
+			          			Permet de modifier mon mot de passe.
+			          		</li>
+			          	</ul>
+			          </li>
+			         	<li title="Pr?f?rences">
+			         		<ul>
+			         			<li title="Th?mes">
+											Permet de changer le th?me de pr?sentation de l'application.
+			        			</li>
+			        			<li title="Langues">
+											Permet de changer la langue de l'application.
+										</li>
+									</ul>
+			          </li>
+		         </ul>
+	         </li>
+	       </ul>
+
+        </msg>
+
+        <msg key="help_objects" title="Les objets PLM">.
+            #img=help/module_objets.png=img#.
+            Le module "Objets PLM" permet de g?rer les objets suivants:
+            <msg key="help_documents" title="Documents" href="/documents">
+                <msg key="help_documents_description" title="Description">
+                    <ul>
+                        <li>Les documents permettent de d?crire les articles ou projets ou clients.
+                            Cependant, ils ne sont pas forc?ment rattach?s ? un article ou projet ou client (par exemple les normes).</li>
+                        <li>Ils peuvent ?tre de diff?rents types: note de calcul, fiche de description de recette, norme, ...#jump=help_typesobjects=jump#.</li>
+                        <li>Ils peuvent avoir un plusieurs fichiers associ?s : #jump=help_datafiles=jump#</li>
+                        <li>L'application g?re le cycle de vie des documents : #jump=help_lifecycle=jump#</li>
+                        <li>Les modifications des fichiers associ?s au document sont contr?l?s ? l'aide du m?canisme
+                            de r?servation/lib?ration afin d'?viter que deux utilisateurs modifient le m?me fichier en m?me temps : #jump=help_documents_reservation=jump#</li>
+                    </ul>
+                </msg>
+                <msg key="help_documents_attributs" title="Attributs">
+                    <ul>Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+                        certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+                        <li title="Identifiant">Identifiant du document</li>
+                        <li title="Type">Type du document</li>
+                        <li title="R?vision">R?vision, ident+revision=identifiant unique d'un document</li>
+                        <li title="D?signation"></li>
+                        <li title="Statut">Statut (voir le cycle de vie)</li>
+                        <li title="Responsable">Nom de l'utilisateur cr?ateur ou dernier modifieur</li>
+                        <li title="Nb fichiers">Nombre de fichiers associ?s ? ce document</li>
+                        <li title="Date">Date de cr?ation ou de derni?re modification</li>
+                    </ul>
+                </msg>
+                <msg key="help_documents_functions" title="Fonctionnalit?s">
+                    Les principales fonctionnalit?s sur les documents sont:
+                    <msg key="help_documents_index" title="Liste" href="/documents">.
+                        #img=help/documents_list.png=img#.
+                    </msg>
+                    <msg key="help_documents_new" title="Nouveau document" href="/documents/new">
+                        <ul>
+                            <li title="Page de cr?ation">#img=help/documents_new.png=img#.
+                            </li>
+                            <li title="Apr?s validation et cr?ation sans erreur">#img=help/documents_new_ok.png=img#.
+                            </li>
+                            <li title="Apr?s validation et cr?ation avec erreur (il manque la d?signation)">#img=help/documents_new_ko.png=img#.
+                            </li>
+                        </ul>
+                    </msg>
+                    <msg key="help_documents_show" title="Explorer un document" href="/documents/1">.
+                        #img=help/documents_show.png=img#.
+                    </msg>
+                    <msg key="help_checks" title="R?servation/Lib?ration">
+                        <ul>
+                            <li title="R?servation">Pour pouvoir modifier le ou les fichiers associ?s ? un document, celui ci doit ?tre r?serv? dans la fen?tre "Explorer":
+                                <ul>
+                                    <li title="Reason">Raison de la r?servation</li>
+                                </ul>
+                            </li>
+                            <li title="Lib?ration">Lorsque le document est r?serv?, le menu est modifi?:
+                                #img=help/documents_checkin.png=img#.
+                                <ul>
+                                    <li title="Maj et lib?rer">Permet de prendre en compte les modifications sur le(s) fichier(s) et de lib?rer le document</li>
+                                    <li title="Reason">Raison de la mise ? jour</li>
+                                    <li title="Lib?rer">Permet de lib?rer document sans prendre en compte les modifications ?ventuelles</li>
+                                    <li title="Reason">Raison de la lib?ration</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </msg>
+                    <msg key="help_documents_edit" title="Edition" href="/documents/edit/1">.
+                        #img=help/documents_edit.png=img#.
+                    </msg>
+
+                    <msg key="help_datafiles" title="Document/fichiers" >
+				            	Les fichiers sont toujours associ?s aux documents et ne sont donc pas accessibles directement aux utilisateurs.
+				            	<msg key="help_datafiles_description" title="Description">
+				                    <ul>
+				                        <li>Un fichier permet de d?finir tout ou partie du contenu d'un et un seul document.</li>
+				                        <li>Ils peuvent ?tre de diff?rents types: catia, autocad, text, ...#jump=help_typesobjects=jump#.</li>
+				                        <li>Ils peuvent avoir diff?rents types de contenu: application/pdf, text, ...</li>
+				                        <li>L'application g?re le cycle de vie des fichiers.</li>
+				                    </ul>
+				                </msg>
+				                <msg key="help_datafiles_attributs" title="Attributs">
+				                    <ul>Les attributs des fichiers ont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+				                        certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+				                        <li title="Identifiant">Identifiant du fichier</li>
+				                        <li title="R?vision">R?vision, ident+revision=identifiant unique d'un fichier</li>
+				                        <li title="Type">Type du fichier</li>
+				                        <li title="Volume">Nom du volume ou est stock? le fichier</li>
+				                				<li title="Fichier">Nom du fichier associ? ? ce document</li>
+				                				<li title="Type de contenu">Type de contenu du fichier</li>
+				                        <li title="Responsable">Nom de l'utilisateur cr?ateur ou dernier modifieur</li>
+				                       	<li title="Document">Le document que le fichier d?finit en tout ou partie</li>
+				                        <li title="Date">Date de cr?ation ou de derni?re modification</li>
+				                    </ul>
+				                </msg>
+				                <msg key="help_datafiles_functions" title="Fonctionnalit?s">
+                    				Les principales fonctionnalit?s sur les fichiers sont:
+                    				<msg key="help_documents_add_datafiles" title="Ajouter un fichier au document">
+                    					Dans la vue de d?tail d'un document, apr?s activation du menu "Ajouter fichier", la fen?tre suivante apparait:
+			                        Note: le document doit ?tre r?serv? pour ajouter un fichier, celle ci peut s'effectuer de deux mani?res:
+			                        <ul>
+			                        	<li>Automatiquement si la propri?t? de l'utilisateur "R?servation automatique" est vrai: #jump=help_documents_reservation=jump#	.
+			                        	</li>
+			                        	<li>Manuellement par le menu "R?server" de la vue de d?tail du document.
+			                        	</li>
+			                        </ul>
+			                        #img=help/documents_add_datafile.png=img#.
+                    				</msg>
+                    				<msg key="help_datafiles_list" title="Lister les fichiers">
+			                        #img=help/documents_datafile_list.png=img#.
+                    				</msg>
+                   					<msg key="help_datafiles_show" title="Explorer un fichier">
+			                        #img=help/documents_datafile_show.png=img#.
+                    				</msg>
+                    				<msg key="help_datafiles_edit" title="Editer un fichier">
+                           	#img=help/documents_datafile_edit.png=img#.
+                    				</msg>
+            						</msg>
+            						</msg>
+                </msg>
+            </msg>
+
+            <msg key="help_parts" title="Articles" href="/parts">
+                <ul>
+                    <li>Les Articles sont les composants d'un produit (qui est ?galement un article)</li>
+                    <li>Suivant l'entreprise, ils peuvent ?tre de diff?rents types:#jump=help_typesobjects=jump#</li>
+                    <li>Un article est rattach? ? 0 ou plusieurs projets</li>
+                    <li>Il est d?crit par 0 ? plusieurs documents</li>
+                    <li>L'application g?re le cycle de vie des articles, voir le chapitre correspondant:#jump=help_lifecycle=jump#</li>
+                </ul>
+                <msg key="help_parts_attributs" title="Attributs">
+                    <ul>Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+                        certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+                        <li title="Identifiant">Identifiant de l'article</li>
+                        <li title="Type">Type de l'article</li>
+                        <li title="R?vision">R?vision, ident+revision=identifiant unique de l'article</li>
+                        <li title="D?signation"></li>
+                        <li title="Statut">Statut (voir le cycle de vie)</li>
+                        <li title="Responsable">Nom de l'utilisateur cr?ateur ou dernier modifieur</li>
+                        <li title="Date">Date de cr?ation ou de derni?re modification</li>
+                    </ul>
+                </msg>
+                <msg key="help_parts_functions" title="Fonctionnalit?s">
+                    Les principales fonctionnalit?s sur les articles sont:
+                    <msg key="help_parts_bom" title="Nomenclature" href="/parts">
+                        Une fonction importante est la nomenclature (bom).
+                        Elle repr?sente les instances d'articles avec leurs liens.
+                    </msg>
+                    <msg key="help_parts_index" title="Liste" href="/parts">.
+                        #img=help/parts_list.png=img#.
+                    </msg>
+                    <msg key="help_parts_show" title="Explorer un article" href="/parts/1">.
+                        <ul>
+                            <li title="Page d'exploration">#img=help/parts_show.png=img#.
+                            </li>
+                           	<li title="Structure">#img=help/parts_structure.png=img#.
+                            	Le choix de la vue permet d'afficher seulement les relations qui lui sont associ?es.
+                            	Voir le param?trage des vues pour exploiter cette notion.
+                            	Le choix de la variante permet d'exploiter la notion de configuration de nomenclature (nomenclature configur?e).
+                            </li>
+                            <li title="Ajout forum">#img=help/parts_add_forum.png=img#.
+                            </li>
+                        </ul>
+                    </msg>
+                    <msg key="help_parts_edit" title="Editer un article" href="/parts/edit/1">.
+                        #img=help/parts_edit.png=img#.
+                    </msg>
+                    <msg key="help_parts_new" title="Nouvel article" href="/parts/new">
+                        <ul>
+                            <li title="Page de cr?ation">#img=help/parts_new.png=img#.
+                            </li>
+                        </ul>
+                    </msg>
+                </msg>
+            </msg>
+            <msg key="help_projects" title="Projets" href="/projects">
+                <ul>
+                    <li>Les projets permettent de regrouper les informations relatives ? un projet de l'entreprise</li>
+                    <li>Ils peuvent ?tre de diff?rents types:#jump=help_typesobjects=jump#</li>
+                    <li>Un projet est rattach? ? 0 ou 1 client</li>
+                    <li>Il est d?crit par 0 ? plusieurs documents</li>
+                    <li>L'application g?re le cycle de vie des projets, voir le chapitre correspondant: #jump=help_lifecycle=jump#</li>
+                </ul>
+                <msg key="help_projects_attributs" title="Attributs">
+                    <ul>Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+                        certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+                        certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+                        <li title="Identifiant">Identifiant du projet</li>
+                        <li title="Type">Type du projet</li>
+                        <li title="D?signation"></li>
+                        <li title="Statut">Statut (voir le cycle de vie)</li>
+                        <li title="Responsable">Nom de l'utilisateur cr?ateur ou dernier modifieur</li>
+                        <li title="Date">Date de cr?ation ou de derni?re modification</li>
+                        <li title="Client">Le client ayant demand? le projet</li>
+                    </ul>
+                </msg>
+                <msg key="help_projects_functions" title="Fonctionnalit?s">
+                    Les principales fonctionnalit?s sur les projets sont:
+                    <msg key="help_projects_index" title="Liste des projets" href="/projects">.
+                        #img=help/projects_list.png=img#.
+                    </msg>
+                    <msg key="help_projects_show" title="Explorer un projet" href="/projects/1">
+                        <ul>
+                            <li title="Page d'exploration">#img=help/projects_show.png=img#.
+                            </li>
+                           	<li title="Structure">#img=help/projects_structure.png=img#.
+                            	Le choix de la vue permet d'afficher seulement les relations qui lui sont associ?es.
+                            	Voir le param?trage des vues pour exploiter cette notion.
+                            </li>
+                            <li title="Ajout forum">#img=help/projects_add_forum.png=img#.
+                            </li>
+                        </ul>
+                    </msg>
+                    <msg key="help_projects_edit" title="Editer un projet" href="/projects/edit/1">.
+                        #img=help/projects_edit.png=img#.
+                    </msg>
+                    <msg key="help_projects_new" title="Nouveau projet" href="/projects/new">.
+                        #img=help/projects_new.png=img#.
+                    </msg>
+                </msg>
+            </msg>
+            <msg key="help_customers" title="Clients" href="/customers">
+                <ul>
+                    <li>Les clients sont les demandeurs des projets</li>
+                    <li>Ils peuvent ?tre de diff?rents types:#jump=help_typesobjects=jump#</li>
+                    <li>Il est d?crit par 0 ? plusieurs documents</li>
+                    <li>L'application g?re le cycle de vie des clients, voir le chapitre correspondant: #jump=help_lifecycle=jump#</li>
+                </ul>
+                <msg key="help_customers_attributs" title="Attributs">
+                    <ul>Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+                        certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+                        <li title="Identifiant">Identifiant du client</li>
+                        <li title="Type">Type du client</li>
+                        <li title="D?signation"></li>
+                        <li title="Statut">Statut (voir le cycle de vie)</li>
+                        <li title="Responsable">Nom de l'utilisateur cr?ateur ou dernier modifieur</li>
+                        <li title="Date">Date de cr?ation ou de derni?re modification</li>
+                    </ul>
+                </msg>
+                <msg key="help_parts_functions" title="Fonctionnalit?s">
+                    Les principales fonctionnalit?s sur les clients sont:
+                    <msg key="help_customers_index" title="Liste des clients" href="/customers">.
+                        #img=help/customers_list.png=img#.
+                    </msg>
+                    <msg key="help_customers_show" title="Explorer un client" href="/customers/1">
+                        <ul>
+                            <li title="Page d'exploration">#img=help/customers_show.png=img#.
+                            </li>
+                            <li title="Ajout forum">#img=help/customers_add_forum.png=img#.
+                            </li>
+                           	<li title="Structure">#img=help/customers_structure.png=img#.
+                            	Le choix de la vue permet d'afficher seulement les relations qui lui sont associ?es.
+                            	Voir le param?trage des vues pour exploiter cette notion.
+                            </li>
+                        </ul>
+                    </msg>
+                    <msg key="help_customers_edit" title="Editer un client" href="/customers/edit/1">.
+                        #img=help/customers_edit.png=img#.
+                    </msg>
+                    <msg key="help_customers_new" title="Nouveau client" href="/customers/new">
+                        <ul>
+                            <li title="Page de cr?ation">#img=help/customers_new.png=img#.
+                            </li>
+                        </ul>
+                    </msg>
+                </msg>
+            </msg>
+            <msg key="help_relation" title="Relations entre objets">
+                L'application permet d'?tablir des relations entres les objets PLM.
+                Par exemple, la d?finition d'un article par un document est faite par une relation de type relation_document.
+                Les articles sont reli?s entre eux par une relation de type relation_part.
+                Les articles sont reli?s aux projets par une relation de type relation_part.
+                Les projets sont reli?s aux projets par une relation de type relation_projet.
+                Ces diff?rents types de relations ont des noms param?trables suivant l'entreprise, voir le chapitre param?trages: #jump=help_typesobjects=jump#
+                La m?thode pour cr?er une relation entre deux objets est la suivante.
+                <ul>
+                    <li>Afficher la liste des objets d'un type donn?: document/article/projet</li>
+                    <li>Pour pouvoir relier un de ces objets ? un autre objet, activer d'abord le menu "copier".
+                        Le module "Presse papier" affiche alors l'objet 'copi?'.
+                        #img=help/module_pressepapier_1.png=img#.</li>
+                    <li>Ensuite, afficher la liste des objets du type avec lequel on veut ?tablir la relation: article/projet/client</li>
+                    <li>Activer le menu "D?tails" sur l'objet d?sir?</li>
+                    <li>Dans la page "D?tails", choisir la relation voulue et activer le menu "Coller Documents" ou "Coller articles" ou "Coller projets" pour coller le ou les objets du type se trouvant dans le prese papier.
+                        R?sultat:
+                        <ul>
+                            <li title="Document coll? sur un article">#img=help/explorer_part_document.png=img#.
+                            </li>
+                            <li title="Article coll? sur un article">#img=help/explorer_part_part.png=img#.
+                            </li>
+                            <li title="Article coll? sur un projet">#img=help/explorer_project_part.png=img#.
+                            </li>
+                            <li title="Client avec tous ses composants">#img=help/explorer_customer_all.png=img#.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </msg>
+            <msg key="help_lifecycle" title="Cycle de vie des objets PLM">.
+            	  #img=help/module_lifecycle.png=img#.
+                L'application g?re le cycle de vie de ces objets PLM:document,article,projet,client gr?ce ? 2 notions:
+                <ul>
+                    <li title="Maturit?">A un moment donn?, un objet a un statut parmi plusieurs possibles, par exemple "inwork", "ready", "approved".
+                        Le passage d'un statut ? un autre s'effectue de diverses mani?res possibles dans la page "Cycle de vie":
+                        Soit par choix dans la liste des statuts possibles, soit par les menus "Promouvoir"/"R?trograder" : #jump=help_statusobjects=jump#.
+                        Ceci d?pend du param?trage des statuts, voir le chapitre correspondant:#jump=help_statusobjects=jump#
+                    </li>
+                    <li title="R?vision">Pour les documents et articles seulement.
+                        Un objet peut ?tre r?vis? lorsque le statut le permet (voir le param?trage par le framework), ex:"approved".
+                        L'utilisateur peut alors demander sa r?vision par le menu "R?vision par menu" "R?vision par action" dans la page "Cycle de vie".
+                        Une nouvelle version de l' objet est alors cr?e, la valeur de la r?vision ayant ?t? incr?ment?e.
+                    </li>
+                </ul>
+            </msg>
+        </msg>
+        <msg key="help_collab" title="Travail collaboratif">.
+            #img=help/module_collaboratif.png=img#.
+            Les fonctions de travail collaboratif sont:
+            <msg key="help_questions_index" title="Foire aux questions" href="/questions">
+                Cette foire aux questions permet ? l'administrateur de pr?ciser certains points techniques ou de fonctionnement de l'application.
+                <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+                    certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+                    <li title="Question">La question</li>
+                    <li title="R?ponse">La r?ponse</li>
+                </ul>
+            </msg>
+            <msg key="help_news_index" title="Nouveaut?s" href="/main/news">
+                Permet ? l'administrateur d'informer les utilisateurs (#jump=help_users=jump#) sur les nouveaut?s de l'application.
+            </msg>
+            <msg key="help_forums" title="Forums" href="/forums">
+                Permet aux utilisateurs (#jump=help_users=jump#) d'?changer des informations.
+                Un ou plusieurs forums peuvent ?tre associ?s aux objets PLM suivants: article, projet, client par le menu "Ajout forum" de la page "Explorer"
+                <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+                    certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+                    <li title="Type">Type de forum</li>
+                    <li title="Statut">Statut du forum</li>
+                    <li title="Sujet du forum">Sujet du forum</li>
+                    <li title="Description">Description du forum</li>
+                    <li title="Emetteur">Cr?ateur du forum</li>
+                    <li title="Message">Le premier message sur ce forum</li>
+                </ul>
+                </msg>
+           		<msg key="help_forumitems" title="Messages Forums" href="/forumsitems">
+ 								Messages contenus dans les forums.
+ 							</msg>
+
+            <msg key="help_contacts_index" title="Contacts" href="/main/contacts">
+                Liste les contacts utiles pour l'utilisation de l'application.
+            </msg>
+        </msg>
+
+        <msg key="help_processes" title="Processus m?tier">.
+            #img=help/module_processus.png=img#.
+            Ce module comprend les fonctions relatives a l'execution des processus m?tier: ex?cution, suivi.
+            <msg key="help_workitems_index" title="Mes actions" href="/workitems">
+            	Suivi des actions qui me sont affect?es lors du d?roulement des processus.
+            	Liste:
+            	#img=help/workflows_list.png=img#.
+            	D?tails:
+            	#img=help/workflows_show.png=img#.
+            	Lancement:
+            	#img=help/workflows_edit.png=img#.
+            </msg>
+            <msg key="help_definitions_new_process" title="Lancer un Processus" href="/definitions/new_process">
+            	Lancer un processus.
+            	#img=help/new_process.png=img#.
+            	Activer un des processus
+            	#img=help/new_process1.png=img#.
+            	Lancer le processus
+            	#img=help/new_process2.png=img#.
+            </msg>
+            <msg key="help_processes_index" title="Processus en cours" href="/processus">
+            	Liste des processus en cours d'ex?cution.
+            	#img=help/processus_list.png=img#.
+            	D?tails:
+            	#img=help/processus_show.png=img#.
+            </msg>
+            <msg key="help_errors" title="Erreurs durant les Processus" href="/errors">
+            	Erreurs survenant durant l'ex?cution des processus.
+            	#img=help/errors_list.png=img#.
+            	D?tails:
+            	#img=help/errors_show.png=img#.
+            </msg>
+            <msg key="help_expressions" title="Expressions utilis?es par les Processus" href="/expressions">
+            	Expressions utilis?es durant l'ex?cution des processus.
+            	#img=help/errors_expressions.png=img#.
+            	D?tails:
+            	#img=help/errors_expressions.png=img#.
+            </msg>
+            <msg key="help_history" title="Historique des Processus" href="/history">
+            	Historique des processus.
+            	#img=help/history_list.png=img#.
+            </msg>
+        </msg>
+				<msg key="help_administration" title="L'administration des objets et du framework">
+					<ul title="Administration">
+						Les modules d'administration sont diff?rents pour l'administrateur et les utilisateurs "normaux.
+	          <li title="Administration">Les modules d'administration pour un user non administrateur sont les suivants:
+	          	#img=help/modules_administration.png=img#.
+	          </li>
+	         <li title="Administration administrateur">Les modules d'administration pour un user administrateur sont les suivants:
+	          	#img=help/modules_administration_admin.png=img#
+	          </li>
+	        </ul>
+	        <msg key="help_organization" title="L'organisation">.
+	            #img=help/module_organisation.png=img#.
+	            Le module "Organisation" permet de g?rer:
+	            <msg key="help_users" title="Utilisateurs" href="/login/list_users">
+	                Permet de d?finir les personnes ayant acc?s ? l'application.
+	                <msg key="help_users_attributs" title="Attributs">
+	                    <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+	                        certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+	                        <li title="Nom">Nom de l'utilisateur.
+	                        </li>
+	                        <li title="R?le">R?le actuel de l'utilisateur.
+	                        </li>
+	                        <li title="Email">Adresse de messagerie de l'utilisateur.
+	                        </li>
+	                        <li title="Th?me">Th?me actif pour l'utilisateur.
+	                        </li>
+	                        <li title="R?les(en cr?ation seulement)">R?les attribu?s ? l'utilisateur.
+	                        </li>
+	                    </ul>
+	                </msg>
+	                <msg key="help_users_functions" title="Fonctionnalit?s">
+	                    Les principales fonctionnalit?s sur les utilisateurs sont:
+	                    <msg key="help_users_index" title="Liste des utilisateurs" href="/list_users">.
+	                        #img=help/users_list.png=img#.
+	                    </msg>
+	                    <msg key="help_users_edit" title="Editer un utilisateur" href="/edit_user/1">.
+	                        #img=help/users_edit.png=img#.
+	                    </msg>
+	                    <msg key="help_users_new" title="Nouvel utilisateur" href="/add_user">.
+	                        #img=help/users_new.png=img#.
+	                    </msg>
+	                </msg>
+	            </msg>
+	            <msg key="help_roles" title="R?les" href="/roles">
+	                Un ou plusieurs r?les sont attribu?s ? un utilisateur, il se connecte avec un seul de ses r?les dans une session.
+	                <msg key="help_roles_attributs" title="Attributs">
+	                    <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+	                        certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+	                        <li title="Nom">Nom du r?le.
+	                        </li>
+	                        <li title="Description">
+	                        </li>
+	                    </ul>
+	                </msg>
+	                <msg key="help_roles_functions" title="Fonctionnalit?s">
+	                    Les principales fonctionnalit?s sur les r?les sont:
+	                    <msg key="help_roles_index" title="Liste des r?les" href="/roles">.
+	                        #img=help/roles_list.png=img#.
+	                    </msg>
+	                    <msg key="help_roles_show" title="Explorer un r?le" href="/roles/1">.
+	                        #img=help/roles_show.png=img#.
+	                    </msg>
+	                    <msg key="help_roles_edit" title="Editer un r?le" href="/roles/1">.
+	                        #img=help/roles_edit.png=img#.
+	                    </msg>
+	                    <msg key="help_users_new" title="Nouveau r?le" href="/roles/new">.
+	                        #img=help/roles_new.png=img#.
+	                    </msg>
+	                </msg>
+	            </msg>
+	            <msg key="help_groups" title="Groupes" href="/groups">
+	                Un groupe comprend un ou plusieurs utilisateurs, ils permettent d'attribuer certains droits au groupe entier.
+	                par exemple, ex?cuter un processus.
+	                <msg key="help_groups_attributs" title="Attributs">
+	                    <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+	                        certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+	                        <li title="Nom">Nom du groupe.
+	                        </li>
+	                        <li title="Description">
+	                        </li>
+	                    </ul>
+	                </msg>
+	                <msg key="help_groups_functions" title="Fonctionnalit?s">
+	                    Les principales fonctionnalit?s sur les groupes sont:
+	                    <msg key="help_groups_index" title="Liste des groupes" href="/groups">.
+	                        #img=help/groups_list.png=img#.
+	                    </msg>
+	                    <msg key="help_groups_show" title="Explorer un groupe" href="/groups/1">.
+	                        #img=help/groups_show.png=img#.
+	                    </msg>
+	                    <msg key="help_groups_edit" title="Editer un groupe" href="/groups/1">.
+	                        #img=help/groups_edit.png=img#.
+	                    </msg>
+	                    <msg key="help_users_new" title="Nouveau groupe" href="/groups/new">.
+	                        #img=help/groups_new.png=img#.
+	                    </msg>
+	                </msg>
+	            </msg>
+	            <msg key="help_accesses" title="Autorisations" href="/access">
+	                D?terminent les fonctions utilisables par chaque r?le (#jump=help_roles=jump#).
+	                <msg key="help_access_attributs" title="Autorisations">
+	                    <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+	                        certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+	                        <li title="Controleur">Controleur(ruby and rails) sur lequel l'action est permise au r?le.
+	                        </li>
+	                        <li title="Action">L'action du controleur que peut effectuer le r?le.
+	                        </li>
+	                        <li title="R?le">le R?le pour lequel l'action du controleur est permise.
+	                        </li>
+	                        <li title="Controleur(en cr?ation seulement">Controleur(ruby and rails).action permis au r?le.
+	                        </li>
+	                    </ul>
+	                </msg>
+	                <msg key="help_accesss_functions" title="Fonctionnalit?s">
+	                    Les principales fonctionnalit?s sur les autorisations sont:
+	                    <msg key="help_access_index" title="Liste des acc?s" href="/access">.
+	                        #img=help/access_list.png=img#.
+	                    </msg>
+	                    <msg key="help_access_show" title="Explorer un acc?s" href="/access/1">.
+	                        #img=help/access_show.png=img#.
+	                    </msg>
+	                    <msg key="help_roles_edit" title="Editer un acc?s" href="/access/1">.
+	                        #img=help/access_edit.png=img#.
+	                    </msg>
+	                    <msg key="help_users_new" title="Nouvel acc?s" href="/access/new">.
+	                        #img=help/access_new.png=img#.
+	                    </msg>
+	                </msg>
+	            </msg>
+	            <msg key="help_volumes" title="Volumes" href="/volumes">
+	                D?termine le lieu de stockage des fichiers des Documents.
+	                <msg key="help_volumes_volumes" title="Volumes">
+	                    <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+	                        certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+	                        <li title="Nom">Nom du volume, il appraitra tel quel sans traduction.
+	                        </li>
+	                        <li title="Description">
+	                        </li>
+	                        <li title="R?pertoire">R?pertoire de base du volume.
+	                            Les fichiers y seront stock?s suivant la structure suivante.
+	                            %R?pertoire%/@nom_volume/Document/@ident/@revision/@nom_fichier.extension
+	                        </li>
+	                    </ul>
+	                </msg>
+	                <msg key="help_volumes_functions" title="Fonctionnalit?s">
+	                    Les principales fonctionnalit?s sur les volumes sont:
+	                    <msg key="help_volumes_index" title="Liste des volumes" href="/volumes">.
+	                        #img=help/volumes_list.png=img#.
+	                    </msg>
+	                    <msg key="help_volumes_show" title="Explorer un volume" href="/volumes/1">.
+	                        #img=help/volumes_show.png=img#.
+	                    </msg>
+	                    <msg key="help_volumes_edit" title="Editer un volume" href="/volumes/1">.
+	                        #img=help/volumes_edit.png=img#.
+	                    </msg>
+	                    <msg key="help_volumes_new" title="Nouveau volume" href="/volumes/new">.
+	                        #img=help/volumes_new.png=img#.
+	                    </msg>
+	                </msg>
+	            </msg>
+	        </msg>
+	        <msg key="help_param" title="Param?trages">
+	            #img=help/module_parametrage.png=img#.
+	            Les diverses possibilit?s de param?trage portent sur:
+	            <msg key="help_typesobjects" title="Types d'objet" href="/typesobjects">
+	                Les types permettent de classer les diff?rents objets suivant une caract?ristique consider?e comme importante dans l'entreprise.
+	                <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+	                    certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+	                    <li title="Objet">Type d'objet ou de relation sur lequel portera le statut:
+	                        <ul>
+	                            <li>document</li>
+	                            <li>article</li>
+	                            <li>projet</li>
+	                            <li>client</li>
+	                            <li>relation_document (depuis document ou part ou projet ou client)</li>
+	                            <li>relation_part (depuis part ou projet ou client)</li>
+	                            <li>relation_projet (depuis client)</li>
+	                        </ul>
+	                    </li>
+	                    <li title="Nom">Nom du type, il appraitra tel quel sans traduction.
+	                    </li>
+	                    <li title="Description">
+	                    </li>
+	                    <li title="Attributs">
+	                    	Permet de d?finir des attributs sp?cifiques au type ou ? une fonctionnalit? donn?e.
+	                    </li>
+	                </ul>
+	            </msg>
+	            <msg key="help_statusobjects" title="Status des objets" href="/statusobjects">
+	                Les statuts permettent de d?finir les statuts de maturit? des objets suivant les processus mis en oeuvre dans l'entreprise.
+	                <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+	                    certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+	                    <li title="Objet">Type d'objet PLM sur lequel portera le statut: document/article/projet/client/forum
+	                    </li>
+	                    <li title="Type">Sous type du type PLM sur lequel portera le statut: document:cdc/m3d,m2d,exb,fmat...  , part:EFF, PIE, PRD, ...
+	                    </li>
+	                    <li title="Nom">Nom du statut, il apparaitra tel quel sans traduction.
+	                    </li>
+	                    <li title="Rang de promotion">Rang du statut dans le cycle de vie de l'objet:
+	                        le Premier est pris ? la creation.
+	                        #jump=help_lifecycle=jump#.
+	                    </li>
+	                    <li title="Description">
+	                    </li>
+	                    <li title="Promotion(interdit, libre, menu, action)">Permet de pr?ciser si le changement de statut vers le haut se fait par choix dans la liste ou par le menu ou par une action (processus) .
+	                    </li>
+	                    <li title="R?trogadation(oui/non)">Permet de pr?ciser si le changement de statut vers le bas se fait par choix dans la liste ou par le menu ou par une action (processus).
+	                    </li>
+	                    <li title="Statuts suivants">
+	                    	D?finit le ou les status possibles suivant ce statut .
+	                    	L'utilisateur aura le choix dans la page "Cycle de vie".
+	                    </li>
+	                    <li title="Statuts pr?c?dents">
+	                    	D?finit le ou les status possibles pr?c?dents ce statut .
+	                    	L'utilisateur aura le choix dans la page "Cycle de vie".
+	                    </li>
+	                    <li title="R?visable">
+	                    	Pr?cise si une r?vision de l'objet est possible depuis ce statut (Interdit/Menu/Action).
+	                    </li>
+
+	                </ul>
+	            </msg>
+	            <msg key="help_sequences" title="Valeurs par d?faut" href="/sequences">
+	                D?finit les diff?rentes valeurs par d?faut utilis?es par l'application, en particulier lors de l'attribution de noms aux objets.
+	                <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+	                    certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+	                    <li title="Utilisation(identifiant/revision/...)">Permet d'attribuer la valeur ? n'importe quel attribut d'un objet.
+	                    </li>
+	                    <li title="S?quence(oui/non)">Permet de pr?ciser que la valeur doit s'incr?menter ? chaque cr?ation d'un nouel objet de ce type.
+	                    </li>
+	                    <li title="Modifiable">Permet de rendre possible la modification de la valeur de cet attribut( non pris en compte pour le moment).
+	                    </li>
+	                    <li title="Valeur">Pour pr?ciser la valeur par d?faut ou la premi?re valeur d'une s?quence.
+	                    </li>
+	                    <li title="Valeur minimale">Pour pr?ciser la valeur minimale, non utilis?e pour l'instant.
+	                    </li>
+	                    <li title="Valeur maximale">Pour pr?ciser la valeur maximale, non utilis?e pour l'instant.
+	                    </li>
+	                </ul>
+	            </msg>
+
+	            <msg key="help_relations" title="Relations" href="/relations">
+	                D?finit les diff?rentes relations utilis?es par l'application lors de la cr?ation de lienx entre objets.
+	                <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+	                    certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+	                    <li title="Nom">Nom de la relation.
+	                    </li>
+	                    <li title="Type">Type de la relation.
+	                    </li>
+	                    <li title="Type PLM du p?re">Type PLM possible de l'objet p?re de la relation.
+	                    </li>
+	                    <li title="Type PLM du fils">Type PLM possible de l'objet fils de la relation.
+	                    </li>
+	                     <li title="Type du p?re">Type possible de l'objet p?re de la relation.
+	                    </li>
+	                    <li title="Type du fils">Type possible de l'objet fils de la relation.
+	                    </li>
+	                    <li title="Cardin occur mini">Cardinalit? d'occurence mini de la relation.
+	                    </li>
+	                    <li title="Cardin occur maxi">Cardinalit? d'occurence maxi de la relation.
+	                    </li>
+	                    <li title="Cardin use mini">Cardinalit? d'utilisation mini de la relation.
+	                    </li>
+	                    <li title="Cardin use maxi">Cardinalit? d'utilisation maxi de la relation.
+	                    </li>
+	                </ul>
+	            </msg>
+
+	            <msg key="help_views" title="Vues" href="/views">
+	                D?finit les diff?rentes vues utilis?es par l'application lors de l'affichage des nomenclatures d'articles par l'explorateur,
+	                voir les commandes Explorateur des objets concernes: Article, Projet et Client.
+	                <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+	                    certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+	                    <li title="Nom">
+	                    </li>
+	                    <li title="Description">
+	                    </li>
+	                    <li title="Relations">Liste des relations que la vue affichera dans l'explorateur.
+	                    </li>
+
+	                </ul>
+	            </msg>
+
+	            <msg key="help_definitions" title="D?finitions de processus" href="/definitions">
+	                D?finit les diff?rentes processus utilis?es par l'application.
+	                <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+	                    certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+	                    <li title="Nom">
+	                    </li>
+	                    <li title="Description">
+	                    </li>
+	                    <li title="URL">
+	                    </li>
+	                    <li title="Groupes">
+	                    </li>
+	                </ul>
+	                <msg key="help_definitions" title="D?finition" href="/definitions">
+			            	Liste et lancement des processus (bouton vert).
+			            	#img=help/definitions_list.png=img#.
+			            	D?tail:
+			            	#img=help/definitions_show.png=img#.
+			            	Edition:
+			            	#img=help/definitions_edit.png=img#.
+			            	Cr?ation:
+			            	#img=help/definitions_new.png=img#.
+	            		</msg>
+	            </msg>
+							<msg key="help_subscriptions" title="Abonnements" href="/subscription">
+	                D?finit les abonnements pour assurer les notifications d'apr?s les ?v?nements sur les objets PLM.
+	                <msg key="help_subscriptions_subscriptions" title="Abonnements">
+	                    <ul title="Attributs">Les attributs sont les suivants, certains sont obligatoires lors de la cr?ation ou ?dition,
+	                        certains sont remplis automatiquement et modifiable ou non par l'utilisateur.:
+	                        <li title="Nom">Nom de l'abonnement, il apparaitra tel quel sans traduction.
+	                        </li>
+	                        <li title="D?signation">
+	                        </li>
+	                        <li title="Responsable">Cr?ateur ou dernier modificateur.
+	                       	</li>
+	                        <li title="Sur cr?ation">L'?v?nement de cr?ation sera notifi?.
+	                        </li>
+	                        <li title="Sur ?dition">L'?v?nement de modification sera notifi?.
+	                        </li>
+	                        <li title="Sur destruction">L'?v?nement de destruction sera notifi?.
+	                        </li>
+	                        <li title="Pour les types">Seuls ces types seront pris en compte.
+	                        </li>
+	                        <li title="Dans les groupes">Les objets appartenant ? ces groupes seront pris en compte.
+	                        </li>
+	                        <li title="Dans les projets">Les objets associ?s ? ces projets seront pris en compte.
+	                        </li>
+	                        <li title="Domaine">
+	                        </li>
+	                    </ul>
+	                </msg>
+	                <msg key="help_subscriptions_functions" title="Fonctionnalit?s">
+	                    Les principales fonctionnalit?s sur les abonnements sont:
+	                    <msg key="help_subscriptions_index" title="Liste des abonnements" href="/volumes">.
+	                        #img=help/subscriptions_list.png=img#.
+	                    </msg>
+	                    <msg key="help_subscriptions_show" title="Explorer un abonnement" href="/abonnements/1">.
+	                        #img=help/subscriptions_show.png=img#.
+	                    </msg>
+	                    <msg key="help_subscriptions_edit" title="Editer un abonnement" href="/abonnements/1">.
+	                        #img=help/subscriptions_edit.png=img#.
+	                    </msg>
+	                    <msg key="help_subscriptions_new" title="Nouvel abonnement" href="/abonnements/new">.
+	                        #img=help/subscriptions_new.png=img#.
+	                    </msg>
+	                </msg>
+	            </msg>
+	            <msg key="help_config" title="Configuration">
+	                Il est possible de configurer l'application ? l'aide de propri?t?s ? d?finir dans le fichier sylrplm.rb du r?pertoire config/initializers/sylrplm.rb.
+	                Toute modification de ce fichier requiert un red?marrage du serveur http.
+	                <ul title="config/sylrplm.rb">
+	                    <li title="VOLUME_DIRECTORY_DEFAULT">=/home/syl/trav/rubyonrails/sylrplm_data/.
+	                        R?pertoire par d?faut du premier volume cr?e lors de l'initialisation: #jump=help_init_db=jump#
+	                    </li>
+	                </ul>
+	                <ul title="Types/properties">
+	                	De plus, d'autres param?tres peuvent ?tre modifi?s dans la base dans les objets 'Types d'objet' de type sylrplm_properties:
+	                	#img=help/properties.png=img#.
+	                  <li title="Volume">
+	                   #img=help/properties_volume.png=img#.
+	                  </li>
+	                  <li title="Autres">
+	                   #img=help/properties_others.png=img#.
+	                  </li>
+	                  <li title="Objets">
+	                   #img=help/properties_objects.png=img#.
+	                  </li>
+	                  <li title="Structure">
+	                   #img=help/properties_tree.png=img#.
+	                  </li>
+	                  <li title="Defauts utilisateur">
+	                   	#img=help/properties_userdefaults.png=img#.
+	                   	<ul>
+		                   	<li>title="LOCAL_DEFAULT">="fr"
+		                    	Langue par d?faut (fr ou us).
+		                    </li>
+		                    <li title="THEME_DEFAULT">="blackwhite"
+		                    	Th?me par d?faut (blackwhite ou blue ou green).
+		                   	</li>
+		                   	<li title="NB_ITEMS_PER_PAGE">=15
+		                    	Nombre de lignes d'objets affich?es par page dans les listes.
+		                   	</li>
+	                  	</ul>
+	                	</li>
+	                  <li title="Valeurs des types">
+	                  	#img=help/properties_typesvalues.png=img#.
+	                  </li>
+	                </ul>
+	                <ul>
+	                	<li title="Logs">
+					    				Des fichiers logs accessible ? l'administrateur contiennent des informations sur le fonctionnement de l'application.
+					    				Le niveau de trace est param?trable par l'administrateur du site dans le fichier de configuration : config/environments/production.rb:
+					    				config.log_level = :info.
+											#FATAL an unhandleable error that results in a program crash.
+											#ERROR a handleable error condition.
+											#WARN  a warning.
+											#INFO  generic (useful) information about system operation.
+											#DEBUG.
+				    				</li>
+									</ul>
+	            </msg>
+        	</msg>
+        </msg>
+
+        <msg key="help_debug" title="Debug">.
+            #img=help/module_debug.png=img#
+            Permet de g?rer les tables internes de l'application.
+            Pour administrateur tr?s ?clair? seulement.
+        </msg>
+
+        <msg key="help_custo_integration" title="Integration du parametrage">
+            La commande "rake sylrplm:export_domain" permet d'exporter et importer un parametrage suivant un domaine particulier
+ 						<ul title="Export-Import">Les differentes utilisations possibles sont:
+                   <li title="Export custo societe sicm">
+                        rake sylrplm:export_domain[db/custos_export,sicm.custo].
+                    </li>
+
+                    <li title="Import custo de base de la  societe sicm">
+                        rake sylrplm:import_domain[db/custos/sicm,sicm.custo_base].
+                    </li>
+                    <li title="Import custo de la societe sicm">
+                        rake sylrplm:import_domain[db/custos/sicm,sicm.custo].
+                    </li>
+                    <li title="Import exemple table">
+                        rake sylrplm:import_domain[db/custos/sicm,sample.table].
+                    </li>
+            </ul>
+        </msg>
+
+    </msg>
+    <msg key="help_exchange" title="Echanges de donn?es">.
+        Les ?changes de donn?es sont possibles suivant en utilisant une des technologies suivantes
+        <msg key="help_exchange_rest" title="Acc?s aux donn?es par la technologie REST">.
+        	<ul>
+	        	<li title="Liste des objets d'un type donn?">
+	            	/info/list_objects/:plmtype.:format .
+	                :plmtype pouvant valoir customer, document, part, project, datafile, question, user, volume.
+	                :format = xml.
+	                exemple: #lnk=/info/list_objects/part.xml=lnk# .
+	                r?sultat:.
+	                &lsaquo;list_objects&rsaquo; .
+		                &lsaquo;plm_object&rsaquo; .
+			                &lsaquo;model&rsaquo;part&lsaquo;/model&rsaquo; .
+			                &lsaquo;id&rsaquo;1&lsaquo;/id&rsaquo; .
+			                &lsaquo;ident&rsaquo;PRT000001&lsaquo;/ident&rsaquo; .
+			                &lsaquo;designation&rsaquo;Table&lsaquo;/designation&rsaquo; .
+		                &lsaquo;/plm_object&rsaquo; .
+	                &lsaquo;/list_objects&rsaquo; .
+	                exemple: #lnk=/info/list_objects/datafile.xml=lnk# .
+	                liste les fichiers .
+	            </li>
+	            <li title="Definition d'un objet avec ses relations au premier niveau'">
+	            	/info/object_links/:plmtype/:id.:format .
+	                :plmtype pouvant valoir customer, document, part, project, datafile, question, user, volume.
+	                :id etant l'identifiant unique de l'objet (donn? par la commande pr?c?dente (tag:id.
+	                exemple: #lnk=/info/object_links/part/3.xml=lnk# .
+	                r?sultat:
+	                &lsaquo;object plmtype="part" ident="PRT000003" designation="Plateau"&rsaquo; .
+	                	&lsaquo;col name="created_at" value="2014-10-19 15:31:15 UTC"/&rsaquo;.
+	                	&lsaquo;col name="date" value="2012-10-28"/&rsaquo;.
+	                	&lsaquo;col name="description" value=""/&rsaquo;.
+	                	&lsaquo;col name="designation" value="Plateau hexagonal"/&rsaquo;.
+	                	&lsaquo;col name="domain" value="sample.table"/&rsaquo;.
+	                	...
+	                	...
+	                	&lsaquo;links_down&rsaquo;.
+	                		&lsaquo;link&rsaquo;.
+	                			&lsaquo;relation&rsaquo;.
+	                				&lsaquo;ident&rsaquo;bom.STR_PIE&lsaquo;/ident&rsaquo;.
+	                				&lsaquo;col name="cardin_occur_max" value="-1"/&rsaquo;.
+	                				&lsaquo;col name="cardin_occur_min" value="0"/&rsaquo;.
+	                				&lsaquo;col name="cardin_use_max" value="-1"/&rsaquo;.
+	                				&lsaquo;col name="cardin_use_min" value="0"/&rsaquo;.
+	                				&lsaquo;col name="child_plmtype" value="part"/&rsaquo;.
+	                				&lsaquo;col name="child_typesobject_id" value="989626525"/&rsaquo;.
+	                				&lsaquo;col name="created_at" value="2014-10-19 15:31:00 UTC"/&rsaquo;.
+	                				&lsaquo;col name="domain" value="admin"/&rsaquo;.
+	                				&lsaquo;col name="father_plmtype" value="part"/&rsaquo;.
+	                				&lsaquo;col name="father_typesobject_id" value="989626526"/&rsaquo;.
+	                				&lsaquo;col name="id" value="26"/&rsaquo;.
+	                				&lsaquo;col name="name" value="STR_PIE"/&rsaquo;.
+	                				&lsaquo;col name="paste_way" value="manual"/&rsaquo;.
+	                				&lsaquo;col name="type_values" value=""/&rsaquo;.
+	                				&lsaquo;col name="typesobject_id" value="989626531"/&rsaquo;.
+	                				&lsaquo;col name="updated_at" value="2014-10-19 15:31:00 UTC"/&rsaquo;.
+	                			&lsaquo;/relation&rsaquo;.
+	                			&lsaquo;child&rsaquo;.
+	                				&lsaquo;id&rsaquo;25&lsaquo;/id&rsaquo;&lsaquo;ident&rsaquo;PRT000026&lsaquo;/ident&rsaquo;.
+	                				&lsaquo;designation&rsaquo;Plateau hexagonal&lsaquo;/designation&rsaquo;.
+	                				&lsaquo;col name="created_at" value="2014-10-19 15:31:15 UTC"/&rsaquo;.
+	                				&lsaquo;col name="date" value="2012-10-28"/&rsaquo;.
+	                				&lsaquo;col name="description" value=""/&rsaquo;.
+	                				&lsaquo;col name="designation" value="Plateau hexagonal"/&rsaquo;.
+	                				&lsaquo;col name="domain" value="sample.table"/&rsaquo;.
+	                				&lsaquo;col name="group_id" value="101"/&rsaquo;.
+	                				&lsaquo;col name="id" value="25"/&rsaquo;.
+	                				&lsaquo;col name="ident" value="PRT000026"/&rsaquo;.
+	                				&lsaquo;col name="next_status_id" value=""/&rsaquo;.
+	                				&lsaquo;col name="owner_id" value="101"/&rsaquo;.
+	                				&lsaquo;col name="previous_status_id" value=""/&rsaquo;.
+	                				&lsaquo;col name="projowner_id" value="3"/&rsaquo;.
+	                				&lsaquo;col name="revision" value="AAA"/&rsaquo;.
+	                				&lsaquo;col name="statusobject_id" value="7"/&rsaquo;.
+	                				&lsaquo;col name="type_values" value=""/&rsaquo;.
+	                				&lsaquo;col name="typesobject_id" value="989626525"/&rsaquo;.
+	                				&lsaquo;col name="updated_at" value="2014-10-19 15:31:15 UTC"/&rsaquo;.
+	                			&lsaquo;/child&rsaquo;.
+	                		&lsaquo;/link&rsaquo;.
+	                		&lsaquo;link&rsaquo;.
+	                			&lsaquo;relation&rsaquo;.
+	                				&lsaquo;ident&rsaquo;bom.STR_PIE&lsaquo;/ident&rsaquo;.
+	                				&lsaquo;col name="cardin_occur_max" value="-1"/&rsaquo;.
+	                				&lsaquo;col name="cardin_occur_min" value="0"/&rsaquo;.
+	                				&lsaquo;col name="cardin_use_max" value="-1"/&rsaquo;.
+	                				&lsaquo;col name="cardin_use_min" value="0"/&rsaquo;.
+	                				&lsaquo;col name="child_plmtype" value="part"/&rsaquo;.
+	                				&lsaquo;col name="child_typesobject_id" value="989626525"/&rsaquo;.
+	                				&lsaquo;col name="created_at" value="2014-10-19 15:31:00 UTC"/&rsaquo;.
+	                				&lsaquo;col name="domain" value="admin"/&rsaquo;.
+	                				&lsaquo;col name="father_plmtype" value="part"/&rsaquo;.
+	                				&lsaquo;col name="father_typesobject_id" value="989626526"/&rsaquo;.
+	                				&lsaquo;col name="id" value="26"/&rsaquo;.
+	                				&lsaquo;col name="name" value="STR_PIE"/&rsaquo;.
+	                				&lsaquo;col name="paste_way" value="manual"/&rsaquo;.
+	                				&lsaquo;col name="type_values" value=""/&rsaquo;.
+	                				&lsaquo;col name="typesobject_id" value="989626531"/&rsaquo;.
+	                				&lsaquo;col name="updated_at" value="2014-10-19 15:31:00 UTC"/&rsaquo;.
+	                			&lsaquo;/relation&rsaquo;.
+	                			&lsaquo;child&rsaquo;.
+	                				&lsaquo;id&rsaquo;24&lsaquo;/id&rsaquo;.
+	                				&lsaquo;ident&rsaquo;PRT000025&lsaquo;/ident&rsaquo;.
+	                				&lsaquo;designation&rsaquo;Plateau carre&lsaquo;/designation&rsaquo;.
+	                				&lsaquo;col name="created_at" value="2014-10-19 15:31:15 UTC"/&rsaquo;.
+	                				&lsaquo;col name="date" value="2012-10-28"/&rsaquo;.
+	                				&lsaquo;col name="description" value=""/&rsaquo;.
+	                				&lsaquo;col name="designation" value="Plateau carre"/&rsaquo;.
+	                				&lsaquo;col name="domain" value="sample.table"/&rsaquo;.
+	                				&lsaquo;col name="group_id" value="101"/&rsaquo;.
+	                				&lsaquo;col name="id" value="24"/&rsaquo;.
+	                				&lsaquo;col name="ident" value="PRT000025"/&rsaquo;.
+	                				&lsaquo;col name="next_status_id" value=""/&rsaquo;.
+	                				&lsaquo;col name="owner_id" value="101"/&rsaquo;.
+	                				&lsaquo;col name="previous_status_id" value=""/&rsaquo;.
+	                				&lsaquo;col name="projowner_id" value="3"/&rsaquo;.
+	                				&lsaquo;col name="revision" value="AAA"/&rsaquo;.
+	                				&lsaquo;col name="statusobject_id" value="7"/&rsaquo;.
+	                				&lsaquo;col name="type_values" value=""/&rsaquo;.
+	                				&lsaquo;col name="typesobject_id" value="989626525"/&rsaquo;.
+	                				&lsaquo;col name="updated_at" value="2014-10-19 15:31:15 UTC"/&rsaquo;.
+	                			&lsaquo;/child&rsaquo;.
+	                		&lsaquo;/link&rsaquo;.
+	                	&lsaquo;/links_down&rsaquo;.
+	                	&lsaquo;links_up&rsaquo; .
+	                				....
+	                				....
+	                	&lsaquo;/links_up&rsaquo;.
+	                &lsaquo;/object_childs&rsaquo;			.
+	                exemple: #lnk=/info/object_links/datafile/14.xml=lnk# .
+	                decode un fichier .
+	            </li>
+	            <li title="download d'un fichier">
+	            	/datafiles/:id/download_file .
+	                :id etant l'identifiant unique du fichier (donn? par la commande pr?c?dente (tag du datafile :id.
+	                exemple: #lnk=/datafiles/13/download_file=lnk# .
+	                r?sultat: un fichier zip est telecharge
+	            </li>
+            </ul>
+    	</msg>
+    		<msg key="help_exchange_import_export" title="Export/Import de donn?es">.
+	        	<ul>
+	        	<li title="Export exemple table">
+	            	rake sylrplm:export_domain[db/custos_export,sample.table].
+	            </li>
+	          	<li title="Import exemple table">
+	                rake sylrplm:import_domain[db/custos/sicm,sample.table].
+	            </li>
+        	</ul>
+    	</msg>
+    </msg>
+   <msg key="help_technical_doc" title="Documentation technique">.
+        La documentation technique de l'application d?crit les classes,fichiers source et m?thodes:#lnk=doc/app/index.html=lnk#.
+        Diagramme des classes du mod?le de donn?es:#lnk=mdd/models.png=lnk#.
+        Diagramme des classes du mod?le des controlleurs:#lnk=mdd/controllers.png=lnk#.
+    </msg>
+
+    <msg key="help_init_db" title="Initialisation d'une base de donn?es">.
+        Avant de commencer ? cr?er des objets , l'application vous invite ? initialiser la base de donn?e suivant le domaine dans lequel vous voulez l'utiliser.
+        Vous pourrez ensuite compl?ter ce param?trage, voir la partie param?trage.
+        L'application propose donc la soci?t? SICM (soci?t? internationale de construction de meubles) ainsi que l'exemple d'une table configur?e.
+        Ce param?trage est disponible en effectuant l'import suivant pr?cis? dans le chapitre sur l'int?gration:
+        #jump=help_custo_integration=jump#.
+        :
+        <ul>
+        	<li title="Import custo de base de la societe sicm">
+        		rake sylrplm:import_domain[db/custos/sicm,sicm.custo_base].
+          </li>
+          <li title="Import custo de la societe sicm">
+          	rake sylrplm:import_domain[db/custos/sicm,sicm.custo].
+          </li>
+        </ul>
+        <ul>
+            <li title="SICM">
+                Les param?trages possibles sont les suivants:
+                <ul>
+                    <li title="Types d'objets" href="/typesobjects/new">
+                        <ul>
+                            <li>Documents:Plan2D, Plan3D, Note de calcul, ...</li>
+                            <li>Pi?ces:Ameublement M?canique, Electronique, ...</li>
+                            <li>Projets:PDM, Batiment, ...</li>
+                            <li>Clients:Interne, Public, Priv? ...</li>
+                        </ul>
+                    </li>
+                    <li title="Statuts des objets" href="/statusobjects/new">
+                        <ul>
+                            <li>Documents: En cours, Approuv?</li>
+                            <li>Pi?ces: En cours, Valid?</li>
+                            <li>Projets: D?marr?, Termin?, Obsol?te</li>
+                            <li>Clients: Actif, Inactif, Obsol?te</li>
+                        </ul>
+                    </li>
+                    <li title="Valeurs par d?faut" href="/sequences/new">
+                        <ul>
+                            <li>Documents: DOC000000 ou ______ ...</li>
+                            <li>Parts: PART000000 ou ______ ...</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li title="Volumes">Au moins un volume. ex:volume1 sur le repertoire /home/syl/trav/rubyonrails/sylrplm_data:#lnk=/volumes/new=lnk#
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul>A la validation du choix, l' initialisation automatique consiste a param?trer les ?l?ments suivants:
+            Note: les liens renvoient sur les menus associ?s pour modifications ult?rieures.
+            <li title="R?les">R?les cr?es: admin(tous les privil?ges), designer(peut cr?er), consultant(peut voir) :#lnk=/roles/new=lnk#.
+            </li>
+            <li title="Utilisateurs">Utilisateurs cr?es: admin avec le r?le admin, designer avec le r?le designer, consutant avec le r?le consultant:#lnk=/login/add_user=lnk#.
+                Mot de passe=nom utilisateur.
+            </li>
+
+        </ul>
+    </msg>
+
+    <msg key="help_todo" title="Reste ? faire">
+        <ul>
+            <li>IMPROV:Vues:prendre en compte l'attribut fixe o/n sur les valeurs par d?faut pour permettre ou non la modif de la valeur par le user</li>
+            <li>DOC:?crire un guide m?thodologique avec des cas d'utilisation "m?tier"</li>
+            <li>TEST:Terminer l'?criture des tests unitaires</li>
+        </ul>
+    </msg>
+    <msg key="help_about" title="A propos de SYLRPLM">
+    	SYLRPLM est une r?alisation de Sylv?re Coutable avec l'assistance technique de R?my Coutable.
+    	#bloc=translate(:sylrplm_version, :version => ::SYLRPLM::SYLRPLM_VERSION, :version_date => I18n.localize(::SYLRPLM::SYLRPLM_DATE))=bloc#.
+    	Release notes: #lnk=/release_notes.txt=lnk#
+        <msg key="help_contrib" title="Contributeurs">
+            <ul>
+                <li title="Concepteur">Sylv?re Coutable, consultant expert int?gration PLM</li>
+                <li title="D?veloppeur">Sylv?re Coutable</li>
+                <li title="Conseiller technique Ruby On Rails">R?my Coutable</li>
+                <li title="Graphisme">Sylv?re Coutable assist? de R?my Coutable</li>
+            </ul>
+        </msg>
+        <msg key="help_plugins" title="Principaux Plugins/Gems utilis?s">
+            <ul>
+            	 <li title="ProcessusManagement">ruote
+                    Impl?mentation:Gemfile.
+                    gem 'ruote', '~>2.2.0'.
+                    gem 'rufus-scheduler' , '~>2.0.19'.
+                </li>
+                <li title="Pagination">will_paginate.
+                	Pagination des listes d'objets.
+                    Impl?mentation:Gemfile: gem 'will_paginate', :version => '~> 2.3.16'.
+                </li>
+                <li title="Autorisations">acl_system2.
+                	Gestion des autorisations aux actions des controllers suivant le role actif.
+                    Impl?mentation:vendor/plugins/acl_system2
+                </li>
+               <li title="Cloud">fog.
+               	    Stockage de fichier sur le "Cloud".
+                    Impl?mentation dans Gemfile: gem 'fog'
+                </li>
+              <li title="Mail">mail.
+               	    Envoi de Mails .
+                    Impl?mentation dans Gemfile: gem 'mail', '~>2.3.0'
+                </li>
+              <li title="PostgressDriver">pg.
+               	    Driver pour le SGDB postgres.
+                    Impl?mentation in Gemfile: gem 'pg' , '~>0.14.1'
+                </li>
+              <li title="Zip">zip.
+               	    zip et unzip de fichiers.
+                    Impl?mentation in Gemfile: gem 'zip-zip'
+                </li>
+                 <li title="Zip">sylrplm_ext.
+               	    Fonctions utiles pour le helper et les views.
+                    Impl?mentation dans Gemfile: gem 'sylrplm_ext', :git => "git://github.com/sylvani/sylrplm_ext.git"
+                </li>
+            </ul>
+        </msg>
+    </msg>
+
+
+</sylrplm_help>

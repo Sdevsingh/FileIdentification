@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Cowlibob</title>
+		<description></description>
+		<link>http://cowlibob.co.uk</link>
+		<atom:link href="http://cowlibob.co.uk/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Debugging the whole ecosystem</title>
+				
+				
+					<description>I was recently exporting a large number of records via CSV, some 130k rows. Luckily, the rows only consisted of three columns.</description>
+				
+				<pubDate>Sat, 28 Jan 2017 11:04:52 +0000</pubDate>
+				<link>http://cowlibob.co.uk/2017/01/28/debugging-the-whole-ecosystem.html</link>
+				<guid isPermaLink="true">http://cowlibob.co.uk/2017/01/28/debugging-the-whole-ecosystem.html</guid>
+			</item>
+		
+			<item>
+				<title>A Rate-limited Sidekiq Job - Part 2</title>
+				
+				
+					<description>In the last &lt;a href=&quot;/2017/01/14/a-rate-limited-sidekiq-job-part-1.html&quot;&gt;post&lt;/a&gt;, I talked about an initial approach to a rate limited sidekiq job. Sadly, it didn&amp;#39;t scale for us; thousands of jobs were being tried and retried, while all of them exited early as the rate limit had been exceeded.</description>
+				
+				<pubDate>Sat, 21 Jan 2017 11:16:51 +0000</pubDate>
+				<link>http://cowlibob.co.uk/2017/01/21/a-rate-limited-sidekiq-job-part-2.html</link>
+				<guid isPermaLink="true">http://cowlibob.co.uk/2017/01/21/a-rate-limited-sidekiq-job-part-2.html</guid>
+			</item>
+		
+			<item>
+				<title>A Rate-limited Sidekiq Job - Part 1</title>
+				
+				
+					<description>&lt;em&gt;Problem&lt;/em&gt;: A background task needs to hit an external service, but not too frequently</description>
+				
+				<pubDate>Sat, 14 Jan 2017 22:28:15 +0000</pubDate>
+				<link>http://cowlibob.co.uk/2017/01/14/a-rate-limited-sidekiq-job-part-1.html</link>
+				<guid isPermaLink="true">http://cowlibob.co.uk/2017/01/14/a-rate-limited-sidekiq-job-part-1.html</guid>
+			</item>
+		
+			<item>
+				<title>Building a guard rail</title>
+				
+				
+					<description>When you use a tool you built, you know where it?s sharp edges are.</description>
+				
+				<pubDate>Fri, 27 Feb 2015 23:29:20 +0000</pubDate>
+				<link>http://cowlibob.co.uk/2015/02/27/building-a-guard-rail.html</link>
+				<guid isPermaLink="true">http://cowlibob.co.uk/2015/02/27/building-a-guard-rail.html</guid>
+			</item>
+		
+			<item>
+				<title>Sharing with the world</title>
+				
+				
+					<description>Several years ago, I wrote a spreadsheet. It was awesome.</description>
+				
+				<pubDate>Sun, 15 Feb 2015 23:23:25 +0000</pubDate>
+				<link>http://cowlibob.co.uk/2015/02/15/sharing-with-the-world.html</link>
+				<guid isPermaLink="true">http://cowlibob.co.uk/2015/02/15/sharing-with-the-world.html</guid>
+			</item>
+		
+	</channel>
+</rss>

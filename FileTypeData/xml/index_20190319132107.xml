@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aur on Caleb Cushing&#39;s blog</title>
+    <link>http://blog.xenoterracide.com/tags/aur/index.xml</link>
+    <description>Recent content in Aur on Caleb Cushing&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://blog.xenoterracide.com/tags/aur/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Iron Man and introductions</title>
+      <link>http://blog.xenoterracide.com/post/iron-man-and-introductions/</link>
+      <pubDate>Sat, 13 Mar 2010 21:59:00 +0000</pubDate>
+      
+      <guid>http://blog.xenoterracide.com/post/iron-man-and-introductions/</guid>
+      <description>&lt;p&gt;So I&amp;rsquo;ve decided to &amp;ldquo;compete&amp;rdquo; in the &lt;a href=&#34;http://www.enlightenedperl.org/ironman.html&#34;&gt;Iron Man competition&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;My name is Caleb Cushing, I&amp;rsquo;m a 25 year old, unemployed, student, living in the Greater Lansing, MI, USA, area. I&amp;rsquo;ve been programming perl for approximately 6 months. This includes a lot of off time, time to relearn the language from the class I took a couple years ago (and learn modern perl), learning Catalyst and DBIC, all of which is an ongoing process. I would guess I&amp;rsquo;ve been writing useful code for about 4 months and even that is a slow going process as I&amp;rsquo;ve still got a lot to learn.&lt;br /&gt;&lt;br /&gt;Previously, I was the tree maintainer for Funtoo, and tried spinning my own fork of Funtoo/Gentoo, it needed more devs than me to survive though. I now use &lt;a href=&#34;http://www.archlinux.org/&#34;&gt;Arch Linux&lt;/a&gt;. After an arch/perl user who went by aCiD2 moved to OS X I adopted most of his perl AUR (arch user repository) packages in addition to ones I had created myself. I now have &lt;a href=&#34;http://aur.archlinux.org/packages.php?SeB=m&amp;K=xenoterracide&#34;&gt;over 200 CPAN packages on AUR&lt;/a&gt; in Arch&amp;rsquo;s PKGBUILD format.&lt;br /&gt;&lt;br /&gt;I&amp;rsquo;m a contributer to &lt;a href=&#34;http://search.cpan.org/dist/Catalyst-Manual/&#34;&gt;Catalyst::Manual&lt;/a&gt; and I created &lt;a href=&#34;http://search.cpan.org/dist/Template-ShowStartStop/&#34;&gt;Template::ShowStartStop&lt;/a&gt; by forking &lt;a href=&#34;http://search.cpan.org/dist/Template-Timer/&#34;&gt;Template::Timer&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;I&amp;rsquo;m sure I&amp;rsquo;ll become more active as time goes on, and have more interesting posts than this one.&lt;div class=&#34;blogger-post-footer&#34;&gt;&lt;br /&gt;&amp;ndash;&lt;br /&gt;
+This &lt;span xmlns:dc=&#34;http://purl.org/dc/elements/1.1/&#34; href=&#34;http://purl.org/dc/dcmitype/Text&#34; rel=&#34;dc:type&#34;&gt;work&lt;/span&gt; by &lt;a xmlns:cc=&#34;http://creativecommons.org/ns#&#34; href=&#34;http://www.xenoterracide.com&#34; property=&#34;cc:attributionName&#34; rel=&#34;cc:attributionURL&#34;&gt;Caleb Cushing&lt;/a&gt; is licensed under a &lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/3.0/&#34;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License&lt;/a&gt;.&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

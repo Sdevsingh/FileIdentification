@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Stephen Tudor</title>
+        <link>https://smt.io</link>
+        <description><![CDATA[RSS feed for Stephen Tudor's blog]]></description>
+        <atom:link href="https://smt.io/rss.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Wed, 10 Aug 2016 18:17:37 UT</lastBuildDate>
+        <item>
+    <title>Words and Text Objects in Vim</title>
+    <link>https://smt.io/2016/08/10/vim-text-objects/</link>
+    <description><![CDATA[<div id="primary">
+    <div class="inside">
+        <h1 class="title">Words and Text Objects in Vim</h1>
+        <div class="opacity08"><small>
+                <i>August 10, 2016 / <a href="https://smt.io/label/vim/">Vim</a>, <a href="https://smt.io/label/mad-coding/">Mad Coding</a></i>
+        </small></div>
+        <br>
+        <p>What are text objects in Vim? Before I can answer that question, we first need to discuss <strong>words</strong>.</p>
+<h2 id="there-are-words-and-then-there-are-words">There are words, and then there are WORDS</h2>
+<p>Not even joking, there really are two distinct types of these things. To quote Vim?s help page on the subject (see <code>:h word</code>):</p>
+<blockquote>
+<p>A word consists of a sequence of letters, digits and underscores, or a sequence of other non-blank characters, separated with white space (spaces, tabs, EOL). This can be changed with the ?iskeyword? option. An empty line is also considered to be a?word.</p>
+<p>A WORD consists of a sequence of non-blank characters, separated with white space. An empty line is also considered to be a?WORD.</p>
+</blockquote>
+<p>Under those definitions, given the following example text to operate on:</p>
+<blockquote>
+<p>what-is-up; ?i can?t even?</p>
+</blockquote>
+<p>Assuming a default <code>iskeyword</code> setting, the following are words:</p>
+<p><code>what</code>, <code>-</code>, <code>is</code>, <code>-</code>, <code>up</code>, <code>;</code>, <code>&quot;</code>, <code>i</code>, <code>can</code>, <code>'</code>, <code>t</code>, <code>even</code>, and <code>&quot;</code></p>
+<p>By contrast, in the same passage, these are considered WORDS:</p>
+<p><code>what-is-up;</code>, <code>&quot;i</code>, <code>can't</code>, and <code>even&quot;</code></p>
+<p>WORDS are bounded strictly go by surrounding whitespace, whereas the delineation of words is configurable. In my Vim configuration, I actually set my personal <code>iskeyword</code> option to include <code>$</code>, <code>%</code>, <code>&amp;</code>, <code>#</code>, <code>-</code>, <code>'</code>, and <code>+</code> as ?word? characters.</p>
+<p>(As an aside, I?m on the fence about setting <code>'</code> as a ?word? character. For prose, it makes sense; for programming, not so much.)</p>
+<h2 id="word-motions">Word motions</h2>
+<p>We can perform <strong>motions</strong> over words in several useful ways. (Hint/foreshadowing: words are like text objects in this respect.)</p>
+<p>In each example below, the caret <code>^</code> character indicates the cursor position to illustrate where it ends up after each motion.</p>
+<ol style="list-style-type: decimal">
+<li><p>We move the cursor to the <strong>beginning</strong> of the next word using the <code>w</code> key. Likewise, we use <code>W</code> to move to the beginning of the next?WORD.</p>
+<ul>
+<li><strong>w</strong>: forward to start of next <em>word</em></li>
+<li><strong>W</strong>: forward to start of next <em>WORD</em></li>
+</ul>
+<p><br></p>
+<pre class="text"><code>Making friends is easy. Waiting-for-Superman... waiting...
+         ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+w(ord)         ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+w(ord)            ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+W(ORD)                  ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+w(ord)                         ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+W(ORD)                                          ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+w(ord)                                                 ^</code></pre>
+<p><br></p></li>
+<li><p>To move the cursor to the <strong>end</strong> of the next word or WORD, we use the <code>e</code> or <code>E</code> key.</p>
+<ul>
+<li><strong>e</strong>: <em>end</em> of word</li>
+<li><strong>E</strong>: <em>END</em> of WORD</li>
+</ul>
+<p><br></p>
+<pre class="text"><code>Making friends is easy. Waiting-for-Superman... waiting...
+         ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+e(nd)        ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+e(nd)           ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+E(ND)                 ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+e(nd)                         ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+E(ND)                                         ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+e(nd)                                                 ^</code></pre>
+<p><br></p></li>
+<li><p>Finally, we use <code>b</code> and <code>B</code> to move to the start of a word or WORD.</p>
+<ul>
+<li><strong>b</strong>: <em>back</em> to start of word</li>
+<li><strong>B</strong>: <em>BACK</em> to start of WORD</li>
+</ul>
+<p><br></p>
+<pre class="text"><code>Making friends is easy. Waiting-for-Superman... waiting...
+                                                      ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+b(ack)                                          ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+b(ack)                                      ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+B(ACK)                  ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+B(ACK)            ^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+b(ack)         ^</code></pre>
+<p><br></p></li>
+</ol>
+<h3 id="counting-motions">Counting motions</h3>
+<p>For each type of motion, we can tell Vim to perform the motion a number of times by typing a <strong>count</strong> ahead of the motion command.</p>
+<p>For example, <code>2w</code> would move two words ahead, and <code>4b</code> would move four words back, and so on. The implications of this are very powerful and counts play a major role in how we compose commands in Vim. More on this later.</p>
+<h2 id="operators">Operators</h2>
+<p>Now that we?ve got some basic word motions down, let?s review some basic Vim operators that use motions.</p>
+<p>One of the first things you learn about Vim is that it is modal. We?ve been focused on moving around in Normal mode, but now we?re going to look at editing some text in Insert mode.</p>
+<p>If you?ve used Vim at a novice level, you probably know about the <code>i</code> and <code>a</code> operators to activate Insert mode before/after the cursor. The two basic operators I?m about to cover go one step beyond that. They are:</p>
+<ul>
+<li><strong>d</strong>: Delete text to a point defined by a motion</li>
+<li><strong>c</strong>: Change (like delete, but also switches to Insert mode)</li>
+</ul>
+<p>These operators require a motion, and can also take an optional count. Here are some usage examples (An plus <code>+</code> indicates where we?ve switched into Insert mode as a result of a change operator).</p>
+<p><br></p>
+<pre class="text"><code>Making friends is easy. Waiting-for-Superman... waiting...
+dB     ^
+friends is easy. Waiting-for-Superman... waiting...
+^
+
+Making friends is easy. Waiting-for-Superman... waiting...
+d4W    ^
+Making waiting...
+       ^
+
+Making  is easy. Waiting-for-Superman... waiting...
+cw     ^
+Making  is easy. Waiting-for-Superman... waiting...
+       ^
+       +
+
+Making friends is easy. Waiting-for-Superman... waiting...
+c3w    ^
+Making . Waiting-for-Superman... waiting...
+       ^
+       +</code></pre>
+<p><br></p>
+    </div>
+</div>
+]]></description>
+    <pubDate>Wed, 10 Aug 2016 18:17:37 UT</pubDate>
+    <guid>https://smt.io/2016/08/10/vim-text-objects/</guid>
+    <dc:creator>Stephen Tudor</dc:creator>
+</item>
+<item>
+    <title>Vim Cheat Sheet for Programmers: Dvorak Edition</title>
+    <link>https://smt.io/2016/08/09/vim-cheat-sheet-dvorak/</link>
+    <description><![CDATA[<div id="primary">
+    <div class="inside">
+        <h1 class="title">Vim Cheat Sheet for Programmers: Dvorak Edition</h1>
+        <div class="opacity08"><small>
+                <i>August  9, 2016 / <a href="https://smt.io/label/vim/">Vim</a>, <a href="https://smt.io/label/mad-coding/">Mad Coding</a></i>
+        </small></div>
+        <br>
+        <p>I found <a href="http://michael.peopleofhonoronly.com/vim/">this intense Vim cheat sheet</a>, and noticed that the author, Michael, had made the Excel 2011 sources available. Furthermore, he was kind enough to give it a <a href="https://en.wikipedia.org/wiki/Copyleft">Copyleft</a> license.</p>
+<p>Being a user of the <a href="https://en.wikipedia.org/wiki/Dvorak_Simplified_Keyboard">Dvorak keyboard layout</a>, I took a few moments tonight to adapt the 300dpi color version to Dvorak. I?m making them available to download them for free, just like the originals. Other than the key layout changes, I bumped the version from 2.0 to 2.1, and updated the dates.</p>
+<h3 id="download-it-here-pdf-excel-source">Download it here: <a href="https://smt.io/files/vim_cheat_sheet_for_programmers_print_DV.pdf?v=2.2">PDF</a> (<a href="https://smt.io/files/vim_cheat_sheet_for_programmers_print_DV.xlsx?v=2.2">Excel source</a>)</h3>
+<p><br></p>
+<div class="figure">
+<img src="https://smt.io/images/vim_cheat_sheet_for_programmers_print_DV_16color.png?v=2.2" />
+
+</div>
+<p>I don?t have any immediate plans to adapt the original low-res, monochrome, or accessible versions of the cheat sheet, but I?m more than happy to accept contributions from anyone, and make them available here.</p>
+<h4 id="update-v2.2">Update: v2.2</h4>
+<p>Changes:</p>
+<ul>
+<li>Replaced the hyphon/underscore key, which I missed in v2.1</li>
+</ul>
+    </div>
+</div>
+]]></description>
+    <pubDate>Tue, 09 Aug 2016 21:04:50 UT</pubDate>
+    <guid>https://smt.io/2016/08/09/vim-cheat-sheet-dvorak/</guid>
+    <dc:creator>Stephen Tudor</dc:creator>
+</item>
+<item>
+    <title>Three Things I've Learned With Haskell</title>
+    <link>https://smt.io/2016/05/23/three-things-i-learned-with-haskell/</link>
+    <description><![CDATA[<div id="primary">
+    <div class="inside">
+        <h1 class="title">Three Things I've Learned With Haskell</h1>
+        <div class="opacity08"><small>
+                <i>May 23, 2016 / <a href="https://smt.io/label/haskell/">Haskell</a>, <a href="https://smt.io/label/mad-coding/">Mad Coding</a></i>
+        </small></div>
+        <br>
+        <p>This is the first of a series of posts. We?ll see how it goes if I try to keep each one limited to ?three things.? That seems a nice, manageable number.</p>
+<p>While picking my way through <a href="http://haskellbook.com">Haskell Programming from First Principles</a> (hereafter referred to as <abbr title="Haskell Programming from First Principles">HPFP</abbr>), I?ve come across a number of interesting syntactic concepts that I haven?t seen much of (or at all) in my prior programming experience until recently.</p>
+<p><em>Note: I?ve been a front-end developer primarily focused on JavaScript and other dynamic languages for most of my professional life, while these things are new to <strong>me</strong>, I?m fully aware that they may not be new for <strong>you</strong>. As always, I welcome any constructive feedback.</em></p>
+<h2 id="lambdas">Lambdas</h2>
+<p>Being a functional language, Haskell features anonymous functions (or <em>lambdas</em>) rather prominently. It was exciting to learn that parts of the Haskell language are merely syntactic sugar around these lambdas. <abbr title="Haskell Programming from First Principles">HPFP</abbr> has a whole chapter dedicated solely to the lambda calculus, which underpins many major concepts of Haskell?s design.</p>
+<p>In JavaScript, a lambda looks like this:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> (x) <span class="op">{</span> <span class="cf">return</span> <span class="st">&quot;yeah &quot;</span> <span class="op">+</span> x <span class="op">+</span> <span class="st">&quot;!&quot;</span><span class="op">;</span> <span class="op">}</span></code></pre></div>
+<p>If you?re one of those people who likes their ES2015 arrow functions, you might be more at home with this:</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">x <span class="op">=&gt;</span> <span class="st">&quot;yeah &quot;</span> <span class="op">+</span> x <span class="op">+</span> <span class="st">&quot;!&quot;</span></code></pre></div>
+<p>In the following example of a Haskell lambda, you can see how the design of the ES2015 lambda might have drawn inspiration:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">\x <span class="ot">-&gt;</span> <span class="st">&quot;yeah &quot;</span> <span class="fu">++</span> x <span class="fu">++</span> <span class="st">&quot;!&quot;</span></code></pre></div>
+<p>It?s a small thing, but one of my favorite things about using Haskell lambdas is how my editor is configured to treat them. In a lambda, the \ is replaced by a ?: a lambda character! It helps me when I see that instead of a backslash:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">?x <span class="ot">-&gt;</span> <span class="st">&quot;yeah &quot;</span> <span class="fu">++</span> x <span class="fu">++</span> <span class="st">&quot;!&quot;</span></code></pre></div>
+<h2 id="pattern-matching">Pattern Matching</h2>
+<p>My exposure to <em>pattern matching</em> is totally backwards, because the first time I saw it was in some <a href="http://elixir-lang.org">Elixir</a> code. However, the Elixir examples I?ve seen tend to use pattern matching with destructuring variable binding:</p>
+<pre class="elixir"><code>{x, y} = {1, 2}  # {1, 2}
+x  # 1
+y  # 2
+
+[h | _] = [1, 2, 3]  # [1, 2, 3]
+h  # 1</code></pre>
+<p>I haven?t gotten far enough with my Haskell learning to know how it treats destructuring assignment (I?m fairly sure my brain will melt when I get to that point). For conventional assignment, it?s pretty great to be able to express functions in this clear a way:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">isItTen ::</span> <span class="dt">Integer</span> <span class="ot">-&gt;</span> <span class="dt">Bool</span>
+isItTen <span class="dv">10</span> <span class="fu">=</span> <span class="dt">True</span>
+isItTen _  <span class="fu">=</span> <span class="dt">False</span></code></pre></div>
+<p>As with some other languages like Go and Elixir, <code>_</code> acts like a catch-all bitbucket for unneeded values. It?s interesting to me that the patterns are matched against values rather than types. Pattern matching can help prevent some needlessly verbose logic in the function body.</p>
+<h2 id="guards">Guards</h2>
+<p>Every language has its own concept of control flow. In JavaScript and other languages in the C family, most of the burden falls on <code>if</code>/<code>else</code> statements, and occasionally a <code>switch</code>/<code>case</code>.</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">goodRange</span>(temp) <span class="op">{</span>
+  <span class="kw">var</span> out<span class="op">;</span>
+  <span class="cf">switch</span> (temp) <span class="op">{</span>
+  <span class="cf">case</span> temp <span class="op">&lt;</span> <span class="dv">64</span><span class="op">:</span>
+    out <span class="op">=</span> <span class="st">&quot;too low&quot;</span><span class="op">;</span>
+    <span class="cf">break</span><span class="op">;</span>
+  <span class="cf">case</span> temp <span class="op">&gt;</span> <span class="dv">78</span><span class="op">:</span>
+    out <span class="op">=</span> <span class="st">&quot;too high&quot;</span><span class="op">;</span>
+    <span class="cf">break</span><span class="op">;</span>
+  <span class="dt">default</span><span class="op">:</span>
+    out <span class="op">=</span> <span class="st">&quot;just right&quot;</span><span class="op">;</span>
+    <span class="cf">break</span><span class="op">;</span>
+  <span class="op">}</span>
+  <span class="cf">return</span> out<span class="op">;</span>
+<span class="op">}</span></code></pre></div>
+<p>Haskell also has an <code>if-then-else</code> pattern that you can use, but it only supports two possible outcomes. When writing a function definition, especially one with more than two possible outcomes, <em>guard</em> syntax can come in handy. It resembles pattern matching.</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">goodRange ::</span> <span class="dt">Integer</span> <span class="ot">-&gt;</span> <span class="dt">String</span>
+goodRange x
+  <span class="fu">|</span> x <span class="fu">&lt;</span> <span class="dv">64</span>    <span class="fu">=</span> <span class="st">&quot;too low&quot;</span>
+  <span class="fu">|</span> x <span class="fu">&gt;</span> <span class="dv">78</span>    <span class="fu">=</span> <span class="st">&quot;too high&quot;</span>
+  <span class="fu">|</span> otherwise <span class="fu">=</span> <span class="st">&quot;just right&quot;</span></code></pre></div>
+<p>The <code>goodRange</code> function is expressive and clear: for an Integer <code>x</code>, return a string depending on where <code>x</code> falls within a predetermined range.</p>
+<p>Here?s another example, taken right out of the <abbr title="Haskell Programming from First Principles">HPFP</abbr> book because it?s so great:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">avgGrade ::</span> (<span class="dt">Fractional</span> a, <span class="dt">Ord</span> a) <span class="ot">=&gt;</span> a <span class="ot">-&gt;</span> <span class="dt">Char</span>
+avgGrade x
+  <span class="fu">|</span> y <span class="fu">&gt;=</span> <span class="fl">0.9</span>  <span class="fu">=</span> <span class="ch">'A'</span>
+  <span class="fu">|</span> y <span class="fu">&gt;=</span> <span class="fl">0.8</span>  <span class="fu">=</span> <span class="ch">'B'</span>
+  <span class="fu">|</span> y <span class="fu">&gt;=</span> <span class="fl">0.7</span>  <span class="fu">=</span> <span class="ch">'C'</span>
+  <span class="fu">|</span> y <span class="fu">&gt;=</span> <span class="fl">0.59</span> <span class="fu">=</span> <span class="ch">'D'</span>
+  <span class="fu">|</span> y <span class="fu">&lt;</span> <span class="fl">0.59</span>  <span class="fu">=</span> <span class="ch">'F'</span>
+  <span class="kw">where</span> y <span class="fu">=</span> x <span class="fu">/</span> <span class="dv">100</span></code></pre></div>
+<p>For a given <code>x</code> that implements <code>Fractional</code> and <code>Ord</code> typeclasses (think of them like interfaces or mixins that provide access to certain functions), divide <code>x</code> by 100 (scoped to the variable <code>y</code> in the <code>where</code> clause) and return a ?grade? character based on several ranks of comparison? ranks that most of us have come to either love or despise.</p>
+    </div>
+</div>
+]]></description>
+    <pubDate>Mon, 23 May 2016 20:36:04 UT</pubDate>
+    <guid>https://smt.io/2016/05/23/three-things-i-learned-with-haskell/</guid>
+    <dc:creator>Stephen Tudor</dc:creator>
+</item>
+<item>
+    <title>Putting Aside the Ranger</title>
+    <link>https://smt.io/2016/05/02/putting-aside-the-ranger/</link>
+    <description><![CDATA[<div id="primary">
+    <div class="inside">
+        <h1 class="title">Putting Aside the Ranger</h1>
+        <div class="opacity08"><small>
+                <i>May  2, 2016 / <a href="https://smt.io/label/haskell/">Haskell</a>, <a href="https://smt.io/label/mad-coding/">Mad Coding</a></i>
+        </small></div>
+        <br>
+        <blockquote>
+<p>Put aside the ranger. Become who you were born to be.</p>
+<p>?<cite>Elrond Half-elven</cite></p>
+</blockquote>
+<p>Nothing about my life, or this little story, is anywhere near as inspirational as when Elrond gives Anduril, forged from the shards of Narsil, to Aragorn.</p>
+<p>In fact, there?s ample opportunity yet for crushing disappointment to steal the day. It?s my hope that writing this here, now, will put just enough pressure on myself to stick with what I?ve committed to do.</p>
+<p>I simply choose to believe that we can all find inspiration to make small decisions to improve our lives, incrementally shedding the husks of older versions of ourselves behind us.</p>
+<h2 id="the-podcast">The podcast</h2>
+<p>Not long ago (the end of March, 2016), I listened to an episode of the Changelog that had a profound effect on me. I?m not entirely sure what it was that made <a href="https://changelog.com/198/">episode #198</a> different from other podcasts I?ve heard, featuring guests who shone light on some (to me) heretofore unexplored topic.</p>
+<p>The Changelog has aired many such episodes over the years. This one stood out from the rest because, unlike previous installments, this particular show hosted a pair of guests who are co-authoring a book about <em>Haskell</em>, the functional programming language.</p>
+<h2 id="the-gateway-drug">The gateway drug</h2>
+<p>At work, one team took a different path from most, opting to do their work in a more functional/reactive paradigm. Their stack is Node.js on the server, which allowed lots of universal app code (that is, code meant to run on both the client and the server) to be written in JavaScript.</p>
+<p>Among other libraries, the team used <a href="http://ramdajs.com/">Ramda</a>, a functional JavaScript framework, to perform powerful data manipulation and flow control with relatively few lines of code.</p>
+<p>The lead engineer pointed me to <a href="https://drboolean.gitbooks.io/mostly-adequate-guide/content/">Professor Frisby?s Mostly Adequate Guide to Functional Programming</a>, which ignited an interest in this new idea everyone has been talking about lately?except there?s really nothing new about it. I got my first taste of point-free functions, Functors, and Hindley-Milner notation, all within the familiar confines of JavaScript.</p>
+<p>Later, when writing the build harness for my team?s app, I used Ramda to wire everything together. I?m sure I got a lot wrong, but my appetite for functional programming had been whetted, and I wanted to learn more.</p>
+<p>I wanted to learn <em>the</em> reference functional programming language. I wanted to learn Haskell.</p>
+<p>I?ll always love JavaScript, and I think I?ll still be writing it many years from now. However, I believe it is our duty as programmers to always strive to broaden our horizons.</p>
+<h2 id="the-haskell-book">The Haskell Book</h2>
+<p>When Chris Allen and Julie Moronuki were interviewed on the Changelog, what caught my interest was their unique team dynamic as a writing duo.</p>
+<p>Chris has over six years of Haskell experience under his belt, as well as previous experience with other functional languages, like Clojure. His passion is clearly teaching. Surely, the ideal candidate to author a programming book.</p>
+<p>Julie is a linguist and stay-at-home mom, with no prior programming experience other than Haskell. She?s been working with the language for about a year. Chris convinced Julie to let him teach her how to program, and along the way, Julie became the co-author of the Haskell book: <a href="http://haskellbook.com">Haskell Programming from First Principles</a>.</p>
+<p>To me the book promised a pedagogical rigor, combined with what was sure to be a fair amount of empathy for the beginner?s mind. I?d tried to read about Haskell before, but all I came away with was an esoteric vocabulary to describe mountaintop ideas I couldn?t comprehend.</p>
+<blockquote>
+<p>In interacting with other Haskell learners I often hear that other materials leave them feeling like Haskell is difficult and mysterious, a programming language best left to wizards. It doesn?t have to be that way.</p>
+<p>?<cite>Julie Moronuki</cite></p>
+</blockquote>
+<p>I found that point of view encouraging and refreshing. It was as if an impenetrable veil was about to be lifted.</p>
+<h2 id="an-unexpected-journey">An unexpected journey</h2>
+<p>I downloaded the free sample, and after completing it, I felt comfortable buying the early access edition of the book. At the time I purchased it, the book was complete but for three chapters remaining.</p>
+<p>Today, I received the notification that the final chapters have been added. It looks like the authors are now busying themselves with various preparations to go to print with the hard copy.</p>
+<p>As a challenge to myself, I?ve started reading the Haskell Book regularly. I?ve found it both very clear and incredibly challenging to this point ? I?m just finishing up the sixth chapter: Typeclasses.</p>
+<p>I?m being challenged to rethink much of what I know as a programmer, enough to the point where I suspect that, if the command line and general tooling weren?t serious issues, it <em>would</em> be easier for someone completely new to programming to pick up Haskell.</p>
+<p>If for no other reason than to reinforce them for myself, I am planning future posts to discuss Haskell and functional programming concepts I?m learning as I get further into the book. Stay tuned!</p>
+    </div>
+</div>
+]]></description>
+    <pubDate>Mon, 02 May 2016 23:42:18 UT</pubDate>
+    <guid>https://smt.io/2016/05/02/putting-aside-the-ranger/</guid>
+    <dc:creator>Stephen Tudor</dc:creator>
+</item>
+<item>
+    <title>The Intervening Years</title>
+    <link>https://smt.io/2016/04/24/intervening-years/</link>
+    <description><![CDATA[<div id="primary">
+    <div class="inside">
+        <h1 class="title">The Intervening Years</h1>
+        <div class="opacity08"><small>
+                <i>April 24, 2016 / <a href="https://smt.io/label/family/">Family</a>, <a href="https://smt.io/label/miscellaneous/">Miscellaneous</a></i>
+        </small></div>
+        <br>
+        <p>Is this thing on?</p>
+<h2 id="hiatus-isnt-really-the-best-descriptor">?Hiatus? isn?t really the best descriptor</h2>
+<p>I didn?t officially take a hiatus from my own blog, since it was never much of a blog in the first place. Regardless, with no apologies or excuses, I?m going to perform a brief rewind and fast-forward to catch us up to the present.</p>
+<h3 id="section">2013</h3>
+<ul>
+<li>Led several responsive web front-end prototype projects.</li>
+<li>Built a SPA to run in a custom Webkit browser on resource-starved embedded systems.</li>
+<li>Got hopelessly addicted to coffee.</li>
+<li>Left EPAM to join the Solutions Innovation team at eBay Enterprise.</li>
+</ul>
+<h3 id="section-1">2014</h3>
+<ul>
+<li>Supported sales consultants by preparing Magento demo environments to highlight client-specific use cases.</li>
+<li>Built small web apps at work, mostly self-directed.</li>
+<li>Built small web apps at home, totally self-directed.</li>
+<li>Learned how to automate server administration with Ansible and Docker.</li>
+<li>Welcomed our new daughter, Evelyn Rose, into our family!</li>
+</ul>
+<h3 id="section-2">2015</h3>
+<ul>
+<li>eBay announced their intention to spin off PayPal and eBay Enterprise.<br />
+</li>
+<li>Officially became a <a href="https://www.magentocommerce.com/certification/directory/dev/1584395/">Magento Certified Solution Specialist</a>.</li>
+<li>Ran a workshop with the Magento UX team on user-centered design methodology at <a href="https://magento.com/company/events/imagine-commerce-2015">Imagine Commerce 2015</a>.</li>
+<li>Left my post at eBay Enterprise to join the web production team at Anthropologie.</li>
+<li>Started using Python and ES6 full-time on a next-gen web platform project.</li>
+</ul>
+<h3 id="section-3">2016</h3>
+<ul>
+<li>Started learning Haskell through reading <a href="http://haskellbook.com/">Haskell Programming From First Principles</a>.</li>
+<li>Attended <a href="http://2016.phillyemergingtech.com/">Philly ETE</a> for the first time.</li>
+<li>Received a promotion to engineering manager for URBN IT.</li>
+</ul>
+    </div>
+</div>
+]]></description>
+    <pubDate>Sun, 24 Apr 2016 02:26:45 UT</pubDate>
+    <guid>https://smt.io/2016/04/24/intervening-years/</guid>
+    <dc:creator>Stephen Tudor</dc:creator>
+</item>
+<item>
+    <title>Gulp and Browserify</title>
+    <link>https://smt.io/2014/02/11/gulp-browserify/</link>
+    <description><![CDATA[<div id="primary">
+    <div class="inside">
+        <h1 class="title">Gulp and Browserify</h1>
+        <div class="opacity08"><small>
+                <i>February 11, 2014 / <a href="https://smt.io/label/javascript/">JavaScript</a>, <a href="https://smt.io/label/mad-coding/">Mad Coding</a>, <a href="https://smt.io/label/node/">Node.js</a></i>
+        </small></div>
+        <br>
+        <p>Just a quick write-up of some things I?ve been playing with lately.</p>
+<p>A few weeks ago, at lunch with some old coworkers, someone mentioned that <a href="http://gulpjs.com">gulp</a> might just be the new hotness that steals Grunt?s thunder. More recently, I was inspired by <a href="http://www.100percentjs.com/just-like-grunt-gulp-browserify-now/">Martin Genev</a> to look into the gulp build system and <a href="http://browserify.com">Browserify</a>. I?m pretty impressed with what I?ve seen of gulp thus far, but I feel the bigger story by far is Browserify.</p>
+<p><strong>Update (2014-04-09):</strong> <a href="http://viget.com/about/team/dtello">Dan Tello</a> has posted a <a href="http://viget.com/extend/gulp-browserify-starter-faq">far superior contribution</a> on this topic. The examples he gives are really?compelling.</p>
+<h2 id="gulp">gulp</h2>
+<p>I?ve been on several projects now that use the Grunt build system, and I?m not trying to criticize Grunt ? in many ways, it was a Godsend that saved us from the hell of Makefiles and build.xml files. However, I always found configuring Grunt to be a major chore, and I was always bad at it. The up-front configuration work can be pretty intimidating.</p>
+<p>In contrast, <a href="http://gulpjs.com">gulp</a> uses conventions similar to node.js streams. I?m no expert with using streams myself, but to be able to pipe operations into other operations, Unix-style, is quite intuitive. Writing a task in gulp is nearly as simple and natural as pseudo-coding what you want it to do.</p>
+<p>In this example, I defined a task to build and concatenate my JavaScript source into a single file (dist/built.js), adding a file watcher for good measure. Nice!</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> gulp <span class="op">=</span> <span class="at">require</span>(<span class="st">'gulp'</span>)<span class="op">;</span>
+<span class="kw">var</span> util <span class="op">=</span> <span class="at">require</span>(<span class="st">'gulp-util'</span>)<span class="op">;</span>
+<span class="kw">var</span> concat <span class="op">=</span> <span class="at">require</span>(<span class="st">'gulp-concat'</span>)<span class="op">;</span>
+<span class="kw">var</span> browserify <span class="op">=</span> <span class="at">require</span>(<span class="st">'gulp-browserify'</span>)<span class="op">;</span>
+
+<span class="va">gulp</span>.<span class="at">task</span>(<span class="st">'scripts'</span><span class="op">,</span> <span class="kw">function</span> (cb) <span class="op">{</span>
+    <span class="va">gulp</span>.<span class="at">src</span>(<span class="st">'./src/app.js'</span>)
+        .<span class="at">pipe</span>(<span class="at">browserify</span>(<span class="op">{</span>
+            <span class="dt">basedir</span><span class="op">:</span> <span class="st">'./'</span><span class="op">,</span>
+            <span class="dt">debug</span><span class="op">:</span> <span class="op">!</span><span class="va">util</span>.<span class="va">env</span>.<span class="at">production</span>
+        <span class="op">}</span>))
+        .<span class="at">pipe</span>(<span class="at">concat</span>(<span class="st">'built.js'</span>))
+        .<span class="at">pipe</span>(<span class="va">gulp</span>.<span class="at">dest</span>(<span class="st">'./dist/'</span>))
+<span class="op">}</span>)<span class="op">;</span>
+
+<span class="va">gulp</span>.<span class="at">task</span>(<span class="st">'watch'</span><span class="op">,</span> [<span class="st">'scripts'</span>]<span class="op">,</span> <span class="kw">function</span> () <span class="op">{</span>
+    <span class="kw">var</span> watcher <span class="op">=</span> <span class="va">gulp</span>.<span class="at">watch</span>(<span class="st">'./src/**/*.js'</span><span class="op">,</span> [<span class="st">'scripts'</span>])<span class="op">;</span>
+    <span class="va">watcher</span>.<span class="at">on</span>(<span class="st">'change'</span><span class="op">,</span> <span class="kw">function</span> (event) <span class="op">{</span>
+        <span class="va">console</span>.<span class="at">log</span>(<span class="st">'File '</span> <span class="op">+</span> <span class="va">event</span>.<span class="at">path</span> <span class="op">+</span> <span class="st">' was '</span> <span class="op">+</span> <span class="va">event</span>.<span class="at">type</span> <span class="op">+</span> <span class="st">', building scripts...'</span>)<span class="op">;</span>
+    <span class="op">}</span>)<span class="op">;</span>
+<span class="op">}</span>)<span class="op">;</span>
+
+<span class="va">gulp</span>.<span class="at">task</span>(<span class="st">'default'</span><span class="op">,</span> [<span class="st">'scripts'</span><span class="op">,</span> <span class="st">'watch'</span>])<span class="op">;</span></code></pre></div>
+<h2 id="browserify">Browserify</h2>
+<p>I honestly don?t think I can do <a href="http://browserify.com">Browserify</a> any justice by attempting to explain it here, but it?s basically a library that allows you to use core node modules, npm modules, and your own modules written in node.js style <strong>in the browser</strong>.</p>
+<p>I?ve been a proponent of AMD and RequireJS for some time, but when it comes to writing modules in JavaScript, here?s my big question: Why not use the same conventions for the browser as for node.js, with minimal, if any, boilerplate needed?</p>
+<p>Browserify lets you do that. I wrote 3 or 4 modules, using node.js-style <code>require</code> statements for dependencies, and exposing what I needed to with <code>module.exports</code>. With very little configuration (see the gulpfile.js example above), Browserify wrapped all my modules appropriately, and built them to a single JS file, which I loaded in the browser. It worked. It was glorious. The blinders were off.</p>
+<p>My experience with Browserify thus far has only been with modules I?ve written myself. I haven?t even scratched the surface of using an npm module in the browser yet. That will be my next experiment. I?m genuinely excited.</p>
+    </div>
+</div>
+]]></description>
+    <pubDate>Tue, 11 Feb 2014 19:28:52 UT</pubDate>
+    <guid>https://smt.io/2014/02/11/gulp-browserify/</guid>
+    <dc:creator>Stephen Tudor</dc:creator>
+</item>
+<item>
+    <title>Emergent Task Planner</title>
+    <link>https://smt.io/2012/12/19/emergent-task-planner/</link>
+    <description><![CDATA[<div id="primary">
+    <div class="inside">
+        <h1 class="title">Emergent Task Planner</h1>
+        <div class="opacity08"><small>
+                <i>December 19, 2012 / <a href="https://smt.io/label/productivity/">Productivity</a></i>
+        </small></div>
+        <br>
+        <p>For a few years now I?ve used David Seah?s excellent <a href="http://davidseah.com/productivity-tools">Printable CEO</a> resources, to keep track of my activity across projects. I stopped doing it a while back for some reason, but recently rediscovered them, and decided they deserved a mention, particularly the <a href="http://davidseah.com/node/the-emergent-task-planner/">Emergent Task Planner (ETP)</a>.</p>
+<div class="figure">
+<img src="https://smt.io/images/etp-top-section.png" alt="ETP top section" />
+<p class="caption">ETP top section</p>
+</div>
+<p>The ETP really is great to use, and the pads you can buy from Amazon are of extremely high quality. What I like most is how much it reduces the friction of plotting how I?ve spent my day. It?s dead simple to just pick up and start using. I have found the ETP to be an <em>invaluable</em> asset for logging of how I spend my time between different projects.</p>
+<p>A word of caution: the ScanTron-phobic among us may wish to look elsewhere for suitable productivity tools, as the filling in of little ovals features prominently in these. But for the frictionless capturing of task-based information in the moment, I haven?t found anything else that works nearly as well for me.</p>
+    </div>
+</div>
+]]></description>
+    <pubDate>Wed, 19 Dec 2012 11:11:26 UT</pubDate>
+    <guid>https://smt.io/2012/12/19/emergent-task-planner/</guid>
+    <dc:creator>Stephen Tudor</dc:creator>
+</item>
+<item>
+    <title>2012: Year In Review</title>
+    <link>https://smt.io/2012/12/17/year-in-review/</link>
+    <description><![CDATA[<div id="primary">
+    <div class="inside">
+        <h1 class="title">2012: Year In Review</h1>
+        <div class="opacity08"><small>
+                <i>December 17, 2012 / <a href="https://smt.io/label/family/">Family</a>, <a href="https://smt.io/label/miscellaneous/">Miscellaneous</a></i>
+        </small></div>
+        <br>
+        <p>It has been a very busy year for my family and me. I suppose this post is something of an excuse for the lack of updates to this blog, so enjoy the rambling stream of consciousness below. I have no agenda here, other than to briefly recall the year?s highlights.</p>
+<p>So 2012 happened. In the offing, I have been blessed to see my son <strong>William</strong> turn 3, and my marriage to <strong>Sarah</strong> turn 7. This year saw me turn 5 times the age of my marriage. Sarah and I sold our first home together and moved to our second.</p>
+<p>Sarah participated in a 2-day watercolor workshop put on by <a href="http://www.pafa.org">PAFA</a>. She had a great time, and came home full of inspiration for future art projects. Her paintings look fabulous.</p>
+<p>My father is retiring this year, after 35 years of teaching and conducting research at the same university, which also happens to be my <a href="http://www.sju.edu">alma mater</a>. It really is amazing to me how anyone can stay at one place for so long ? literally my whole lifetime. He?s always been my inspiration, and I owe so much to him and Mom that I haven?t the words to express my full gratitude. I?m just proud to be their son.</p>
+<p>I still play board games as often as I?m able, which isn?t a lot, but though the quantity of my playing has diminished, I feel the quality has increased ? I?m more selective about my gaming experiences these days, as my time is a more precious commodity than it once was. I?ve been fortunate to make a number of dear friends through this misunderstood hobby.</p>
+<p>This year also saw my first foray into the world of pencil-and-paper role-playing games. Some friends and I started a basic Pathfinder campaign. I find it pretty interesting and fun, though I?m still learning the ropes. I went with a pretty straightforward character since I?m new at it.</p>
+<p>Professionally, I volunteered twice to be a TA for web development classes at <a href="http://girldevelopit.com/chapters/philadelphia">GDI Philly</a>. The first was for server-side programming with Node.js, and the second was an intermediate HTML &amp; CSS class.</p>
+<p>I am as much of a fan of Vim now as I ever was. I?m writing this post in Vim right now.</p>
+<p>At <a href="http://empathylab.com">my day job</a>, I managed to get my fingers into an awful lot of different pies ? heres a recap of the busy year I had at work:</p>
+<h3 id="q1">Q1</h3>
+<blockquote>
+<p>Wrapped up my involvement leading front-end development for the brand-new redesign of the <a href="http://redcross.org">American Red Cross</a> website, which eventually went on to a successful launch in September of this year. I?d been on the project since the kickoff in March 2011. If you donated to Hurricane Sandy victims this year, you likely used code that I wrote.</p>
+</blockquote>
+<h3 id="q2">Q2</h3>
+<blockquote>
+<p>Built a revolutionary JavaScript proof-of-concept app with my talented co-worker at the time, <a href="http://vickaita.com">Vick Aita</a>. The proof-of-concept won my company the contract to develop the full application for the client. This work had me making several trips out to California, and one trip to Belgium.</p>
+</blockquote>
+<h3 id="q3">Q3</h3>
+<blockquote>
+<p>My company kicked off 3 simultaneous responsive web design projects for customers in the media &amp; entertainment space, and I was tapped to work across the projects with each team so that they could deliver consistently high-quality solutions.</p>
+</blockquote>
+<h3 id="q4">Q4</h3>
+<blockquote>
+<p>As I continued to oversee our responsive web design development efforts, my focus shifted to some pressing departmental needs, such as documenting clearer development guidelines for our team, and helping to start a framework/pattern library of reusable components for future projects. I continued to support various client projects as the need arose. Toward the end of the year, I reunited with the aforementioned JS project from Q2, which is now in full development with a dedicated team.</p>
+</blockquote>
+<hr />
+<h4 id="may-you-all-have-a-wonderful-ending-to-2012-and-an-equally-promising-beginning-to-2013">May you all have a wonderful ending to 2012, and an equally promising beginning to 2013!</h4>
+    </div>
+</div>
+]]></description>
+    <pubDate>Mon, 17 Dec 2012 23:05:41 UT</pubDate>
+    <guid>https://smt.io/2012/12/17/year-in-review/</guid>
+    <dc:creator>Stephen Tudor</dc:creator>
+</item>
+<item>
+    <title>Developers Are Artists</title>
+    <link>https://smt.io/2012/10/07/developers-are-artists/</link>
+    <description><![CDATA[<div id="primary">
+    <div class="inside">
+        <h1 class="title">Developers Are Artists</h1>
+        <div class="opacity08"><small>
+                <i>October  7, 2012 / <a href="https://smt.io/label/mad-coding/">Mad Coding</a></i>
+        </small></div>
+        <br>
+        <p>Software development is, in part, an artistic practice. As a developer, your brush is a keyboard; your canvas, a text editor. You derive satisfaction from crafting solutions to real problems, and it is your creativity that brings the solutions to life.</p>
+<h2 id="beautiful-code">Beautiful Code</h2>
+<p>Development is necessarily a balancing act of competing concerns:</p>
+<ul>
+<li>Performance</li>
+<li>Scalability</li>
+<li>Maintainability</li>
+<li>Usability</li>
+<li>Accessibility</li>
+<li><strong>Beauty</strong></li>
+</ul>
+<p>Yes, we care very much about beauty in our code, but unlike most other concerns, it is subjective by nature. Beauty is very much in the eye of the beholder.</p>
+<p>Teaching how to design beautiful code is as challenging as teaching ?the practice of software development.? Each of us is left to ourselves to figure it out, either by following the example of others, or stumbling upon it ourselves in a blinding aura of caffeine-induced revelation. More often than not, at least in my experience, it?s the former.</p>
+<h3 id="so-artists">So? Artists?</h3>
+<p>As tempting as it is to draw upon the analogy of being ?under-appreciated in our time,? it is noteworthy that developers often experience a similar creative arc as artists of other disciplines. A great deal of code makes its initial appearance as a ?s****y first draft,? to quote Anne LaMott. Before that, it may even have begun its life as a simple whiteboard doodle. Eventually, we revise and refactor that first idea as we gain a fuller understanding of the problem, and the best code eventually emerges. More often than not, it also happens to be more elegant code, the rough edges having been smoothed out, and the redundancy reduced. If all goes well, the developer can put down her brush at this point and take a step back to take in the full scope of her work.</p>
+<pre class="scss"><code>$break-small: 320px;
+$break-large: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+.profile-pic {
+  float: left;
+  width: 250px;
+  @include respond-to(handhelds) { width: 100% ;}
+  @include respond-to(medium-screens) { width: 125px; }
+  @include respond-to(wide-screens) { float: none; }
+}</code></pre>
+<p>In the example above (from <a href="http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32">The Sass Way</a>), the <code>respond-to</code> Sass mixin provides a more attractive way to specify <span class="citation">@media</span> queries in CSS, abstracting away some of the ugliness for the author. Obviously, abstraction isn?t always the best course of action, but oftentimes the biggest reason for doing it is to end up with a cleaner codebase.</p>
+<h2 id="beauty-often-takes-care-of-itself.">Beauty often takes care of itself.</h2>
+<p>We must remember that beauty in code is a means, not an end, to our satisfaction in development work. Most of us provide our services for hire. In practical terms, each of those other competing concerns has a real link to business value, and will tend to trump ?beauty? when the two are in conflict. However, I find that if everything else properly accounted for, beauty will often take care of itself in the process.</p>
+<p>We?ve been talking about this for a while now.</p>
+<ul>
+<li>2007 ? O?Reilly publishes the book <a href="http://shop.oreilly.com/product/9780596510046.do">Beautiful Code</a>, a collection of essays by notable members of the profession on how they approach programming problems in ways they deem beautiful.</li>
+<li>2008 ? Jeff Atwood proclaims that <a href="http://www.codinghorror.com/blog/2008/02/code-isnt-beautiful.html">Code Isn?t Beautiful</a> in reaction to O?Reilly?s book, finding beauty not in the code itself, but in the ideas and algorithms beneath the surface.</li>
+<li>2009 ? Chris Coyier describes <a href="http://css-tricks.com/what-beautiful-html-code-looks-like/">What Beautiful HTML Code Looks Like</a>, focusing on how beauty in HTML is derived from craftsmanship.</li>
+<li>2010 ? Martin van Emden argues <a href="http://vanemden.wordpress.com/2010/10/05/in-defense-of-beautiful-code-2/">In Defense of Beautiful Code</a>, demonstrating that there are ways to write the same code that are more beautiful than others.</li>
+<li>2011 ? Alberto Gutierrez discusses <a href="http://www.makinggoodsoftware.com/2011/03/27/the-obsession-with-beautiful-code-the-refactor-syndrome/">The Obsession With Beautiful Code</a>, underscoring the dangers of pursuing beauty for beauty?s sake.</li>
+</ul>
+<p>Gutierrez? post particularly resonates with me, despite its being the least complementary to my point of view, because I have observed many of the tendencies he lists in myself as well as in many of my peers. Developers need to be aware that subjective coding style can be conflated with beauty on occasion, and it often has little to do with code quality. However, I do not agree that <a href="http://www.makinggoodsoftware.com/2009/11/09/the-four-golden-rules-to-be-a-better-software-developer/">all code is crap</a>.</p>
+<p>While it is true that much of what we work on is, at best, <em>ephemeral</em> even if it does end up seeing the light of day, what we gain in experience will stay with us for future opportunities to create beautiful code.</p>
+    </div>
+</div>
+]]></description>
+    <pubDate>Sun, 07 Oct 2012 11:53:56 UT</pubDate>
+    <guid>https://smt.io/2012/10/07/developers-are-artists/</guid>
+    <dc:creator>Stephen Tudor</dc:creator>
+</item>
+<item>
+    <title>KSS and Middleman</title>
+    <link>https://smt.io/2012/01/10/kss-middleman/</link>
+    <description><![CDATA[<div id="primary">
+    <div class="inside">
+        <h1 class="title">KSS and Middleman</h1>
+        <div class="opacity08"><small>
+                <i>January 10, 2012 / <a href="https://smt.io/label/kss/">KSS</a>, <a href="https://smt.io/label/mad-coding/">Mad Coding</a>, <a href="https://smt.io/label/middleman/">Middleman</a>, <a href="https://smt.io/label/ruby/">Ruby</a>, <a href="https://smt.io/label/sass/">Sass</a>, <a href="https://smt.io/label/site-generators/">Site Generators</a></i>
+        </small></div>
+        <br>
+        <p>I love the idea of building an ?interactive style guide? for a website design. I really do. However, working in Agencyland, it can be extremely difficult to budget enough time for this kind of tool when seemingly higher-priority tasks pile up. Right or wrong, the utopian vision of a living style guide often becomes a foregone luxury in the throes of looming deadlines.</p>
+<p><em>Assumes the reader understands the basics of Ruby and CSS.</em></p>
+<h2 id="middleman">Middleman</h2>
+<p>For an upcoming project at <a href="http://empathylab.com">work</a>, I?ll be leading the effort to author static HTML templates for a different group of software integrators to wire up to a complex back-end architecture (rhymes with WebSmear).</p>
+<p>We are also going to be building a whole front-end stack with CSS and JavaScript to boot, so it makes sense to use a solid static framework to take the pain away from developing a massive amount of templates without any server-side help. The bottom line is that we need to be able to export flat HTML files that work the same as the development templates.</p>
+<p>Enter <a href="http://middlemanapp.com">Middleman</a>, a loosely-coupled, yet carefully curated collection of Ruby libraries that all contribute to a framework that is much greater than the sum of its parts. I won?t go into all of its features here???you can visit the Middleman <a href="http://middlemanapp.com">site</a> for everything you need to know.</p>
+<p>For our purposes, Middleman looks to be a robust platform on which to build our static site.</p>
+<h2 id="kss">KSS</h2>
+<p>I am a closet fan of documentation specs like RubyDoc and JSDoc, but they often introduce a lot of heavy baggage for developers. <a href="http://tomdoc.org">TomDoc</a> came on the scene not too long ago as a really simple doc spec that Githubbers use in their in-house Ruby code, and I was ecstatic when another Github guy, <a href="http://warpspire.com">Kyle Neath</a>, released his own <a href="http://github.com/kneath/kss">KSS</a> project in late 2011. I think I?ve subconsciously been yearning for this kind of CSS documentation support for some time.</p>
+<p>KSS is a documentation spec for CSS (one of the first of its kind that I?ve heard of) that can be parsed by Ruby. This helps us do things like? generating an interactive style guide. It?s certainly not a silver bullet, but KSS will lower some of the administrative barriers to putting together helpful CSS documentation.</p>
+<h2 id="kss-ing-middleman">KSS-ing Middleman</h2>
+<p>I thought it would be a good idea to try to port some of the <a href="https://github.com/kneath/kss/tree/master/example">KSS example app</a> code over to my basic Middleman app. The example shows several variations of form submit button styles, including states such as hover and disabled, which makes for an excellent use case.</p>
+<h3 id="the-styles">The Styles</h3>
+<p>I?m using <a href="http://sass-lang.com">Sass</a> and <a href="http://compass-style.org">Compass</a>, with Middleman, so I did a quick port of Kyle?s example button CSS to Sass with some appropriate Compass mixins. I found that KSS broke when used with the original terse Sass format, but it did work fine with the newer SCSS format. I?m not certain, but it?s possible that this issue may be resolved in KSS in the future.</p>
+<p>Below is the result of porting the button CSS to <code>_button.scss</code>. The comment block at the top is where the documentation magic happens. You just describe what something is, specify a list of different states, and then reference a numbered section of the style guide. That?s it.</p>
+<pre class="scss"><code>// Your standard form button.
+//
+// :hover    - Highlights when hovering.
+// :disabled - Dims the button when disabled.
+// .primary  - Indicates button is the primary action.
+// .smaller  - A smaller button
+//
+// Styleguide 5.1.1
+button {
+  background-color: #f5f5f5;
+  @include background-image(linear-gradient(#f5f5f5, #e5e5e5));
+  border: 1px solid #ddd;
+  border-bottom-color: #bbb;
+  @include border-radius(3px);
+  @include box-shadow(0 1px 4px rgba(0, 0, 0, 0.15));
+  color: #666;
+  cursor: pointer;
+  font-family: &quot;Helvetica Neue&quot;, Helvetica;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: normal;
+  padding: 5px 15px;
+  @include text-shadow(0 1px rgba(255, 255, 255, 0.9));
+
+  &amp;.primary, &amp;.primary:hover {
+    color: #fff;
+    background-color: #8add6d;
+    @include background-image(linear-gradient(#8add6d, #60b044));
+    border-color: #74bb5a;
+    border-bottom-color: #509338;
+    @include box-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+    @include text-shadow(0 -1px 0 rgba(0, 0, 0, 0.4));
+  }
+  &amp;.smaller {
+    font-size: 11px;
+    padding: 4px 7px;
+  }
+  &amp;:hover {
+    color: #337797;
+    background-color: #f0f7fa;
+    @include background-image(linear-gradient(#f0f7fa, #d8eaf2));
+    border-color: #cbe3ee;
+    border-bottom-color: #97c7dd;
+  }
+  &amp;:disabled {
+    opacity: 0.5;
+  }
+}</code></pre>
+<p>You actually <em>do</em> need to manage the numeric structure of the style guide yourself. However, I appreciate that KSS makes you maintain control over the meaningful aspects of organizing a style guide, while making it possible to automate the tedious parts.</p>
+<h3 id="the-config">The Config</h3>
+<p>For the style guide to look nice on the front end, there is also a small amount of boilerplate CSS and JavaScript code to make some of the magic happen, so I pulled those files in and called them from a separate layout, <code>layouts/styleguide.erb</code>.</p>
+<p>The KSS example app runs on Sinatra, and Middleman also basically runs on Sinatra with some abstractions on top, so setting up the configuration wasn?t too tough. After adding <code>gem &quot;kss&quot;, &quot;~&gt; 0.1.1&quot;</code> to the Gemfile and running <code>bundle install</code>, I added the following to Middleman?s <code>config.rb</code> file:</p>
+<div class="sourceCode"><pre class="sourceCode ruby"><code class="sourceCode ruby">require <span class="st">&quot;kss&quot;</span>
+page <span class="st">&quot;/styleguide/*&quot;</span>, <span class="st">:layout</span> =&gt; <span class="st">:styleguide</span> <span class="kw">do</span>
+  <span class="ot">@styleguide</span> = <span class="dt">Kss</span>::<span class="dt">Parser</span>.new(<span class="st">'source/css'</span>)
+<span class="kw">end</span>
+
+helpers <span class="kw">do</span>
+  <span class="co"># Generates a styleguide block.</span>
+  <span class="kw">def</span> styleguide_block(section, &amp;block)
+    <span class="ot">@section</span> = <span class="ot">@styleguide</span>.section(section)
+    <span class="ot">@example_html</span> = kss_capture{ block.call }
+    <span class="ot">@_out_buf</span> &lt;&lt; partial(<span class="st">'styleguide/block'</span>)
+  <span class="kw">end</span>
+
+  <span class="co"># Captures the result of a block within an erb template without spitting it</span>
+  <span class="co"># to the output buffer.</span>
+  <span class="kw">def</span> kss_capture(&amp;block)
+    out, <span class="ot">@_out_buf</span> = <span class="ot">@_out_buf</span>, <span class="st">&quot;&quot;</span>
+    <span class="kw">yield</span>
+    <span class="ot">@_out_buf</span>
+  <span class="kw">ensure</span>
+    <span class="ot">@_out_buf</span> = out
+  <span class="kw">end</span>
+<span class="kw">end</span></code></pre></div>
+<p>For all style guide templates, the above configuration exposes a variable containing a Ruby representation of all KSS-documented CSS in the site (because KSS parses all documentation blocks in the CSS). A couple of helpers are defined that the templates will have access to, in order to handle the generated style guide block.</p>
+<blockquote>
+<p><em>(Due to a bug in Middleman 3.0 beta, wildcard file paths did not set local variables correctly. This bug should be resolved in 3.0 final. Additionally, I suspect that the <code>kss_capture</code> helper is not exactly optimal for use with Middleman, but I haven?t taken the time to refactor the example code beyond simply getting it working. It was originally named <code>capture</code> in the example, but I renamed it to prevent conflicts with the existing Middleman <code>capture</code> helper, which I would have probably tried to use if it was available inside the config file.)</em></p>
+</blockquote>
+<h3 id="the-templates">The Templates</h3>
+<p>A partial template needs to be defined for rendering every style guide section. The template will be used by the <code>styleguide_block</code> helper defined in the config above: <code>styleguide/_block.erb</code>.</p>
+<pre class="erb"><code>&lt;div class=&quot;styleguide-example&quot;&gt;
+
+  &lt;h3&gt;&lt;%= @section.section %&gt; &lt;em&gt;&lt;%= @section.filename %&gt;&lt;/em&gt;&lt;/h3&gt;
+  &lt;div class=&quot;styleguide-description&quot;&gt;
+    &lt;p&gt;&lt;%= @section.description %&gt;&lt;/p&gt;
+    &lt;% if @section.modifiers.any? %&gt;
+      &lt;ul class=&quot;styleguide-modifier&quot;&gt;
+        &lt;% @section.modifiers.each do |modifier| %&gt;
+          &lt;li&gt;&lt;strong&gt;&lt;%= modifier.name %&gt;&lt;/strong&gt; - &lt;%= modifier.description %&gt;&lt;/li&gt;
+        &lt;% end %&gt;
+      &lt;/ul&gt;
+    &lt;% end %&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;styleguide-element&quot;&gt;
+    &lt;%= @example_html %&gt;
+  &lt;/div&gt;
+  &lt;% @section.modifiers.each do |modifier| %&gt;
+    &lt;div class=&quot;styleguide-element styleguide-modifier&quot;&gt;
+      &lt;span class=&quot;styleguide-modifier-name&quot;&gt;&lt;%= modifier.name %&gt;&lt;/span&gt;
+      &lt;%= @example_html.sub('$modifier_class', &quot; #{modifier.class_name}&quot;) %&gt;
+    &lt;/div&gt;
+  &lt;% end %&gt;
+
+&lt;/div&gt;</code></pre>
+<p>In <code>styleguide/buttons.html.erb</code>, I added the following template call:</p>
+<pre class="erb"><code>&lt;% styleguide_block '5.1.1' do %&gt;
+  &lt;button class=&quot;$modifier_class&quot;&gt;Default Button&lt;/button&gt;
+&lt;% end %&gt;</code></pre>
+<p>Note that there is a single <code>button</code> element in the block. This is where the magic happens, because it passes the <code>button</code> to <code>styleguide_block</code>, which imports the <code>styleguide/block</code> partial for the style guide section.</p>
+<p>The partial parses the KSS representation of the documented CSS for the given section of the style guide (5.1.1). It prints out the section number and SCSS filename, adds the documentation text to the page, cycles through each CSS modifier of <code>button</code>, and generates a new <code>&lt;button&gt;</code> tag for each modifier. The resulting section of the style guide will look like this:</p>
+<div class="figure">
+<img src="https://smt.io/images/kss-styleguide.png" alt="Style guide example" />
+<p class="caption">Style guide example</p>
+</div>
+<p>The original basic <code>button</code> element is listed first, followed by accurate examples of all of its documented modifiers. The KSS JavaScript file fakes the pseudo-selectors <code>:hover</code> and <code>:disabled</code>.</p>
+<h2 id="onward">Onward</h2>
+<p>For my project, at least, this is an encouraging proof-of-concept that I plan to take forward. In the meantime, it looks like there is a generous amount of potential in both Middleman and KSS, so be sure to check out each of these projects.</p>
+<p>If you have used either Middleman or KSS, what has your experience been like thus far?</p>
+<h2 id="update-2012-02-04">Update 2012-02-04</h2>
+<p>I have pushed my working code to a <a href="http://github.com/smt/middleman-kss">Github repo</a>. Some of the gems are a little out of date, but I wanted to get my initial version up first, and then work through any issues that might arise from updating libraries. Please let me know what you think; I?m always open to suggestions for improvement.</p>
+<p>After checking out the code, just run <code>middleman</code> like any other Middleman app, and browse to <code>http://localhost:4567</code>.</p>
+    </div>
+</div>
+]]></description>
+    <pubDate>Tue, 10 Jan 2012 15:11:12 UT</pubDate>
+    <guid>https://smt.io/2012/01/10/kss-middleman/</guid>
+    <dc:creator>Stephen Tudor</dc:creator>
+</item>
+
+    </channel>
+</rss>

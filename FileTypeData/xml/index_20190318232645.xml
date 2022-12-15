@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Links on Rob Bevan</title>
+    <link>/categories/links/</link>
+    <description>Recent content in Links on Rob Bevan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-GB</language>
+    <lastBuildDate>Mon, 20 Mar 2006 06:31:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/links/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>del.icio.us rolls out private saving feature (in beta)</title>
+      <link>/post/2006-03-20-delicious-rolls-out-private-saving-feature-in-beta/</link>
+      <pubDate>Mon, 20 Mar 2006 06:31:00 +0000</pubDate>
+      
+      <guid>/post/2006-03-20-delicious-rolls-out-private-saving-feature-in-beta/</guid>
+      <description>From del.ico.us/blog:
+ This is a big step for del.icio.us, but one that I hope will make it more useful. Because del.icio.us is all about sharing and we don?t want to discourage that, we will be watching how this feature impacts the community and will also be experimenting a bit with the UI over the next few weeks.
+ </description>
+    </item>
+    
+    <item>
+      <title>Free software for Symbian S60 phones</title>
+      <link>/post/2005-12-19-free-software-for-symbian-s60-phones/</link>
+      <pubDate>Mon, 19 Dec 2005 11:26:33 +0000</pubDate>
+      
+      <guid>/post/2005-12-19-free-software-for-symbian-s60-phones/</guid>
+      <description>Whilst searching the Opera Mobile forums, I came across this fairly comprehensive list of free software for S60 phones. Some of the links are broken and there&amp;#8217;s nothing on the development side, but a useful list nonetheless.
+Also, if you&amp;#8217;re excited by the prospect of Flash Lite 2.0 announced back in November, you&amp;#8217;ll also be excited to hear from this official forum post that this will be available to developers from Macromedia Labs in January.</description>
+    </item>
+    
+    <item>
+      <title>News from Norway</title>
+      <link>/post/2005-11-13-news-from-norway/</link>
+      <pubDate>Sun, 13 Nov 2005 08:59:34 +0000</pubDate>
+      
+      <guid>/post/2005-11-13-news-from-norway/</guid>
+      <description>In the first in an occasional series of &amp;#8216;linked links&amp;#8217; and by way of tribute to Merlin Mann&amp;#8217;s 5ives here are some great stories from the English version of Aftenposten, Norway&amp;#8217;s &amp;#8216;leading quality daily&amp;#8217; that I&amp;#8217;ve bookmarked at del.icio.us* recently.
+(I&amp;#8217;m half-Norwegian, so I enjoy keeping up-to-date with what&amp;#8217;s happening in the &amp;#8216;motherland&amp;#8217;, but it&amp;#8217;s a great feed nevertheless.)
+Giant boulder closes highway  A boulder weighing roughly 50 tons has shut down highway 715, one of the traffic arteries to Trondheim.</description>
+    </item>
+    
+  </channel>
+</rss>

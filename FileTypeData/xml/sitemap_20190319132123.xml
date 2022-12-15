@@ -1,0 +1,2266 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/log-crlf-injection-with-slf4j/</loc>
+    <lastmod>2017-02-27T04:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/falsehoods-programmers-believe-about-versions/</loc>
+    <lastmod>2015-08-04T10:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/single-repository-one-aggregate/</loc>
+    <lastmod>2015-07-02T02:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/continuous-integration-with-wercker-and-maven/</loc>
+    <lastmod>2015-06-20T14:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/abandoning-all-perl-modules/</loc>
+    <lastmod>2015-05-03T15:26:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/premature-optimization-is-not-evil/</loc>
+    <lastmod>2015-01-07T20:46:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/10-ways-of-implementing-polymorphism/</loc>
+    <lastmod>2014-10-07T04:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/celebrity-nude-scandal-on-security-an-analogy/</loc>
+    <lastmod>2014-09-20T11:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/using-spring-to-create-a-full-rest-api-in-less-than-60-lines-of-code/</loc>
+    <lastmod>2014-09-02T22:42:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/writing-deprecation-notices-in-perl-optionally-with-moose/</loc>
+    <lastmod>2014-07-01T08:49:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/java-privacy-broken-by-design/</loc>
+    <lastmod>2014-06-03T04:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/two-hundred-posts/</loc>
+    <lastmod>2014-05-06T04:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/rest-roa-and-hateoas-often-leads-to-bad-webservice-design/</loc>
+    <lastmod>2014-04-02T04:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/matching-hex-characters-in-a-regex/</loc>
+    <lastmod>2014-03-13T15:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/the-sharedir-problem/</loc>
+    <lastmod>2014-02-27T15:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/advent-good-idea-but-problematic-execution/</loc>
+    <lastmod>2013-12-01T15:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/would-you-miss-autoderef-in-5.20-solutions-in-search-of-a-problem/</loc>
+    <lastmod>2013-11-02T02:13:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/providing-with-providers-and-breadboard/</loc>
+    <lastmod>2013-10-23T05:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/thinking-of-presenting-at-yapcna-2014/</loc>
+    <lastmod>2013-09-02T04:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/podspell-maintained-but-could-use-more-hands/</loc>
+    <lastmod>2013-08-05T04:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/changing-default-behavior-of-filechmod/</loc>
+    <lastmod>2013-07-06T06:03:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/moose-interface-pattern-with-parameter-enforcement/</loc>
+    <lastmod>2013-05-25T13:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/inversion-of-control-principle/</loc>
+    <lastmod>2013-01-03T21:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/override-dns-on-a-linux-system-without-root/</loc>
+    <lastmod>2012-12-06T21:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/businesscybersource-api-is-stabilizing-as-of-0.7.x/</loc>
+    <lastmod>2012-11-07T21:15:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/interface-driven-design/</loc>
+    <lastmod>2012-11-03T05:37:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/uml-tools/</loc>
+    <lastmod>2012-09-05T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/wheres-5.16.1/</loc>
+    <lastmod>2012-07-24T11:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/perl-core-syntax-wishlist-role-support/</loc>
+    <lastmod>2012-06-11T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/new-module-moosexremotehelper-rfc/</loc>
+    <lastmod>2012-06-04T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/perl-core-syntax-wishlist-class-support/</loc>
+    <lastmod>2012-05-28T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/better-exceptions-with-exceptionbase/</loc>
+    <lastmod>2012-05-21T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/perl-core-syntax-wishlist-die-should-die/</loc>
+    <lastmod>2012-05-14T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/perl-core-syntax-wishlist-an-exception-stack/</loc>
+    <lastmod>2012-05-07T22:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/adventures-with-soap-using-perl-part-2--soapdatabuilder-/</loc>
+    <lastmod>2012-03-11T16:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/simple-scripting-cli-with-expect.pm/</loc>
+    <lastmod>2012-03-04T02:04:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/adventures-with-soap-using-perl-part-1--soaplite-/</loc>
+    <lastmod>2011-10-22T15:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/adventures-with-soap-using-perl-part-0--prelude-/</loc>
+    <lastmod>2011-10-15T15:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/experience-with-having-a-non-distzilla-user-contribute-to-a-distzilla-project-its-not-hard-for-them-or-me/</loc>
+    <lastmod>2011-07-05T02:02:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/my-solution-to-not-using-pluginbundleauthor-for-dzil-is-git/</loc>
+    <lastmod>2011-06-05T15:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/regen2-accounts-transferred/</loc>
+    <lastmod>2011-06-05T12:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/testversion-under-maintenance-again/</loc>
+    <lastmod>2011-06-01T09:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/new-beginnings/</loc>
+    <lastmod>2011-05-31T23:48:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/adding-and-deleting-subdomains-with-plesk-on-the-command-line/</loc>
+    <lastmod>2011-04-29T07:31:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/writing-a-simple-distzillatester-test/</loc>
+    <lastmod>2010-11-10T08:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/making-secure-recoverable-passwords--part-3-/</loc>
+    <lastmod>2010-11-03T08:12:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/ubuntu-isnt-linux-whats-a-beginner-anyways/</loc>
+    <lastmod>2010-09-02T16:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/i-need-a-new-favorite-osi-license-or-why-i-dont-like-the-gpl-anymore/</loc>
+    <lastmod>2010-08-06T03:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/some-stack-exchange-sites-id-like-to-see-come-to-fruition/</loc>
+    <lastmod>2010-08-03T12:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/if-you-cant-beat-them-join-them/</loc>
+    <lastmod>2010-08-02T12:53:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/creating-new-projects-with-dzil-new-and-templates/</loc>
+    <lastmod>2010-07-30T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/dont-use-big-words/</loc>
+    <lastmod>2010-07-26T16:54:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/making-re.pl-usable/</loc>
+    <lastmod>2010-07-25T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/making-secure-recoverable-passwords-part-2/</loc>
+    <lastmod>2010-07-23T21:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/annoucing-templatepluginhaml/</loc>
+    <lastmod>2010-07-21T08:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/a-page-for-perl-webhosts/</loc>
+    <lastmod>2010-07-16T00:09:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/i-wish-my-would-go-away/</loc>
+    <lastmod>2010-07-10T21:53:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/git-workflows/</loc>
+    <lastmod>2010-07-02T08:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/announcing-distzillaplugincatalyst/</loc>
+    <lastmod>2010-06-27T21:37:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/solving-code-generation-problems-in-dzil/</loc>
+    <lastmod>2010-06-26T06:16:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/please-dont-use-distzillapluginbundleusername/</loc>
+    <lastmod>2010-06-19T02:05:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/rt-git-workflow/</loc>
+    <lastmod>2010-06-17T20:16:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/test-perl-5.12-on-arch-linux/</loc>
+    <lastmod>2010-06-16T04:23:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/github-renders-pod/</loc>
+    <lastmod>2010-06-14T02:33:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/semver.org-probably-not-compat-with-all-downstream/</loc>
+    <lastmod>2010-06-13T17:57:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/selling-open-source-software-specifically-games/</loc>
+    <lastmod>2010-06-13T01:13:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/i-am-a-explicitive-or-formal-apology-to-rjbs/</loc>
+    <lastmod>2010-06-11T16:23:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/using-ref-to-fix-5-year-old-bug/</loc>
+    <lastmod>2010-06-04T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/testing-tt-templates/</loc>
+    <lastmod>2010-06-03T21:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/submittingpatches-is-better-than-patches-welcome/</loc>
+    <lastmod>2010-05-28T18:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/thats-not-what-im-saying/</loc>
+    <lastmod>2010-05-21T02:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/warranties-what-do-they-have-to-do-with-anything/</loc>
+    <lastmod>2010-05-21T02:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/of-volunteers-and-work/</loc>
+    <lastmod>2010-05-19T22:23:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/google-trashed-my-google-sites-content/</loc>
+    <lastmod>2010-05-18T01:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/gpl-3-and-artistic-2.0-softwarelicense/</loc>
+    <lastmod>2010-05-10T14:34:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/documentation-it-should-be-tddd/</loc>
+    <lastmod>2010-05-09T22:21:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/dont-say-patches-welcome/</loc>
+    <lastmod>2010-05-05T13:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/teaching-perl---week-3---textual-data/</loc>
+    <lastmod>2010-05-03T06:44:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/teaching-perl---week-3---prelude-commentary/</loc>
+    <lastmod>2010-05-02T13:22:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/distzilla-vs-xenoterracide/</loc>
+    <lastmod>2010-04-28T21:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/my-new-lovehate-relationship-with-distzilla/</loc>
+    <lastmod>2010-04-27T08:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/cat-that-displays-tabs-at-4-spaces/</loc>
+    <lastmod>2010-04-25T20:26:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/teaching-perl---week-2--part2-/</loc>
+    <lastmod>2010-04-25T18:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/teaching-perl---week-2/</loc>
+    <lastmod>2010-04-18T22:15:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/teaching-perl---week-1----part2-/</loc>
+    <lastmod>2010-04-18T05:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/teaching-perl---week-1----part1-/</loc>
+    <lastmod>2010-04-13T18:13:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/teaching-perl---part-0---preface/</loc>
+    <lastmod>2010-04-13T16:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/unpaid-volunteer-work-is-a-job/</loc>
+    <lastmod>2010-03-30T13:49:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/say-perl/</loc>
+    <lastmod>2010-03-27T02:08:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/perl-blogger-annoyances/</loc>
+    <lastmod>2010-03-25T16:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/bad-customer-service-from-t-mobile/</loc>
+    <lastmod>2010-03-25T12:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/my-git-remote/</loc>
+    <lastmod>2010-03-24T03:12:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/managing-cpan-on-arch-linux/</loc>
+    <lastmod>2010-03-14T00:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/iron-man-and-introductions/</loc>
+    <lastmod>2010-03-13T21:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/how-not-to-ask-for-help/</loc>
+    <lastmod>2010-03-11T00:22:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/you-should-have-hired-me--just-a-vent-/</loc>
+    <lastmod>2010-03-10T13:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/bash-and-konsole/</loc>
+    <lastmod>2010-02-16T23:06:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/cant-find-googles-openid/</loc>
+    <lastmod>2010-02-14T12:48:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/kde-4-is-finally-ready-for-users/</loc>
+    <lastmod>2010-02-11T14:21:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/empty-function-for-postgresql-in-sql/</loc>
+    <lastmod>2010-01-20T13:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/postgresql-initial-setup-authentication-part-2/</loc>
+    <lastmod>2010-01-19T11:37:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/bypassing-disabled-accounts-with-kdm/</loc>
+    <lastmod>2009-11-16T19:06:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/difference-between-a-database-and-a-database-instance/</loc>
+    <lastmod>2009-11-10T15:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/port-forwarding-in-openwrt/</loc>
+    <lastmod>2009-10-03T19:34:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/quick-sha1sum-with-crypto/</loc>
+    <lastmod>2009-09-22T01:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/fsdaily-security-fail-see-image/</loc>
+    <lastmod>2009-09-05T17:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/postgresql-initial-setup-authentication/</loc>
+    <lastmod>2009-08-24T01:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/adding-a-new-group-to-an-open-shell-without-logging-in-and-out/</loc>
+    <lastmod>2009-08-23T01:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/more-security--better.-wrong/</loc>
+    <lastmod>2009-08-22T19:54:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/openwrt-static-dhcp/</loc>
+    <lastmod>2009-07-06T02:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/to-pointer-or-not-to-pointer-that-is-the-question/</loc>
+    <lastmod>2009-06-27T17:53:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/iptables-browsing-samba-shares/</loc>
+    <lastmod>2009-05-16T00:37:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/git-presentation/</loc>
+    <lastmod>2009-05-11T16:27:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/jeff-atwood-fails-at-password-security/</loc>
+    <lastmod>2009-05-06T19:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/regen2.-dont-care-anymore/</loc>
+    <lastmod>2009-05-05T01:53:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/arch-funtoo-and-regen2s-future/</loc>
+    <lastmod>2009-04-30T11:52:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/regen2-0.9.1.0-released/</loc>
+    <lastmod>2009-04-22T00:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/looking-for-tree-maintainers/</loc>
+    <lastmod>2009-04-21T20:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/regen2-0.9.1.0/</loc>
+    <lastmod>2009-04-14T23:54:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/arch-will-be-testing-again-not-stable/</loc>
+    <lastmod>2009-03-24T05:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/regen2-0.9.1.0-soon/</loc>
+    <lastmod>2009-03-23T02:44:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/postgresql-initial-setup-users-and-databases/</loc>
+    <lastmod>2009-03-18T05:22:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/tree-hasnt-been-updated---why/</loc>
+    <lastmod>2009-03-12T12:54:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/sync_method/</loc>
+    <lastmod>2009-03-07T20:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/to-gentoo-dev-or-not-to-gentoo-dev/</loc>
+    <lastmod>2009-03-04T18:15:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/regen2-maintaining-its-own-openrc/</loc>
+    <lastmod>2009-02-22T20:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/split-package.mask/</loc>
+    <lastmod>2009-02-21T23:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/merged-java-overlay/</loc>
+    <lastmod>2009-02-21T23:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/useexperimental-git-sys-appsportage/</loc>
+    <lastmod>2009-02-19T23:14:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/heritage-paper---cultural-diversity/</loc>
+    <lastmod>2009-02-19T14:34:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/banned-from-funtoo/</loc>
+    <lastmod>2009-02-16T09:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/open-letter-to-dan-robbins---merge-regen2/</loc>
+    <lastmod>2009-02-11T06:15:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/tag-builds/</loc>
+    <lastmod>2009-02-08T01:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/a-snake-in-regen2/</loc>
+    <lastmod>2009-01-30T07:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/forking-funtoo---regen2-project-born/</loc>
+    <lastmod>2009-01-29T02:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/funtoo-news/</loc>
+    <lastmod>2009-01-23T14:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/mpd-overlay/</loc>
+    <lastmod>2009-01-18T10:42:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/funtoo-gets-the-new-perl/</loc>
+    <lastmod>2009-01-09T08:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/sunrises-over-funtoo/</loc>
+    <lastmod>2009-01-06T14:49:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/recovering-from-a-deleted-etc/</loc>
+    <lastmod>2008-12-30T15:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/sync-target-support/</loc>
+    <lastmod>2008-12-21T17:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/--sync-should-be-sync/</loc>
+    <lastmod>2008-12-21T15:32:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/types-of-use-flags/</loc>
+    <lastmod>2008-12-19T15:03:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/download-book-the-ruining-of-a-good-feature/</loc>
+    <lastmod>2008-12-12T13:57:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/regen2-development-has-officially-begun/</loc>
+    <lastmod>2008-12-11T04:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/postgresql-edit-and-syntax-highlighting/</loc>
+    <lastmod>2008-11-29T10:35:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/finally-linux-gets-something-first/</loc>
+    <lastmod>2008-11-17T12:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/the-motherboard-i-want-doesnt-exist/</loc>
+    <lastmod>2008-11-08T05:04:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/accept-input-from-stdin/</loc>
+    <lastmod>2008-10-30T02:11:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/minimum-permissions-and-privilegdges/</loc>
+    <lastmod>2008-10-29T00:53:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/pkgcore-the-victor/</loc>
+    <lastmod>2008-10-28T01:22:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/graphical-package-manager/</loc>
+    <lastmod>2008-10-26T00:51:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/why-not-sabayon/</loc>
+    <lastmod>2008-10-25T22:12:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/more-than-3-levels-of-stable/</loc>
+    <lastmod>2008-10-24T11:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/versioned-etc/</loc>
+    <lastmod>2008-10-22T10:27:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/dan-robbins-tarballs/</loc>
+    <lastmod>2008-10-21T11:17:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/no-more-stabalizing-rx-one-after-another/</loc>
+    <lastmod>2008-10-20T20:06:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/buildpkg/</loc>
+    <lastmod>2008-10-19T06:31:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/kde-overlay-svn-now-requires-paludis/</loc>
+    <lastmod>2008-10-18T17:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/pkgcore--paludis/</loc>
+    <lastmod>2008-10-17T17:35:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/emerge-ng-multiple-trees/</loc>
+    <lastmod>2008-10-14T23:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/emerge-ng-and-vcs-builds/</loc>
+    <lastmod>2008-10-14T01:22:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/what-is-regen2-linux/</loc>
+    <lastmod>2008-10-10T19:35:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/emerge-ng/</loc>
+    <lastmod>2008-10-09T16:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/tco-windows-vs-linux-part-1-a-linux-professonal/</loc>
+    <lastmod>2008-07-20T20:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/the-real-problem-with-windows-is-not-windows/</loc>
+    <lastmod>2008-07-05T12:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/debian-and-openssl-blunder---goodbye-debian/</loc>
+    <lastmod>2008-05-22T23:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/dvorak-vs-manufacturers/</loc>
+    <lastmod>2008-05-12T21:44:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/cant-reach-google.com-for-at-least-4-hours/</loc>
+    <lastmod>2008-05-06T23:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/ext3-defaults-update-and-grub-breaks/</loc>
+    <lastmod>2008-05-01T17:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/recipe-for-success/</loc>
+    <lastmod>2008-04-29T13:13:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/making-secure-recoverable-passwords/</loc>
+    <lastmod>2008-04-27T14:08:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/tracking-your-home-directory-with-a-vcs/</loc>
+    <lastmod>2008-04-26T19:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/more-advice-to-a-young-developer/</loc>
+    <lastmod>2008-04-25T15:39:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/poor-support---read-what-i-said/</loc>
+    <lastmod>2008-04-25T10:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/firefox-3-beta5/</loc>
+    <lastmod>2008-04-23T09:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/busybox-vi/</loc>
+    <lastmod>2008-04-22T09:07:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/seagate-kills-linux-support/</loc>
+    <lastmod>2008-04-20T20:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/open-source--it-or-not/</loc>
+    <lastmod>2008-04-18T19:34:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/rssatom-bulk/</loc>
+    <lastmod>2008-04-18T19:02:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/whats-wrong-with-open-source-developers/</loc>
+    <lastmod>2008-04-14T23:36:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/maintainance-problem/</loc>
+    <lastmod>2008-04-13T00:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/would-you-steal-a-buck-how-about-a-can-of-soda/</loc>
+    <lastmod>2008-04-12T21:22:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/msysgit-shouldnt-be-used/</loc>
+    <lastmod>2008-04-11T23:49:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/iptables-for-the-average-desktop-user/</loc>
+    <lastmod>2008-04-08T23:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/tagged---a-site-that-doesnt-get-it-right/</loc>
+    <lastmod>2008-04-04T19:07:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/msys---native-nix-on-windows/</loc>
+    <lastmod>2008-04-02T21:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/really-nice/</loc>
+    <lastmod>2008-04-02T09:36:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/what-hack-to-do-first/</loc>
+    <lastmod>2008-04-02T08:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/perl-by-example-not-on-oreillys-safari/</loc>
+    <lastmod>2008-04-01T18:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/just-answer-the-question/</loc>
+    <lastmod>2008-04-01T13:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/blogger-needs-better-contact-info/</loc>
+    <lastmod>2008-03-31T09:41:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/wiped-out-svn/</loc>
+    <lastmod>2008-03-31T04:26:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/how-to-disagree/</loc>
+    <lastmod>2008-03-28T22:57:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/whats-in-my-name-xenoterracide/</loc>
+    <lastmod>2008-03-27T01:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/regen2-linux/</loc>
+    <lastmod>2008-03-26T22:33:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/new-version-of-selinux-released/</loc>
+    <lastmod>2008-03-25T18:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/unix-toolbox/</loc>
+    <lastmod>2008-03-24T17:49:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/usas-secuity-is-at-risk...-from-itself/</loc>
+    <lastmod>2008-03-21T17:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/favorites/</loc>
+    <lastmod>2008-03-18T20:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/dawn-of-war-soulstorm/</loc>
+    <lastmod>2008-03-12T20:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/10000-b.c/</loc>
+    <lastmod>2008-03-09T14:33:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/what-open-source-operating-systems-still-need/</loc>
+    <lastmod>2008-03-07T15:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/the-eye-movie/</loc>
+    <lastmod>2008-02-26T12:36:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/anti-depressants-no-better-than-placebo/</loc>
+    <lastmod>2008-02-26T11:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/i-have-an-account/</loc>
+    <lastmod>2008-02-22T18:12:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/participation-points/</loc>
+    <lastmod>2008-02-20T19:51:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/jumper-movie/</loc>
+    <lastmod>2008-02-15T16:35:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/modern-bigotry----black-history-month/</loc>
+    <lastmod>2008-02-15T16:12:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/0.9.1/index.0/</loc>
+    <lastmod>2009-04-22T00:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/accounts/</loc>
+    <lastmod>2009-11-16T19:06:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/adobe/</loc>
+    <lastmod>2008-11-17T12:56:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/aggregator/</loc>
+    <lastmod>2010-03-27T02:08:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/analogy/</loc>
+    <lastmod>2009-11-10T15:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/anti-competetive/</loc>
+    <lastmod>2008-04-04T19:07:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/arch/</loc>
+    <lastmod>2010-03-14T00:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/arch-linux/</loc>
+    <lastmod>2010-06-16T04:23:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/aur/</loc>
+    <lastmod>2010-03-13T21:59:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/authentication/</loc>
+    <lastmod>2010-01-19T11:37:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/baker/</loc>
+    <lastmod>2010-04-18T22:15:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/bash/</loc>
+    <lastmod>2010-04-25T20:26:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/blogger/</loc>
+    <lastmod>2008-03-31T09:41:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/books/</loc>
+    <lastmod>2010-04-13T16:10:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/breadboard/</loc>
+    <lastmod>2013-10-23T05:56:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/bugs/</loc>
+    <lastmod>2010-06-17T20:16:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/business/</loc>
+    <lastmod>2008-04-25T10:20:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/businesscybersource/</loc>
+    <lastmod>2012-11-07T21:15:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/c/</loc>
+    <lastmod>2009-06-27T17:53:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/c&#43;&#43;/</loc>
+    <lastmod>2009-09-22T01:59:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/</loc>
+    <lastmod>2017-02-27T04:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/catalyst-framework/</loc>
+    <lastmod>2010-06-27T21:37:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/cell-provider/</loc>
+    <lastmod>2010-03-25T12:55:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/cfug/</loc>
+    <lastmod>2009-05-11T16:27:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/cgi/</loc>
+    <lastmod>2010-07-21T08:10:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/code-example/</loc>
+    <lastmod>2009-09-22T01:59:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/commands/</loc>
+    <lastmod>2011-04-29T07:31:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/community/</loc>
+    <lastmod>2010-09-02T16:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/composite/</loc>
+    <lastmod>2012-06-04T06:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/concepts/</loc>
+    <lastmod>2009-11-10T15:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/constraints/</loc>
+    <lastmod>2010-01-20T13:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/continous-integration/</loc>
+    <lastmod>2015-06-20T14:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/convention/</loc>
+    <lastmod>2010-03-24T03:12:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/cpan/</loc>
+    <lastmod>2015-05-03T15:26:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/cpanplus/</loc>
+    <lastmod>2010-03-14T00:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/cpanplusdistarch/</loc>
+    <lastmod>2010-03-14T00:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/cryptography/</loc>
+    <lastmod>2010-11-03T08:12:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/curriculum/</loc>
+    <lastmod>2010-05-03T06:44:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/data-transfer-object/</loc>
+    <lastmod>2012-06-04T06:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/database/</loc>
+    <lastmod>2010-08-03T12:20:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/dependency-injection/</loc>
+    <lastmod>2013-10-23T05:56:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/deprecation/</loc>
+    <lastmod>2014-07-01T08:49:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/design-patterns/</loc>
+    <lastmod>2015-07-02T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/develrepl/</loc>
+    <lastmod>2010-07-25T18:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/dhcp/</loc>
+    <lastmod>2009-07-06T02:47:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/distzilla/</loc>
+    <lastmod>2011-07-05T02:02:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/distzillatester/</loc>
+    <lastmod>2010-11-10T08:59:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/dns/</loc>
+    <lastmod>2012-12-06T21:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/documentation/</loc>
+    <lastmod>2008-03-24T17:49:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/domain-driven-design/</loc>
+    <lastmod>2015-07-02T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/downtime/</loc>
+    <lastmod>2009-03-12T12:54:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/emerge-ng/</loc>
+    <lastmod>2009-02-08T01:18:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/entrepreneurship/</loc>
+    <lastmod>2010-06-13T01:13:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/example/</loc>
+    <lastmod>2009-11-10T15:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/exceptions/</loc>
+    <lastmod>2012-05-21T06:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/expect/</loc>
+    <lastmod>2012-03-04T02:04:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/exploit/</loc>
+    <lastmod>2017-02-27T04:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/features/</loc>
+    <lastmod>2008-03-31T09:41:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/filechmod/</loc>
+    <lastmod>2013-07-06T06:03:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/flash/</loc>
+    <lastmod>2008-11-17T12:56:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/forums/</loc>
+    <lastmod>2010-08-03T12:20:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/functions/</loc>
+    <lastmod>2010-01-20T13:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/funtoo/</loc>
+    <lastmod>2010-05-28T18:47:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/funtoo-newsletter/</loc>
+    <lastmod>2009-01-23T14:18:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/gentoo/</loc>
+    <lastmod>2009-03-04T18:15:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/git/</loc>
+    <lastmod>2011-07-05T02:02:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/github/</loc>
+    <lastmod>2010-03-24T03:12:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/global/</loc>
+    <lastmod>2010-03-27T02:08:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/google/</loc>
+    <lastmod>2010-05-18T01:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/gpl/</loc>
+    <lastmod>2010-08-06T03:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/guide/</loc>
+    <lastmod>2009-03-18T05:22:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/hall-of-shame/</loc>
+    <lastmod>2010-05-18T01:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/haml/</loc>
+    <lastmod>2010-07-21T08:10:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/hardware/</loc>
+    <lastmod>2008-11-08T05:04:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/hateoas/</loc>
+    <lastmod>2014-04-02T04:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/help/</loc>
+    <lastmod>2010-08-03T12:20:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/howto/</loc>
+    <lastmod>2010-02-16T23:06:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/http/</loc>
+    <lastmod>2014-04-02T04:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/idea/</loc>
+    <lastmod>2010-07-16T00:09:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/install/</loc>
+    <lastmod>2010-03-14T00:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/intel/</loc>
+    <lastmod>2008-11-08T05:04:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/interfaces/</loc>
+    <lastmod>2014-06-03T04:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/inversion-of-control/</loc>
+    <lastmod>2013-10-23T05:56:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/iptables/</loc>
+    <lastmod>2009-10-03T19:34:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/ironman/</loc>
+    <lastmod>2015-08-04T10:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/java/</loc>
+    <lastmod>2017-02-27T04:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/kde/</loc>
+    <lastmod>2010-02-16T23:06:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/kde4/</loc>
+    <lastmod>2010-02-16T23:06:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/kdm/</loc>
+    <lastmod>2009-11-16T19:06:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/konsole/</loc>
+    <lastmod>2010-02-16T23:06:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/language-design/</loc>
+    <lastmod>2010-07-10T21:53:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/linux/</loc>
+    <lastmod>2012-12-06T21:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/linuxtips/</loc>
+    <lastmod>2008-04-08T23:20:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/maintainance-required/</loc>
+    <lastmod>2008-04-13T00:18:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/maven/</loc>
+    <lastmod>2015-06-20T14:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/modern-perl/</loc>
+    <lastmod>2010-07-25T18:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/moose/</loc>
+    <lastmod>2014-07-01T08:49:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/movie/</loc>
+    <lastmod>2008-03-09T14:33:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/name/</loc>
+    <lastmod>2008-03-27T01:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/networking/</loc>
+    <lastmod>2012-12-06T21:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/object-oriented-design/</loc>
+    <lastmod>2015-07-02T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/open-source/</loc>
+    <lastmod>2010-08-06T03:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/openid/</loc>
+    <lastmod>2010-02-14T12:48:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/openwrt/</loc>
+    <lastmod>2009-10-03T19:34:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/opinion/</loc>
+    <lastmod>2010-05-05T13:24:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/osi/</loc>
+    <lastmod>2010-08-06T03:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/overlay/</loc>
+    <lastmod>2009-02-21T23:24:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/packages/</loc>
+    <lastmod>2009-01-30T07:01:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/paludis/</loc>
+    <lastmod>2008-10-28T01:22:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/pam/</loc>
+    <lastmod>2009-11-16T19:06:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/passwords/</loc>
+    <lastmod>2010-11-03T08:12:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/patches/</loc>
+    <lastmod>2010-06-17T20:16:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/perl/</loc>
+    <lastmod>2015-05-03T15:26:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/perl-5/index.12/</loc>
+    <lastmod>2010-06-16T04:23:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/perl-syntax-wishlist/</loc>
+    <lastmod>2012-06-11T06:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/pkgcore/</loc>
+    <lastmod>2008-10-28T01:22:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/plesk/</loc>
+    <lastmod>2011-04-29T07:31:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/pms/</loc>
+    <lastmod>2008-12-21T17:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/pod/</loc>
+    <lastmod>2010-06-14T02:33:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/podspell/</loc>
+    <lastmod>2014-02-27T15:47:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/pointers/</loc>
+    <lastmod>2009-06-27T17:53:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/policy/</loc>
+    <lastmod>2010-05-28T18:47:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/polymorphism/</loc>
+    <lastmod>2014-10-07T04:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/portage/</loc>
+    <lastmod>2009-03-07T20:18:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/postgresql/</loc>
+    <lastmod>2010-03-11T00:22:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/post/</loc>
+    <lastmod>2017-02-27T04:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/presentation/</loc>
+    <lastmod>2009-05-11T16:27:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/procedures/</loc>
+    <lastmod>2010-01-20T13:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/programming/</loc>
+    <lastmod>2015-01-07T20:46:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/provider-pattern/</loc>
+    <lastmod>2013-10-23T05:56:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/psql/</loc>
+    <lastmod>2008-11-29T10:35:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/python/</loc>
+    <lastmod>2009-01-30T07:01:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/qa/</loc>
+    <lastmod>2008-05-06T23:56:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/question/</loc>
+    <lastmod>2010-04-25T18:41:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/rant/</loc>
+    <lastmod>2015-01-07T20:46:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/regen2/</loc>
+    <lastmod>2011-06-05T12:56:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/regexp/</loc>
+    <lastmod>2014-03-13T15:41:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/release/</loc>
+    <lastmod>2009-04-22T00:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/remote-facade/</loc>
+    <lastmod>2012-06-04T06:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/repository/</loc>
+    <lastmod>2015-07-02T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/rest/</loc>
+    <lastmod>2014-04-02T04:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/review/</loc>
+    <lastmod>2010-04-27T08:30:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/router/</loc>
+    <lastmod>2009-10-03T19:34:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/rt/</loc>
+    <lastmod>2010-06-17T20:16:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/safaribooksonline/</loc>
+    <lastmod>2008-12-12T13:57:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/samba/</loc>
+    <lastmod>2009-05-16T00:37:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/school/</loc>
+    <lastmod>2010-04-18T05:29:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/screenname/</loc>
+    <lastmod>2008-03-27T01:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/security/</loc>
+    <lastmod>2017-02-27T04:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/selinux/</loc>
+    <lastmod>2008-03-25T18:20:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/semantic/</loc>
+    <lastmod>2010-06-13T17:57:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/service-locator-pattern/</loc>
+    <lastmod>2013-10-23T05:56:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/sh/</loc>
+    <lastmod>2010-04-25T20:26:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/shell/</loc>
+    <lastmod>2010-04-25T20:26:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/soap/</loc>
+    <lastmod>2012-03-11T16:59:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/soapdatabuilder/</loc>
+    <lastmod>2012-03-11T16:59:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/soaplite/</loc>
+    <lastmod>2012-06-04T06:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/software-license/</loc>
+    <lastmod>2010-08-06T03:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/solid/</loc>
+    <lastmod>2014-06-03T04:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/spring/</loc>
+    <lastmod>2015-07-02T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/spring-boot/</loc>
+    <lastmod>2017-02-27T04:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/spring-data/</loc>
+    <lastmod>2015-07-02T02:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/sql/</loc>
+    <lastmod>2010-03-11T00:22:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/sql-server/</loc>
+    <lastmod>2010-03-11T00:22:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/stackexchange/</loc>
+    <lastmod>2010-09-02T16:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/support/</loc>
+    <lastmod>2008-05-06T23:56:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/t-mobile/</loc>
+    <lastmod>2010-03-25T12:55:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/tabs/</loc>
+    <lastmod>2010-02-16T23:06:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/tabs-vs-spaces/</loc>
+    <lastmod>2010-04-25T20:26:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/tdd/</loc>
+    <lastmod>2010-06-03T21:18:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/teaching-perl/</loc>
+    <lastmod>2010-05-03T06:44:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/template-toolkit/</loc>
+    <lastmod>2010-07-21T08:10:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/templatepluginhaml/</loc>
+    <lastmod>2010-07-21T08:10:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/templates/</loc>
+    <lastmod>2010-07-21T08:10:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/templateshowstartstop/</loc>
+    <lastmod>2010-06-04T12:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/test/</loc>
+    <lastmod>2010-06-03T21:18:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/testversion/</loc>
+    <lastmod>2011-06-01T09:50:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/texttemplate/</loc>
+    <lastmod>2010-07-30T18:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/tips/</loc>
+    <lastmod>2010-07-25T18:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/translation/</loc>
+    <lastmod>2010-03-27T02:08:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/tree/</loc>
+    <lastmod>2009-04-21T20:01:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/tt/</loc>
+    <lastmod>2010-06-04T12:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/tutorial/</loc>
+    <lastmod>2010-04-28T21:32:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/typepad/</loc>
+    <lastmod>2010-02-14T12:48:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/uml/</loc>
+    <lastmod>2012-09-05T06:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/unix/</loc>
+    <lastmod>2010-09-02T16:45:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/unpopular-opinion/</loc>
+    <lastmod>2010-07-10T21:53:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/user-interface/</loc>
+    <lastmod>2010-08-03T12:20:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/users/</loc>
+    <lastmod>2008-07-05T12:39:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/versions/</loc>
+    <lastmod>2010-06-13T17:57:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/video-games/</loc>
+    <lastmod>2008-03-12T20:30:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/vim/</loc>
+    <lastmod>2008-11-29T10:35:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/warranty/</loc>
+    <lastmod>2010-05-21T02:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/web-services/</loc>
+    <lastmod>2014-04-02T04:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/wercker/</loc>
+    <lastmod>2015-06-20T14:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/who-am-i/</loc>
+    <lastmod>2010-03-13T21:59:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/windows/</loc>
+    <lastmod>2008-07-20T20:10:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/wishlist/</loc>
+    <lastmod>2010-07-10T21:53:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/xenoterracide/</loc>
+    <lastmod>2008-03-27T01:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/xmlcompilesoap/</loc>
+    <lastmod>2012-11-07T21:15:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/yapc/</loc>
+    <lastmod>2013-09-02T04:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.xenoterracide.com/tags/zsh/</loc>
+    <lastmod>2010-04-25T20:26:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE MODE SYSTEM "xmode.dtd">
+
+<MODE>
+  <PROPS>
+    <PROPERTY NAME="indentOpenBrackets" VALUE="{" />
+    <PROPERTY NAME="indentCloseBrackets" VALUE="}" />
+    <PROPERTY NAME="lineUpClosingBracket" VALUE="true" />
+    <PROPERTY NAME="lineComment" VALUE="//" />
+    <PROPERTY NAME="commentStart" VALUE="/*" />
+    <PROPERTY NAME="commentEnd" VALUE="*/" />
+    <PROPERTY NAME="noTabs" VALUE="true" />
+    <PROPERTY NAME="tabSize" VALUE="2" />
+    <PROPERTY NAME="indentSize" VALUE="2" />
+  </PROPS>
+  
+  <RULES ESCAPE="\" IGNORE_CASE="FALSE" HIGHLIGHT_DIGITS="TRUE" DIGIT_RE="\d+">
+    <SPAN TYPE="LITERAL1">
+      <BEGIN>"</BEGIN>
+      <END>"</END>
+    </SPAN>
+
+    <EOL_SPAN TYPE="COMMENT1">//</EOL_SPAN>
+	
+    <SEQ TYPE="COMMENT1">/**/</SEQ>
+    <SPAN TYPE="COMMENT1">
+      <BEGIN>/*</BEGIN>
+      <END>*/</END>
+    </SPAN>
+	
+	<MARK_PREVIOUS TYPE="FUNCTION" MATCH_TYPE="OPERATOR">(</MARK_PREVIOUS>
+	
+	<SEQ TYPE="OPERATOR">{</SEQ>
+	<SEQ TYPE="OPERATOR">}</SEQ>
+	<SEQ TYPE="OPERATOR">(</SEQ>
+	<SEQ TYPE="OPERATOR">)</SEQ>
+	
+	<SEQ TYPE="OPERATOR">&lt;</SEQ>
+	<SEQ TYPE="OPERATOR">=</SEQ>
+	<SEQ TYPE="OPERATOR">=&gt;</SEQ>
+	
+	<SEQ TYPE="OPERATOR">+</SEQ>
+	<SEQ TYPE="OPERATOR">-</SEQ>
+	<SEQ TYPE="OPERATOR">*</SEQ>
+	<SEQ TYPE="OPERATOR">/</SEQ>
+	<SEQ TYPE="OPERATOR">!</SEQ>
+	
+    <KEYWORDS>
+		<KEYWORD1>class</KEYWORD1>
+		<KEYWORD1>while</KEYWORD1>
+		<KEYWORD1>native</KEYWORD1>
+		<KEYWORD1>case</KEYWORD1>
+		<KEYWORD1>else</KEYWORD1>
+		<KEYWORD1>new</KEYWORD1>
+		<KEYWORD1>if</KEYWORD1>
+		<KEYWORD1>override</KEYWORD1>
+		<KEYWORD1>extends</KEYWORD1>
+		<KEYWORD1>def</KEYWORD1>
+		<KEYWORD1>var</KEYWORD1>
+		<KEYWORD1>match</KEYWORD1>
+		
+		<KEYWORD2>Object</KEYWORD2>
+		<KEYWORD2>String</KEYWORD2>
+		<KEYWORD2>Integer</KEYWORD2>
+		<KEYWORD2>Boolean</KEYWORD2>
+		
+		<KEYWORD3>Array</KEYWORD3>
+		<KEYWORD3>IO</KEYWORD3>
+		
+		<LITERAL3>this</LITERAL3>
+		<LITERAL3>super</LITERAL3>
+		<LITERAL3>false</LITERAL3>
+		<LITERAL3>true</LITERAL3>
+		<LITERAL3>null</LITERAL3>
+		
+		<OPERATOR>eq</OPERATOR>
+    </KEYWORDS>
+  </RULES>
+</MODE>
+

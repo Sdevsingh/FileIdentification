@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<application xmlns="http://ns.adobe.com/air/application/1.1">
+    <id>com.air-growl.client-tester</id>
+    <version>0.1</version>
+    <name>Air Growl</name>
+    <filename>AirGrowl</filename>
+    <initialWindow>
+        <content>client_tester.html</content>
+        <visible>true</visible>
+        <resizable>true</resizable>
+        <width>300</width>
+        <height>200</height>
+    </initialWindow>
+    <allowBrowserInvocation>true</allowBrowserInvocation>
+</application>

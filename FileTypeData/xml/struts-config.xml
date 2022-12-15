@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+  <form-beans>
+
+		<form-bean name="loginForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="username" type="java.lang.String"/>
+			<form-property initial="" name="password" type="java.lang.String"/>
+			<form-property initial="false" name="admin" type="java.lang.Boolean"/>
+			<form-property initial="false" name="persist" type="java.lang.Boolean"/>
+		</form-bean>
+
+   <form-bean name="displayForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+
+			<form-property name="id" type="java.lang.Integer"/>
+			<form-property name="image_id" type="java.lang.Integer"/>
+		</form-bean>
+
+    <form-bean name="searchForm" type="net.spy.photo.struts.SearchForm"/>
+
+   <form-bean name="cursorForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+
+			<form-property name="startOffset" type="java.lang.Integer"/>
+			<form-property name="whichCursor" type="java.lang.String"/>
+		</form-bean>
+
+    <form-bean name="uploadForm" type="net.spy.photo.struts.UploadForm"/>
+
+    <form-bean name="savedSearchForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+
+			<form-property name="searchId" type="java.lang.Integer"/>
+		</form-bean>
+
+    <form-bean name="variantForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+
+			<form-property name="origId" type="java.lang.Integer"/>
+			<form-property name="variantId" type="java.lang.Integer"/>
+		</form-bean>
+
+    <form-bean name="saveSearchForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+
+			<form-property name="name" type="java.lang.String"/>
+			<form-property name="search" type="java.lang.String"/>
+		</form-bean>
+
+    <form-bean name="newUserForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+
+			<form-property name="username" type="java.lang.String"/>
+			<form-property name="password" type="java.lang.String"/>
+			<form-property name="pass2" type="java.lang.String"/>
+			<form-property name="realname" type="java.lang.String"/>
+			<form-property name="email" type="java.lang.String"/>
+			<form-property name="profile" type="java.lang.String"/>
+		</form-bean>
+
+    <form-bean name="setSizeForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+
+			<form-property name="dims" type="java.lang.String"/>
+		</form-bean>
+
+    <form-bean name="changePWForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+
+			<form-property name="oldpw" type="java.lang.String"/>
+			<form-property name="newpw1" type="java.lang.String"/>
+			<form-property name="newpw2" type="java.lang.String"/>
+		</form-bean>
+
+    <form-bean name="forgotPWForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+
+			<form-property name="username" type="java.lang.String"/>
+		</form-bean>
+
+    <form-bean name="commentForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+
+			<form-property name="imageId" type="java.lang.Integer"/>
+			<form-property name="comment" type="java.lang.String"/>
+		</form-bean>
+
+    <form-bean name="addToGalleryForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+
+			<form-property name="id" type="java.lang.Integer"/>
+		</form-bean>
+
+    <form-bean name="saveGalleryForm"
+			type="net.spy.photo.struts.SaveGalleryForm"/>
+    <form-bean name="emptyForm"
+			type="net.spy.photo.struts.EmptyForm"/>
+
+		<form-bean name="sessionForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+
+			<form-property name="id" type="java.lang.String"/>
+		</form-bean>
+
+		<form-bean name="setuidForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="user" type="java.lang.String"/>
+		</form-bean>
+
+		<!-- Admin beans -->
+		<form-bean name="adminUserForm" type="net.spy.photo.struts.AdminUserForm"/>
+		<form-bean name="adminCatForm"
+			type="net.spy.photo.struts.AdminCategoryForm"/>
+		<form-bean name="adminNewProfileForm"
+			type="net.spy.photo.struts.AdminNewProfileForm"/>
+
+		<form-bean name="bulkKwForm"
+			type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="match" type="java.lang.String"/>
+			<form-property name="modify" type="java.lang.String"/>
+		</form-bean>
+  </form-beans>
+
+	<global-forwards type="org.apache.struts.action.ActionForward">
+		<forward name="notfound" path="error.404"/>
+		<forward name="forbidden" path="error.403"/>
+	</global-forwards>
+
+  <action-mappings>
+
+	<!-- Login -->
+	<action    path="/login"
+		type="net.spy.photo.struts.LoginAction"
+		input="top.credform"
+		scope="request"
+		name="loginForm">
+		<forward name="next" path="/index.do" redirect="true" />
+	</action>
+
+	<!-- Logout -->
+	<action    path="/logout"
+		type="net.spy.photo.struts.LogoutAction">
+		<forward name="next" path="/index.do" redirect="true" />
+	</action>
+
+	<!-- How to handle displays -->
+	<action
+		path="/display"
+		name="displayForm"
+		scope="request"
+		type="net.spy.photo.struts.GetImageDataAction">
+		<forward name="next" path="top.display"/>
+	</action>
+
+	<action path="/refreshDisplay" type="net.spy.photo.struts.SetDisplayRefresh">
+		<forward name="next" path="/display.do"/>
+	</action>
+
+	<!-- Annotation form -->
+	<action
+		path="/annotateForm"
+		name="displayForm"
+		scope="request"
+		type="net.spy.photo.struts.GetImageDataAction">
+		<forward name="next" path="top.annotateForm"/>
+	</action>
+
+	<!-- Change password -->
+	<action    path="/changepw"
+		type="net.spy.photo.struts.ChangePWAction"
+		input="top.changepw"
+		scope="request"
+		name="changePWForm">
+		<forward name="next" path="/index.do" />
+	</action>
+
+	<!-- Forgot password -->
+	<action    path="/forgotpw"
+		type="net.spy.photo.struts.ForgotPWAction"
+		input="top.credform"
+		scope="request"
+		name="forgotPWForm">
+		<forward name="next" path="top.forgotPwOut" />
+	</action>
+
+  <!-- Add a new comment -->
+  <action path="/addcomment"
+    type="net.spy.photo.struts.CommentAction"
+    input="top.commentInput"
+    name="commentForm">
+		<forward name="next" path="/display.do" />
+  </action>
+
+	<!-- Set the optimal image size. -->
+	<action path="/setviewsize"
+		type="net.spy.photo.struts.SetSizeAction"
+		input="top.sizeform"
+		scope="request"
+		name="setSizeForm">
+		<forward name="next" path="/index.do"/>
+	</action>
+
+	<!-- Searches -->
+	<!-- This action causes the form to reset -->
+	<action path="/search"
+		input="top.search"
+		name="searchForm"
+		forward="/int/search.do">
+	</action>
+
+	<!-- This actually performs the search, but does not reset the form -->
+	<action path="/int/search"
+		type="net.spy.photo.struts.SearchAction"
+		input="top.search"
+		name="searchForm">
+
+		<forward name="next" path="/filterSearch.do" />
+		<forward name="showResults" path="/filterSearch.do" />
+		<!-- Backwards compatibility -->
+		<forward name="success" path="/filterSearch.do" />
+	</action>
+
+	<action path="/savedSearch"
+		type="net.spy.photo.struts.GetSavedSearchAction"
+		input="/index.do" scope="request"
+		name="savedSearchForm">
+
+		<!-- Send it on to the search class -->
+		<forward name="next" path="/int/search.do" />
+	</action>
+
+	<action path="/x/search"
+		type="net.spy.photo.struts.SearchAction"
+		name="searchForm">
+
+		<forward name="next" path="/export" />
+	</action>
+
+	<action path="/deleteSearch"
+		type="net.spy.photo.struts.DeleteSearchAction"
+		roles="admin" scope="request"
+		name="savedSearchForm"/>
+
+	<action path="/createVariant"
+		type="net.spy.photo.struts.LinkVariantAction"
+		roles="admin" scope="request"
+		name="variantForm"/>
+	<action path="/deleteVariant"
+		type="net.spy.photo.struts.UnlinkVariantAction"
+		roles="admin" scope="request"
+		name="variantForm"/>
+
+	<!-- Search result cursor movement -->
+	<action    path="/nextresults"
+		type="net.spy.photo.struts.CursorAction"
+		scope="request"
+		name="cursorForm">
+		<forward name="next" path="top.searchResults" />
+	</action>
+
+	<action path="/reverseSearch"
+		type="net.spy.photo.struts.MappedFilterAction"
+		className="net.spy.photo.struts.FilterMapping"
+		scope="request">
+		<set-property property="filterClass"
+			value="net.spy.photo.filter.ReverseFilter"/>
+		<forward name="next" path="top.searchResults" />
+	</action>
+
+	<!-- Search to RSS -->
+	<action path="/rss"
+		type="net.spy.photo.struts.SearchAction"
+		scope="request" name="searchForm">
+		<forward name="next" path="/rss"/>
+	</action>
+	<action path="/auth/rss"
+		type="net.spy.photo.struts.SearchAction"
+		scope="request" name="searchForm">
+		<forward name="next" path="/rss"/>
+	</action>
+
+	<!-- Search result cursor movement -->
+	<action    path="/listcomments"
+		type="net.spy.photo.struts.ListCommentsAction">
+		<forward name="next" path="/nextcomments.do" />
+	</action>
+
+	<!-- Search result cursor movement -->
+	<action    path="/nextcomments"
+		type="net.spy.photo.struts.CursorAction"
+		scope="request"
+		name="cursorForm">
+		<forward name="next" path="top.comments" />
+	</action>
+
+	<!-- Search result filtering -->
+	<action path="/filterSearch"
+		type="net.spy.photo.struts.SearchFilterAction"
+		name="searchForm">
+		<forward name="next" path="/nextresults.do"/>
+		<forward name="showResults" path="/refreshDisplay.do?relativeTo=0" />
+		<!-- Backwards compatibility -->
+		<forward name="success" path="/nextresults.do" />
+	</action>
+
+	<!-- Image uploads -->
+	<action path="/upload"
+		type="net.spy.photo.struts.UploadAction"
+		input="top.addImage"
+		name="uploadForm">
+		<forward name="next" path="top.addImage" />
+	</action>
+
+	<!-- Saving a search. -->
+	<action path="/savesearch"
+		type="net.spy.photo.struts.SaveSearchAction"
+		scope="request"
+		name="saveSearchForm">
+		<forward name="next" redirect="true" path="/nextresults.do"/>
+	</action>
+
+	<!-- New user self-creation -->
+	<action    path="/newuser"
+		type="net.spy.photo.struts.NewUserAction"
+		input="top.newUserForm"
+		scope="request"
+		name="newUserForm">
+		<forward name="next" path="/index.do" />
+	</action>
+
+	<!-- Add a new image to a gallery -->
+	<action path="/addToGallery"
+		type="net.spy.photo.struts.AddToGalleryAction"
+		scope="request"
+		name="addToGalleryForm">
+		<forward name="next" path="/display.do" />
+	</action>
+
+	<!-- Save a gallery -->
+	<action path="/saveGallery"
+		type="net.spy.photo.struts.SaveGalleryAction"
+		input="top.saveGallery"
+		scope="request"
+		name="saveGalleryForm">
+		<forward name="next" path="/index.do" />
+	</action>
+
+	<!-- View the images a given session has seen as a search results object.  -->
+	<action path="/viewSession"
+		type="net.spy.photo.struts.ViewSessionAction"
+		input="top.sessions"
+		roles="admin,subadmin"
+		scope="request"
+		name="sessionForm">
+
+		<forward name="next" path="/reverseSearch.do"/>
+	</action>
+
+	<action path="/matchKeyword"
+		type="net.spy.photo.struts.KeywordCompletionAction"
+		name="emptyForm">
+		<forward name="next" path="top.kwSuggest"/>
+	</action>
+
+	<action path="/kwCloud"
+		type="net.spy.photo.struts.KeywordCloudAction"
+		name="emptyForm">
+		<forward name="next" path="top.kwCloud"/>
+	</action>
+
+	<!-- ***************************************************************** -->
+	<!-- Admin stuff -->
+	<!-- ***************************************************************** -->
+
+	<action    path="/setuid"
+		type="net.spy.photo.struts.SetUidAction"
+		scope="request"
+		name="setuidForm">
+		<forward name="next" path="/index.do" redirect="true" />
+	</action>
+
+	<!-- Managing users -->
+	<action path="/admuseredit"
+		name="adminUserForm"
+		input="admin.userlist"
+		roles="admin"
+		type="net.spy.photo.struts.AdminSelectUserAction">
+		<forward name="next" path="admin.edituser" />
+	</action>
+
+	<action path="/admusersave"
+		name="adminUserForm"
+		input="admin.edituser"
+		roles="admin"
+		type="net.spy.photo.struts.AdminSaveUserAction">
+		<forward name="next" path="admin.userlist" />
+	</action>
+
+	<!-- Managing categories -->
+	<action path="/admcatedit"
+		name="adminCatForm"
+		input="admin.catlist"
+		roles="admin"
+		type="net.spy.photo.struts.AdminSelectCatAction">
+		<forward name="next" path="admin.editcat" />
+	</action>
+
+	<action path="/admcatsave"
+		name="adminCatForm"
+		input="admin.editcat"
+		roles="admin"
+		type="net.spy.photo.struts.AdminSaveCatAction">
+		<forward name="next" path="admin.catlist" />
+	</action>
+
+	<!-- Creating a profile -->
+	<action path="/admnewprofile"
+		name="adminNewProfileForm"
+		input="admin.newprofile"
+		roles="admin"
+		type="net.spy.photo.struts.AdminSaveProfile">
+		<forward name="next" path="admin.newprofile" />
+	</action>
+
+	<action path="/admin/saveProperties"
+		name="emptyForm"
+		input="admin.properties"
+		roles="admin"
+		type="net.spy.photo.struts.AdminSaveProperties">
+		<forward name="next" path="/index.do"/>
+	</action>
+
+	<action path="/admin/bulkkwsave"
+		name="bulkKwForm"
+		input="admin.bulkkw"
+		roles="admin"
+		scope="request"
+		type="net.spy.photo.struts.AdminBulkKWUpdate">
+		<forward name="next" path="/admin/bulkkw.do"/>
+	</action>
+
+	<action path="/admin/places"
+		roles="admin"
+		scope="request"
+		type="net.spy.photo.struts.ListPlacesAction">
+		<forward name="next" path="admin.placelist"/>
+	</action>
+
+	<!-- REPORTING -->
+
+	<action path="/report/userCat"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="User Category Report"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.GetUserCat"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<action path="/report/logins"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="Recent Logins"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.RecentLogins"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<action path="/report/failedLogins"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="Recent Failed Logins"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.RecentFailedLogins"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<action path="/report/userLogins"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="Recent Logins for a User"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.RecentLoginsForUser"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<action path="/report/userCatXd"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="User Category Report"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.GetUserCatXd"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<action path="/report/userImgs"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="User Image View Report"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.GetImagesSeenByUser"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<action path="/report/userRecent"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="Recent Images for User"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.RecentImagesByUser"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<action path="/report/userRecentVotes"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="Recent Votes for User"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.UserVotes"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<action path="/report/recentVotes"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="Recent Votes"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.RecentVotes"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<action path="/report/mostVoted"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="Most voted-on Images"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.MostVoted"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<action path="/report/topImages"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="Top Images"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.MostViewedImages"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<action path="/report/topImagesXd"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="Top Images"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.MostViewedImagesXd"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<action path="/report/mostActiveUsers"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="Most Active Users"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.MostActiveUsers"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<action path="/report/mostActiveUsersXd"
+		className="net.spy.jwebkit.struts.DBSPMapping"
+		roles="admin"
+		type="net.spy.photo.struts.AdminReportAction">
+
+		<set-property property="reportName" value="Most Active Users"/>
+		<set-property property="spt"
+			value="net.spy.photo.sp.reporting.MostActiveUsersXd"/>
+
+		<forward name="next" path="admin.reportDisplay"/>
+	</action>
+
+	<!-- End of reporting -->
+
+	<!-- Tiles stuff -->
+	<action path="/index"
+		type="net.spy.photo.struts.GetSavedSearchesAction">
+		<forward name="next" path="index"/>
+	</action>
+
+	<action path="/addform" forward="top.addImage"/>
+	<action path="/catview" forward="top.catView"/>
+	<action path="/changePwForm" forward="top.changePw"/>
+	<action path="/credform" forward="top.credform"/>
+	<action path="/galleryList" forward="top.galleryList"/>
+	<action path="/logView" forward="top.logView"/>
+	<action path="/newUserForm" forward="top.newUserForm"/>
+	<action path="/saveGalleryForm" forward="top.saveGallery"/>
+	<action path="/searchForm" forward="top.searchForm"/>
+	<action path="/sessions" forward="top.sessions"/>
+	<action path="/showGallery" forward="top.showGallery"/>
+	<action path="/sizeForm" forward="top.sizeForm"/>
+	<!-- Admin stuff -->
+	<action path="/admin/catList" roles="admin" forward="admin.catlist"/>
+	<action path="/admin/userList" roles="admin" forward="admin.userlist"/>
+	<action path="/admin/reporting" roles="admin" forward="admin.reporting"/>
+	<action path="/admin/properties" roles="admin" forward="admin.properties"/>
+	<action path="/admin/newprofile" roles="admin" forward="admin.newprofile"/>
+	<action path="/admin/bulkkw" roles="admin" forward="admin.bulkkw"/>
+	<action path="/admin/cacheValidation" roles="admin"
+		forward="admin.cacheValidation"/>
+	<action path="/admin/storerControl" roles="admin"
+		forward="admin.storerControl"/>
+
+  </action-mappings>
+
+	<message-resources parameter="net.spy.photo.photoresources"/>
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn" >
+		<set-property
+			property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+	</plug-in>
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin" >
+		<set-property property="definitions-config"
+			value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+</struts-config>

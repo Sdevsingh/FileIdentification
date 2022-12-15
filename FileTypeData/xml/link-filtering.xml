@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XRD xmlns="http://docs.oasis-open.org/ns/xri/xrd-1.0">
+    <Link rel="describedby" href="http://example.com/1" />
+    <Link rel="http://specs.example.net/foo" href="http://example.com/2" />
+    <Link rel="describedby" type="text/html" href="http://example.com/3" />
+</XRD>

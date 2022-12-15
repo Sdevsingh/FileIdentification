@@ -1,0 +1,16 @@
+?<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<atom:link href="http://www.oem.com.mx/oem/rss/rss_mexico.xml" rel="self" type="application/rss+xml" />
+<title>OEM en L?nea - M?xico</title>
+<link>http://www.oem.com.mx/elsoldemexico/mexico.aspx</link>
+<description>Usted se enterar? oportuna, objetiva y verazmente de lo que ocurre en nuestro pa?s, gracias a la informaci?n del equipo de reporteros de OEM</description> 
+<item>
+<title>Testimonio de ecuatoriano abre posibilidad de m?s sobrevivientes en masacre</title>
+<link>http://www.oem.com.mx/elsoldemexico/notas/n1768417.htm</link>
+<guid>http://www.oem.com.mx/elsoldemexico/notas/n1768417.htm</guid>
+<description>"Viajaban conmigo 76", dijo el ecuatoriano Freddy Lala Pomavilla a la prensa oficial en el avi?n de la presidencia de su pa?s que lo repatri? el domingo pasado, en un relato difundido por el gobierno.</description>
+</item>
+
+</channel>
+</rss>

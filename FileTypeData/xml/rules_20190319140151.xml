@@ -1,0 +1,503 @@
+<rules>
+        <rule key="org.scalastyle.file.FileTabChecker" priority="MINOR">
+        <name>
+          <![CDATA[Line contains Tab]]>
+        </name>
+        <configKey>
+          <![CDATA[line.contains.tab]]>
+        </configKey>
+        <description>
+          <![CDATA[Line contains a tab -  Check that there are no tabs in a file]]>
+        </description>
+      </rule><rule key="org.scalastyle.file.FileLengthChecker" priority="MINOR">
+        <name>
+          <![CDATA[File length]]>
+        </name>
+        <configKey>
+          <![CDATA[file.size.limit]]>
+        </configKey>
+        <description>
+          <![CDATA[File length exceeds {0} lines -  Check the number of lines in a file]]>
+        </description>
+      </rule><rule key="org.scalastyle.file.HeaderMatchesChecker" priority="MINOR">
+        <name>
+          <![CDATA[Match Header]]>
+        </name>
+        <configKey>
+          <![CDATA[header.matches]]>
+        </configKey>
+        <description>
+          <![CDATA[Header does not match expected text -  Check the first lines of each file matches the text]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.SpacesAfterPlusChecker" priority="MINOR">
+        <name>
+          <![CDATA[Space after plus]]>
+        </name>
+        <configKey>
+          <![CDATA[spaces.after.plus]]>
+        </configKey>
+        <description>
+          <![CDATA[There should be a space after the plus (+) sign -  Check that the plus sign is followed by a space]]>
+        </description>
+      </rule><rule key="org.scalastyle.file.WhitespaceEndOfLineChecker" priority="MINOR">
+        <name>
+          <![CDATA[Whitespace at end of line]]>
+        </name>
+        <configKey>
+          <![CDATA[whitespace.end.of.line]]>
+        </configKey>
+        <description>
+          <![CDATA[Whitespace at end of line -  Check that there is no trailing whitespace at the end of lines]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.SpacesBeforePlusChecker" priority="MINOR">
+        <name>
+          <![CDATA[Space before plus]]>
+        </name>
+        <configKey>
+          <![CDATA[spaces.before.plus]]>
+        </configKey>
+        <description>
+          <![CDATA[There should be a space before the plus (+) sign -  Check that the plus sign is preceded by a space]]>
+        </description>
+      </rule><rule key="org.scalastyle.file.FileLineLengthChecker" priority="MINOR">
+        <name>
+          <![CDATA[File line length]]>
+        </name>
+        <configKey>
+          <![CDATA[line.size.limit]]>
+        </configKey>
+        <description>
+          <![CDATA[File line length exceeds {0} characters -  Check the number of characters in a line]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.ClassNamesChecker" priority="MINOR">
+        <name>
+          <![CDATA[Class name]]>
+        </name>
+        <configKey>
+          <![CDATA[class.name]]>
+        </configKey>
+        <description>
+          <![CDATA[Class name does not match the regular expression ''{0}'' -  Check that class names match a regular expression]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.ObjectNamesChecker" priority="MINOR">
+        <name>
+          <![CDATA[Object name]]>
+        </name>
+        <configKey>
+          <![CDATA[object.name]]>
+        </configKey>
+        <description>
+          <![CDATA[Object name does not match the regular expression ''{0}'' -  Check that object names match a regular expression]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.PackageObjectNamesChecker" priority="MINOR">
+        <name>
+          <![CDATA[Package object name]]>
+        </name>
+        <configKey>
+          <![CDATA[package.object.name]]>
+        </configKey>
+        <description>
+          <![CDATA[Package object name does not match the regular expression ''{0}'' -  Check that package object names match a regular expression]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.EqualsHashCodeChecker" priority="MINOR">
+        <name>
+          <![CDATA[Equals hashCode]]>
+        </name>
+        <configKey>
+          <![CDATA[equals.hash.code]]>
+        </configKey>
+        <description>
+          <![CDATA[You should implement equals and hashCode together -  Check that if a class implements either equals or hashCode, it should implement the other]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.IllegalImportsChecker" priority="MINOR">
+        <name>
+          <![CDATA[Illegal imports]]>
+        </name>
+        <configKey>
+          <![CDATA[illegal.imports]]>
+        </configKey>
+        <description>
+          <![CDATA[Import from illegal package -  Check that a class does not import certain classes]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.ParameterNumberChecker" priority="MINOR">
+        <name>
+          <![CDATA[Maximum parameters]]>
+        </name>
+        <configKey>
+          <![CDATA[parameter.number]]>
+        </configKey>
+        <description>
+          <![CDATA[The number of parameters should not exceed {0} -  Maximum number of parameters for a method]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.MagicNumberChecker" priority="MINOR">
+        <name>
+          <![CDATA[Magic Number]]>
+        </name>
+        <configKey>
+          <![CDATA[magic.number]]>
+        </configKey>
+        <description>
+          <![CDATA[Magic Number -  Checks for use of magic numbers]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.NoWhitespaceBeforeLeftBracketChecker" priority="MINOR">
+        <name>
+          <![CDATA[No whitespace before left bracket ''['']]>
+        </name>
+        <configKey>
+          <![CDATA[no.whitespace.before.left.bracket]]>
+        </configKey>
+        <description>
+          <![CDATA[There should be no space before a left bracket ''['' -  No whitespace before left bracket ''['']]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.NoWhitespaceAfterLeftBracketChecker" priority="MINOR">
+        <name>
+          <![CDATA[No whitespace after left bracket ''['']]>
+        </name>
+        <configKey>
+          <![CDATA[no.whitespace.after.left.bracket]]>
+        </configKey>
+        <description>
+          <![CDATA[There should be no space after a left bracket ''['' -  No whitespace after left bracket ''['']]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.ReturnChecker" priority="MINOR">
+        <name>
+          <![CDATA[Return]]>
+        </name>
+        <configKey>
+          <![CDATA[return]]>
+        </configKey>
+        <description>
+          <![CDATA[Avoid using return -  Check that return is not used]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.NullChecker" priority="MINOR">
+        <name>
+          <![CDATA[Null]]>
+        </name>
+        <configKey>
+          <![CDATA[null]]>
+        </configKey>
+        <description>
+          <![CDATA[Avoid using null -  Check that null is not used]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.NoCloneChecker" priority="MINOR">
+        <name>
+          <![CDATA[Clone method]]>
+        </name>
+        <configKey>
+          <![CDATA[no.clone]]>
+        </configKey>
+        <description>
+          <![CDATA[Avoid using clone method. -  Check that classes and objects do not define the clone() method]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.NoFinalizeChecker" priority="MINOR">
+        <name>
+          <![CDATA[Finalize method]]>
+        </name>
+        <configKey>
+          <![CDATA[no.finalize]]>
+        </configKey>
+        <description>
+          <![CDATA[Avoid using finalize method. -  Check that classes and objects do not define the finalize() method]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.CovariantEqualsChecker" priority="MINOR">
+        <name>
+          <![CDATA[Covariant equals]]>
+        </name>
+        <configKey>
+          <![CDATA[covariant.equals]]>
+        </configKey>
+        <description>
+          <![CDATA[Covariant equals without overriding equals(java.lang.Object). -  Check that classes and objects do not define equals without overriding equals(java.lang.Object).]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.StructuralTypeChecker" priority="MINOR">
+        <name>
+          <![CDATA[Structural type]]>
+        </name>
+        <configKey>
+          <![CDATA[structural.type]]>
+        </configKey>
+        <description>
+          <![CDATA[Avoid using structural types -  Check that structural types are not used.]]>
+        </description>
+      </rule><rule key="org.scalastyle.file.RegexChecker" priority="MINOR">
+        <name>
+          <![CDATA[Regular expression]]>
+        </name>
+        <configKey>
+          <![CDATA[regex]]>
+        </configKey>
+        <description>
+          <![CDATA[Regular expression matched ''{0}'' -  Checks that a regular expression cannot be matched, if found reports this]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.NumberOfTypesChecker" priority="MINOR">
+        <name>
+          <![CDATA[Number of types]]>
+        </name>
+        <configKey>
+          <![CDATA[number.of.types]]>
+        </configKey>
+        <description>
+          <![CDATA[Number of types declared in the file exceeds {0} -  Checks that there are not too many types declared in a file]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.CyclomaticComplexityChecker" priority="MINOR">
+        <name>
+          <![CDATA[Cyclomatic complexity]]>
+        </name>
+        <configKey>
+          <![CDATA[cyclomatic.complexity]]>
+        </configKey>
+        <description>
+          <![CDATA[Cyclomatic complexity of {0} exceeds max of {1} -  Checks that the cyclomatic complexity of a method does exceed a value]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.UppercaseLChecker" priority="MINOR">
+        <name>
+          <![CDATA[Long literal uppercase L]]>
+        </name>
+        <configKey>
+          <![CDATA[uppercase.l]]>
+        </configKey>
+        <description>
+          <![CDATA[Use an uppercase L for long literals -  Checks that if a long literal is used, then an uppercase L is used]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.SimplifyBooleanExpressionChecker" priority="MINOR">
+        <name>
+          <![CDATA[Simplify Boolean expression]]>
+        </name>
+        <configKey>
+          <![CDATA[simplify.boolean.expression]]>
+        </configKey>
+        <description>
+          <![CDATA[Boolean expression can be simplified -  Boolean expression can be simplified]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.IfBraceChecker" priority="MINOR">
+        <name>
+          <![CDATA[If block braces]]>
+        </name>
+        <configKey>
+          <![CDATA[if.brace]]>
+        </configKey>
+        <description>
+          <![CDATA[If block needs braces -  Checks that if statement have braces]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.MethodLengthChecker" priority="MINOR">
+        <name>
+          <![CDATA[Method length]]>
+        </name>
+        <configKey>
+          <![CDATA[method.length]]>
+        </configKey>
+        <description>
+          <![CDATA[Method is longer than {0} lines -  Checks that methods do not exceed a maximum length]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.MethodNamesChecker" priority="MINOR">
+        <name>
+          <![CDATA[Method name]]>
+        </name>
+        <configKey>
+          <![CDATA[method.name]]>
+        </configKey>
+        <description>
+          <![CDATA[Method name does not match the regular expression ''{0}'' -  Check that method names match a regular expression]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.NumberOfMethodsInTypeChecker" priority="MINOR">
+        <name>
+          <![CDATA[Number of methods in type]]>
+        </name>
+        <configKey>
+          <![CDATA[number.of.methods]]>
+        </configKey>
+        <description>
+          <![CDATA[Number of methods in class exceeds {0} -  Check that a class / trait / object does not have too many methods]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.PublicMethodsHaveTypeChecker" priority="MINOR">
+        <name>
+          <![CDATA[Public method must have type]]>
+        </name>
+        <configKey>
+          <![CDATA[public.methods.have.type]]>
+        </configKey>
+        <description>
+          <![CDATA[Public method must have explicit type -  Check that a method has an explicit return type, it is not inferred]]>
+        </description>
+      </rule><rule key="org.scalastyle.file.NewLineAtEofChecker" priority="MINOR">
+        <name>
+          <![CDATA[Newline at EOF]]>
+        </name>
+        <configKey>
+          <![CDATA[newline.at.eof]]>
+        </configKey>
+        <description>
+          <![CDATA[File must end with newline character -  Checks that a file ends with a newline character]]>
+        </description>
+      </rule><rule key="org.scalastyle.file.NoNewLineAtEofChecker" priority="MINOR">
+        <name>
+          <![CDATA[No Newline at EOF]]>
+        </name>
+        <configKey>
+          <![CDATA[no.newline.at.eof]]>
+        </configKey>
+        <description>
+          <![CDATA[File must not end with newline character -  Checks that a file does not end with a newline character]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.WhileChecker" priority="MINOR">
+        <name>
+          <![CDATA[No while loops]]>
+        </name>
+        <configKey>
+          <![CDATA[while]]>
+        </configKey>
+        <description>
+          <![CDATA[Avoid using while loops -  Checks that while is not used]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.VarFieldChecker" priority="MINOR">
+        <name>
+          <![CDATA[No mutable fields]]>
+        </name>
+        <configKey>
+          <![CDATA[var.field]]>
+        </configKey>
+        <description>
+          <![CDATA[Avoid mutable fields -  Checks that classes and objects do not define mutable fields]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.VarLocalChecker" priority="MINOR">
+        <name>
+          <![CDATA[No mutable local variables]]>
+        </name>
+        <configKey>
+          <![CDATA[var.local]]>
+        </configKey>
+        <description>
+          <![CDATA[Avoid mutable local variables -  Checks that functions do not define mutable variables]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.RedundantIfChecker" priority="MINOR">
+        <name>
+          <![CDATA[No redundant if expressions]]>
+        </name>
+        <configKey>
+          <![CDATA[if.redundant]]>
+        </configKey>
+        <description>
+          <![CDATA[Eliminate redundant if expressions where both branches return constant booleans -  Checks that if expressions are not redundant, i.e. easily replaced by a variant of the condition]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.TokenChecker" priority="MINOR">
+        <name>
+          <![CDATA[Regular expression in a token]]>
+        </name>
+        <configKey>
+          <![CDATA[token]]>
+        </configKey>
+        <description>
+          <![CDATA[Regular expression matched ''{0}'' in a token -  Checks that a regular expression cannot be matched in a token, if found reports this]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.DeprecatedJavaChecker" priority="MINOR">
+        <name>
+          <![CDATA[No use of Java @Deprecated]]>
+        </name>
+        <configKey>
+          <![CDATA[deprecated.java]]>
+        </configKey>
+        <description>
+          <![CDATA[@deprecated should be used instead of @java.lang.Deprecated -  Checks that Java @Deprecated is not used, Scala @deprecated should be used instead]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.EmptyClassChecker" priority="MINOR">
+        <name>
+          <![CDATA[Redundant braces in class definition]]>
+        </name>
+        <configKey>
+          <![CDATA[empty.class]]>
+        </configKey>
+        <description>
+          <![CDATA[Redundant braces after class definition -  If a class/trait has no members, the braces are unnecessary]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.ClassTypeParameterChecker" priority="MINOR">
+        <name>
+          <![CDATA[Class type parameter name]]>
+        </name>
+        <configKey>
+          <![CDATA[class.type.parameter.name]]>
+        </configKey>
+        <description>
+          <![CDATA[Type parameter does not match ''{0}'' -  Checks that type parameter to a class matches a regular expression]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.UnderscoreImportChecker" priority="MINOR">
+        <name>
+          <![CDATA[Avoid wildcard imports]]>
+        </name>
+        <configKey>
+          <![CDATA[underscore.import]]>
+        </configKey>
+        <description>
+          <![CDATA[Avoid wildcard imports -  Avoid wildcard imports]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.LowercasePatternMatchChecker" priority="MINOR">
+        <name>
+          <![CDATA[Lowercase pattern match]]>
+        </name>
+        <configKey>
+          <![CDATA[lowercase.pattern.match]]>
+        </configKey>
+        <description>
+          <![CDATA[Lowercase pattern match (surround with ``, or add : Any) -  Checks that a case statement pattern match is not lower case, as this can cause confusion]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.MultipleStringLiteralsChecker" priority="MINOR">
+        <name>
+          <![CDATA[Multiple string literals]]>
+        </name>
+        <configKey>
+          <![CDATA[multiple.string.literals]]>
+        </configKey>
+        <description>
+          <![CDATA[The string literal {0} appears {1} times in the file. -  Checks that a string literal does not appear multiple times]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.ImportGroupingChecker" priority="MINOR">
+        <name>
+          <![CDATA[Group imports]]>
+        </name>
+        <configKey>
+          <![CDATA[import.grouping]]>
+        </configKey>
+        <description>
+          <![CDATA[Imports should be grouped together -  Checks that imports are grouped together, not throughout the file]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.NotImplementedErrorUsage" priority="MINOR">
+        <name>
+          <![CDATA[Usage of ??? operator]]>
+        </name>
+        <configKey>
+          <![CDATA[not.implemented.error.usage]]>
+        </configKey>
+        <description>
+          <![CDATA[Usage of ??? operator -  Checks that the code does not have ??? operators.]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.BlockImportChecker" priority="MINOR">
+        <name>
+          <![CDATA[Avoid block imports]]>
+        </name>
+        <configKey>
+          <![CDATA[block.import]]>
+        </configKey>
+        <description>
+          <![CDATA[Avoid block imports -  Checks that block imports are not used.]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.ProcedureDeclarationChecker" priority="MINOR">
+        <name>
+          <![CDATA[Use : Unit = for procedures]]>
+        </name>
+        <configKey>
+          <![CDATA[procedure.declaration]]>
+        </configKey>
+        <description>
+          <![CDATA[Use : Unit = for procedures -  Use a : Unit = for procedure declarations]]>
+        </description>
+      </rule><rule key="org.scalastyle.scalariform.ForBraceChecker" priority="MINOR">
+        <name>
+          <![CDATA[Use braces in for comprehensions]]>
+        </name>
+        <configKey>
+          <![CDATA[for.brace]]>
+        </configKey>
+        <description>
+          <![CDATA[Use braces in for comprehensions -  Checks that braces are used in for comprehensions]]>
+        </description>
+      </rule>
+      </rules>

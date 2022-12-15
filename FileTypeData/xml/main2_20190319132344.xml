@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:orientation="vertical" >
+  
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:width="30px"
+                android:text="RTT (s)"
+                android:textColor="#FFFFFF"
+				android:gravity="center_horizontal"
+                android:textAppearance="?android:attr/textAppearanceSmall" 
+                android:paddingTop="5px"
+                android:paddingBottom="5px"/>   
+		            
+			<uk.ac.cam.cl.dtg.snowdon.AreaGraphView 
+			    android:layout_width="wrap_content"
+				android:layout_height="0dip"
+				android:layout_weight="1"
+				android:id="@+id/graph"
+        		android:paddingTop="4px"
+        		android:paddingLeft="40px"
+        		android:paddingBottom="10px"/>
+
+            <TextView
+                android:id="@+id/editText1"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:text=""
+                android:textColor="#FF0000"
+                android:width="30px"
+				android:gravity="center_horizontal"
+                android:textAppearance="?android:attr/textAppearanceLarge" 
+                android:paddingTop="2px"
+                android:paddingBottom="5px"/>   
+	
+            
+		            	
+			<TableLayout
+		        android:id="@+id/tableLayoutBottom"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content" 
+		        android:stretchColumns="0,1"
+		        android:paddingTop="4px">
+
+	        
+	        <TableRow
+	            android:id="@+id/tableRow3"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content" >
+				<Button
+			        android:id="@+id/startTest"
+			        android:layout_column="0"
+			        android:layout_width="wrap_content"
+		        	android:layout_height="wrap_content" 
+			        android:text="Start Test" />
+			
+			    <Button
+			        android:id="@+id/stopTest"
+			        android:layout_column="1"
+			        android:layout_width="wrap_content"
+		        	android:layout_height="wrap_content" 
+			        android:text="Stop Test" />
+			    
+			</TableRow>     
+	</TableLayout>
+</LinearLayout>
+

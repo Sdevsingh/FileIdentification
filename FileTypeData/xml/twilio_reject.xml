@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Say>{{say}}</Say>
+  <Gather action="/removerejectee" numDigits="1">
+    <Say voice="woman">
+      Press any number to remove your phone number from the system.
+    </Say>
+  </Gather>
+</Response>

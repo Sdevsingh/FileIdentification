@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.google.com/schemas/sitemap/0.84"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.google.com/schemas/sitemap/0.84
+                      http://www.google.com/schemas/sitemap/0.84/sitemap.xsd">
+
+<url>
+  <loc>http://www.holwik.hr/</loc>
+  <priority>0.5</priority>
+  <lastmod>2005-10-10T15:59:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.holwik.hr/index.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2005-10-10T15:59:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.holwik.hr/proizvodi.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2005-10-10T15:59:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.holwik.hr/usluge.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2005-10-10T15:59:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.holwik.hr/cjenik.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2005-10-10T15:59:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.holwik.hr/kontakt.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2005-10-10T15:59:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.holwik.hr/linkovi.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2005-10-10T15:59:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.holwik.hr/efikasnost.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2005-10-10T15:59:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.holwik.hr/galerija_slika.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2005-10-10T15:59:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.holwik.hr/kako_do_nas.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2005-10-10T15:59:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.holwik.hr/tmp_proizvodi.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2005-10-10T15:59:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://www.holwik.hr/tmp_usluge.html</loc>
+  <priority>0.5</priority>
+  <lastmod>2005-10-10T15:59:43+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+</urlset>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="text/erb">
+    <sub-class-of type="text/html"/>
+    <comment>ERB Template</comment>
+    <glob pattern="*.erb" />
+    <glob pattern="*.rhtml"/>
+    <magic priority="11">
+      <match value="&lt;%" type="string" offset="0"/>
+    </magic>
+  </mime-type>
+  <mime-type type="application/x-ruby">
+    <alias type="application/ruby" />
+    <comment xml:lang="en">Ruby Rake Tasks</comment>
+    <glob pattern="*.rake"/>
+  </mime-type>
+  <mime-type type="application/x-ruby">
+    <comment xml:lang="en">Rakefile</comment>
+    <glob pattern="Rakefile"/>
+  </mime-type>
+  <mime-type type="application/x-ruby">
+    <comment xml:lang="en">Ruby script</comment>
+    <!-- Some Ruby on Rails source files are incorrectly recognized as VHDL,
+         so we override that. -->
+    <magic priority="21">
+      <match value="#--\n# " type="string" offset="0:10"/>
+    </magic>
+  </mime-type>
+  <mime-type type="text/x-yaml">
+    <comment xml:lang="en">YAML</comment>
+    <glob pattern="*.yml"/>
+    <glob pattern="*.yaml"/>
+  </mime-type>
+</mime-info>

@@ -1,0 +1,5 @@
+---
+layout: feed
+feed_type: Left Libertarian Content
+collection: site.categories['leftlibertarian'].reverse.slice(0, 15)
+---

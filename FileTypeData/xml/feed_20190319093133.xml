@@ -1,0 +1,62 @@
+---
+---
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Agyvihar</title>
+	<atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
+	<link>{{ site.url }}</link>
+	<language>hu</language>
+	<description>A mindennapi egyedfejl?d?s?nk k?zelr?l.</description>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<itunes:author>Benke Zsolt, Horv?th R?bert</itunes:author>
+	<itunes:subtitle>A mindennapi egyedfejl?d?s?nk k?zelr?l.</itunes:subtitle>
+	<itunes:summary>A mindennapi egyedfejl?d?s?nk k?zelr?l.</itunes:summary>
+	<itunes:explicit>no</itunes:explicit>
+	<itunes:keywords>agyvihar,wyctim,strob,ynab,produktivit?s,benke,zsolt,horv?th,r?bert,gtd,david,allen</itunes:keywords>
+	<itunes:owner>
+		<itunes:name>Benke Zsolt, Horv?th R?bert</itunes:name>
+		<itunes:email>info@agyvihar.com</itunes:email>
+	</itunes:owner>
+	<itunes:category text="Health">
+		<itunes:category text="Self-Help"/>
+	</itunes:category>
+	<itunes:category text="Technology"/>
+	<itunes:image href="http://agyvihar.com/assets/cover.png"/>
+  {% for post in site.posts %}
+    	<item>
+    		<title>{{ post.title | xml_escape }}</title>
+    		<link>{{ site.url }}{{ post.url }}</link>
+    		<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+    		<dc:creator><![CDATA[zsbenke]]></dc:creator>
+
+    		<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+      <description>
+        <![CDATA[{{ post.excerpt | strip_html | truncatewords: 50 | expand_urls: site.url | cdata_escape }}]]>
+      </description>
+      <content:encoded>
+        <![CDATA[{{ post.content | expand_urls: site.url | cdata_escape }}]]>
+      </content:encoded>
+      	<itunes:author>Benke Zsolt, Horv?th R?bert</itunes:author>
+      <itunes:subtitle>{{ post.excerpt | xml_escape }}</itunes:subtitle>
+      	<itunes:explicit>no</itunes:explicit>
+      	<itunes:duration>{{ post.duration }}</itunes:duration>
+      	<itunes:image href="{{ site.url }}/media/cover.png"/>
+      	{% if post.categories contains 'shorts' %}
+        <enclosure url="{{ site.url }}/media/avs{{ post.episode }}.mp3" length="{{ post.length }}" type="audio/mpeg"/>
+      {% else %}
+        <enclosure url="{{ site.url }}/media/av{{ post.episode }}.mp3" length="{{ post.length }}" type="audio/mpeg"/>
+      {% endif %}
+  		</item>
+    {% endfor %}
+	</channel>
+</rss>

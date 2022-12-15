@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Recent Content on Cognition </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://cognition.ca/index.xml/</link>
+    <language>en-us</language>
+    
+    <copyright>Copyright Joshua McKenty.</copyright>
+    <updated>Thu, 17 Sep 2015 20:13:09 AEST</updated>
+    
+    <item>
+      <title>On Behalf Of</title>
+      <link>http://cognition.ca/post/on-behalf-of/</link>
+      <pubDate>Thu, 17 Sep 2015 20:13:09 AEST</pubDate>
+      
+      <guid>http://cognition.ca/post/on-behalf-of/</guid>
+      <description>
+
+&lt;p&gt;The internet was invented by Vint Cerf.&lt;/p&gt;
+
+&lt;p&gt;But it was made usable by Marc Andreeson. And what he did was simple:&lt;/p&gt;
+
+&lt;p&gt;He turned it into a VCR.&lt;/p&gt;
+
+&lt;p&gt;Now, it seems deeply ironic to me that most of the folks reading this post have
+probably never used a VCR, although they&amp;rsquo;ve most certainly used the Back, Forward,
+Stop and Play buttons on a web browser.&lt;/p&gt;
+
+&lt;p&gt;It was a powerful metaphor, and it made it possible for nearly half of the world&amp;rsquo;s
+population to grapple with the experience of traversing a directed, cyclic graph.&lt;/p&gt;
+
+&lt;p&gt;And in much the same way that we floundered in the world of Gopher and Finger
+protocols before Marc&amp;rsquo;s insight of metaphor, we&amp;rsquo;re floundering in the early world
+of IoT.&lt;/p&gt;
+
+&lt;p&gt;We need a metaphor. And it needs to encapsulate a deceptively difficult concept:
+ - Agency.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Understanding Agency&lt;/h2&gt;
+
+&lt;p&gt;My refrigerator may someday be able to detect when the cream has gone bad, and
+order more - either from Amazon, or from some local grocery store delivery.&lt;/p&gt;
+
+&lt;p&gt;Quite literally, my fridge will be acting on my behalf - an agent, if you will.&lt;/p&gt;
+
+&lt;p&gt;It will authenticate itself with my home wifi network.&lt;/p&gt;
+
+&lt;p&gt;And again with the grocery service, with a payment provider, and possibly with
+an independent shipping or delivery service.&lt;/p&gt;
+
+&lt;p&gt;Likely, though, the software that actually &lt;em&gt;orders&lt;/em&gt; the milk, won&amp;rsquo;t be running
+on my fridge. Instead, it will be cloud-based, and acting &lt;em&gt;on behalf of&lt;/em&gt; my fridge,
+which is in turn acting on behalf of myself.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;In Search of a Metaphor&lt;/h2&gt;
+
+&lt;p&gt;When I was young, I worked as an apprentice carpenter. Often, this included errands
+to the local hardware or lumber supply store. And usually, I was equipped for these
+errands with my boss&amp;rsquo;s credit card (as well as his truck).&lt;/p&gt;
+
+&lt;p&gt;Strictly speaking, proffering someone else&amp;rsquo;s credit card (and signing for it) is
+illegal, much the same as sharing the password or pin to your bank account. And yet,
+the image of a household robot, with an empty milk jug in one mechanical hand and
+a credit card in the other, is the best metaphor for delegated authentication that
+I can come up with. And it&amp;rsquo;s simply not good enough.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>dotplan</title>
+      <link>http://cognition.ca/post/dotplan/</link>
+      <pubDate>Tue, 14 Oct 2014 12:11:26 -0700</pubDate>
+      
+      <guid>http://cognition.ca/post/dotplan/</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Where in the world is Joshua McKenty?&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;October 6: SF&lt;/li&gt;
+&lt;li&gt;October 13: Victoria&lt;/li&gt;
+&lt;li&gt;October 20: Korea and SF&lt;/li&gt;
+&lt;li&gt;October 27: Victoria&lt;/li&gt;
+&lt;li&gt;November 3: Paris and NYC&lt;/li&gt;
+&lt;li&gt;November 10: Victoria&lt;/li&gt;
+&lt;li&gt;November 17: LA and Denver&lt;/li&gt;
+&lt;li&gt;November 24: Victoria / SF&lt;/li&gt;
+&lt;li&gt;December 1: Arizona&lt;/li&gt;
+&lt;li&gt;December 8: Victoria&lt;/li&gt;
+&lt;li&gt;December 15: Toronto, NYC, SF&lt;/li&gt;
+&lt;li&gt;December 22: Victoria&lt;/li&gt;
+&lt;li&gt;December 29: SF&lt;/li&gt;
+&lt;li&gt;Jan 5: Victoria&lt;/li&gt;
+&lt;li&gt;Jan 12: DC, Atlanta, Kansas City&lt;/li&gt;
+&lt;li&gt;Jan 19: Victoria, Vancouver&lt;/li&gt;
+&lt;li&gt;Jan 26: SF, Detroit, Tampa,&lt;/li&gt;
+&lt;li&gt;Feb 2: Victoria, NYC&lt;/li&gt;
+&lt;li&gt;Feb 9: Victoria, SF&lt;/li&gt;
+&lt;li&gt;Feb 16: Victoria, SF&lt;/li&gt;
+&lt;li&gt;Feb 23: DC, NYC, SF&lt;/li&gt;
+&lt;li&gt;Mar 2: Austin&lt;/li&gt;
+&lt;li&gt;Mar 9: Banff, DC, SF&lt;/li&gt;
+&lt;li&gt;Mar 16: Victoria, Vancouver&lt;/li&gt;
+&lt;li&gt;Mar 23: Victoria, Seattle&lt;/li&gt;
+&lt;li&gt;Mar 30: Victoria&lt;/li&gt;
+&lt;li&gt;Apr 6: DC, Cincinnati, Seattle, SF&lt;/li&gt;
+&lt;li&gt;Apr 13: Victoria, SF&lt;/li&gt;
+&lt;li&gt;Apr 20: Victoria&lt;/li&gt;
+&lt;li&gt;Apr 27: LA, SF&lt;/li&gt;
+&lt;li&gt;May 4: Victoria&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Liberty-Source</title>
+      <link>http://cognition.ca/post/canada-source/</link>
+      <pubDate>Thu, 04 Sep 2014 19:54:09 UTC</pubDate>
+      
+      <guid>http://cognition.ca/post/canada-source/</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;tldr: Use equity warrants for open source trademark licenses.&lt;/h2&gt;
+
+&lt;h1 id=&#34;toc_1&#34;&gt;Long Version:&lt;/h1&gt;
+
+&lt;p&gt;Apache Software License v2.0 allows the free and unrestricted use, modification,
+and what-have-you of the source code. However, it protects the use of the &lt;em&gt;name&lt;/em&gt;
+and brand of an open source project.&lt;/p&gt;
+
+&lt;p&gt;In the OpenStack world, we license this brand to vendors who agree to follow a
+trademark license agreement that includes, among other things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Paying to be a corporate sponsor or member of the OpenStack Foundation.&lt;/li&gt;
+&lt;li&gt;Using certain, unmodified sections of the open source code.&lt;/li&gt;
+&lt;li&gt;Passing a compatibility test suite for functionality of all public APIs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;But we could have gone one step better.&lt;/p&gt;
+
+&lt;p&gt;Imagine a trademark license where, along with cash and compatibility, the open
+source entity also received a small amount of equity in the licensing firm.&lt;/p&gt;
+
+&lt;p&gt;This would make the owner of the trademark, rather than being a non-profit
+foundation, a Public Benefit Corporation.&lt;/p&gt;
+
+&lt;p&gt;The stated public benefit purpose could guarantee that the source code license
+and trademark policy would not be changed.&lt;/p&gt;
+
+&lt;p&gt;And the equity stake would guarantee that this company would have the motivation
+to improve and enhance the open source code to meet the needs of all the
+licensees.&lt;/p&gt;
+
+&lt;p&gt;Keeping the core development teams &amp;ldquo;in-house&amp;rdquo;, so to speak.&lt;/p&gt;
+
+&lt;p&gt;While also being able to motivate these &amp;ldquo;best-and-brightest&amp;rdquo; through stock-options, and a potentially lucrative future.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;QUESTIONS:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Does this make the B-corp a &amp;ldquo;hedge fund&amp;rdquo; or some other entity?&lt;/li&gt;
+&lt;li&gt;Would the trademark license need to be baked into the bylaws of the b-corp for reasonable protection?&lt;/li&gt;
+&lt;li&gt;Could standard ISA stock options work for this?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;FAQ&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Yes, this means I&amp;rsquo;m not a fan of the &amp;ldquo;everyone-contributes-and-scratches-their-own-itch&amp;rdquo; model of open source development. While I think that&amp;rsquo;s helpful for modules, plugins, and niche features, I think open source projects are best served by dedicated, core development teams. See Mozilla, Wordpress, Android, and Drupal for examples of this.
+
+&lt;ul&gt;
+&lt;li&gt;Yes, this means that there can be a large community of &amp;ldquo;vendors&amp;rdquo; that are attacking the many go-to-market models which might logically exist for a single open source project. It&amp;rsquo;s like genetic algorithms - but for business. And the core open source organization benefits, regardless of which ones are successful.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>block chain</title>
+      <link>http://cognition.ca/post/block-chain/</link>
+      <pubDate>Tue, 26 Aug 2014 22:01:58 UTC</pubDate>
+      
+      <guid>http://cognition.ca/post/block-chain/</guid>
+      <description>&lt;p&gt;Trying to understand the ecosystem of &amp;ldquo;Proof of Luck&amp;rdquo; based distributed systems.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.stellar.org/blog/introducing-stellar/&#34;&gt;https://www.stellar.org/blog/introducing-stellar/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Use observable phenomenon to time things:
+ - &lt;a href=&#34;http://arxiv.org/abs/1311.3693&#34;&gt;http://arxiv.org/abs/1311.3693&lt;/a&gt;
+ - &lt;a href=&#34;http://en.wikipedia.org/wiki/Pulsar#Precise_clocks&#34;&gt;http://en.wikipedia.org/wiki/Pulsar#Precise_clocks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Use fancy algorithms:
+ - &lt;a href=&#34;http://pagesperso-systeme.lip6.fr/Marc.Shapiro/papers/RR-6956.pdf&#34;&gt;http://pagesperso-systeme.lip6.fr/Marc.Shapiro/papers/RR-6956.pdf&lt;/a&gt;
+ - &lt;a href=&#34;http://highscalability.com/blog/2010/12/23/paper-crdts-consistency-without-concurrency-control.html&#34;&gt;http://highscalability.com/blog/2010/12/23/paper-crdts-consistency-without-concurrency-control.html&lt;/a&gt;
+ - &lt;a href=&#34;http://www.commsp.ee.ic.ac.uk/~mandic/dvv/papers/physica%20D.pdf&#34;&gt;http://www.commsp.ee.ic.ac.uk/~mandic/dvv/papers/physica%20D.pdf&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Dead Pool Pledge</title>
+      <link>http://cognition.ca/post/dead-pool-pledge/</link>
+      <pubDate>Wed, 06 Aug 2014 01:10:41 UTC</pubDate>
+      
+      <guid>http://cognition.ca/post/dead-pool-pledge/</guid>
+      <description>
+
+&lt;p&gt;I love PaaS. Recently I&amp;rsquo;ve gone to great lengths to figure out a way to build
+applications using ONLY SaaS and PaaS platforms. I managed this with a mix of
+wercker, github, orchestrate.io and pivotal web services.&lt;/p&gt;
+
+&lt;p&gt;But with the commitment to any third-party platform, comes a certain kind of fear.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m a believer in open source. And I&amp;rsquo;m ALSO a believer in commercial software.
+As much as I believe in the rights and freedoms of the user, I also value the
+rights and freedoms of the developer - to license his or her work in the way that
+they see fit.&lt;/p&gt;
+
+&lt;p&gt;So here&amp;rsquo;s what I&amp;rsquo;m suggesting: a &amp;ldquo;Dead Pool Pledge&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Add &lt;a href=&#34;https://github.com/freepile&#34;&gt;this github account&lt;/a&gt; to your private repositories
+as a collaborator. You can keep those accounts private, and your source code licensed under whatever terms
+you feel is appropriate, as long as your business/project/coop is a going concern.&lt;/p&gt;
+
+&lt;p&gt;But the day that your company ends up in the Crunchbase deadpool, my bot will
+republish your source code under ASLv2. Seem fair?&lt;/p&gt;
+
+&lt;p&gt;I know that if Wercker, Orchestrate.io and others adopted this, I would sleep a
+little better at night.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Caveats&lt;/h2&gt;
+
+&lt;p&gt;Okay, maybe we should try and contact you first - to find out if you&amp;rsquo;re attempting
+to sell off those assets to a company who has a legitimate intent to continue
+business operations.&lt;/p&gt;
+
+&lt;p&gt;And yes, this whole thing probably ought to have some sort of contract in place -
+maybe something that the SFLC or the EFF could draft up.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>http://cognition.ca/projects/</link>
+      <pubDate>Tue, 05 Aug 2014 01:54:33 UTC</pubDate>
+      
+      <guid>http://cognition.ca/projects/</guid>
+      <description>
+
+&lt;h1 id=&#34;toc_0&#34;&gt;Projects&lt;/h1&gt;
+
+&lt;p&gt;Most of my projects fall within a few main themes:&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;OpenStack&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://openstack.org&#34;&gt;OpenStack.org&lt;/a&gt; : If you&amp;rsquo;re not familiar with it, you should be.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.pistoncloud.com&#34;&gt;Piston OpenStack&lt;/a&gt; : Turn-key OpenStack using math and magic.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://elkstack.org&#34;&gt;ElkStack.org&lt;/a&gt; : Monitoring openstack for fun and profit.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://refstack.org&#34;&gt;RefStack.org&lt;/a&gt; : Interoperability tools for the DefCore committee.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Browser Things&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://elderbrowser.com&#34;&gt;ElderBrowser.com&lt;/a&gt; : Like reading glasses for the web.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;Social Infrastructure&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://hastwoparents.com&#34;&gt;HasTwoParents.com&lt;/a&gt; : An email tool for parents.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://minipact.com&#34;&gt;Minipact.com&lt;/a&gt; : API-first social infra for promises.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.zeronetpositive.org/&#34;&gt;ZeroNetPositive.org&lt;/a&gt; : Rethinking corporate structures with friends.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_4&#34;&gt;Miscellaneous&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Build packs for Cloud Foundry and steps for Wercker.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://afterstack.com&#34;&gt;AfterStack.com&lt;/a&gt; : Haven&amp;rsquo;t decided what this is yet ;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;toc_5&#34;&gt;Defunct Projects&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;BountyUp.com : Like Kickstarter, but 5 years too early. Frozen by the SEC.&lt;/li&gt;
+&lt;li&gt;BuyLatr.com : Browser plugin for price change notifications. Sold it.&lt;/li&gt;
+&lt;li&gt;PatchMe.in : Never miss a conference call or dial a stupid conf ID again.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How I Learned to Stop Worrying and Love the (Static) Web</title>
+      <link>http://cognition.ca/post/about-hugo/</link>
+      <pubDate>Mon, 04 Aug 2014 19:22:29 UTC</pubDate>
+      
+      <guid>http://cognition.ca/post/about-hugo/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m an early fan of the &lt;a href=&#34;http://www.aaronsw.com/weblog/000404&#34;&gt;Baked, Not Fried &lt;/a&gt;
+concept behind static web generators. But somehow, getting all the tools in place
+to run one myself seemed onerous. A simple &lt;code&gt;apt-get install mysql&lt;/code&gt; was always
+easier than the vaguely-mystical incantations required to get jekyll up and running.&lt;/p&gt;
+
+&lt;p&gt;Then again, there was my deep-seated prejudice against Ruby. (See my previous
+    trolling of the ruby community when I accused them of being singlehandedly
+    responsible for Global Warming.)&lt;/p&gt;
+
+&lt;p&gt;But with the emergence of &lt;a href=&#34;http://hugo.spf13.com&#34;&gt;Hugo&lt;/a&gt;, an elegant static site
+generator written in #Golang, I&amp;rsquo;ve been able to get over the line. Or maybe it
+was simply time that I had a blog again.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://cognition.ca/about/</link>
+      <pubDate>Sun, 03 Aug 2014 23:33:29 UTC</pubDate>
+      
+      <guid>http://cognition.ca/about/</guid>
+      <description>
+
+&lt;h1 id=&#34;toc_0&#34;&gt;Joshua McKenty&lt;/h1&gt;
+
+&lt;p&gt;I work on both open source and commercial software. I can probably attribute
+this socialist/capitalist mix to my dual American/Canadian citizenship,
+but I&amp;rsquo;m not &lt;em&gt;that&lt;/em&gt; fond of introspection.&lt;/p&gt;
+
+&lt;p&gt;I am a cofounder of &lt;a href=&#34;http://www.openstack.org&#34;&gt;OpenStack&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The longer stories have been told repeatedly, but suffice it to say that some mix
+of Jesse Andrews, Chris C. Kemp, Devin Carlen, Vishvananda Ishaya, Soo Choi,
+Andy Smith, Manesh Singh and myself ought to be held responsible for the release of
+&amp;ldquo;nova&amp;rdquo;, while we were all affiliated with the NASA Ames Research Center.&lt;/p&gt;
+
+&lt;p&gt;I am the cofounder of &lt;a href=&#34;http://www.pistoncloud.com&#34;&gt;Piston Cloud Computing, Inc.&lt;/a&gt;,
+the first commercial provider of a supported OpenStack software product.&lt;/p&gt;
+
+&lt;p&gt;In prior lives, I worked on the &lt;a href=&#34;http://sillydog.org/narchive/ns8.php&#34;&gt;Netscape Browser&lt;/a&gt;,
+and the &lt;a href=&#34;http://en.wikipedia.org/wiki/Flock_(web_browser&#34;&gt;Flock Browser&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I had a brief stint at &lt;a href=&#34;http://en.wikipedia.org/wiki/Tapulous&#34;&gt;Tapulous&lt;/a&gt;,
+right around the time of the Apple iPhone App Store launch.&lt;/p&gt;
+
+&lt;p&gt;I also founded BountyUp, Natel Canada and BuyLatr, none of which had terribly notable exits.&lt;/p&gt;
+
+&lt;p&gt;Most of my open source work is available online on &lt;a href=&#34;http://github.com/joshuamckenty&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;Governance&lt;/h2&gt;
+
+&lt;p&gt;I currently sit as an elected Gold Member director on the OpenStack Foundation
+Board of Directors. In that capacity, I am the co-chair of the
+&lt;a href=&#34;https://wiki.openstack.org/wiki/Governance/DefCoreCommittee&#34;&gt;DefCore committee&lt;/a&gt;
+ (along with &lt;a href=&#34;http://robhirschfeld.com/&#34;&gt;Rob Hirschfeld&lt;/a&gt;). I was also the founding chair of the (now-defunct)
+ &lt;a href=&#34;https://wiki.openstack.org/wiki/Governance/Foundation/TransparencyCommittee&#34;&gt;Transparency Working Group&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I am an appointed member of the
+&lt;a href=&#34;http://cloudfoundry.org/about/index.html&#34;&gt;Cloud Foundry Advisory Board&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I am also an appointed member of the
+&lt;a href=&#34;http://opencontrail.org/opencontrail-advisory-board/&#34;&gt;Open Contrail Advisory Board&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Social Media&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://twitter.com/jmckenty&#34;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/in/joshuamckenty&#34;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://about.me/jmckenty&#34;&gt;About.me&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I don&amp;rsquo;t blog all that often.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

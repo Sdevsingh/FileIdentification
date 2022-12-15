@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<game
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  name="Summoner-Wars"
+  id="9788b073-6edf-46b3-b6d6-08df7abc315a"
+  octgnVersion="3.1.0.0"
+  version="0.0.0.1"
+  markersize="25"
+  tags="card-game fantasy fighting"
+  description="Summoner Wars..."
+  setsurl=""
+  gameurl=""
+  iconurl=""
+  authors="cpjolicoeur">
+  <scripts>
+    <script src="Scripts/actions.py" />
+  </scripts>
+  <fonts>
+  </fonts>
+  <proxygen definitionsrc="Proxy/proxydef.xml">
+  </proxygen>
+  <globalvariables>
+    <globalvariable name="gameEnded" value="False" />
+  </globalvariables>
+  <card back="Card/card-back.jpg" front="Card/card-front.jpg" width="63" height="88" cornerRadius="2">
+  </card>
+  <table name="Table" visibility="undefined" ordered="False" width="800" height="800" board="Table/tabletop.jpg" boardPosition="" background="Table/background.jpg" backgroundStyle="uniformToFill">
+  </table>
+  <player summary="{#Magic} Magic">
+    <globalvariable name="gameVersion" value="" />
+    <hand name="Hand" visibility="me" ordered="False" width="63" height="88" icon="Groups/Hand.png">
+    </hand>
+    <group name="Magic Pile" visibility="none" ordered="False" width="63" height="88" icon="Groups/Magic-Pile.png" collapsed="False">
+    </group>
+    <group name="Discard Pile" visibility="all" ordered="False" width="63" height="88" icon="Groups/Discard-Pile.png" collapsed="False">
+    </group>
+  </player>
+  <shared>
+    <group name="Exile" visibility="all" ordered="False" width="63" height="88" icon="Groups/Exile.png" collapsed="False" />
+  </shared>
+  <deck>
+    <section name="Hand" group="Hand" />
+  </deck>
+</game>

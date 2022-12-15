@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+	<TableLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:stretchColumns="2"
+	    android:shrinkColumns="2">
+       	<TableRow>
+       	    <TextView android:text="@string/nameFieldLabel" />
+        	<EditText android:id="@+id/name" android:hint="@string/nameFieldHint" android:layout_span="2" />
+       	</TableRow>
+	    <TableRow>
+	        <TextView
+	            android:id="@+id/textView2"
+	            android:textColor="#AA6666"
+	    		android:typeface="monospace"
+	            android:text="@string/addressFieldLabel" />
+	        <AutoCompleteTextView android:id="@+id/address" android:singleLine="true" android:layout_span="2" />
+	    </TableRow>
+	    <TableRow>
+		    <TextView android:text="@string/phoneFieldLabel" />
+		    <EditText android:id="@+id/phone" android:inputType="phone" />
+		</TableRow>
+	    <TableRow>
+	        <TextView
+	            android:id="@+id/textView3"
+	            android:text="@string/typeFieldLabel" />
+	        <RadioGroup android:id="@+id/restaurantTypes">
+	            <RadioButton
+	                android:id="@+id/take_out"
+	                android:checked="true"
+	                android:text="@string/restaurantType01" />
+	            <RadioButton
+	                android:id="@+id/sit_down"
+	                android:text="@string/restaurantType02" />
+	            <RadioButton
+	                android:id="@+id/delivery"
+	                android:text="@string/restaurantType03" />
+	        </RadioGroup>
+			<LinearLayout android:orientation="vertical">
+	        	<EditText android:id="@+id/notes"
+	            	android:inputType="textMultiLine"
+	            	android:gravity="top"
+	            	android:lines="2"
+	            	android:scrollHorizontally="false"
+	            	android:maxLines="2"
+	            	android:layout_width="match_parent"
+	            	android:layout_height="wrap_content"
+	            	android:hint="notes" />
+	        	<EditText android:id="@+id/feed"
+	        	    android:layout_width="match_parent"
+	        	    android:layout_height="wrap_content"
+	        	    android:hint="Feed URL" />
+	        	<LinearLayout android:orientation="horizontal"
+	        	    android:layout_width="wrap_content"
+	        	    android:layout_height="wrap_content">
+	        	    <TextView android:text="@string/locationFieldLabel"
+	        	        android:layout_width="wrap_content"
+	        	    	android:layout_height="wrap_content" />
+	        		<TextView android:id="@+id/location"
+	        		    android:text="@string/locationFieldHint"
+	        		    android:layout_width="wrap_content"
+	        	    	android:layout_height="wrap_content" />
+	        	</LinearLayout>
+	        </LinearLayout>
+	    </TableRow>
+    </TableLayout>
+</ScrollView>

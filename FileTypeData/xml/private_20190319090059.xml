@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>HHKB</name>
+    <item>
+      <name>Command Escape to Command `</name>
+      <identifier>hhkb.command_escape</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::ESCAPE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+        KeyCode::ESCAPE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::ESCAPE, ModifierFlag::COMMAND_L,
+        KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+  </item>
+  <item>
+    <name>Disable ESC for Exit Fullscreen</name>
+    <item>
+      <name>Disable ESC for Exit Fullscreen (Safari only)</name>
+      <identifier>private.app_safari_esc_to_optesc</identifier>
+      <only>SAFARI</only>
+      <autogen>
+        __KeyToKey__ KeyCode::ESCAPE, ModifierFlag::NONE, KeyCode::ESCAPE, ModifierFlag::OPTION_L
+      </autogen>
+    </item>
+    <item>
+      <name>Disable ESC for Exit Fullscreen (Mail only)</name>
+      <identifier>private.app_mail_esc_to_vk_none</identifier>
+      <only>MAIL</only>
+      <autogen>
+        __KeyToKey__ KeyCode::ESCAPE, KeyCode::VK_NONE
+      </autogen>
+    </item>
+  </item>
+</root>

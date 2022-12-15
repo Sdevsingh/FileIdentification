@@ -1,0 +1,121 @@
+{% extends "base.xml" %}
+
+{% block root %}
+<trials>
+    <trial>
+        <main>
+            <trial_id>{{ object.trial_id }}</trial_id>
+            <utrn>{{ object.utrn }}</utrn>
+            <reg_name>{{ object.reg_name }}</reg_name>
+            <date_registration>{{ object.date_registration }}</date_registration>
+            <primary_sponsor>{{ object.primary_sponsor }}</primary_sponsor>
+            <public_title>{{ public_title }}</public_title>
+            <acronym>{{ object.acronym_display }}</acronym>
+            <scientific_title>{{ object.scientific_title }}</scientific_title>
+            <scientific_acronym>{{ object.scientific_acronym_display }}</scientific_acronym>
+            <date_enrolment>{{ object.date_enrollment_actual }}</date_enrolment>
+            <type_enrolment>{{ object.type_enrolment }}</type_enrolment>
+            <target_size>{{ object.target_sample_size }}</target_size>
+            <recruitment_status>{{ object.recruitment_status }}</recruitment_status>
+            <url>{{ object.url }}</url>
+            <study_type>{{ object.study_type }}</study_type>
+            <study_design>{{ object.study_design }}</study_design>
+            <phase>{{ object.phase }}</phase>
+            <hc_freetext>{{ object.hc_freetext }}</hc_freetext>
+            <i_freetext>{{ object.i_freetext }}</i_freetext>            
+        </main>
+        <contacts>
+        {% for contact in object.public_contacts %}
+            <contact>
+                <type>public</type>
+                <firstname>{{ contact.firstname }}</firstname>
+                <middlename>{{ contact.middlename }}</middlename>
+                <lastname>{{ contact.lastname }}</lastname>
+                <address>{{ contact.address }}</address>
+                <city>{{ contact.city }}</city>
+                <country1>{{ contact.country }}</country1>
+                <zip>{{ contact.zip }}</zip>
+                <telephone>{{ contact.telephone }}</telephone>
+                <email>{{ contact.email }}</email>
+                <affiliation>{{ contact.affiliation }}</affiliation>
+            </contact>
+        {% endfor %}
+        {% for contact in object.scientific_contacts %}
+            <contact>
+                <type>scientific</type>
+                <firstname>{{ contact.firstname }}</firstname>
+                <middlename>{{ contact.middlename }}</middlename>
+                <lastname>{{ contact.lastname }}</lastname>
+                <address>{{ contact.address }}</address>
+                <city>{{ contact.city }}</city>
+                <country1>{{ contact.country }}</country1>
+                <zip>{{ contact.zip }}</zip>
+                <telephone>{{ contact.telephone }}</telephone>
+                <email>{{ contact.email }}</email>
+                <affiliation>{{ contact.affiliation }}</affiliation>
+            </contact>
+        {% endfor %}
+        </contacts>
+        <countries>
+        {% for country in object.trial_recruitment_country %}
+            <country2>{{ country.description }}</country2>
+        {% endfor %}
+        </countries>
+        <criteria>
+            <inclusion_criteria>{{ object.inclusion_criteria }}</inclusion_criteria>
+            <agemin>{{ object.agemin }}</agemin>
+            <agemax>{{ object.agemax }}</agemax>
+            <gender>{{ object.gender }}</gender>
+            <exclusion_criteria>{{ object.exclusion_criteria }}</exclusion_criteria>
+        </criteria>
+        <health_condition_code>
+            {% for hc in object.hc_code %}
+            <hc_code>{{ hc.code }}: {{ hc.text }}</hc_code>
+            {% endfor %}
+        </health_condition_code>
+        <health_condition_keyword>
+            {% for hc in object.hc_keyword %}
+            <hc_keyword>{{ hc.code }}: {{ hc.text }}</hc_keyword>
+            {% endfor %}
+        </health_condition_keyword>
+        <intervention_code>
+            {% for iv in object.intervention_code %}
+            <i_code>{{ iv.label }}: {{ iv.description }}</i_code>
+            {% endfor %}
+        </intervention_code>
+        <intervention_keyword>
+            {% for iv in object.intervention_keyword %}
+            <i_keyword>{{ iv.code }}: {{ iv.text }}</i_keyword>
+            {% endfor %}
+        </intervention_keyword>
+        <primary_outcome>
+            {% for outcomes in object.primary_outcomes %}
+            <prim_outcome>{{ outcomes.description }}</prim_outcome>
+            {% endfor %}
+        </primary_outcome>
+        <secondary_outcome>
+            {% for outcomes in object.secondary_outcomes %}
+            <sec_outcome>{{ outcomes.description }}</sec_outcome>
+            {% endfor %}
+        </secondary_outcome>
+        <secondary_sponsor>
+            {%  for sponsors in object.secondary_sponsors %}
+            <sponsor_name>{{ sponsors.institution }}</sponsor_name>
+            {% endfor %}
+        </secondary_sponsor>
+        <secondary_ids>
+            {% for secid in object.trial_number %}
+            <secondary_id>
+                <sec_id>{{ secid.id_number }}</sec_id>
+                <issuing_authority>{{ secid.issuing_authority }}</issuing_authority>    
+            </secondary_id>
+            {% endfor %}
+        </secondary_ids>
+        <source_support>
+            {%  for source_support in object.support_sources %}
+            <source_name>{{ source_support.institution }}</source_name>
+            {% endfor %}
+        </source_support>        
+    </trial>
+</trials>
+{% endblock %}

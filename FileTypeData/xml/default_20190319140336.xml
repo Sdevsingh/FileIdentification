@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<remote name="github" fetch="ssh://git@github.com"/>
+	<default revision="refs/heads/master" remote="github"/>
+	
+	<!-- Web Sites -->
+	
+	<!-- Homepage <http://mylesb.ca/> -->
+	<project name="myles/mylesb.ca.git" path="mylesb.ca" remote="github"/>
+	
+	<!-- Myles' Lab <http://mylesbraithwaite.org/> -->
+	<project name="myles/mylesbraithwaite.org.git" path="mylesbraithwaite.org" remote="github"/>
+	
+	<!-- Blog <http://mylesbraithwaite.com/> -->
+	<project name="myles/mylesbraithwaite.com.git" path="mylesbraithwaite.com" remote="github"/>
+	
+	<!-- You're the Worst Today <http://youaretheworst.today/> -->
+	<project name="myles/youaretheworst.today.git" path="youaretheworst.today" remote="github"/>
+	
+	<!-- Myles.Coffee <http://myles.coffee/> -->
+	<project name="myles/myles.coffee.git" path="myles.coffee" remote="github"/>
+	
+	<!-- Myles.City <http://myles.city/> -->
+	<project name="myles/myles.city.git" path="myles.city" remote="github"/>
+	
+	<!-- GitHub Page <http://myles.github.io/> -->
+	<project name="myles/myles.github.io.git" path="myles.github.io" remote="github"/>
+	
+	<!-- Myles' Life <http://myles.life/> -->
+	<project name="myles/myles.life.git" path="myles.life" remote="github"/>
+	
+	<!-- Myles' Links <http://myles.link/> -->
+	<project name="myles/myles.link.git" path="myles.link" remote="github"/>
+	
+	<!-- Myles RED <http://myles.red/> -->
+	<project name="myles/myles.red.git" path="myles.red" remote="github"/>
+	
+	<!-- My ~ Town <http://tilde.town/~myles/> -->
+	<project name="myles/tidle.town-myles.git" path="tidle.town-myles" remote="github"/>
+	
+	<!-- Services -->
+	
+	<!-- ShortURL Service <http://myl.be/> -->
+	<project name="myles/myl.be.git" path="_services/myl.be" remote="github"/>
+	
+	<!-- Personal API <http://api.mylesbraithwaite.com/> -->
+	<project name="myles/me-api.git" path="_services/me-api" remote="github"/>
+	
+	<!-- Time of Day -->
+	<project name="myles/time-of-day.git" path="_services/time-of-day" remote="github"/>
+	
+	<!-- Applications -->
+	
+	<!-- GitHub Milestones to ICS -->
+	<project name="myles/github-milestones-ics.git" path="_apps/github-milestones-ics" remote="github"/>
+	
+	<!-- Libraries -->
+	
+	<!-- Old Fashioned -->
+	<project name="myles/old-fashioned.git" path="_libs/old-fashioned" remote="github"/>
+</manifest>

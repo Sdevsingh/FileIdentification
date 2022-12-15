@@ -1,0 +1,29 @@
+---
+extension: xml
+layout: false
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>tpitale</title>
+  <link href="http://tpitale.com/feed.xml" rel="self" />
+  <link href="http://tpitale.com/" />
+  <id>http://tpitale.com/</id>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <author>
+    <name>Tony Pitale</name>
+    <email>tpitale@gmail.com</email>
+  </author>
+
+  {% for post in site.posts limit:10 %}
+    <entry>
+      <id>http://tpitale.com{{post.id}}</id>
+      <title>{{post.title | xml_escape}}</title>
+      <link href="http://tpitale.com{{post.url}}" />
+      <updated>{{post.created_at | date_to_xmlschema }}</updated>
+      <content type="html">
+        {{post.content | xml_escape}}
+      </content>
+    </entry>
+  {% endfor %}
+</feed>

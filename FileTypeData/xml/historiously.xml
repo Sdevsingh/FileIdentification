@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<historiously version='0.1'>
+  <account>
+    <name>foo</name>
+    <password>bar</password>
+  </account>
+  <server>
+    <uri>http://localhost:4567/api/message/new</uri>
+  </server>
+</historiously>

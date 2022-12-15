@@ -1,0 +1,389 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE web-app
+	PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+	"http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>net.spy.photo.photoresources</param-value>
+	</context-param>
+	<context-param>
+		<param-name>net.spy.photo.config</param-name>
+		<param-value>/WEB-INF/photo.conf</param-value>
+	</context-param>
+
+	<!-- Auth filter -->
+	<filter>
+		<filter-name>persessCheck</filter-name>
+		<filter-class>net.spy.photo.AuthFilter</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>basicAuth</filter-name>
+		<filter-class>net.spy.jwebkit.auth.BasicAuthFilter</filter-class>
+		<init-param>
+			<param-name>realm</param-name>
+			<param-value>photo authentication</param-value>
+		</init-param>
+		<init-param>
+			<param-name>authAdaptor</param-name>
+			<param-value>net.spy.photo.PhotoAuthAdaptor</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>proxySupport</filter-name>
+		<filter-class>net.spy.jwebkit.ProxySupportFilter</filter-class>
+		<init-param>
+			<param-name>proxy</param-name>
+			<param-value>192.168.1.4</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>proxySupport</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>persessCheck</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>basicAuth</filter-name>
+		<url-pattern>/auth/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>basicAuth</filter-name>
+		<url-pattern>/api/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Watch the sessions -->
+	<listener>
+		<listener-class>net.spy.photo.SessionWatcher</listener-class>
+	</listener>
+	<!-- Persistent startup/shutdown stuff -->
+	<listener>
+		<listener-class>net.spy.photo.Persistent</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>debug</servlet-name>
+		<servlet-class>net.spy.jwebkit.debug.DebugServlet</servlet-class>
+	</servlet>
+
+	<!-- The main image servlet -->
+	<servlet>
+		<servlet-name>PhotoServlet</servlet-name>
+		<servlet-class>net.spy.photo.PhotoServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Export</servlet-name>
+		<servlet-class>net.spy.photo.ExportServlet</servlet-class>
+	</servlet>
+
+	<!-- The XMLRPC interface -->
+	<servlet>
+		<servlet-name>XMLRPCServlet</servlet-name>
+		<servlet-class>net.spy.rpc.XMLRPC</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>rss</servlet-name>
+		<servlet-class>net.spy.photo.RSSServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>rsscomment</servlet-name>
+		<servlet-class>net.spy.photo.RSSCommentServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>zip</servlet-name>
+		<servlet-class>net.spy.photo.ZipExportServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>fzip</servlet-name>
+		<servlet-class>net.spy.photo.ZipExportServlet</servlet-class>
+		<init-param>
+			<param-name>fullExport</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet>
+		<servlet-name>stat</servlet-name>
+		<servlet-class>net.spy.photo.StatServlet</servlet-class>
+	</servlet>
+
+	<!-- AJAX mappings -->
+	<servlet>
+		<servlet-name>ajaxphotoedit</servlet-name>
+		<servlet-class>net.spy.photo.ajax.PhotoEditServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>ajaxPlaceEdit</servlet-name>
+		<servlet-class>net.spy.photo.ajax.PlaceEditor</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>ajaxcatlist</servlet-name>
+		<servlet-class>net.spy.photo.ajax.Categories</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>ajaxkeywords</servlet-name>
+		<servlet-class>net.spy.photo.ajax.Keywords</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>ajaxexif</servlet-name>
+		<servlet-class>net.spy.photo.ajax.EXIFServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>ajaxSlideshow</servlet-name>
+		<servlet-class>net.spy.photo.ajax.SlideshowServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>ajaxPlaces</servlet-name>
+		<servlet-class>net.spy.photo.ajax.Places</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<servlet-name>validationcontrol</servlet-name>
+		<servlet-class>net.spy.photo.ajax.ValidationControlServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>storercontrol</servlet-name>
+		<servlet-class>net.spy.photo.ajax.PhotoStorerControlServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>storageCopy</servlet-name>
+		<servlet-class>net.spy.photo.ajax.StorageCopyControl</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>apiCategory</servlet-name>
+		<servlet-class>net.spy.photo.rest.GetCategories</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>apiNewPhoto</servlet-name>
+		<servlet-class>net.spy.photo.rest.UploadImage</servlet-class>
+	</servlet>
+
+	<!-- The action servlet -->
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+		<init-param>
+			<param-name>application</param-name>
+			<param-value>net.spy.photo.photoresources</param-value>
+		</init-param>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>/WEB-INF/struts-config.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>0</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>0</param-value>
+		</init-param>
+		<init-param>
+			<param-name>validate</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>maxFileSize</param-name>
+			<param-value>5M</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>rss</servlet-name>
+		<url-pattern>/rss/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- Authenticated RSS -->
+	<servlet-mapping>
+		<servlet-name>rss</servlet-name>
+		<url-pattern>/auth/rss/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>rsscomment</servlet-name>
+		<url-pattern>/rssc</url-pattern>
+	</servlet-mapping>
+
+	<!-- Authenticated RSS -->
+	<servlet-mapping>
+		<servlet-name>rsscomment</servlet-name>
+		<url-pattern>/auth/rssc</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>PhotoServlet</servlet-name>
+		<url-pattern>/auth/PhotoServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>zip</servlet-name>
+		<url-pattern>/zip</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>fzip</servlet-name>
+		<url-pattern>/fzip</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>stat</servlet-name>
+		<url-pattern>/stat</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ajaxphotoedit</servlet-name>
+		<url-pattern>/ajax/photo/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ajaxPlaceEdit</servlet-name>
+		<url-pattern>/ajax/place/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ajaxcatlist</servlet-name>
+		<url-pattern>/ajax/cats/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ajaxkeywords</servlet-name>
+		<url-pattern>/ajax/keywords/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ajaxexif</servlet-name>
+		<url-pattern>/ajax/exif/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ajaxSlideshow</servlet-name>
+		<url-pattern>/ajax/slideshow</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ajaxPlaces</servlet-name>
+		<url-pattern>/ajax/places</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>validationcontrol</servlet-name>
+		<url-pattern>/ajax/validation/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>storercontrol</servlet-name>
+		<url-pattern>/ajax/storer/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>storageCopy</servlet-name>
+		<url-pattern>/ajax/storageCopy/*</url-pattern>
+	</servlet-mapping>
+
+	<!-- Normal mapping -->
+	<servlet-mapping>
+		<servlet-name>PhotoServlet</servlet-name>
+		<url-pattern>/PhotoServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Mapping with path-info -->
+	<servlet-mapping>
+		<servlet-name>PhotoServlet</servlet-name>
+		<url-pattern>/PhotoServlet/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Export</servlet-name>
+		<url-pattern>/export</url-pattern>
+	</servlet-mapping>
+
+	<!-- XMLRPC servlet mapping -->
+	<servlet-mapping>
+		<servlet-name>XMLRPCServlet</servlet-name>
+		<url-pattern>/RPC2</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>apiCategory</servlet-name>
+		<url-pattern>/api/cat</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>apiNewPhoto</servlet-name>
+		<url-pattern>/api/photo/new</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>debug</servlet-name>
+		<url-pattern>/debugServlet</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<!-- How errors are done -->
+	<error-page>
+		<!-- This will deal with *all* exceptions. -->
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/error.jsp</location>
+	</error-page>
+
+	<!-- Photo TLD -->
+	<taglib>
+		<taglib-uri>/tlds/photo.tld</taglib-uri>
+		<taglib-location>/WEB-INF/tlds/photo.tld</taglib-location>
+	</taglib>
+
+	<!-- stuff that should never be fetched -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Templates</web-resource-name>
+			<url-pattern>/content/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>denied</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-role>
+		<description>Nobody ever directly accesses this stuff.</description>
+		<role-name>denied</role-name>
+	</security-role>
+
+	<security-role>
+		<description>Any authenticated user.</description>
+		<role-name>authenticated</role-name>
+	</security-role>
+
+	<security-role>
+		<description>Administrative user.</description>
+		<role-name>admin</role-name>
+	</security-role>
+
+</web-app>

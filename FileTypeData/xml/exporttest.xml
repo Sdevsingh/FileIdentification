@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<photoexport>
+  <album>
+    <photo>
+      <id>5</id>
+      <md5>7aeade7396e6c6d8115c5e6847b81532</md5>
+      <addedby>demouser</addedby>
+      <cat>Public</cat>
+      <taken>2006-09-01</taken>
+      <ts>2006-09-01T00:15:21</ts>
+      <descr>Variations on your mom.</descr>
+      <size>383132</size>
+      <width>1600</width>
+      <height>1200</height>
+      <tnwidth>194</tnwidth>
+      <tnheight>146</tnheight>
+      <extension>jpg</extension>
+      <keywords>
+        <keyword word="license"/>
+        <keyword word="mom"/>
+        <keyword word="plate"/>
+        <keyword word="sepia"/>
+        <keyword word="variant"/>
+        <keyword word="your"/>
+      </keywords>
+    </photo>
+    <photo>
+      <id>4</id>
+      <md5>5f6127f18854097fc450da086d3e959c</md5>
+      <addedby>demouser</addedby>
+      <cat>Public</cat>
+      <taken>2006-09-01</taken>
+      <ts>2006-09-01T00:15:19</ts>
+      <descr>Variations on your mom.</descr>
+      <size>358693</size>
+      <width>1600</width>
+      <height>1200</height>
+      <tnwidth>194</tnwidth>
+      <tnheight>146</tnheight>
+      <extension>jpg</extension>
+      <keywords>
+        <keyword word="bw"/>
+        <keyword word="license"/>
+        <keyword word="mom"/>
+        <keyword word="plate"/>
+        <keyword word="variant"/>
+        <keyword word="your"/>
+      </keywords>
+    </photo>
+    <photo>
+      <id>1</id>
+      <md5>1c3a8b16391ee76ec228549559647d52</md5>
+      <addedby>demouser</addedby>
+      <cat>Public</cat>
+      <taken>2004-03-28</taken>
+      <ts>2004-03-28T23:00:07</ts>
+      <descr>Your mom's car.</descr>
+      <size>636796</size>
+      <width>1600</width>
+      <height>1200</height>
+      <tnwidth>194</tnwidth>
+      <tnheight>146</tnheight>
+      <extension>jpg</extension>
+      <keywords>
+        <keyword word="license"/>
+        <keyword word="mom"/>
+        <keyword word="plate"/>
+        <keyword word="your"/>
+      </keywords>
+      <annotations>
+        <annotation>
+          <x>762</x>
+          <y>462</y>
+          <width>264</width>
+          <height>144</height>
+          <title>We were behind your mom in SF.</title>
+          <addedby>demouser</addedby>
+          <ts>2005-05-31T00:47:21</ts>
+          <keywords>
+            <keyword word="license"/>
+            <keyword word="mom"/>
+            <keyword word="plate"/>
+            <keyword word="your"/>
+          </keywords>
+        </annotation>
+        <annotation>
+          <x>90</x>
+          <y>478</y>
+          <width>94</width>
+          <height>54</height>
+          <title>This plate is boring.</title>
+          <addedby>demouser</addedby>
+          <ts>2005-05-31T00:47:52</ts>
+          <keywords>
+            <keyword word="license"/>
+            <keyword word="plate"/>
+          </keywords>
+        </annotation>
+      </annotations>
+    </photo>
+    <photo>
+      <id>2</id>
+      <md5>e99a953cd3f7649009ea2cc6196303e0</md5>
+      <addedby>demouser</addedby>
+      <cat>Private</cat>
+      <taken>2003-12-25</taken>
+      <ts>2004-03-28T23:03:27</ts>
+      <descr>Me at Christmas.</descr>
+      <size>546150</size>
+      <width>1200</width>
+      <height>1600</height>
+      <tnwidth>109</tnwidth>
+      <tnheight>146</tnheight>
+      <extension>jpg</extension>
+      <keywords>
+        <keyword word="christmas"/>
+        <keyword word="dustin"/>
+      </keywords>
+    </photo>
+    <photo>
+      <id>3</id>
+      <md5>f1613624bed606ad2bd9ca1560b156cb</md5>
+      <addedby>demouser</addedby>
+      <cat>Private</cat>
+      <taken>2003-11-17</taken>
+      <ts>2004-03-28T23:05:53</ts>
+      <descr>Me in an ichat session.</descr>
+      <size>731467</size>
+      <width>1600</width>
+      <height>1200</height>
+      <tnwidth>194</tnwidth>
+      <tnheight>146</tnheight>
+      <extension>jpg</extension>
+      <keywords>
+        <keyword word="dustin"/>
+        <keyword word="ichat"/>
+      </keywords>
+    </photo>
+  </album>
+</photoexport>

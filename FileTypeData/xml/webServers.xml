@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="35834480-f385-42a9-bc1c-cc04eb391a27" name="Tumblr Dev" url="http://tumblr.dev">
+        <fileTransfer host="172.16.119.39" port="22" privateKey="$USER_HOME$/.ssh/id_rsa" rootFolder="/var/www/apps" accessType="SFTP" passphrase="dfc3dffddf9adfd8dfc1dfeadfdedfc8" username="kiril" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+    <sftpAdvancedGlobalOptions>
+      <SftpAdvancedOptions />
+    </sftpAdvancedGlobalOptions>
+  </component>
+</application>
+

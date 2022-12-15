@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<command-def	xmlns="http://www.unix4j.org/command-def" 
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:schemaLocation="http://www.unix4j.org/command-def command-def.xsd">
+	
+	<command name="from" class="org.unix4j.unix.From" package="org.unix4j.unix.from"/>
+	<name>
+		from - a pseudo command used to redirect the standard input
+	</name>
+	<synopsis>
+		input &gt; command
+	</synopsis>
+	<description ref="from.html"/>
+	<notes/>
+	<methods>
+		<method name="fromString" args="string" usesStandardInput="false">
+			Uses the given string as input for the next command. If the string
+			contains line ending codes (UNIX or DOS independent from the host
+			operating system), the string is split into multiple lines.  
+		</method>
+		<method name="fromStrings" args="strings" usesStandardInput="false">
+			Uses the given strings as input for the next command. Each string
+			usually represents a single line of the input; however, if any of 
+			the strings contains line ending codes (UNIX or DOS independent from
+			the host operating system), it is split into multiple lines.  
+		</method>
+		<method name="from" args="lines" usesStandardInput="false">
+			Uses the strings in the specified {@code input} collection as input
+			lines for the next command. Each string usually represents a single
+			line of the input; however, if any of the strings contains line
+			ending codes (UNIX or DOS independent from the host operating 
+			system), it is split into multiple lines.
+		</method>
+		<method name="fromFile" args="path" usesStandardInput="false">
+			Redirects the contents of the given file into the next command. This 
+			is essentially equivalent to the following syntax in a unix command
+			shell: {@code path > ...} 
+		</method>
+		<method name="fromFile" args="file" usesStandardInput="false">
+			Redirects the contents of the given file into the next command. This 
+			is essentially equivalent to the following syntax in a unix command
+			shell: {@code file > ...} 
+		</method>
+		<method name="fromResource" args="resource" usesStandardInput="false">
+			Reads from the given resource relative to the classpath and 
+			redirects the contents into the next command. The resource is 
+			usually a file or URL on the classpath. The resource is read using
+			{@link Class#getResourceAsStream(String)}.
+		</method>
+		<method name="from" args="stream" usesStandardInput="false">
+			Reads from the given input stream and redirects the contents into 
+			the next command.
+		</method>
+		<method name="from" args="reader" usesStandardInput="false">
+			Uses the given reader and redirects the read input into the next
+			command.
+		</method>
+		<method name="from" args="url" usesStandardInput="false">
+			Reads from the given URL and redirects the contents into the next
+			command.
+		</method>
+		<method name="from" args="input" usesStandardInput="false">
+			Reads from the given input object and redirects the contents into 
+			the next command.
+		</method>
+	</methods>
+	<options/>
+	<operands default="path">
+		<operand name="string" type="String" redirection="setInput(new org.unix4j.io.StringInput(${value}))">
+			the string to use as input  
+		</operand>
+		<operand name="strings" type="String..." redirection="setInput(new org.unix4j.io.StringInput(${value}))">
+			the input lines  
+		</operand>
+		<operand name="lines" type="java.util.Collection&lt;? extends String>" redirection="setInput(new org.unix4j.io.StringInput(${value}))">
+			collection with input lines 
+		</operand>
+		<operand name="path" type="String">
+			the file to use as input; wildcards * and ? are supported; relative 
+			paths are resolved on the basis of the current working directory.
+		</operand>
+		<operand name="file" type="java.io.File" redirection="setInput(new org.unix4j.io.FileInput(${value}))">
+			the file to use as input; relative paths are not resolved (use the
+			string path argument to enable relative path resolving based on the
+			current working directory).
+		</operand>
+		<operand name="resource" type="String" redirection="setInput(new org.unix4j.io.ResourceInput(${value}))">
+			a path to the file to redirect to the next command. The will need
+			to be on the classpath. If the file is in the root directory, the 
+			filename should be prefixed with a forward slash. e.g.:
+		 	{@code "/test-file.txt"}
+		 	
+		 	If the file is in a package, then the package should be specified
+		 	prefixed with a forward slash, and with each dot "." replaced with a
+		 	forward slash. e.g.:
+			{@code "/org/company/mypackage/test-file.txt"}
+		</operand>
+		<operand name="stream" type="java.io.InputStream" redirection="setInput(new org.unix4j.io.StreamInput(${value}))">
+			the input stream to read from
+		</operand>
+		<operand name="reader" type="java.io.Reader" redirection="setInput(new org.unix4j.io.ReaderInput(${value}))">
+			the reader used to read the input
+		</operand>
+		<operand name="url" type="java.net.URL" redirection="setInput(new org.unix4j.io.URLInput(${value}))">
+			the URL to read from
+		</operand>
+		<operand name="input" type="org.unix4j.io.Input">
+			the input object to read from
+		</operand>
+	</operands>
+</command-def>

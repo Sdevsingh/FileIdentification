@@ -1,0 +1,63 @@
+<dataCategories>
+<dataCategory urid="1493" name="blabla" profile_name="Private"  registration_status="candidate">
+</dataCategory>
+<dataCategory urid="1495" name="learner" profile_name="Private"  registration_status="candidate">
+</dataCategory>
+<dataCategory urid="1500" name="cocaCola" profile_name="Private"  registration_status="candidate">
+</dataCategory>
+<dataCategory urid="1559" name="modalParticle" profile_name="Private"  registration_status="candidate">
+</dataCategory>
+<dataCategory urid="1605" name="workingLanguage" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><feat type="definition" xml:lang="en">An identifier in a terminological entry that indicates the name of a language used for an individual object (as opposed to the object language of a language section or of the database per se) as specified by IETF 3066, wherein a language tag consists of a primary sub-tag consisting of a language identifier from ISO 639-1 or 639-2 followed by a hyphen (no space) followed optionally by a second subtag consisting of a country code taken from ISO 3166.</feat><brack><feat type="explanation" xml:lang="en">The language tag always defines a language as spoken (or written, signed or otherwise signaled) by human beings for communication of information to other human beings.  Computer languages such as programming languages are explicitly excluded.</feat><feat type="source" xml:lang="en">http://sunsite.dk/RFC/rfc/rfc3066.html, http://www.ietf.org/rfc/rfc3066.txt?number=3066</feat></brack><brack><feat type="example" xml:lang="en">en-CA for English spoken/written, etc. in Canada.</feat><feat type="source" xml:lang="en">http://sunsite.dk/RFC/rfc/rfc3066.html, http://www.ietf.org/rfc/rfc3066.txt?number=3066</feat></brack><feat type="profile">Private</feat></struct>
+</dataCategory>
+<dataCategory urid="1606" name="priority" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><feat type="definition" xml:lang="en">status established in order of importance or urgency</feat><feat type="explanation" xml:lang="en">One possibility is to have a number between 1 and 10, 1 being the highest priority</feat><brack><feat type="example" xml:lang="en">The priority of a note element.</feat><feat type="source" xml:lang="en">XLIFF 1.1 specification</feat></brack><feat type="profile">Private</feat></struct>
+</dataCategory>
+<dataCategory urid="1607" name="tool" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><feat type="definition" xml:lang="en">describes the tool that has been used to execute a given task in the document (creation, modification, etc)</feat><feat type="profile">Private</feat><feat type="conceptualDomain">identifier</feat></struct>
+</dataCategory>
+<dataCategory urid="1608" name="process" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><feat type="definition" xml:lang="en">contains metadata about the tasks performed in a particular process</feat><feat type="profile">Private</feat><feat type="conceptualDomain">creator</feat><feat type="conceptualDomain">date</feat><feat type="conceptualDomain">identifier</feat><feat type="conceptualDomain">tool</feat><feat type="conceptualDomain">type</feat></struct>
+</dataCategory>
+<dataCategory urid="1613" name="product" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><brack><feat type="definition" xml:lang="en">The complete set, or any of the individual items of the set, of computer programs, procedures, and associated documentation and data designated for delivery to a customer or end user.</feat><feat type="source" xml:lang="en">[IEEE-STD-610]</feat></brack><feat type="explanation" xml:lang="en">typically, included in a header element it refers to the product which uses this document</feat><feat type="profile">Private</feat><feat type="conceptualDomain">identifier</feat></struct>
+</dataCategory>
+<dataCategory urid="1614" name="phone" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><feat type="definition" xml:lang="en">A number identifying a specific phone line</feat><feat type="profile">Private</feat></struct>
+</dataCategory>
+<dataCategory urid="1616" name="help" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><feat type="definition" xml:lang="en">refers help information about an item</feat><feat type="explanation" xml:lang="en">It can contain an identifier of a help menu</feat><feat type="profile">Private</feat><feat type="conceptualDomain">identifier</feat></struct>
+</dataCategory>
+<dataCategory urid="1617" name="menu" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><feat type="definition" xml:lang="en">Refers to a list of options available in a computer application.</feat><feat type="profile">Private</feat></struct>
+</dataCategory>
+<dataCategory urid="1621" name="approved" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><feat type="definition" xml:lang="en">Indicates whether an element is final or has passed its final review</feat><feat type="explanation" xml:lang="en">typically, indicates whether a translation is final or has passed its final review</feat><feat type="profile">Private</feat></struct>
+</dataCategory>
+<dataCategory urid="1622" name="protected" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><feat type="definition" xml:lang="en">indicates whether or not the element referred to should be translated.</feat><brack><feat type="example" xml:lang="en">translate=yes|no</feat><feat type="source" xml:lang="en">XLIFF 1.1 specification</feat></brack><feat type="profile">Private</feat></struct>
+</dataCategory>
+<dataCategory urid="1623" name="reformat" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><brack><feat type="definition" xml:lang="en">Indicates whether some properties of the element can be formatted differently</feat><feat type="note" xml:lang="en">it can depend on an action taking place, a redefinition of the element, a translation...</feat></brack><brack><feat type="explanation" xml:lang="en">typically, in a translation environment it indicates whether some properties (size, font, etc.) of the target can be formatted differently from the source</feat><feat type="source" xml:lang="en">XLIFF 1.1 Specification</feat></brack><feat type="profile">Private</feat></struct>
+</dataCategory>
+<dataCategory urid="1624" name="administrationStatus" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><feat type="definition" xml:lang="en">a state, at a particular time, of the management and settlement of an estate</feat><feat type="profile">Private</feat><feat type="conceptualDomain">approved</feat></struct>
+</dataCategory>
+<dataCategory urid="1626" name="quality" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><brack><feat type="definition" xml:lang="en">a degree or grade of excellence or worth</feat><feat type="source" xml:lang="en">www.cogsci.princeton.edu/cgi-bin/webwn</feat></brack><feat type="example" xml:lang="en">In terms of a translation, it can be exact, fuzzy, low...</feat><feat type="profile">Private</feat></struct>
+</dataCategory>
+<dataCategory urid="1635" name="begin" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><feat type="definition" xml:lang="en">specification of the beginning of an action or an object
+Used only in refinement (ex: /duration/ or link structure)</feat><feat type="profile">Private</feat></struct>
+</dataCategory>
+<dataCategory urid="1636" name="end" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><feat type="definition" xml:lang="en">specification of the end of an action or an object
+Used only in refinement (ex: /duration/ or link structure)</feat><feat type="profile">Private</feat></struct>
+</dataCategory>
+<dataCategory urid="1638" name="performedBy" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><feat type="definition" xml:lang="en">the description of the entity who has taken part in the construction of the element</feat><feat type="profile">Private</feat><feat type="conceptualDomain">tool</feat></struct>
+</dataCategory>
+<dataCategory urid="1639" name="x" profile_name="Private"  registration_status="candidate">
+<struct type="Desc"><brack><feat type="definition" xml:lang="fr">La coordonn?e sur l'axe-x de l'un des coins de la r?gion rectangulaire dans laquelle un ?l?ment 'svg' incorpor? se place.</feat><feat type="source" xml:lang="fr">sp?cification de la mod?lisation SVG:http://www.yoyodesign.org/doc/w3c/svg1/struct.html</feat></brack><brack><feat type="definition" xml:lang="en">The x-axis coordinate of one corner of the rectangular region into which an embedded 'svg' element is placed</feat><feat type="source" xml:lang="en">SVG specification: http://www.w3.org/TR/SVG/struct.html</feat></brack><feat type="explanation" xml:lang="fr">x = "&lt;coordonn?e&gt;". Si l'attribut n'est pas sp?cifi?, ceci aboutit au m?me effet que si on avait sp?cifi? une valeur de "0".</feat><feat type="profile">Private</feat><feat type="conceptualDomain">unit</feat></struct>
+</dataCategory>
+<dataCategory urid="1640" name="y" profile_name="Private"  registration_status="candidate">

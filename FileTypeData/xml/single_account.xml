@@ -1,0 +1,152 @@
+<ii_feed>
+    <account_info>
+        <plan>Business 3</plan>
+        <product>adsl_business V2</product>
+    </account_info>
+    <volume_usage>
+        <quota_reset>
+            <anniversary>28</anniversary>
+            <days_so_far>10</days_so_far>
+            <days_remaining>22</days_remaining>
+        </quota_reset>        
+        <expected_traffic_types>
+            <type classification="anytime" used="45030021786">
+                <name>non-free</name>
+                <quota_allocation>100000</quota_allocation>
+                <is_shaped speed="0">false</is_shaped>
+            </type>
+            <type classification="freezone" used="1467105012">
+                <name>freezone</name>
+            </type>
+        </expected_traffic_types>
+        <volume_usage>
+            <day_hour period="2010-01-28">
+                <usage type="anytime">8476364804</usage>
+                <usage type="freezone">19950428</usage>
+            </day_hour>
+            <day_hour period="2010-01-29">
+                <usage type="anytime">5680001329</usage>
+                <usage type="freezone">2678761</usage>
+            </day_hour>
+            <day_hour period="2010-01-30">
+                <usage type="anytime">235408370</usage>
+                <usage type="freezone">55411712</usage>
+            </day_hour>
+            <day_hour period="2010-01-31">
+                <usage type="anytime">158825278</usage>
+                <usage type="freezone">2005748</usage>
+            </day_hour>
+            <day_hour period="2010-02-01">
+                <usage type="anytime">838021923</usage>
+                <usage type="freezone">6545194</usage>
+            </day_hour>
+            <day_hour period="2010-02-02">
+                <usage type="anytime">665067485</usage>
+                <usage type="freezone">5278122</usage>
+            </day_hour>
+            <day_hour period="2010-02-03">
+                <usage type="anytime">518595034</usage>
+                <usage type="freezone">119592204</usage>
+            </day_hour>
+            <day_hour period="2010-02-04">
+                <usage type="anytime">7044499877</usage>
+                <usage type="freezone">1067657233</usage>
+            </day_hour>
+            <day_hour period="2010-02-05">
+                <usage type="anytime">5841971792</usage>
+                <usage type="freezone">118317383</usage>
+            </day_hour>
+            <day_hour period="2010-02-06">
+                <usage type="anytime">544638728</usage>
+                <usage type="freezone">69668227</usage>
+            </day_hour>
+            <day_hour period="2010-02-07">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-08">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-09">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-10">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-11">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-12">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-13">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-14">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-15">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-16">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-17">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-18">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-19">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-20">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-21">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-22">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-23">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-24">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-25">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-26">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+            <day_hour period="2010-02-27">
+                <usage type="anytime">0</usage>
+                <usage type="freezone">0</usage>
+            </day_hour>
+        </volume_usage>
+    </volume_usage>
+    <connections>
+        <ip on_since="2010-02-04 20:38:12">1.2.3.4</ip>
+    </connections>
+</ii_feed>

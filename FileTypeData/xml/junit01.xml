@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+        <testsuite tests="2" failures="1" time="0.002" name="_/home/vagrant/ci-playground">
+                <properties>
+                        <property name="go.version" value="go1.9.2"></property>
+                </properties>
+                <testcase classname="ci-playground" name="TestHelloWorld" time="0.000">
+                        <failure message="Failed" type="">foo_test.go:6: bad</failure>
+                </testcase>
+                <testcase classname="ci-playground" name="TestSomething" time="0.000"></testcase>
+        </testsuite>
+</testsuites>

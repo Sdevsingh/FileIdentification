@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE MODE SYSTEM "xmode.dtd">
+
+<MODE>
+  <PROPS>
+    <PROPERTY NAME="lineComment" VALUE="%" />
+    <PROPERTY NAME="noWordSep" VALUE="\"/>
+	
+	<PROPERTY NAME="noTabs" VALUE="true"/>
+	<PROPERTY NAME="indentSize" VALUE="2" />
+	<PROPERTY NAME="tabSize" VALUE="2"/>
+  </PROPS>
+
+  <RULES IGNORE_CASE="FALSE">
+	<IMPORT DELEGATE="extras"/>
+	
+  	<SPAN TYPE="MARKUP" DELEGATE="MartinTabularMode"><BEGIN>\begin{tabular}</BEGIN><END>\end{tabular}</END></SPAN>
+    <SPAN TYPE="MARKUP" DELEGATE="MartinTabularMode"><BEGIN>\begin{tabular*}</BEGIN><END>\end{tabular*}</END></SPAN>
+    <SPAN TYPE="MARKUP" DELEGATE="MartinTabularMode"><BEGIN>\begin{longtable}</BEGIN><END>\end{longtable}</END></SPAN>
+	<SPAN TYPE="MARKUP" DELEGATE="MartinTabularMode"><BEGIN>\begin{supertabular}</BEGIN><END>\end{supertabular}</END></SPAN>
+    <SPAN TYPE="MARKUP" DELEGATE="MartinTabbingMode"><BEGIN>\begin{tabbing}</BEGIN><END>\end{tabbing}</END></SPAN>
+  	
+  	<IMPORT DELEGATE="latex::Core"/>
+  </RULES>
+  
+  <RULES IGNORE_CASE="FALSE" SET="extras">
+	<SEQ TYPE="KEYWORD1">\archap</SEQ>
+	<SEQ TYPE="KEYWORD1">\arf</SEQ>
+	
+	<SEQ TYPE="KEYWORD2">\exercise</SEQ>
+	
+	<SPAN_REGEXP MATCH_TYPE="KEYWORD1" DELEGATE="latex::VERBATIM">
+		<BEGIN>@@(\[.+\])*\s*</BEGIN>
+		<END>@@</END>
+	</SPAN_REGEXP>
+	
+	<SPAN MATCH_TYPE="KEYWORD1" DELEGATE="latex::VERBATIM">
+		<BEGIN>\@</BEGIN>
+		<END>@</END>
+	</SPAN>
+  </RULES>
+  
+  <RULES IGNORE_CASE="FALSE" SET="MartinTabularMode">
+	<IMPORT DELEGATE="extras"/>
+  	<IMPORT DELEGATE="latex::TabularMode"/>
+  </RULES>
+</MODE>

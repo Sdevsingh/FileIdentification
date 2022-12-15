@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <language>fr</language>
+    <title>TOMUSS : nouveaut?s</title>
+    <description>
+      Liste des changements de version avec les nouvelles fonctionnalit?s.
+    </description>
+    <link>http://tomuss.univ-lyon1.fr/</link>
+    <item>
+      <title>25/02/2010 : Version 2.8.6</title>
+      <description>Nouveaut?s :
+	&lt;UL&gt;
+	&lt;LI&gt;
+	Coloration de la page d'accueil en fonction du semestre.
+	&lt;LI&gt;
+	Des flux RSS pour les ?tudiants, les tables et les nouvelles.
+	&lt;/UL&gt;
+      </description>      
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <guid>1</guid>
+    </item>
+    <item>
+      <title>01/03/2010 : Version 2.8.7</title>
+      <description>Corrections de bugs :
+	&lt;UL&gt;
+	&lt;LI&gt;
+        La r?cup?ration des listes d'?tudiants est plus rapide.
+	&lt;LI&gt;
+        On r?cup?re aussi les ?tudiants des UE hors-s?quences.
+	&lt;/UL&gt;
+      </description>      
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <guid>2</guid>
+    </item>
+    <item>
+      <title>02/03/2010 : Version 2.8.8</title>
+      <description>Corrections de bugs concernant la licence STS :
+	&lt;UL&gt;
+	&lt;LI&gt;
+        Les listes d'?tudiants pour les UE hors-s?quences sont r?cup?r?es.
+	&lt;LI&gt;
+        La r?cup?ration des listes d'?tudiants est plus rapide.
+	&lt;/UL&gt;
+      </description>      
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <guid>3</guid>
+    </item>
+    <item>
+      <title>03/03/2010 : Version 2.8.9</title>
+      <description>Cette version affiche en rouge dans le bloc note
+        du r?f?rent les ?tudiants qui ont quitt? l'universit?
+        pour le semestre de printemps.</description>      
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <guid>4</guid>
+    </item>
+    <item>
+      <title>04/03/2010 : Version 2.8.10</title>
+      <description>Le suivi des ?tudiants n'affiche plus ABINJ???
+      pour les cases vides quand le groupe de TD
+      de l'?tudiant n'est pas d?fini.
+      </description>      
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <guid>5</guid>
+    </item>
+    <item>
+      <title>09/03/2010 : Version 2.8.11</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>Nouveaut?s :
+	&lt;UL&gt;
+	&lt;LI&gt;
+        Il est maintenant possible de saisir une date de visibilit?
+        pour la colonne.
+        Pour les ?tudiants, la note s'affichera dans leur suivi seulement
+        ? partir de la date indiqu?e.
+	&lt;LI&gt;
+        Dans les statistiques par groupe d'?tudiants, la moyenne du groupe
+        est en &lt;B&gt;gras et noir&lt;/B&gt; si moins
+        de la moiti? des ?tudiants ont eu une note.
+	&lt;LI&gt;
+        La documentation explique comment conserver des notes
+        d'un semestre sur l'autre pour des ?tudiants redoublants.
+	&lt;/UL&gt;
+      </description>      
+      <guid>6</guid>
+    </item>
+    <item>
+      <title>11/03/2010 : Version 2.8.12</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+         Il est maintenant possible de rendre une table priv?e.
+         Seuls les responsables d'UE pourront voir le contenu de la table
+         et donc le modifier.
+         Par contre les ?tudiants (et les enseignants) verront les
+         notes dans le suivi.
+      </description>      
+      <guid>7</guid>
+    </item>
+    <item>
+      <title>20/03/2010 : Version 2.8.13</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Nouveaut?s :
+	&lt;UL&gt;
+	&lt;LI&gt;
+          Maintenant seul le propri?taire de la colonne peut changer
+          le commentaire associ? (ou le responsable de l'UE).
+	&lt;LI&gt;
+          Les UE favorites sont maintenant compos?es des tables
+          les plus souvent consult?s.
+	&lt;LI&gt;
+          On peut maintenant dire ? TOMUSS de lier dynamiquement
+          le contenu d'une colonne au contenu d'une page web au format CSV.
+          Il mettra presque automatiquement ? jour le contenu de la colonne
+          en fonction du contenu de la page web.
+	&lt;LI&gt;
+          Les ascenseurs ?taient cass?s depuis un mois sous IE et
+          personne ne m'avait pr?venu. C'est maintenant r?par?.
+	&lt;/UL&gt;
+
+      </description>      
+      <guid>8</guid>
+    </item>
+    <item>
+      <title>22/03/2010 : Version 2.8.14</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>L'importation de colonnes fonctionne maintenant
+      m?me quand il y a des accents.
+      </description>      
+      <guid>9</guid>
+    </item>
+    <item>
+      <title>24/03/2010 : Version 2.8.15</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+        Principalement des corrections de probl?mes,
+        notamment dus ? des bugs de IE.
+      </description>
+      <guid>10</guid>
+    </item>
+    <item>
+      <title>30/03/2010 : Version 2.8.18</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+         Correction d'un bug d?clench? par le passage ? l'heure d'?t?,
+         ceci ne concerne que la gestion des ABJ.
+      </description>
+      <guid>11</guid>
+    </item>
+    <item>
+      <title>11/04/2010 : Version 2.8.19</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>Outre la correction de nombreux bug,
+      les principaux changements sont :
+	&lt;UL&gt;
+	&lt;LI&gt; Une page de documentation interactive unique fusionnant
+           toutes les informations et questions a ?t? cr??e.
+        &lt;LI&gt; All?gement de l'interface utilisateur.
+        &lt;LI&gt; Pour saisir une date ?actuelle? dans une cellule
+                  de type date,
+                  on peut se contenter de saisir seulement le jour.
+        &lt;LI&gt; Le champ ? a ?t? ajout? aux colonnes de type date et texte.
+	&lt;/UL&gt;
+      </description>
+      <guid>12</guid>
+    </item>
+    <item>
+      <title>04/05/2010 : Version 2.8.20</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>Correction de nombreux bugs.
+        Le lien ?Qui fait quoi? a ?t? supprim?.
+        TOMUSS d?tecte quand un anti-virus refuse de le laisser
+        fonctionner et passe en mode d?grad? pour se lancer quand m?me.
+      </description>
+      <guid>13</guid>
+    </item>
+    <item>
+      <title>11/05/2010 : Version 2.8.21</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+        TOMUSS prend maintenant en compte la molette de la souris
+        pour se d?placer quand on ?dite les tables (vous pouvez
+        remercier St?phanie Jean-Daubias).
+      </description>
+      <guid>14</guid>
+    </item>
+    <item>
+      <title>27/05/2010 : Version 2.8.23</title>
+      <link>http://tomuss.univ-lyon1.fr/home</link>
+      <description>
+        Version beta de la &lt;a href="http://tomuss.univ-lyon1.fr/home"&gt;nouvelle page d'accueil&lt;/a&gt; !
+      </description>
+      <guid>15</guid>
+    </item>
+    <item>
+      <title>06/06/2010 : Version 2.9.0</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+        Nouvelle page d'accueil&lt;/a&gt; !
+        Elle permet des g?rer ses UE et ?tudiants favoris.
+        On peut directement trouver les ?tudiants sans passer par le suivi.
+      </description>
+      <guid>16</guid>
+    </item>
+    <item>
+      <title>21/06/2010 : Version 2.9.2</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Les UE avec un ?tudiant qui a un tiers temps
+	sont directement indiqu?es sur la page d'accueil.
+      </description>
+      <guid>17</guid>
+    </item>
+    <item>
+      <title>28/06/2010 : Version 2.9.5</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Le menu sur les UE de la page d'accueil est de nouveau fonctionnel.
+      </description>
+      <guid>18</guid>
+    </item>
+    <item>
+      <title>19/08/2010 : Version 2.9.7</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+        De nombreux bugs ont ?t? corrig?s, les principales nouveaut?s sont:
+      &lt;ul&gt;
+      &lt;li&gt; Les tables par sports seront disponibles d?s que les IP
+           seront termin?es. De m?me pour les groupes dans les diff?rentes
+           ECUE des UE transversales.
+      &lt;li&gt; Dans le suivi des ?tudiants toutes les UE auxquels il est
+           inscrits sont affich?es m?me si TOMUSS ne contient aucune
+           information les concernant.
+      &lt;/ul&gt;
+      </description>
+      <guid>19</guid>
+    </item>
+    <item>
+      <title>22/09/2010 : Version 2.10.0</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+        De tr?s nombreux bugs ont ?t? corrig?s.
+        Le principal changement est que TOMUSS est moins souvent
+        bloqu? par les antivirus et par les bugs de FireFox.
+      </description>
+      <guid>20</guid>
+    </item>
+    <item>
+      <title>10/10/2010 : Version 2.10.6</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+          Nouvelle fonctionnalit? : le remplissage de colonne
+          avec une ou plusieurs valeurs.
+      </description>
+      <guid>21</guid>
+    </item>
+    <item>
+      <title>14/11/2010 : Version 2.10.14</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+          Nouvelles fonctionnalit?s depuis la 2.10.6 :
+&lt;/ul&gt;
+&lt;li&gt; On peut plus facilement effacer le contenu des lignes rouges.
+&lt;li&gt; On interdit de donner une date de visibilit? dans le pass?.
+&lt;li&gt; On peut indiquer la place dans l'amphi dans la feuille d'?margement.
+&lt;li&gt; Le type de colonne ? Copy On Write ? copie aussi le comportement de la colonne original.
+&lt;li&gt; Les lignes vides ne sont plus affich?es sur la feuille d'?margement.
+&lt;li&gt; Les statistiques sur l'histogramme tiennent compte de la valeur de ?
+
+&lt;li&gt; Quand on double-clique sur un Booleen ou un Pr?sent cela ne passe plus pas une valeur vide.
+&lt;li&gt; Le coloriage rouge/vert peut contenir un filtre au lieu d'une simple note.
+&lt;li&gt; On peut modifier le coloriage rouge/vert m?me si l'on est pas le propri?taire de la colonne.
+&lt;/ul&gt;
+      </description>
+      <guid>22</guid>
+    </item>
+    <item>
+      <title>20/11/2010 : Version 2.10.16</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+         La nouveaut? de cette version est le publi postage.
+         Vous pouvez envoyer des messages personnalis?s aux ?tudiants
+         en fonction du contenu de la ligne les concernant.
+      </description>
+      <guid>23</guid>
+    </item>
+    <item>
+      <title>02/12/2010 : Version 2.11.2</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+        Changements :
+&lt;ul&gt;
+&lt;li&gt; Rend beaucoup plus difficile pour les ?tudiants
+           de voir les colonnes cach?es.
+&lt;li&gt; Le changement de taille de fen?tre fonctionne sous IE.
+&lt;li&gt; Pour les colonnes de type URL, on peut choisir
+           le nom du lien cellule par cellule.
+&lt;li&gt; Interdit un groupe de personne d'acc?der ? TOMUSS
+           (? l'UCBL : Personnel Contractuel de Cat?gorie C).
+&lt;/ul&gt;
+      </description>
+      <guid>24</guid>
+    </item>
+    <item>
+      <title>14/12/2010 : Version 2.12.0</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+        Nouvelles fonctionnalit?s :
+&lt;ul&gt;
+&lt;li&gt; La liste des responsables de la table est directement modifiable.
+&lt;li&gt; Le responsable de la table peut interdire les ?critures
+           pour que la table ne soit plus modifiable.
+&lt;li&gt; Le responsable de la table peut autoriser les ?critures
+           pour une table qui est dans un ancien semestre afin
+           de pouvoir corriger une erreur par exemple.
+&lt;li&gt; Le responsable de la table peut fixer le nombre de colonnes
+           ? afficher quelque soit la personne qui regarde la table.
+&lt;li&gt; Une URL de base peut ?tre indiqu?e pour les colonnes
+           de type URL.
+&lt;li&gt; Les listes d'?tudiants sont mises ? jour plus rapidement
+           quand il y a un changement dans APOG?E.
+&lt;/ul&gt;      
+      </description>
+      <guid>25</guid>
+    </item>
+    <item>
+      <title>21/12/2010 : Version 2.12.3</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Nouvelles fonctionnalit?s :
+&lt;ul&gt;
+&lt;li&gt; On peut cacher des lignes avant d'imprimer.
+&lt;li&gt; La documentation indique comment faire une moyenne sans les meilleurs ni les plus mauvaises notes.
+&lt;li&gt; L'emploi du temps personnel de l'?tudiant de licence STS est accessible via la page de suivi.
+&lt;/ul&gt;
+      </description>
+      <guid>26</guid>
+    </item>
+    <item>
+      <title>31/12/2010 : Version 2.12.6</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Nouvelles fonctionnalit?s :
+&lt;ul&gt;
+&lt;li&gt; Mise en ?vidence de la ligne courante.
+&lt;li&gt; Le suivi des ?tudiants est plus lisible.
+&lt;li&gt; Les UE des semestres pass?s sont modifiables par un responsable.
+&lt;li&gt; Le logo de l'universit? appara?t en haut des pages.
+&lt;/ul&gt;
+      </description>
+      <guid>27</guid>
+    </item>
+    <item>
+      <title>02/03/2011 : Version 2.12.20</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Depuis la version 2.12.6 ce sont principalement des bugs qui ont ?t?
+corrig?s, ou bien des fonctionnalit?s li?es ? la prise des rendez-vous IP.
+Les changements visibles par tous :
+&lt;ul&gt;
+&lt;li&gt; L'interface de gestion des mails a ?t? chang?.
+&lt;li&gt; Les noms/mails de responsables d'UE sont affich?s dans le suivi.
+&lt;li&gt; On peut trier les UE favorites par code UE.
+&lt;/ul&gt;
+      </description>
+      <guid>28</guid>
+    </item>
+    <item>
+      <title>07/03/2011 : Version 2.13.0</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Cette version en pr?paration depuis longtemps contient de nouveaux
+types de colonnes :  Enum?ration de valeurs possibles,
+Code ?tape, Mail, T?l?phone (pour le personnel), Nom, Pr?nom.
+&lt;p&gt;
+Ces gros changements ont impos? des modifications cons?quentes dans TOMUSS,
+donc si vous constatez des probl?mes, pr?venez-nous rapidement.
+      </description>
+      <guid>29</guid>
+    </item>
+    <item>
+      <title>28/03/2011 : Version 2.13.7</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Mis ? part de nombreux bugs corrig?s :
+&lt;ul&gt;
+&lt;li&gt; Il est maintenant possible d'afficher ou non n'importe quelle
+           table Printemps ou Automne dans le suivi de l'?tudiant.
+           On peut donc maintenant afficher une table contenant une ?tape
+           dans le suivi de l'?tudiant.
+&lt;li&gt; Il est possible d'exporter la liste des valeurs uniques trouv?es
+           dans la colonne.
+&lt;li&gt; Maintenant, par d?faut toutes les tables qui ne sont pas
+           dans Printemps ou Automne ont comme 'responsable' la personne
+           qui les a cr??s.
+&lt;li&gt; L'indicateur de tri secondaire (en cas d'?galit?) est affich?.
+&lt;/ul&gt;
+
+      </description>
+      <guid>30</guid>
+    </item>
+    <item>
+      <title>03/04/2011 : Version 2.13.9</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Mis ? part de nombreux bugs corrig?s :
+&lt;ul&gt;
+&lt;li&gt; Les cellules avec un commentaire ont un petit triangle comme
+           dans les autres tableurs.
+&lt;li&gt; Vous pouvez indiquer pour toutes les tables Printemps/Automne
+           si la table est visible dans le suivi.
+&lt;li&gt; En cas de probl?me de connexion au serveur.
+           Votre travail est sauv? sur votre machine personnelle quand
+           vous fermez la page web ou quittez le navigateur.
+           Vous pourrez alors la sauvegarder ult?rieurement.
+           Cette fonctionnalit? ?tant nouvelle, il ne faut pas en abuser.
+&lt;/ul&gt;
+      </description>
+      <guid>31</guid>
+    </item>
+    <item>
+      <title>07/04/2011 : Version 2.13.10</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Cette version propose une nouvelle interface pour le trombinoscope.
+Vous pouvez maintenant paginer en utilisant n'importe quels crit?res,
+par exemple par salle de TP.
+      </description>
+      <guid>32</guid>
+    </item>
+    <item>
+      <title>17/04/2011 : Version 2.13.11</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+La gestion des impressions et des feuilles d'?margement est maintenant
+compl?tement param?trables interactivement.
+      </description>
+      <guid>33</guid>
+    </item>
+    <item>
+      <title>10/05/2011 : Version 2.14.0</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Les statistiques sur une tableau de note ont ?t? refaites,
+elles permettent l'affichage de nombreux indicateurs et graphiques.
+Elles ont ?t? cr??es avec comme objectif l'analyse des r?sultats des
+UE comportant beaucoup de groupes et de notes par ?tudiants.
+&lt;p&gt;
+Maintenant, on peut :
+&lt;ul&gt;
+&lt;li&gt; voir instantan?ment les diff?rences de notation entre groupes ;
+&lt;li&gt; analyser la mani?re de noter des enseignants ;
+&lt;li&gt; demander ? voir l'influence de la pr?sence au premier TD
+           ou au soutien sur la note finale pour l'UE ;
+&lt;li&gt; suivre l'?volution du nombre de pr?sents au cours du temps ;
+&lt;li&gt; d?tailler la plage de saisie des informations dans la table.
+&lt;/ul&gt;
+Cette fonctionnalit? ?tant nouvelle, ne lui faites pas confiance
+les yeux ferm?s, tous les cas n'ont pas du ?tre test?s.
+      </description>
+      <guid>34</guid>
+    </item>
+    <item>
+      <title>21/05/2011 : Version 2.14.4</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Beaucoup d'am?liorations de fonctionnement, notamment pour les utilisateurs
+d'Internet Explorer.
+&lt;ul&gt;
+&lt;li&gt; La page de gestion des justificatifs d'absence est plus claire.
+&lt;li&gt; Dans le suivi de l'?tudiant il y a un lien pour envoyer un
+          message ? tous les enseignants de l'?tudiant.
+&lt;li&gt; Il y a maintenant l'auto-compl?tion pour les colonnes
+          de type pr?sence, bool?en et ?num?ration.
+&lt;/ul&gt;
+      </description>
+      <guid>35</guid>
+    </item>
+    <item>
+      <title>01/07/2011 : Version 2.14.10</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+La recherche de personnes sur la page d'accueil est plus rapide,
+plus pratique et plus puissante :
+vous tapez simplement le d?but du nom et/ou du pr?nom et/ou
+du num?ro d'?tudiant.
+Par exemple :
+&lt;ul&gt;
+&lt;li&gt; ?do re? pour trouver les personnes dont le nom ou pr?nom commence
+           par ?do? ET le nom ou pr?nom commence par ?re?
+&lt;li&gt; ?charle p10? pour trouver les ?tudiants dont le num?ro d'?tudiant
+           commence par ?p10? et le nom ou pr?nom commence par ?charle?
+&lt;/ul&gt;
+Par contre, la liste est maintenant tronqu?e si elle trop longue.
+      </description>
+      <guid>36</guid>
+    </item>
+    <item>
+      <title>09/07/2011 : Version 2.14.11</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Vous pouvez maintenant essayer la nouvelle version de l'interface utilisateur.
+Quand vous ?tes dans une table, vous cliquez sur le lien &amp;beta;
+qui est ? cot? de la documentation.
+      </description>
+      <guid>37</guid>
+    </item>
+    <item>
+      <title>17/07/2011 : Version 2.14.13</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Les am?liorations les plus visibles sont :
+&lt;ul&gt;
+&lt;li&gt; L'exportation de valeurs vers un tableur est maintenant plus facile.
+&lt;li&gt; Maintenant les valeurs par d?fauts dans les cellules apparaissent
+           comme des fant?mes dans les cellules
+&lt;li&gt; L'interface de remplissage de colonne a ?t? modifi? pour
+           ?tre plus simple.
+&lt;li&gt; Il y a maintenant l'auto-compl?tion des noms de colonne
+           quand on saisi une formule.
+&lt;/ul&gt;
+      </description>
+      <guid>38</guid>
+    </item>
+    <item>
+      <title>29/07/2011 : Version 3.0.0</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Les am?liorations les plus visibles sont :
+&lt;ul&gt;
+&lt;li&gt; Le moteur de recherche ?tudiant accepte les noms compos?s.
+&lt;li&gt; La nouvelle interface d'?dition de tableau permet de
+           rendre une colonne modifiable par les ?tudiants dans leur suivi.
+           Les ?tudiants ne pourront modifier que la valeur dans leur ligne.
+&lt;/ul&gt;
+      </description>
+      <guid>39</guid>
+    </item>
+    <item>
+      <title>21/09/2011 : Version 3.0.6</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+Les am?liorations les plus visibles sont :
+&lt;ul&gt;
+&lt;li&gt; Le r?f?rent peut indiquer une liste de num?ros d'?tudiant
+           dont il veut s'occuper sur la page d'accueil.
+&lt;li&gt; Dans l'?diteur de table, il y a une interface permettant de
+           copier les tables TOMUSS d'un semestre ? l'autre avec
+           ou sans les valeurs et l'historique des modifications.
+&lt;li&gt; Un nouveau type de colonne permet de trouver le r?f?rent
+           d'un ?tudiant ? partir de son num?ro.
+&lt;li&gt; On peut maintenant associer une liste de jours ou demi-journ?es
+           d'enseignement ? une colonne.
+           Quand un ?tudiant a un justificatif d'absence pour l'une
+           de ces demi-journ?e et qu'il est not? ABI alors cet ABI
+           est affich?e en rouge.
+&lt;/ul&gt;
+      </description>
+      <guid>40</guid>
+    </item>
+    <item>
+      <title>15/10/2011 : Version 3.0.9</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+          Il est maintenant possible d'indiquer pour chaque colonne
+          un nombre maximal de r?p?titions de valeurs identiques dans
+          la colonne. Exemple d'utilisation :
+&lt;ul&gt;
+&lt;li&gt; Vous faites une colonne de type ?num?ration.
+&lt;li&gt; Vous mettez des cr?neaux horaires comme valeurs possibles
+           pour l'?num?ration.
+&lt;li&gt; Vous indiquez 2 dans le champ ?R?p?tition? de la colonne.
+&lt;li&gt; Vous indiquez que la colonne est modifiable par les ?tudiants.
+&lt;/ul&gt;
+
+        Et voila, vos ?tudiants peuvent prendre rendez-vous avec vous.
+        Il y aura au maximum 2 ?tudiants par cr?neau horaire.
+      </description>
+      <guid>41</guid>
+    </item>
+    <item>
+      <title>27/10/2011 : Version 3.0.11</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+          La nouvelle fonctionnalit? est pour les gestionnaires de formations.
+          Elle permet de compter de compter par exemple le nombre d'ABINJ
+          pour chaque semaine du semestre pour un ensemble d'UE.
+       &lt;p&gt;
+          Pour avoir plus d'information, cherchez ?count?
+          dans la documentation.
+      </description>
+      <guid>42</guid>
+    </item>
+    <item>
+      <title>21/11/2011 : Version 3.1.0</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	C'est la version d?veloppement durable de TOMUSS,
+	si vous ne l'utilisez pas, il ne consomme pas de temps CPU
+	comme les versions pr?c?dentes.
+      </description>
+      <guid>43</guid>
+    </item>
+    <item>
+      <title>02/01/2012 : Version 3.1.2</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Cette version permet d'?diter les tableaux sous forme de formulaires.
+	Il est alors possible de rentrer facilement de longues chaines
+	de caract?res dans les cellules.
+	&lt;p&gt;
+	Si une colonne de notes est arrondie ? l'entier pr?s,
+	alors les d?cimales ne sont pas affich?es.
+      </description>
+      <guid>44</guid>
+    </item>
+    <item>
+      <title>20/01/2012 : Version 3.1.4</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	A part les nombreux bugs sans gravit? corrig?s.
+&lt;ul&gt;
+&lt;li&gt; Si un cellule est colori?e en vert et rouge : elle est violette !
+&lt;li&gt; Le publipostage est maintenant fait en UTF8 : vous pouvez
+	envoyer vos mail en chinois ou simplement utiliser
+	le caract?re '?' par exemple.
+&lt;li&gt; Il est possible d'interdire les modifications des valeurs
+	des cellules dans une colonne. C'est dans l'onglet ? Affiche ?
+	de la colonne.
+&lt;/ul&gt;
+      </description>
+      <guid>45</guid>
+    </item>
+    <item>
+      <title>04/05/2012 : Version 4.0.0</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	De gros changements internes dans TOMUSS,
+	s'il y a des probl?mes, envoyez rapidement un mail
+	pour nous pr?venir.
+	Principaux changements :
+&lt;ul&gt;
+&lt;li&gt; En allant sur le suivi de l'enseignant,
+           on peut voir la liste des ?tudiants qu'il r?f?re.
+&lt;li&gt; Affiche les num?ros de lignes quand on met le curseur sur
+           une cellule de la premi?re colonne.
+&lt;li&gt; Les UE de master ne sont plus semestrialis?e.
+&lt;li&gt; L'indicateur de chargement de page s'arr?te de tourner pour rien.
+           Le statut de la connection au serveur est maintenant
+	   explicitement indiqu?e.
+&lt;li&gt; On peut copier une table de l'ann?e pr?c?dente (m?me semestre)
+&lt;li&gt; Il existe maintenant un type de colonne permettant pour
+           les ?tudiants de licence STS de savoir s'ils sont FFSU (sportif).
+&lt;li&gt; ATTENTION : Si jamais vous avez demand? ? votre navigateur que
+           votre langue pr?f?r?e soit l'anglais, TOMUSS affichera les
+	   messages en anglais.
+&lt;/ul&gt;
+      </description>
+      <guid>46</guid>
+    </item>
+    <item>
+      <title>30/05/2012 : Version 4.0.2</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Nouveaut?s :
+&lt;ul&gt;
+&lt;li&gt; On peut remplir une colonne avec des nombre successifs,
+           pour placer les ?tudiants en examen par exemple.
+&lt;li&gt; On peut ajouter plein de colonnes sur la feuille d'?margement.
+&lt;/ul&gt;
+      </description>
+      <guid>47</guid>
+    </item>
+    <item>
+      <title>11/08/2012 : Version 4.1.1</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Le code source de TOMUSS a ?t? remis au propre et de nombreux
+	bugs ont ?t? corrig?.
+	Mais il est certain que de nouveaux bugs sont apparus,
+	donc pr?venez-moi rapidement.
+	&lt;p&gt;
+	Il y a eu un changement dans l'interface utilisateur,
+	il y a un onglet de plus dans le bloc colonne et un
+	peu de r?organisation.
+	On peut maintenant saisir facilement :
+&lt;ul&gt;
+&lt;li&gt; l'arrondi de la colonne,
+&lt;li&gt; le nombre de mauvaises et bonnes notes ? enlever d'une moyenne,
+&lt;li&gt; l'URL de base et l'intitul? du lien pour les colonnes de type URL,
+&lt;li&gt; l'URL du document CSV ? importer dynamiquement dans la colonne.
+&lt;/ul&gt;
+        Il est maintenant possible d'indiquer TNR (Travail Non Rendu)
+	comme note ? la place d'un 0 pour diff?rencier les deux.
+      </description>
+      <guid>48</guid>
+    </item>
+    <item>
+      <title>20/08/2012 : Version 4.1.2</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Quand on clique pour choisir le type de la colonne,
+	cela fait appara?tre une fen?tre permettant d'avoir
+	plus d'explications sur les types possibles.
+	&lt;p&gt;
+	Les bulles d'aide qui ?nervent tous le monde ont disparu.
+	Il y a ? la place un simple '?', il suffit de mettre le
+	curseur dessus pour faire appara?tre la bulle d'aide.
+      </description>
+      <guid>49</guid>
+    </item>
+    <item>
+      <title>1/09/2012 : Version 5.0.1</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Cette version devrait mieux fonctionner sur les tablettes
+	pour la saisie de notes.
+	&lt;p&gt;
+	La bulle d'aide li?e ? une cellule de la table
+	permet de voir la valeur de la cellule non tronqu?e.
+	&lt;p&gt;
+	Dans les statistiques, un utilitaire permet de trouver les notes
+	?tranges qui ne sont pas logiques avec les autres notes
+	de l'?tudiant dans l'UE.
+      </description>
+      <guid>50</guid>
+    </item>
+    <item>
+      <title>15/09/2012 : Version 5.0.2</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Le primo-entrant licence STS en premi?re ann?e sont affich?s
+	en gras dans la liste des ?tudiants r?f?r?s.
+	Un type de colonne permet de savoir en quelle ann?e de licence STS
+	les primos entrant sont inscrits.
+	&lt;p&gt;
+	On peut maintenant dynamiquement extraire une colonne d'une table pour
+	la mettre dans une autre (onglet 'Config', ligne du bas).
+	Malheureusement pas pour les r?sultats de calcul.
+	&lt;p&gt;
+      </description>
+      <guid>51</guid>
+    </item>
+    <item>
+      <title>26/09/2012 : Version 5.0.5</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Il est maintenant possible de calculer le pourcentage d'absence
+	justifi?es dans une moyenne en utilisant le type de colonne :
+	'% pond?r? de' ABJUS et en indiquant que l'on veux une valeur
+	entre 0 et 100.
+      </description>
+      <guid>52</guid>
+    </item>
+    <item>
+      <title>26/02/2013 : Version 5.1.7</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Nouvelles fonctionnalit?s :
+&lt;ul&gt;
+&lt;li&gt; Ctrl-D?but Ctrl-Fin permettent d'aller ?
+           la premi?re ou derni?re page.
+&lt;li&gt; Le bloc 'Table' contient maintenant un onglet 'Info'
+&lt;li&gt; On peut se d?placer dans la table en faisant
+           un glisser/d?poser comme sur les tablettes.
+&lt;li&gt; On peut indiquer des caract?res sp?ciaux (!=@#...) dans les filtres
+           en les pr?c?dent du caract?re \.	   
+&lt;/ul&gt;
+      </description>
+      <guid>53</guid>
+    </item>
+    <item>
+      <title>26/03/2013 : Version 5.1.9</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	A part les nombreuses petites am?liorations et bugs corrig?s,
+	la principale nouveaut? est que les ?tudiants
+	peuvent cacher leur page de suivi aux enseignants
+	qui ne sont pas directement concern?s.
+      </description>
+      <guid>54</guid>
+    </item>
+    <item>
+      <title>04/04/2013 : Version 5.1.10</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Les responsables de formation au sens GASEL
+	peuvent maintenant modifier la liste des responsables
+	des UE dont ils sont responsables au niveau de la formation.
+	&lt;p&gt;
+	L'exportation de colonne est plus simple ? utiliser
+	est permet d'exporter les commentaires.
+      </description>
+      <guid>55</guid>
+    </item>
+    <item>
+      <title>23/04/2013 : Version 5.1.12</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	On peut maintenant importer ou remplir les commentaires
+	de cellules dans une colonne.
+	&lt;p&gt;
+	L'exportation de colonne est plus simple ? utiliser
+	est permet d'exporter les valeurs et commentaires
+	en une seule fois.
+	&lt;p&gt;
+	On peut maintenant colorier en rouge ou vert
+	le texte des cellules ind?pendamment de la couleur du fond.
+	&lt;p&gt;
+	Et rouge+vert donne orange au lieu de violet.
+      </description>
+      <guid>56</guid>
+    </item>
+    <item>
+      <title>16/08/2013 : Version 5.2.2</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Les enseignants et administratifs peuvent afficher un message
+	ou une question sur la page de suivi d'un ?tudiant en particulier.
+	On utilise pour faire cela le lien 'Poser une question' sur la page
+	de suivi de l'?tudiant.
+	L'?tudiant ne pourra plus voir ses notes tant qu'il n'aura
+	pas lu le message ou r?pondu ? la question.
+	Pour poser une question ? un ensemble d'?tudiants,
+	cherchez 'Questionnaire' dans la documentation TOMUSS.
+	&lt;p&gt;
+	Changement dans les calculs : ABI-3 ou ABI+0 donne ABI au lieu de
+	-3 et 0.
+	&lt;p&gt;
+	Il y a un type de colonne permettant d'extraire le contenu d'APOGEE.
+	Le titre de la colonne (pouvant commencer par .) peut-?tre
+	un code UE ou bien S1, S2...
+	Ceci ne fonctionne que pour la licence STS.
+	&lt;p&gt;
+        TOMUSS n'affiche plus les emplois du temps des ?tudiants,
+	il les redirige vers le site officiel.
+	&lt;p&gt;
+	Les enseignants r?f?rents peuvent voir les r?ponses de leurs
+	?tudiants au questionnaire primo-entrant.
+      </description>
+      <guid>57</guid>
+    </item>
+    <item>
+      <title>13/10/2013 : Version 5.2.12</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Vous l'avez peut-?tre d?j? vu, mais il y a maintenant
+	des menus pour choisir la compl?tion des valeurs.
+	&lt;p&gt;
+	On peut avoir un flux RSS contenant les modifications
+	sur les tables qui ne sont ni dans Printemps ni dans Automne.
+	&lt;p&gt;
+	Si les lignes vides contenant un historique vous g?nent,
+	vous pouvez les faire dispara?tre gr?ce ? un attribut de table.
+	Elles ne sont pas effac?es, on peut les faire r?appara?tre.
+	&lt;p&gt;
+	Les options d'affichage des tables
+	(colonnes tri?es, filtres, coloriage...)
+	sont maintenant stock?es dynamiquement dans l'adresse de la page.
+	Il vous suffit d'enregistrer un favori
+	pour retrouver le m?me affichage.	
+	&lt;p&gt;
+	Le remplissage de colonne AAABBBCCC permet maintenant d'indiquer
+	un nombre maximum de r?p?titions de la valeur.
+	Par exemple pour des effectifs maximum d'amphith??tre.
+      </description>
+      <guid>58</guid>
+    </item>
+    <item>
+      <title>19/11/2013 : Version 5.2.16</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Le flux RSS fonctionne maintenant sur toutes les tables,
+	pas seulement dans Automne et Printemps.
+	&lt;p&gt;
+        On peut importer des retours ? la ligne dans les valeurs
+        et les commentaires des cellules gr?ce au symbole ?.	
+	&lt;p&gt;
+	Dans les param?tres de table, il y a une option
+	pour cacher les lignes vides qui ont un historique
+	(les lignes vid?es).
+	&lt;p&gt;
+        Les options d'affichage de la table sont maintenant
+        directement ins?r?es dans l'adresse de la page.
+      </description>
+      <guid>59</guid>
+    </item>
+    <item>
+      <title>05/02/2014 : Version 5.2.25</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	On peut copier une table sous un autre nom
+	dans le m?me semestre.
+	&lt;p&gt;
+	On peut devenir le r?f?rent p?dagogique d'un ?tudiant
+	en cliquant sur le filet ? papillon dans le suivi
+	de l'?tudiant.
+	&lt;p&gt;
+	L'?tape d'appartenance de l'?tudiant est affich?e dans le suivi.
+	Pour voir l'intitul?, il suffit de mettre le curseur dessus.
+	&lt;p&gt;
+	L'?tat fig? des colonnes est maintenant sauvegard?
+	pour les colonnes que vous avez cr??es.
+	Donc malheureusement pas pour 'Seq' et 'Grp'.
+	&lt;p&gt;
+        On peut rendre visible des colonnes cach?es, via l'onglet Table/Action.
+	La colonne nomm?e ?Inscrit? contient 'ok' si l'?tudiant
+	est officiellement inscrit, 'sportif' s'il est FFSU niveau 2.
+	On peut donc les trier et filtrer suivant ces crit?res.
+	&lt;p&gt;
+	&lt;b&gt;
+	Si une colonne est colori?e, alors le m?me coloriage
+	est appliqu? sur la page de suivi de l'?tudiant.	
+	&lt;/b&gt;
+      </description>
+      <guid>60</guid>
+    </item>
+    <item>
+      <title>11/11/2014 : Version 5.4.0</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	Un grand changement interne de TOMUSS a permis
+	d'apporter de nouvelles fonctionnalit?s?:
+	&lt;p&gt;
+	Le calcul de la moyenne est plus naturel dans les cas
+	pathologiques (ABI, TNR, ABJ) quand on enl?ve les notes les
+	plus mauvaises. ABI et TNR sont consid?r?s comme des 0.
+	Vous pouvez consulter le
+	&lt;a href="http://perso.univ-lyon1.fr/thierry.excoffier/TOMUSS/moyenne.html"&gt;r?capitulatif des changements de calcul de moyenne&lt;/a&gt;
+	&lt;p&gt;
+	Si le r?sultat d'une moyenne est NaN, ABI, ABJ, PPN alors
+	le responsable de l'UE peut saisir une note ? la place.
+	Il ne peut pas changer une note calcul?e.
+	&lt;p&gt;
+	Le rang et les autres statistiques sont maintenant affich?s
+	pour les moyennes sur la page du suivi de l'?tudiants.
+	&lt;p&gt;
+	On peut maintenant
+	&lt;a href="http://perso.univ-lyon1.fr/thierry.excoffier/TOMUSS/doc_table.html#Extraire une colonne d'une autre table TOMUSS"&gt;
+	importer dynamiquement une colonne&lt;/a&gt; de moyenne
+	d'une table TOMUSS dans une autre table TOMUSS.
+	&lt;p&gt;
+	Le propri?taire d'une colonne peut maintenant d?finir quelles
+	sont les cellules modifiables de la colonne.
+	Par exemple, autoriser la modification des ABI par n'importe qui,
+	interdire la modification d'une valeur une fois saisie,
+	autoriser la modification par n'importe qui des valeurs
+	saisies par lui-m?me, interdire les modifications si la saisie
+	a ?t? faite il y a plus de 7 jours...
+	Le crit?re est un
+	&lt;a href="http://perso.univ-lyon1.fr/thierry.excoffier/TOMUSS/doc_table.html#Les filtres de TOMUSS"&gt;
+	filtre&lt;/a&gt;,
+	il n'y a donc rien de nouveau ? apprendre.
+	&lt;p&gt;
+	Il y a un menu permettant de rendre une colonne invisible
+	dans le suivi aux ?tudiants, et m?me aux enseignants
+	sans date limite.
+	A n'utiliser qu'? bon escient, les ?tudiants peuvent demander
+	? ce que ces informations leurs soient communiqu?es.
+	&lt;p&gt;
+	TOMUSS comprend maintenant la notion de bin?me, trin?me...
+	Il suffit d'indiquer dans la colonne contenant la note le
+	titre de la colonne contenant le nom du groupe (binome).
+	Quand on saisit une valeur pour un des membres du groupe,
+	elle est recopi?e pour les autres.
+	&lt;p&gt;
+	&lt;b&gt;
+	Ses fonctionnalit?s sont toutes nouvelles,
+	en cas de probl?me, pr?venez rapidement.
+	&lt;/b&gt;
+      </description>
+      <guid>61</guid>
+    </item>
+    <item>
+      <title>19/11/2014 : Version 5.5.0</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	&lt;p&gt;
+	Sur ?cran tactile (tablette),
+	le trombinoscope permet de directement saisir
+	les pr?sences sur la photo de l'?tudiant.
+	Cela s'applique aussi aux ?num?rations et aux bool?ens.
+      </description>
+      <guid>62</guid>
+    </item>
+    <item>
+      <title>02/01/2015 : Version 5.5.8</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	&lt;p&gt;
+	Ajout d'une fen?tre d'aide et de param?trage pour la page d'accueil
+	et l'?diteur de table.
+	&lt;p&gt;
+	Ajout de quelques raccourcis clavier standard d'?dition de tables,
+	la liste des raccourcis est indiqu?e dans l'aide de l'?diteur
+	de table.
+	&lt;p&gt;
+	La &lt;a href="https://tomuss.univ-lyon1.fr/stats.html"&gt;
+	page de statistiques TOMUSS&lt;/a&gt; affiche le temps moyen
+	entre 2 visites d'?tudiants au suivi.
+	&lt;p&gt;
+	La liste des UE dans lesquelles vous avez fait des saisies
+	est visible sur votre
+ 	&lt;a href="https://tomusss.univ-lyon1.fr/"&gt;page de suivi&lt;/a&gt;.
+	&lt;p&gt;
+	Attention la moyenne sans la plus mauvaise note ne donne plus
+	le m?me r?sultat :
+	&lt;a href="http://perso.univ-lyon1.fr/thierry.excoffier/TOMUSS/moyenne.html"&gt;calcul de moyenne&lt;/a&gt;
+	&lt;p&gt;
+	Le bilan de l'?tudiant (accessible seulement aux enseignants r?f?rents)
+	utilise la colonne contenant la moyenne totale de la table si
+	elle existe.
+	&lt;p&gt;
+	Il est maintenant possible d'effacer l'historique d'une	table
+	en passant par l'utilitaire de copie de table.
+	A n'utiliser qu'en cas d'extr?me n?cessit?.
+      </description>
+      <guid>63</guid>
+    </item>
+    <item>
+      <title>19/02/2015 : Version 5.5.13</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	&lt;p&gt;
+	Dans l'?diteur de table, les colonnes cach?es aux ?tudiants
+	ont leur titre orange.
+	&lt;p&gt;
+	Il est possible de faire des multiplications de colonne.
+	Par exemple pour multiplier la note par le pourcentage de plagiat.
+	&lt;p&gt;
+	Quand on fait une moyenne en enlevant des notes,
+	on peut maintenant d?cider que ABJ est une note ?gale
+	? la moyenne des notes moyenn?es.
+      </description>
+      <guid>64</guid>
+    </item>
+    <item>
+      <title>15/03/2015 : Version 5.5.15</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	&lt;p&gt;
+	Pour trier une colonne il faut maintenant cliquer sur le triangle.
+	On peut ?ventuellement utiliser le menu pour trier les lignes
+	en fonction de la date ou l'auteur de la saisie,
+	du commentaire de cellule et surtout du
+	&lt;b&gt;pourcentage d'ABJUS et PPNOT utilis?s
+	pour calculer la moyenne pond?r?e&lt;/b&gt;.
+	La valeur utilis?e pour trier est affich?e dans la cellule
+	en plus de la valeur de la cellule.
+	&lt;p&gt;
+	Les lignes des ?tudiants d?sinscrits ne sont maintenant
+	effa?ables que par le responsable de l'UE.
+	&lt;p&gt;
+      </description>
+      <guid>65</guid>
+    </item>
+    <item>
+      <title>11/07/2015 : Version 5.5.27</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	&lt;p&gt;
+	On peut d?finir des login qui ont le droit de modifier
+	les notes saisies par d'autre login,
+	par exemple ?j.bond? peut modifier les notes de ?j.bond2?.
+	La relation peut ?tre sym?trique.
+	&lt;p&gt;
+	Le remplissage de colonne a compl?tement ?t? refait.
+	Il permet de faire toutes les t?ches courantes.
+	&lt;p&gt;
+	Pour chaque table on peut d?finir la m?thode pour faire les arrondis.
+	La m?thode par d?faut fait des calculs syst?matiquement arrondis
+	vers le bas (m?me si cela fausse les notes) afin de garantir
+	que TOMUSS trouvera moins que n'importe quel autre logiciel.	
+	&lt;p&gt;
+      </description>
+      <guid>66</guid>
+    </item>
+    <item>
+      <title>26/02/2016 : Version 5.8.3</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	&lt;p&gt;
+	On peut d?finir la m?thode d'arrondi pour la table.
+	&lt;p&gt;
+	Nouvelle interface de remplissage de colonnes.
+	&lt;p&gt;
+	Importation possible de documents par l'?tudiant ou par l'enseignant.
+	&lt;p&gt;
+	On peut noter des actions de la colonne de droite comme favorites.
+	&lt;p&gt;
+	Les filtres permettent maintenant de tester le contenu d'une
+	autre colonne, la date courante	ainsi que l'utilisateur connect?.
+	&lt;p&gt;
+      </description>
+      <guid>67</guid>
+    </item>
+    <item>
+      <title>18/12/2016 : Version 6.0.23</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	&lt;p&gt;
+	Sur la page de suivi, les ?tudiants peuvent indiquer dans
+	leurs pr?f?rences (icone ?), s'ils peuvent amener un ordinateur.
+	Les enseignants peuvent r?cup?rer l'information via un
+	type de colonne dans l'?diteur de table.
+	&lt;p&gt;
+	Vous pouvez changer globalement le th?me d'affichage (icone ?)
+	pour vous m?me, ou bien l'imposer aux autres pour une table
+	dont vous ?tes responsable (onglet ?Param?trage?).
+	&lt;p&gt;
+	Dans les pr?f?rence de l'?diteur de table (icone ?),
+	vous pouvez indiquer qu'il faut toujours afficher
+	les colonnes qui contiennent un filtre.
+	&lt;p&gt;
+	Pour les groupes d'?tudiants (bin?me, trin?me ou plus)
+	avec un facteur de r?p?tition maximum des valeurs saisies.
+	Le facteur de r?p?tition tient compte du nombre de groupes
+	et non du nombre d'?tudiants.
+	Ceci permet par exemple de choisir un sujet diff?rent par groupe
+	quelque	soit le nombre d'?tudiants pr?sents dans le groupe.
+      </description>
+      <guid>68</guid>
+    </item>
+    <item>
+      <title>19/02/2017 : Version 6.0.29</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	&lt;p&gt;
+	On peut indiquer qu'une moyenne avec une ABI donne DEF comme r?sultat.
+	&lt;p&gt;
+	On peut faire lire (n'oubliez pas d'allumer les enceintes)
+	le contenu d'une colonne (onglet ?Column/Action?).
+	&lt;p&gt;
+	On peut cr?er plein de colonnes de type pr?sence rapidement?:
+	Lien ?Cr?er? de l'onglet ?Table/Action?
+      </description>
+      <guid>69</guid>
+    </item>
+    <item>
+      <title>22/07/2017 : Version 6.0.44</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	&lt;p&gt;
+	On peut envoyer des invitations par mail pour que des personnes
+	puissent s'inscrire dans une table.
+	&lt;p&gt;
+	Les enseignants peuvent afficher la photo de leur choix
+	aux ?tudiants sur la page de suivi.
+	&lt;p&gt;
+	Il y a maintenant un type de colonne: 'si alors sinon'
+	&lt;p&gt;
+	Si un titre de colonne est rouge, c'est que les ?tudiants
+	peuvent modifier la cellule les concernant.
+	&lt;p&gt;
+	Il est possible de diffuser des colonnes de tables publiquement
+	avec ou sans authentification.
+	&lt;p&gt;
+	Il est possible d'importer un PDF unique comportant plusieurs copies
+	(pouvant contenir un nombre variable de pages) dans une colonne
+	en r?partissant interactivement les copies aux ?tudiants.
+	&lt;p&gt;
+	Nouvelles options pour la page d'accueil :
+	oublier la derni?re recherche.
+	R?duire la hauteur des menus.
+      </description>
+      <guid>70</guid>
+    </item>
+    <item>
+      <title>26/11/2017 : Version 6.1.3</title>
+      <link>http://tomuss.univ-lyon1.fr/</link>
+      <description>
+	&lt;p&gt;
+	Le changement avec le plus grand impact est que le r?sultat
+	du calcul de la moyenne est arrondi vers le bas au lieu d'?tre
+	arrondi au plus proche afin d'?viter des probl?mes lors des jurys.
+	Les moyennes doivent maintenant ?tre affich?es avec 3 chiffres
+	significatifs pour ?tre compatibles avec APOG?E.
+      </description>
+      <guid>71</guid>
+    </item>
+
+  </channel>
+</rss>

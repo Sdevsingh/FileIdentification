@@ -1,0 +1,9 @@
+<application>
+  <component name="DefaultFont">
+    <option name="FONT_FAMILY" value="Go Mono" />
+    <option name="USE_LIGATURES" value="true" />
+  </component>
+  <component name="EditorSettings">
+    <option name="SHOW_PARAMETER_NAME_HINTS" value="false" />
+  </component>
+</application>

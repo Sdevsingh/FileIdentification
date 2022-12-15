@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+	"-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN"
+	"http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">
+
+<form-validation>
+
+    <global>
+
+        <!-- An example global constant
+        <constant>
+            <constant-name>postalCode</constant-name>
+            <constant-value>^\d{5}\d*$</constant-value>
+        </constant>
+        end example-->
+
+    </global>
+
+    <formset>
+
+			<!-- Comment form -->
+
+			<form name="commentForm">
+				<field property="imageId" depends="required">
+					<arg0 key="Image ID" resource="false"/>
+				</field>
+				<field property="comment" depends="required,minlength">
+					<arg0 key="Comment" resource="false"/>
+					<arg1 name="minlength" key="${var:minlength}" resource="false"/>
+					<var>
+						<var-name>minlength</var-name>
+						<var-value>2</var-value>
+					</var>
+				</field>
+			</form>
+
+			<form name="annotationForm">
+				<field property="imageId" depends="required">
+					<arg0 key="Image ID" resource="false"/>
+				</field>
+				<field property="x" depends="required">
+					<arg0 key="X" resource="false"/>
+				</field>
+				<field property="y" depends="required">
+					<arg0 key="Y" resource="false"/>
+				</field>
+				<field property="w" depends="required">
+					<arg0 key="Width" resource="false"/>
+				</field>
+				<field property="h" depends="required">
+					<arg0 key="Height" resource="false"/>
+				</field>
+				<field property="keywords" depends="required">
+					<arg0 key="Keywords" resource="false"/>
+				</field>
+				<field property="title" depends="required">
+					<arg0 key="Title" resource="false"/>
+				</field>
+			</form>
+
+			<form name="addToGalleryForm">
+				<field property="id" depends="required,integer">
+					<arg0 key="Image ID" resource="false"/>
+				</field>
+			</form>
+
+			<form name="loginForm">
+				<field property="username" depends="required">
+					<arg0 key="Username" resource="false"/>
+				</field>
+				<field property="password" depends="required">
+					<arg0 key="Password" resource="false"/>
+				</field>
+			</form>
+
+			<form name="savedSearchForm">
+				<field property="searchId" depends="required,integer">
+					<arg0 key="Saved Search ID" resource="false"/>
+				</field>
+			</form>
+
+			<form name="adminifyForm">
+				<field property="action" depends="required,mask">
+					<arg0 key="Admin action" resource="false"/>
+					<var>
+						<var-name>mask</var-name>
+						<var-value>(setadmin|unsetadmin)</var-value>
+					</var>
+				</field>
+			</form>
+
+			<form name="newUserForm">
+				<field property="username" depends="required">
+					<arg0 key="Username" resource="false"/>
+				</field>
+				<field property="realname" depends="required,minlength">
+					<arg0 key="Real name" resource="false"/>
+					<arg1 name="minlength" key="${var:minlength}" resource="false"/>
+					<var>
+						<var-name>minlength</var-name>
+						<var-value>3</var-value>
+					</var>
+				</field>
+				<field property="profile" depends="required,minlength,maxlength">
+					<arg0 key="Profile ID" resource="false"/>
+					<arg1 name="minlength" key="${var:minlength}" resource="false"/>
+					<arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+					<var>
+						<var-name>minlength</var-name>
+						<var-value>16</var-value>
+					</var>
+					<var>
+						<var-name>maxlength</var-name>
+						<var-value>16</var-value>
+					</var>
+				</field>
+				<field property="email" depends="required,email"/>
+				<field property="password" depends="required,minlength">
+					<arg0 key="Password" resource="false"/>
+					<arg1 name="minlength" key="${var:minlength}" resource="false"/>
+					<var>
+						<var-name>minlength</var-name>
+						<var-value>6</var-value>
+					</var>
+				</field>
+				<field property="pass2" depends="required,twofields">
+					<arg0 key="Password confirm" resource="false"/>
+					<var>
+						<var-name>secondproperty</var-name>
+						<var-value>password</var-value>
+					</var>
+				</field>
+			</form>
+
+			<form name="setSizeForm">
+				<field property="dims" depends="required,dimension">
+					<arg0 key="Dimension" resource="false"/>
+				</field>
+			</form>
+
+			<form name="saveSearchForm">
+				<field property="name" depends="required,minlength">
+					<arg0 key="Name" resource="false"/>
+					<arg1 name="minlength" key="${var:minlength}" resource="false"/>
+					<var>
+						<var-name>minlength</var-name>
+						<var-value>2</var-value>
+					</var>
+				</field>
+				<field property="search" depends="required,minlength">
+					<arg0 key="Search" resource="false"/>
+					<arg1 name="minlength" key="${var:minlength}" resource="false"/>
+					<var>
+						<var-name>minlength</var-name>
+						<var-value>10</var-value>
+					</var>
+				</field>
+			</form>
+
+			<form name="changePWForm">
+				<field property="oldpw" depends="required">
+					<arg0 key="Old password" resource="false"/>
+				</field>
+				<field property="newpw1" depends="required,minlength">
+					<arg0 key="New password" resource="false"/>
+					<arg1 name="minlength" key="${var:minlength}" resource="false"/>
+					<var>
+						<var-name>minlength</var-name>
+						<var-value>6</var-value>
+					</var>
+				</field>
+				<field property="newpw2" depends="required,twofields">
+					<arg0 key="New password confirm" resource="false"/>
+					<var>
+						<var-name>secondproperty</var-name>
+						<var-value>newpw1</var-value>
+					</var>
+				</field>
+			</form>
+
+			<form name="bulkKwForm">
+				<field property="match" depends="required,minlength">
+					<arg0 key="Keyword Match" resource="false"/>
+					<arg1 name="minlength" key="${var:minlength}" resource="false"/>
+					<var>
+						<var-name>minlength</var-name>
+						<var-value>1</var-value>
+					</var>
+				</field>
+				<field property="modify" depends="required,minlength">
+					<arg0 key="Replacement" resource="false"/>
+					<arg1 name="minlength" key="${var:minlength}" resource="false"/>
+					<var>
+						<var-name>minlength</var-name>
+						<var-value>1</var-value>
+					</var>
+				</field>
+			</form>
+
+    </formset>
+
+</form-validation>

@@ -1,0 +1,25 @@
+<workbook>
+  <worksheet name="Top Usage by User">
+    <format bg_color="silver" bold="1">
+      <row>
+        <cell width="50%">Total usage by user - Last Year</cell>
+        <cell />
+        <cell />
+      </row>
+      <row>
+        <cell width="20%">User</cell>
+        <cell width="20%">Account</cell>
+        <cell width="20%">CPU Minutes</cell> 
+      </row>
+    </format>
+
+    <loop name="results">
+      <row>
+        <cell><var name="name"/> (<var name="login"/>)</cell>
+        <cell><var name="account"/></cell>
+        <cell><var name="cpu_min"/></cell> 
+      </row>
+    </loop>
+  </worksheet>
+</workbook>
+

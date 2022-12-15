@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pete Roome</title>
+    <description>Code Snippets and such like.</description>
+    <link>http://peteroome.com</link>
+    <atom:link href="http://peteroome.com/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Moving Rails controller helper_methods to helpers for testing purposes with Rspec</title>
+        <description>&lt;p&gt;A Rails architecture thing that I picked up this week?&lt;/p&gt;
+
+&lt;p&gt;It?s easier to test and better practice to define helper methods in a helper file, rather than in a controller by using the &lt;code&gt;helper_method&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;p&gt;In some controllers I?ve recently been working with there were quite a lot of &lt;code&gt;helper_methods&lt;/code&gt; defined like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;&lt;/span&gt;	&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ApplicationController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActionController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;helper_method&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:current_cart&lt;/span&gt;
+
+		&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;current_cart&lt;/span&gt;
+			&lt;span class=&quot;no&quot;&gt;Cart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:cart_id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This works fine. However, when it comes to testing things get complicated. I created a helper method in a helper and it uses the &lt;code&gt;current_cart&lt;/code&gt; helper method from the controller, like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;&lt;/span&gt;	&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;CartHelper&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;cart_empty?&lt;/span&gt;
+		   &lt;span class=&quot;n&quot;&gt;current_cart&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;current_cart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cart_items&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty?&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In the spec I was writing, I was only interested in testing my new helper method so I tried to stub the &lt;code&gt;current_cart&lt;/code&gt; method like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;&lt;/span&gt;	&lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:current_cart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:cart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;cart_items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;n&quot;&gt;before&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+	    &lt;span class=&quot;n&quot;&gt;allow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;helper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	      &lt;span class=&quot;n&quot;&gt;receive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:current_cart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;and_return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;current_cart&lt;/span&gt;
+	    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This always failed though. &lt;code&gt;current_cart&lt;/code&gt; isn?t defined in my helper, it?s defined in the controller, so it can?t be stubbed like this. I was getting the error?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;@view_renderer ? does not implement: current_cart&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;(View renderer because that?s what Rspec is using to test the view helper that I?m interested in testing).&lt;/p&gt;
+
+&lt;p&gt;So, I moved the &lt;code&gt;current_cart&lt;/code&gt; helper method to our &lt;code&gt;CartHelper&lt;/code&gt;, out of the &lt;code&gt;ApplicationController&lt;/code&gt;. I can then add the line &lt;code&gt;include CartHelper&lt;/code&gt; in the &lt;code&gt;ApplicationController&lt;/code&gt;. Like this?&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;&lt;/span&gt;	&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ApplicationController&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActionController&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;
+		&lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CartHelper&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+	&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This allows me to now stub the helper method in my test and correctly test other helper methods that use the &lt;code&gt;current_cart&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Win!&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 11 Mar 2018 00:00:00 +0000</pubDate>
+        <link>http://peteroome.com/2018/03/11/moving-rails-controller-helper-methods-to-helpers-for-testing-purposes-with-rspec.html</link>
+        <guid isPermaLink="true">http://peteroome.com/2018/03/11/moving-rails-controller-helper-methods-to-helpers-for-testing-purposes-with-rspec.html</guid>
+      </item>
+    
+      <item>
+        <title>Growth Hacking A Personalised Print Business Using Strava Segments</title>
+        <description>&lt;p&gt;I?ve recently &lt;a href=&quot;http://www.peteroome.com/2016/10/01/validating-a-personalised-print-business-aimed-at-cycling-and-running-enthusiasts.html&quot;&gt;started to document my endeavours&lt;/a&gt; in getting &lt;a href=&quot;https://www.madewithsisu.com/&quot;&gt;my personalised print business&lt;/a&gt; off the ground and generating a bit more revenue. This post is my first attempt at documenting and formalising one of the growth hacks I?m experimenting with. I?ll work to a standardised format when I do write them up and I hope the process might spark more ideas for the future, or even for you the reader.&lt;/p&gt;
+
+&lt;p&gt;I?ve already experimented informally with this hack. I?ve previously created two or three segments on Strava that have driven a small amount of traffic to the website. The segments were not on especially busy routes, but they did create mixed reactions. For good or for bad, people publicly tweeted at us?&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Loving the way &lt;a href=&quot;https://twitter.com/madewithsisu&quot;&gt;@madewithsisu&lt;/a&gt; is growth hacking using Strava segments. Really caught my eye. &lt;a href=&quot;https://t.co/44Nd4E6OkP&quot;&gt;https://t.co/44Nd4E6OkP&lt;/a&gt;&lt;/p&gt;&amp;mdash; Daniel Bower (@danielbower) &lt;a href=&quot;https://twitter.com/danielbower/status/764410431716876288&quot;&gt;August 13, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Not appreciative that &lt;a href=&quot;https://twitter.com/madewithsisu&quot;&gt;@madewithsisu&lt;/a&gt; is spamming strava segments as a way of advertising - quite counter-productive.&lt;/p&gt;&amp;mdash; Sefi (@TigaSefi) &lt;a href=&quot;https://twitter.com/TigaSefi/status/735775789652660224&quot;&gt;May 26, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;whats-the-hack&quot;&gt;What?s the hack?&lt;/h2&gt;
+&lt;p&gt;Create segments on Strava that include a URL, linking back to &lt;a href=&quot;https://www.madewithsisu.com/&quot;&gt;Sisu&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A segment is a section of your run or ride that has an associated public (if you choose) leaderboard for competing against others who pass over it.&lt;/p&gt;
+
+&lt;h2 id=&quot;pros-of-the-hack&quot;&gt;Pros of the hack&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;It?s free.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I can create as many segments as I like (for now ??).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I can name the segment anything I like (perfect for A/B testing).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Strava users are my target audience.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cons-of-the-hack&quot;&gt;Cons of the hack&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;It looks spammy.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;URL?s in segment names aren?t clickable on the Strava app or website.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;There are 000?s of segments on Strava. Standing out from the crowd will be hard.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Strava users can flag my segments if they don?t like them. This could lead to my account being blocked.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It might be hard getting enough traffic volume from the experiment to prove that an AB test is statistically significant.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;the-ab-test&quot;&gt;The AB test&lt;/h2&gt;
+
+&lt;p&gt;I will set up segments on two busy routes to start with: London Bridge &amp;amp; Tower Bridge. Each route will have two identical (almost) segments: A &amp;amp; B.&lt;/p&gt;
+
+&lt;p&gt;Variant A will have a title of ?Sisu - Your exercise data as art!? followed by the shortened Google URL. Variant B will be titled: ?Sisu - Is that all you?ve got??, again followed by a Google shortened URL.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Update&lt;/em&gt;&lt;/strong&gt;: &lt;a href=&quot;https://tfl.gov.uk/status-updates/major-works-and-events/tower-bridge-closure&quot;&gt;A small glitch in the planned experiment as reported by TFL (Transport for London)&lt;/a&gt;?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The City of London Corporation is planning major essential maintenance works to Tower Bridge from Saturday 1 October to Friday 30 December 2016.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As a result of the above, I have chosen another route in addition to London Bridge and Tower Bridge to experiment with. I?ve added two running segments to Victoria park, a popular destination near my office that I run myself.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-will-i-measure-the-hacks-success&quot;&gt;How will I measure the hack?s success?&lt;/h2&gt;
+
+&lt;p&gt;Google URL shortener will provide me with short urls that I can use in segment names, with viewable (and public) analytics for measuring performance too. It?s a free service.&lt;/p&gt;
+
+&lt;h2 id=&quot;caveats&quot;&gt;Caveats&lt;/h2&gt;
+
+&lt;p&gt;In my attempt to be as informative as possible about my experiment, it?s possible to get hold of the Google shortened URL?s that are in in the titles of the segments. This could quite quickly lead to the downfall of the experiment if they end up being abused online. ??&lt;/p&gt;
+
+&lt;h2 id=&quot;cycling-segments&quot;&gt;Cycling Segments&lt;/h2&gt;
+
+&lt;h3 id=&quot;tower-bridge&quot;&gt;Tower Bridge&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Variant A) ?Sisu - Your exercise data as art!?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Segment:&lt;/strong&gt; &lt;a href=&quot;https://www.strava.com/segments/13413887&quot;&gt;https://www.strava.com/segments/13413887&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Analytics:&lt;/strong&gt; &lt;a href=&quot;https://goo.gl/#analytics/goo.gl/KqQAhm/all_time&quot;&gt;https://goo.gl/#analytics/goo.gl/KqQAhm/all_time&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe height=&quot;405&quot; width=&quot;590&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; scrolling=&quot;no&quot; src=&quot;https://www.strava.com/segments/13413887/embed&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;strong&gt;Variant B) ?Sisu - Is that all you?ve got??&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Segment&lt;/strong&gt;: &lt;a href=&quot;https://www.strava.com/segments/13421132&quot;&gt;https://www.strava.com/segments/13421132&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Analytics:&lt;/strong&gt; &lt;a href=&quot;https://goo.gl/#analytics/goo.gl/BEFjc4/all_time&quot;&gt;https://goo.gl/#analytics/goo.gl/BEFjc4/all_time&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe height=&quot;405&quot; width=&quot;590&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; scrolling=&quot;no&quot; src=&quot;https://www.strava.com/segments/13421132/embed&quot;&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&quot;london-bridge&quot;&gt;London Bridge&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Variant A) ?Sisu - Your exercise data as art!?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Segment:&lt;/strong&gt; &lt;a href=&quot;https://www.strava.com/segments/13413873&quot;&gt;https://www.strava.com/segments/13413873&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Analytics:&lt;/strong&gt; &lt;a href=&quot;https://goo.gl/#analytics/goo.gl/WL2404/all_time&quot;&gt;https://goo.gl/#analytics/goo.gl/WL2404/all_time&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe height=&quot;405&quot; width=&quot;590&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; scrolling=&quot;no&quot; src=&quot;https://www.strava.com/segments/13413873/embed&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;strong&gt;Variant B) ?Sisu - Is that all you?ve got??&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Segment&lt;/strong&gt;: &lt;a href=&quot;https://www.strava.com/segments/13421123&quot;&gt;https://www.strava.com/segments/13421123&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Analytics:&lt;/strong&gt; &lt;a href=&quot;https://goo.gl/#analytics/goo.gl/M8YQb7/all_time&quot;&gt;https://goo.gl/#analytics/goo.gl/M8YQb7/all_time&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe height=&quot;405&quot; width=&quot;590&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; scrolling=&quot;no&quot; src=&quot;https://www.strava.com/segments/13421123/embed&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;running-segments&quot;&gt;Running Segments&lt;/h2&gt;
+
+&lt;h3 id=&quot;victoria-park&quot;&gt;Victoria Park&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Variant A) ?Sisu - Your exercise data as art!?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Segment:&lt;/strong&gt; &lt;a href=&quot;https://www.strava.com/segments/13421175&quot;&gt;https://www.strava.com/segments/13421175&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Analytics:&lt;/strong&gt; &lt;a href=&quot;https://goo.gl/#analytics/goo.gl/bsS6Us/all_time&quot;&gt;https://goo.gl/#analytics/goo.gl/bsS6Us/all_time&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe height=&quot;405&quot; width=&quot;590&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; scrolling=&quot;no&quot; src=&quot;https://www.strava.com/segments/13421175/embed&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;strong&gt;Variant B) ?Sisu - Is that all you?ve got??&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Segment&lt;/strong&gt;: &lt;a href=&quot;https://www.strava.com/segments/13421200&quot;&gt;https://www.strava.com/segments/13421200&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Analytics:&lt;/strong&gt; &lt;a href=&quot;https://goo.gl/#analytics/goo.gl/kpZj4E/all_time&quot;&gt;https://goo.gl/#analytics/goo.gl/kpZj4E/all_time&lt;/a&gt;&lt;/p&gt;
+
+&lt;iframe height=&quot;405&quot; width=&quot;590&quot; frameborder=&quot;0&quot; allowtransparency=&quot;true&quot; scrolling=&quot;no&quot; src=&quot;https://www.strava.com/segments/13421132/embed&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;?I?ll update this once I?ve collected some data and have some results to share.&lt;/p&gt;
+
+&lt;h2 id=&quot;followup-ideas&quot;&gt;Followup Ideas&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Offer incentives to the segment leaderboard winners at the end of each week, month or year.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Celebrate the winners of the leaderboard on social media every week, month or year.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 11 Oct 2016 00:00:00 +0100</pubDate>
+        <link>http://peteroome.com/2016/10/11/growth-hacking-a-personalised-print-business-using-strava-segments.html</link>
+        <guid isPermaLink="true">http://peteroome.com/2016/10/11/growth-hacking-a-personalised-print-business-using-strava-segments.html</guid>
+      </item>
+    
+      <item>
+        <title>Validating my Personalised Print Business Aimed At Cycling And Running Enthusiasts.</title>
+        <description>&lt;p&gt;This post was initially written for &lt;a href=&quot;https://www.reddit.com/r/Entrepreneur/comments/56ndj5/validating_my_personalised_print_business_focused/&quot;&gt;Reddit&lt;/a&gt;, but I figured other non-Reddit folk might be interested in feeding back too.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Original post?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Hi all. I?m here for some thoughts/feedback/advice on my plan of action for the next 3 months of my startup/side-project. A bit of context?&lt;/p&gt;
+
+&lt;p&gt;I run a site called &lt;a href=&quot;https://www.madewithsisu.com/&quot;&gt;Madewithsisu.com&lt;/a&gt;. The website turns your exercise data into ?artwork?. Using your Strava or Runkeeper exercise data, we aggregate the routes/maps and timings onto print designs that you can personalise and buy. Prints cost ?20/$30 and I currently offer free p&amp;amp;p.&lt;/p&gt;
+
+&lt;p&gt;The problem is I?ve been running the site for about 2 years but I don?t feel like I?ve reached the point of validation to determine if I should continue with the idea or not. Currently, I have about 16k registered users with this number increasing at a steady rate daily.&lt;/p&gt;
+
+&lt;p&gt;The next 3-4 months are my busiest period of the year. A lot of my sales are for ?end of year? prints so although Christmas seems like the obvious time for sales to peak, it actually continues well into the new year as folks wait for the 31st December to pass.&lt;/p&gt;
+
+&lt;p&gt;An important thing to note; &lt;a href=&quot;https://www.madewithsisu.com/myprint?sample_url=http://samples.madewithsisu.com/user-1875/multiroute/q551e2qsq0k0-small.png&amp;amp;name=Thomas%20Heyn&quot;&gt;my flagship product - the Multi Route&lt;/a&gt;, can?t be gifted. The exercise data is private i.e you have to log into our system with your account details for Strava or Runkeeper to access the data. This makes gifting the product (almost) impossible.&lt;/p&gt;
+
+&lt;p&gt;So I?m currently planning my strategy for the best approach to finally validate if the idea is worth carrying on, and would really appreciate some feedback please.&lt;/p&gt;
+
+&lt;p&gt;Possible next steps?&lt;/p&gt;
+
+&lt;h3 id=&quot;reduce-costs-and-therefore-prices&quot;&gt;Reduce costs, and therefore prices:&lt;/h3&gt;
+&lt;p&gt;For European and Rest of World orders I use a high street printers in London. They produce a fantastically high quality print but each one costs ?12. I could find a cheaper provider. My US printer charges $9 per print - it?s much more cost effective. The small paid marketing budget I have is always directed at a US audience for this reason.&lt;/p&gt;
+
+&lt;h3 id=&quot;new-print-design&quot;&gt;New Print Design&lt;/h3&gt;
+&lt;p&gt;I ask each new user if they?d mind filling in a short feedback survey for me. One of the four questions I ask is: ?What would you like us to work on next??. The top response is: ?Additional print designs? getting 57% of votes. 2nd place is ?More print personalisation options? (49%) and 3rd place: ?More data insights? (45%)(to clarify the %?s, it?s a multiple choice question and more than one can be selected). It takes me approx 4 weeks to design, build and ship a new print design onto the website.&lt;/p&gt;
+
+&lt;p&gt;I?m not sure if my time is best spent working on a new print design if I?m not confident in the first instance that I?ve even validated the initial idea.&lt;/p&gt;
+
+&lt;h3 id=&quot;additional-print-features&quot;&gt;Additional print features&lt;/h3&gt;
+&lt;p&gt;Based on the aforementioned data, my time might be better spent improving the current designs, the personalisation features and the data insights customers can highlight on each. This could be broken down into much more manageable features, than a brand new print design. Suggestions include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Highlighting PB?s&lt;/li&gt;
+  &lt;li&gt;Showcasing climbing data: i.e Meters climbed in the period.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;free-or-paid-pp&quot;&gt;Free or Paid P&amp;amp;P&lt;/h3&gt;
+&lt;p&gt;I currently offer free postage and packaging because I figured that would be a nice sweetener. Friends have told me I?m crazy for doing this. It would be a relatively quick test to see if it increases/decreases sales.&lt;/p&gt;
+
+&lt;p&gt;The question is, do I bring down prices of the prints as a result of dropping free shipping?!&lt;/p&gt;
+
+&lt;h3 id=&quot;digital-downloads&quot;&gt;Digital Downloads&lt;/h3&gt;
+&lt;p&gt;This seems like a no-brainer. Offering digital downloads of prints for a much lower price, say ?5/$7 or something?&lt;/p&gt;
+
+&lt;h3 id=&quot;support-more-platforms-nike-garmin-etc&quot;&gt;Support more platforms: Nike, Garmin etc?&lt;/h3&gt;
+&lt;p&gt;Opening up the funnel (potential customer base) at the start of the process seems like a good idea. The ability to get more people to sign up would be great. The problem is that these other platforms have API?s that aren?t as easy to work with as Strava?s and the design process for a print would therefore be much more ?clunky? IMO. Runkeeper, the other platform Sisu supports falls into this category.&lt;/p&gt;
+
+&lt;h3 id=&quot;paid-marketing&quot;&gt;Paid marketing&lt;/h3&gt;
+&lt;p&gt;I have a very small paid marketing budget of about ?150 per month (depending on return) for this project at the moment. My previous efforts have involved running Facebook and Instagram ads. I didn?t have a huge amount of success with these. I?d like to learn more and experiment further with them though. I suspect I need to work harder on my landing pages and messaging for visitors who visit via these sources.&lt;/p&gt;
+
+&lt;h3 id=&quot;non-paid-marketing&quot;&gt;Non-paid marketing&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.madewithsisu.com/&quot;&gt;I?ve worked on a few blog posts this year&lt;/a&gt; and tried to distribute them as widely as possible. This generated a few signups but no sales unfortunately. I?ve also worked on growing our &lt;a href=&quot;https://www.instagram.com/madewithsisu/&quot;&gt;Instagram account&lt;/a&gt; as well as sending a weekly newsletter to existing customers.&lt;/p&gt;
+
+&lt;p&gt;The problem here is there seems to just be so many options that it?s slightly overwhelming what to focus on - perhaps that is the takeaway - focus on a single source. Does anyone have any good suggestions for managing/approaching this?&lt;/p&gt;
+
+&lt;h3 id=&quot;growth-hacks&quot;&gt;Growth hacks&lt;/h3&gt;
+&lt;p&gt;I had an idea I?ve started to rollout. Strava allows you to create segments. This is a section of a run or ride that you can compete against others on and beat your own time on too. It might be a hill climb, a straight sprint or a lap of a park for example. I?ve started creating segments on popular roads: &lt;a href=&quot;https://www.strava.com/segments/12171330&quot;&gt;Rye Lane - Peckham&lt;/a&gt; and &lt;a href=&quot;https://www.strava.com/segments/12171352&quot;&gt;Regents Canal&lt;/a&gt; and calling them ?Sisu - Your exercise data as art!?. These are easy to create and I?ve had a reasonable number hits from the ones I?ve created. Each is accompanied with a Google shortened URL for measurement purposes.&lt;/p&gt;
+
+&lt;p&gt;So, that?s it. That?s my business, where I?m at and what I?m planning to do over the next few months. However, I do feel that the amount of options for my next steps is stalling me slightly. I hoped writing it down would bring some clarity and it has to a degree, but I?d really appreciate any feedback from experts out there with suggestions on how I can finally validate this idea once and for all.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;? End of Reddit post ?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I figured it would be useful to post this here as a bit of a record of progress, for myself and for others. I?d like to address this on a semi-regular basis over the next couple of months too - famous last words - but hopefully I can report back progress and improvement in my business. Fingers crossed.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 01 Oct 2016 00:00:00 +0100</pubDate>
+        <link>http://peteroome.com/2016/10/01/validating-a-personalised-print-business-aimed-at-cycling-and-running-enthusiasts.html</link>
+        <guid isPermaLink="true">http://peteroome.com/2016/10/01/validating-a-personalised-print-business-aimed-at-cycling-and-running-enthusiasts.html</guid>
+      </item>
+    
+      <item>
+        <title>Free User Generated Marketing Automation For Your Startup</title>
+        <description>&lt;p&gt;When it comes to marketing automation for your startup, you?ve got no excuses. There are an abundance of tools out there to help. This guide will detail a simple, 4 step approach used at &lt;a href=&quot;http://madewithsisu.com&quot;&gt;Sisu&lt;/a&gt; to automate our weekly newsletter. The aim of the email is to surface shareable content that our users want to read. Content that draws them to our brand and makes them believe that we?re experts in our field.&lt;/p&gt;
+
+&lt;p&gt;After a short amount of setup, this approach should take no more than 1 hour of your time each week. The results speak for themselves: shares, retweets, likes, follows and most importantly new users and conversions.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-1&quot;&gt;Step 1&lt;/h2&gt;
+&lt;p&gt;Get yourself a free Buffer account. If you don?t know what Buffer is, &lt;a href=&quot;https://buffer.com/guides&quot;&gt;take yourself off to read about it now&lt;/a&gt;. I?ll wait for you. Seriously?&lt;/p&gt;
+
+&lt;p&gt;Right. Now that you understand Buffer, you need to connect your Social Media accounts: Twitter, Facebook and LinkedIn. Once connected we need to find some content sources. Your content sources will be feeding your hungry Buffer account with delicious, shareable content, perhaps sprinkled with a few of your own posts.&lt;/p&gt;
+
+&lt;p&gt;Name some sources?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://quuu.co/&quot;&gt;Quuu&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.google.com/webhp?sourceid=chrome-instant&amp;amp;ion=1&amp;amp;espv=2&amp;amp;ie=UTF-8#q=twitter%20bots&quot;&gt;Twitter bot&lt;/a&gt; - something to auto-post relevant content on your behalf.&lt;/li&gt;
+  &lt;li&gt;Got a favourite blog? &lt;a href=&quot;https://ifttt.com/connect/feed/buffer&quot;&gt;IFTTT their content straight to your Buffer&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now sit back for a week. Let the content settle with your audience and we?ll review next week?&lt;/p&gt;
+
+&lt;h2 id=&quot;step-2&quot;&gt;Step 2&lt;/h2&gt;
+&lt;p&gt;Here comes the exciting part! Let?s see what content resonated with your audience. Jump into your Buffer account, check out the Analytics and lets find the stuff that people want to read about.&lt;/p&gt;
+
+&lt;p&gt;Pick the top 5-10 items of content that received the most shares, likes, and retweets over the past week. This is the highly readable and shareable content that we?ll put into our email newsletter that we?ll send to our customers. They?ll think we?re experts in no time.&lt;/p&gt;
+
+&lt;h2 id=&quot;step-3&quot;&gt;Step 3&lt;/h2&gt;
+&lt;p&gt;Put together your newsletter using your favourite email creation tool. We use the marvellous &lt;a href=&quot;intercom.io&quot;&gt;Intercom&lt;/a&gt;. We?ve used &lt;a href=&quot;https://www.getrevue.co/&quot;&gt;Revue&lt;/a&gt; in the past too, an equally strong tool.&lt;/p&gt;
+
+&lt;p&gt;The newsletter doesn?t have to be long, or complicated.&lt;/p&gt;
+
+&lt;p&gt;Suggested outline:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Your logo &amp;amp; company name&lt;/li&gt;
+  &lt;li&gt;Opening remark from the editor&lt;/li&gt;
+  &lt;li&gt;A shareable piece of content&lt;/li&gt;
+  &lt;li&gt;A recommended reading list&lt;/li&gt;
+  &lt;li&gt;A link to our product&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2016-05-25-marketing-automation-for-your-startup/email-template-1.png&quot; alt=&quot;Sisu's Email Newsletter Header&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With the &lt;a href=&quot;https://www.madewithsisu.com/&quot;&gt;Sisu&lt;/a&gt; newsletter, we search Twitter for users who have shared their print design with their followers. We then pick two of these each week to feature as our ?Favourite Designs?. We link these designs back to our own website, where customers can see the print designs in all their glory before continuing to design their own.&lt;/p&gt;
+
+&lt;p&gt;Regarding the Shareable Content, we use the iOS app: &lt;a href=&quot;http://wordswag.co/&quot;&gt;WordSwag&lt;/a&gt;, to overlay sporting quotes onto aspirational photographs from free stock imagery websites e.g &lt;a href=&quot;https://www.pexels.com&quot;&gt;Pexels&lt;/a&gt; and &lt;a href=&quot;http://allthefreestock.com/&quot;&gt;All The Free Stock&lt;/a&gt;. We place a button beneath these photos that encourages the reader to share the content, referencing &lt;a href=&quot;http://twitter.com/madewithsisu&quot;&gt;@madewithsisu&lt;/a&gt; and including the hashtags of our choosing.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2016-05-25-marketing-automation-for-your-startup/shareable-content.png&quot; alt=&quot;An example of some shareable content within the Sisu newsletter&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Despatch the email to your user base. Be sure to observe the open, click and unsubscribe rate. Particularly the unsubscribe rate. If this is higher than your user growth then you?re in trouble, obviously.&lt;/p&gt;
+
+&lt;h3 id=&quot;newsletter-template-tips&quot;&gt;Newsletter Template Tips&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Be consistent with the day and time that you send your Newsletter. By all means optimise this with some testing but don?t leave people guessing as to when they?ll receive your content.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Take some pride over the look and feel of your template. It doesn?t need the craft of a professional designer but just think about the colours, imagery and typography a little bit! Big easy to read copy is far more friendly on a small device (that?s where most people read email, right?! ?probably), no matter how good or bad your eyes are.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2016-05-25-marketing-automation-for-your-startup/email-template-2.png&quot; alt=&quot;The Recommended Reading Section of Sisu's Email newsletter&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Give clear and obvious calls to action. ?Follow us on Instagram?, ?Share this quote on Twitter?, ?Post this video to Facebook? leave the reader in no confusion as to what they?re supposed to do with the content you?ve sent them.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Format your inbound links to include UTM tags. Campaign, source, medium and a keyword should be your minimum to exactly identify the button or link clicked which resulted in conversions on your website.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;step-4&quot;&gt;Step 4&lt;/h2&gt;
+&lt;p&gt;Rinse and repeat.&lt;/p&gt;
+
+&lt;p&gt;Continue to add further content sources to feed your Buffer account and optimise the frequency and times that you share your content.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Kill content sources that consistently underperform on your social networks.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Increase/decrease the frequency of your posting from Buffer until you find your sweet spot: enough to keep people interested but not too annoying.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Experiment with different content in your newsletter: an opening remark from the Editor vs no opening remark from the Editor, 5 vs 10 vs 15 items in your recommended reading list. No reading list items and just 1 shareable piece of content - why not?!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Experiment with your Subject Line. Unless you people open your email, they?re never going to read, share and engage with your brand. Make use of the content you?re sharing, the headlines they?ve written are a good starting place. Chances are the journalist has taken the time to test the headline to find out what?s most likely to get people to click and read their content.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;bonus&quot;&gt;Bonus&lt;/h2&gt;
+
+&lt;p&gt;As your user base grows you may find you want to send more than one newsletter, each to a different segment of customers (why? More specific content has a higher chance of resonating with the reader and resulting in some sort of conversion). You can make the task of deciding which content to share in your newsletter easier by appending a hashtag to it before you Buffer it. For example, Buffer content with #cycling might only be sent to Cyclists who use Sisu as opposed to content appended with #running, which would be sent to only runners. It?s an easy hack, depending on how many different emails you intend to send out.&lt;/p&gt;
+
+&lt;p&gt;Even better, setup multiple Twitter accounts and Facebook pages, targeted to individual topics related to your brand e.g Sisu Cycling, Sisu Running and Sisu Swimming. Only Buffer related content to these accounts and segment your newsletter accordingly.&lt;/p&gt;
+
+&lt;p&gt;And finally, increase your mailing list by posting a static URL to your newsletter along with &lt;a href=&quot;http://upstate.us3.list-manage.com/subscribe?u=a9df7cdc8bde2d266bfa724ad&amp;amp;id=8aa4f9ffbc&quot;&gt;a link where people can sign up&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 25 May 2016 00:00:00 +0100</pubDate>
+        <link>http://peteroome.com/2016/05/25/marketing-automation-for-your-startup.html</link>
+        <guid isPermaLink="true">http://peteroome.com/2016/05/25/marketing-automation-for-your-startup.html</guid>
+      </item>
+    
+      <item>
+        <title>Flight Mode for Mac</title>
+        <description>&lt;p&gt;Having pulled out my laptop, whilst sat on a flight to NY, it occurred to me that there should be a flight mode for laptops (if this doesn?t already exist?!).&lt;/p&gt;
+
+&lt;p&gt;It?s simple?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Turn off wifi&lt;/li&gt;
+  &lt;li&gt;Turn off Bluetooth&lt;/li&gt;
+  &lt;li&gt;Save battery&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The save battery one is where some customisation may come in:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Kill non-essential running software.&lt;br /&gt;
+&lt;em&gt;e.g software that depends on an Internet connection. Examples on my machine include:  Buffer for Mac, Google Drive, Shazam. Ask to Save before closing!&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Reduce brightness.&lt;br /&gt;
+&lt;em&gt;Brightness level to be determined in Preferences by user.&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;form&quot;&gt;Form&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Menu Bar App activated by a single click.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;bonus&quot;&gt;Bonus&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Remember pre-flight mode status.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Restore whatever software the user was running and what settings they had prior to switching to flight-mode.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;name-ideas&quot;&gt;Name Ideas&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;FLIM&lt;/li&gt;
+  &lt;li&gt;Lofty&lt;/li&gt;
+  &lt;li&gt;High&lt;/li&gt;
+  &lt;li&gt;Lift-Off&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 25 May 2016 00:00:00 +0100</pubDate>
+        <link>http://peteroome.com/2016/05/25/flight-mode-for-mac.html</link>
+        <guid isPermaLink="true">http://peteroome.com/2016/05/25/flight-mode-for-mac.html</guid>
+      </item>
+    
+      <item>
+        <title>London to Paris Bike Ride In Under 24 Hours</title>
+        <description>
+</description>
+        <pubDate>Sun, 18 Oct 2015 00:00:00 +0100</pubDate>
+        <link>http://peteroome.com/2015/10/18/london-to-paris-bike-ride-under-24-hours.html</link>
+        <guid isPermaLink="true">http://peteroome.com/2015/10/18/london-to-paris-bike-ride-under-24-hours.html</guid>
+      </item>
+    
+      <item>
+        <title>Growth hacking using Javascript to automate following, unfollowing and connecting on Twitter and LinkedIn</title>
+        <description>&lt;p&gt;It?s difficult to test the validity of an Internet startup without data. Most of the time this means having an audience that you can test your product on, to collect some data. Without an audience, you?re not going to prove any hypotheses on your product.&lt;/p&gt;
+
+&lt;p&gt;During the 15 months I ran Upstate, we learnt that one of the most challenging aspects of our day to day work, was growing our audience.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Upstate was a product development agency. Our aim was to design and built Internet products with the aim of scaling any we validated. Upstate had no clients but was instead funded by an Angel Investor and earnings we made from our products.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We learnt that writing about what we were doing (product launches, experiments and failures) and sharing it with our own audiences helped. This generated shares and likes, but it wasn?t scalable. So we started to experiment.&lt;/p&gt;
+
+&lt;p&gt;There are a multitude of tools out there, free (with limitations) and paid for, to automate the growth of an Audience. We tried many of these different tools, including: &lt;a href=&quot;http://www.goodaudience.com/&quot;&gt;Good Audience&lt;/a&gt;, &lt;a href=&quot;https://unfollowers.com/&quot;&gt;Unfollowers&lt;/a&gt; and &lt;a href=&quot;https://buffer.com&quot;&gt;Buffer&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It was during this period that I began to better understand what these tools were doing and how we could replicate them for free. We were a startup on a tight budget, afterall.&lt;/p&gt;
+
+&lt;p&gt;The opportunities that presented themselves were easy to spot. The usual tell tell sign was when I had to click the same button on a webpage, more than 3 or 4 times. This immediately felt like something that could and should be automated. It?s this lazyiness that a lot of social network automation tools rely on, to entice people to pay for their service. A button to ?Follow all? or ?Unfollow all? is often made available immediately after credit card details are entered. Other limitations that are lifted by paying for social media automation tools, include: the number of people who can be followed or followed in a single day, how many ?posts? can be queued up and access to more recommendations for who to follow, who to unfollow and even interesting content to share.&lt;/p&gt;
+
+&lt;p&gt;In this post, I?m going to focus on growing an audience, using automation, to follow/connect and unfollow other accounts?&lt;/p&gt;
+
+&lt;h3 id=&quot;required-knowledge&quot;&gt;Required knowledge&lt;/h3&gt;
+&lt;p&gt;The code snippets i?m about to share need you to have a basic knowledge and understanding of the Google Chrome web inspector, in particular it?s console.&lt;/p&gt;
+
+&lt;p&gt;For those who don?t know what web inspector is; open Chrome, load a web page and &lt;code&gt;ctrl + click&lt;/code&gt; (OS X) on any part of it. From the menu that appears, click &lt;code&gt;Inspect Element&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This will open up the web inspector on your screen. You should see some tabs, which include &lt;code&gt;Console&lt;/code&gt;. Select &lt;code&gt;Console&lt;/code&gt; to reveal a tool that allows you to interact with the currently open webpage, live, with Javascript. For example, copy and paste this line into the console and press return:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;      &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Hello world&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You should see a popup that says ?Hello world?.&lt;/p&gt;
+
+&lt;p&gt;This technique of copying and pasting snippets into the console is something you?ll need to be able to do for these examples to work.&lt;/p&gt;
+
+&lt;h2 id=&quot;twitter&quot;&gt;Twitter&lt;/h2&gt;
+&lt;p&gt;Those with a proficiency in programming will stop at nothing to exploit unprotected loopholes in social networks. Twitter is no exception and has long been gamed by hackers. Although aggressive attempts to DDOS a service happen, more often than not, hackers tinkerings are merely ?a bit of fun?.&lt;/p&gt;
+
+&lt;h3 id=&quot;limits&quot;&gt;Limits&lt;/h3&gt;
+&lt;p&gt;This &lt;a href=&quot;https://support.twitter.com/articles/66885&quot;&gt;support document on Twitter&lt;/a&gt; lists the platforms current limits when it comes to following other accounts, but to summarize:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Every account can follow 2,000 users total. Once this number is reached, additional follows are allowed based on a follow to follower ratio that Twitter claims to be different for every account.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Every Twitter account is technically unable to follow more than 1,000 users per day. Unfortunately, there is no avoiding this one.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;technique&quot;&gt;Technique&lt;/h3&gt;
+&lt;p&gt;We have a 1000 follows each day, to maximise. My first approach is to unfollow those followers who aren?t following me back (to maximise my following ability) and to follow as many of the 1k limit of people as possible each day.&lt;/p&gt;
+
+&lt;h3 id=&quot;unfollowing&quot;&gt;Unfollowing&lt;/h3&gt;
+&lt;p&gt;I use the free tier of a 3rd party service called &lt;a href=&quot;https://manageflitter.com&quot;&gt;ManageFlitter&lt;/a&gt;. Once connected to my Twitter account, this service shows me the accounts that I follow but aren?t following me back. ManageFlitter provides an &lt;code&gt;unfollow&lt;/code&gt; button next to each of these accounts that I can click.&lt;/p&gt;
+
+&lt;p&gt;I use the following code to automate this process of unfollowing:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;      &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.Unfollow&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This code will run on repeat in your browser, forever, unless you stop it. Stopping it is either a case of refreshing your browser or, copying this line of code into the console and pressing return.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;			&lt;span class=&quot;nx&quot;&gt;clearInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;On the free tier at least, ManageFlitter limit the number of people you can unfollow in a single day. So the process of unfollowing and following accounts is done in small batches each day, that take 5 minutes or so to complete.&lt;/p&gt;
+
+&lt;h3 id=&quot;following&quot;&gt;Following&lt;/h3&gt;
+&lt;p&gt;When it comes to following users my technique is as follows:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Find an account of interest to me.&lt;/li&gt;
+  &lt;li&gt;Click their ?Followers? tab.&lt;/li&gt;
+  &lt;li&gt;Follow as many of the accounts as I can, that follow the initial account I was interested in.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The aim of this approach is to find other accounts that I may have something in common with, and are therefore more likely to follow back.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;      &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scrollTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scrollHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.not-following .user-actions-follow-button.js-follow-btn&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Disclaimer&lt;/em&gt;&lt;/strong&gt;&lt;em&gt;: This technique requires you to run code on an adhoc basis in the web inspector console. As a result, we?re not tracking the accounts we?ve followed and unfollowed in a database for example. Therefore we have no historical data to prevent us from following and unfollowing those accounts again in the future. This is will more than likely irritate those users and result in them reporting your account as spam to Twitter.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;favouriting&quot;&gt;Favouriting&lt;/h3&gt;
+&lt;p&gt;The same approach can be used for favouriting tweets too. Simply use the Twitter search bar to search for a hastag or term you?re interested in. Once you?ve arrived at some search results of interest, for example &lt;a href=&quot;https://twitter.com/search?q=%23madewithsisu&quot;&gt;#madewithsisu&lt;/a&gt;, open your web inspector console and run the following snippet?&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;      &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scrollTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scrollHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.js-actionButton.js-actionFavorite:visible&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will replicate clicking all the favourite buttons on the page, scroll to the bottom of the page so more content loads, and continue to favourite tweets.&lt;/p&gt;
+
+&lt;p&gt;There does seem to be a limit in place for how many tweets you can follow, but for now, I don?t know what it is.&lt;/p&gt;
+
+&lt;h2 id=&quot;linkedin&quot;&gt;LinkedIn&lt;/h2&gt;
+
+&lt;p&gt;LinkedIn is a fun network to game. I?ll go into more detail in another post about all of the fun to be had, but in the meantime; there is a URL I found that doesn?t seem to be accessible unless you know it, called: &lt;a href=&quot;https://www.linkedin.com/people/pymk&quot;&gt;People You May Know (PYMK)&lt;/a&gt;. The URL lists people LinkedIn believes you may have a connection with. You may have worked with these people, been to college with them or just know them through another connection.&lt;/p&gt;
+
+&lt;p&gt;The element we?re interested in on this page is the &lt;code&gt;Connect&lt;/code&gt; button. With so many of them on the page, we have the opportunity to script clicking them all automatically.&lt;/p&gt;
+
+&lt;p&gt;However, a good percentage of the PYMK will have their accounts set so that inorder to connect with them, you must enter their email address. This isn?t useful to us and prevents us from automating the connection. However, the rest of the people on this page won?t have this setting enabled, meaning we can initiate a connection.&lt;/p&gt;
+
+&lt;p&gt;This snippet will find all of the &lt;code&gt;Connect&lt;/code&gt; buttons on the page, simulate clicking them and then scroll to the bottom of the page. When you scroll to the bottom of the page, LinkedIn kindly load more PYMK onto the screen!!!&lt;/p&gt;
+
+&lt;p&gt;I?ve found that LinkedIn users are fairly similar to those on Twitter in the sense that they?re not too fussed about who they connect with. Most aren?t that bothered if they don?t know the person they?re connecting with, so it?s quite easy to grow your own list of connections.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span&gt;&lt;/span&gt;      &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;setInterval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scrollTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scrollHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;button.bt-request-buffed[data-act=&amp;#39;request&amp;#39;]&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;After a while this becomes a self fulfilling phallacy. Other users will try to connect with you - people you won?t even know. The reason for this is because of LinkedIn?s &lt;a href=&quot;https://www.linkedin.com/wvmx/profile/rankings&quot;&gt;Profile Rankings&lt;/a&gt;. As you gain more connections, you naturally receive more profile views. More profile views and more connections speed you up the profile rankings. Profile Rankings are prominent on the LinkedIn mobile app - they?re right on your profile. It?s quite natural for those ranked around you to become curious about who you are and what you do, so they will take a look at your profile. This only helps to further accelerate you up the LinkedIn profile rankings.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2015-09-15-growth-twitter-and-linkedin/post-header.png&quot; alt=&quot;My own profile ranking acceleration&quot; title=&quot;My own profile ranking acceleration&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;limitations&quot;&gt;Limitations&lt;/h3&gt;
+&lt;p&gt;There don?t seem to be any limitations to doing this through the web inspector console.&lt;/p&gt;
+
+&lt;p&gt;But, this is only a short term approach to growth hacking your account. Although you?ll likely reach the dizzying heights of the Top 1% of connections in your network, you?ll just as quickly slip back down the rankings as you run out of PYMK who haven?t enabled the ?Enter my address to connect? feature.&lt;/p&gt;
+
+&lt;p&gt;Inbox messages from recruiters. But this is a positive if you?re job hunting, right?!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 15 Sep 2015 00:00:00 +0100</pubDate>
+        <link>http://peteroome.com/2015/09/15/growth-twitter-and-linkedin.html</link>
+        <guid isPermaLink="true">http://peteroome.com/2015/09/15/growth-twitter-and-linkedin.html</guid>
+      </item>
+    
+      <item>
+        <title>Botty - The web through the eyes of a Googlebot</title>
+        <description>&lt;p&gt;Previous to &lt;a href=&quot;https://chrome.google.com/webstore/detail/botty-through-the-eyes-of/ecjekiaiphcnmloaiadoeendpnlaldfc&quot;&gt;Botty&lt;/a&gt;, I?d never built a Chrome Extension before. However, I was inspiried after being tipped off with some information. A colleague of mine had mentioned that it was possible to access paywall content on the &lt;a href=&quot;http://www.ft.com/home/uk&quot;&gt;Financial Times website&lt;/a&gt;, if you changed your browsers User Agent to be a Googlebot. A simple hack that seemed easy to implement.&lt;/p&gt;
+
+&lt;p&gt;Of course &lt;a href=&quot;https://developer.chrome.com/devtools/docs/device-mode&quot;&gt;this is already possible using the Chrome Developer tools&lt;/a&gt;, however, not every Tom, Dick and Harry knows how to navigate their way around those advanced features. Therefore, I thought it would be fun to cobble together a Chrome extension that did just this.&lt;/p&gt;
+
+&lt;p&gt;To date, i?ve found that this extension works particularly well with:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.ft.com/home/uk&quot;&gt;The Financial Times&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.quora.com/&quot;&gt;Quora.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;botty-for-testing&quot;&gt;Botty For Testing&lt;/h2&gt;
+
+&lt;p&gt;It should also be noted that this tool can also be used for website testing purposes too. Viewing a website using Botty allows you to see differences between how a Googlebot sees your page and how your browser renders it. Every website creator knows that in order to rank in Google, Googlebot needs to be able to crawl your website.&lt;/p&gt;
+
+&lt;h2 id=&quot;download-botty&quot;&gt;Download Botty&lt;/h2&gt;
+
+&lt;p&gt;So, without further ado, I present to you: &lt;a href=&quot;https://chrome.google.com/webstore/detail/botty-through-the-eyes-of/ecjekiaiphcnmloaiadoeendpnlaldfc&quot;&gt;Botty!&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Botty is a simple &lt;code&gt;background&lt;/code&gt; extension that monitors the URL?s you visit. If the current page matches a URL in the extension?s customisable White List, then the browsers User Agent is submitted as a Googlebot.&lt;/p&gt;
+
+&lt;p&gt;Via the extensions Options menu, it?s possible to update the White List of URL?s the extension monitors.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/botty-through-the-eyes-of/ecjekiaiphcnmloaiadoeendpnlaldfc&quot;&gt;Install Botty now.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/botty/options.png&quot; alt=&quot;Botty - Options Page&quot; title=&quot;Botty - Options Page&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 05 Apr 2015 00:00:00 +0100</pubDate>
+        <link>http://peteroome.com/2015/04/05/botty-the-web-through-the-eyes-of-a-google-bot-copy.html</link>
+        <guid isPermaLink="true">http://peteroome.com/2015/04/05/botty-the-web-through-the-eyes-of-a-google-bot-copy.html</guid>
+      </item>
+    
+      <item>
+        <title>Running an early-stage, seasonal web startup at a glance</title>
+        <description>&lt;p&gt;One of the most successful products I?ve created to date is &lt;a href=&quot;https://www.madewithsisu.com/?ref=1PRyhasi&quot;&gt;Sisu (madewithsisu.com)&lt;/a&gt;. It?s also one of the only products that I?ve built with a revenue stream from Day 1.&lt;/p&gt;
+
+&lt;p&gt;To explain; Sisu enables users to connect their exercise data from Strava or Runkeeper and design a print (poster) visualising what they have achieved. Our design tool enables users to pick a start and finish date from which to include activities. Other options enable the user to choose the colour of their print and the measurement system (Metric or Imperial) used. Users can also customise the athlete name and title on the design too.&lt;/p&gt;
+
+&lt;p&gt;Users can share their creations digitally or buy a physical version of their print. Print?s are A3 (12?x16?) in size and printed on high quality 300gsm paper. The price of a Sisu print is ?30 (approx $45).&lt;/p&gt;
+
+&lt;h4 id=&quot;sisus-new-clocked-print&quot;&gt;Sisu?s New ?Clocked? Print&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/images/seasonal-app/clocked-pair.png&quot; alt=&quot;Sisu Clocked Print&quot; title=&quot;Sisu Clocked Print&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Since it?s inception, Sisu has been featured on a number of websites (&lt;a href=&quot;http://www.producthunt.com/posts/sisu&quot;&gt;Product Hunt&lt;/a&gt;) and blogs (&lt;a href=&quot;http://www.scarletfire.co.uk/sisu-gps-art/&quot;&gt;Scarlet Fire&lt;/a&gt;). It has also been shared on social media by some well known and influential people (&lt;a href=&quot;https://twitter.com/khoi/status/461636625685286912&quot;&gt;Khoi Vinh&lt;/a&gt;) too.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;This app takes your exercise data and turns it into &amp;quot;art.&amp;quot; &lt;a href=&quot;http://t.co/vatBIn5ajq&quot;&gt;http://t.co/vatBIn5ajq&lt;/a&gt; &lt;a href=&quot;http://t.co/WJzqAoxi8N&quot;&gt;pic.twitter.com/WJzqAoxi8N&lt;/a&gt;&lt;/p&gt;&amp;mdash; Khoi Vinh (@khoi) &lt;a href=&quot;https://twitter.com/khoi/status/461636625685286912&quot;&gt;April 30, 2014&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Each time Sisu is featured we see the usual spike in traffic and signups from a small percentage of those visitors. This is followed by the predictable drop-off of traffic. Seasoned Internet entrepreneurs know all to well that this kind of traffic is difficult to draw conclusions from. Often the target audience of the website that has featured your product, isn?t your intended audience. The traffic will therefore throw your analytics into disarray. Bounce rates escalate and you quickly acquire early-adopters who will sign up to anything and everything, often never to be seen again. However, this is another discussion entirely.&lt;/p&gt;
+
+&lt;p&gt;To better understand Sisu?s current position, here are a few screenshots that will give you a better picture of our traffic. Be aware of the scale changes on the Sessions graph each month.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;November, 2014&lt;/strong&gt; &lt;br /&gt;
+&lt;img src=&quot;/images/seasonal-app/sisu-november.png&quot; alt=&quot;Sisu's November Figures&quot; title=&quot;Sisu's November Figures&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;December, 2014&lt;/strong&gt; &lt;br /&gt;
+&lt;img src=&quot;/images/seasonal-app/sisu-december.png&quot; alt=&quot;Sisu's December Figures&quot; title=&quot;Sisu's December Figures&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;January, 2014&lt;/strong&gt; &lt;br /&gt;
+&lt;img src=&quot;/images/seasonal-app/sisu-january.png&quot; alt=&quot;Sisu's January Figures&quot; title=&quot;Sisu's January Figures&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;February, 2015 (so far?)&lt;/strong&gt; &lt;br /&gt;
+&lt;img src=&quot;/images/seasonal-app/sisu-february.png&quot; alt=&quot;Sisu's February Figures&quot; title=&quot;Sisu's February Figures&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-is-sisu-seasonal-when-is-it-seasonal&quot;&gt;How is Sisu seasonal? When is it seasonal?&lt;/h2&gt;
+&lt;p&gt;Until last week, Sisu only had one product for users to design, share and/or purchase: The Multi-Route. Despite the ability to choose a start and finish date, the print design has a natural tendency to lend itself towards an end of year purchase. We know this firstly from user feedback and secondly from the data we?ve collected in the last couple of months.&lt;/p&gt;
+
+&lt;p&gt;We?ve spoken to a number of Sisu?s users who reached out and told us that they love the product and couldn?t wait to purchase a print?at the end of the year!&lt;/p&gt;
+
+&lt;p&gt;The data we?ve collected since December 31st and throughout January has proved our assumptions. We sold nearly as many prints in January as we had done the previous 9 months. It?s worth noting that a reasonable proportion of the prints sold before 31st December 2014 were historical representations of users data from 2013 and 2012 for example. They were not 2014 related.&lt;/p&gt;
+
+&lt;p&gt;Here is some data for comparison to enhance the picture:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;May, 2014 - November, 2014&lt;/strong&gt;  &lt;br /&gt;
+&lt;img src=&quot;/images/seasonal-app/sisu-may-november.png&quot; alt=&quot;Sisu's May, 2014 - November, 2014 Figures&quot; title=&quot;Sisu's May, 2014 - November, 2014 Figures&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;December, 2014 - January, 2015&lt;/strong&gt;  &lt;br /&gt;
+&lt;img src=&quot;/images/seasonal-app/sisu-december-january.png&quot; alt=&quot;Sisu's December, 2014 - January, 2015 Figures&quot; title=&quot;Sisu's December, 2014 - January, 2015 Figures&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A quick synopsis shows that between December and January we received nearly 2x as many sessions as we had done in the previous 7 months. Our user based grew 4x too. Our (slightly) higher returning visitor % contributes towards proving our hypothesis: users would wait and return at the end of the year to make a purchase.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-effect-does-this-have-upon-running-the-product&quot;&gt;What effect does this have upon running the product?&lt;/h2&gt;
+&lt;p&gt;The seasonality of the product means we need to think about how we can better stabilise our sales throughout the year. Some thought has already gone into this and it has affected our product roadmap - we have much more focus.&lt;/p&gt;
+
+&lt;p&gt;In the last few weeks we have worked hard to improve our customer feedback loop. Using &lt;a href=&quot;https://app.intercom.io/r/izPZDCJeQquA&quot;&gt;Intercom.io&lt;/a&gt; we?ve been able to easily target past customers to ask: ?what would encourage you back to Sisu on a more regular basis??. It?s also enabled us to target ?active users? to ask ?what other data would you like to see on a Sisu print??. By asking these questions we hope to achieve two goals?&lt;/p&gt;
+
+&lt;p&gt;Our highest priority is to improve the conversion rate of users we turn into paying customers. This is done by acquiring a better understanding of what our users would like to see from a print design.&lt;/p&gt;
+
+&lt;p&gt;Secondly, we?d hope to introduce products that a far less seasonal. Through understanding what is important to our users in terms of the content of a print, we can produce better designs in the first place. Once we understand what data it is our users like to ?show off?, we can repeat the recipe to produce profitable designs over and over. That?s the theory anyway.&lt;/p&gt;
+
+&lt;p&gt;Both of the aforementioned goals contribute towards our high-level target of product market fit. Rule #1 of Product Management, right?!&lt;/p&gt;
+
+&lt;p&gt;Our short to medium term goal is retention. In the short term, we?ll improve this by offering more (quantity and quality) designs in the store. However, we need to work out what will cause our users to return to our website monthly, weekly or even daily. Additional visualisation tools and automatic posting of a users achievements to social media are two ideas we?re exploring.&lt;/p&gt;
+
+&lt;p&gt;The third focus is maintaining and even improving the viralness of our product. We?ve experienced huge success on Twitter using Twitter cards. When a user creates a print on Sisu and shares it via Twitter, an image of their design is attached with the tweet and shows up in the users stream.&lt;/p&gt;
+
+&lt;p&gt;Depending on who shares their print, we?ve seen on occasions 10+ user signups off of the back of a single tweet. By expanding the number of designs we have on offer we hope to compound this number as more people choose to share their creations.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;My rides in 2014 (on the correct Twitter accoun this time...): &lt;a href=&quot;https://t.co/jbomyXIl3s&quot;&gt;https://t.co/jbomyXIl3s&lt;/a&gt; via &lt;a href=&quot;https://twitter.com/madewithsisu&quot;&gt;@madewithsisu&lt;/a&gt;&lt;/p&gt;&amp;mdash; William Hook (@williamtm) &lt;a href=&quot;https://twitter.com/williamtm/status/570726606857220096&quot;&gt;February 25, 2015&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Reddit has also been a valuable channel for us. We?ve become more regular at posting examples of our own creations to related, niche sub-reddits to attract attention to our product. It?s a channel we?ll be exploring further, especially as we launch more and more designs.&lt;/p&gt;
+
+&lt;h2 id=&quot;todays-lesson&quot;&gt;Today?s Lesson&lt;/h2&gt;
+&lt;p&gt;The lesson learnt from our data is that we?ve created a seasonal product. We want to generate a more steady revenue stream so we need to address the problem. To do this we?ve manuevered ourselves closer to our users using &lt;a href=&quot;https://app.intercom.io/r/izPZDCJeQquA&quot;&gt;Intercom&lt;/a&gt;. This will guarentee that we know what our users want from our product. Directly related to the product itself, we?re drafting print designs that are far less seasonal by nature.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 27 Feb 2015 00:00:00 +0000</pubDate>
+        <link>http://peteroome.com/2015/02/27/running-an-early-stage-seasonal-startup-at-a-glance.html</link>
+        <guid isPermaLink="true">http://peteroome.com/2015/02/27/running-an-early-stage-seasonal-startup-at-a-glance.html</guid>
+      </item>
+    
+      <item>
+        <title>5 skills you practice whilst travelling that will help you when working with clients</title>
+        <description>&lt;p&gt;I?ve recently returned from a surprise trip to Marrakech in Morocco, with my sister. It was just the two of us, on a brief hiatus from the British Winter and it was extremely welcome.&lt;/p&gt;
+
+&lt;p&gt;Whilst walking around the riads and souks of Marrakech?s, my mind wondered. What  skills are required to travel successfully through foreign cities and countries? Especially those that seem so distant from home.&lt;/p&gt;
+
+&lt;p&gt;This was my first visit to Africa. It was a continent that before seemed like another world. I felt like this was a rung up on the travelling ladder.&lt;/p&gt;
+
+&lt;p&gt;Upon arrival Marrakech seemed intimidating. Our taxi dropped us to the entrance of the cities? souks. Here our light skin and pale faces were like sweat treats to wasps. We were immediately ambushed by stall owners who attempted to usher us into their shops. With no intention to offend anyone, ignoring a sales pitch every 10 yards whilst exploring Marrakech is something you have to get used to when visiting.&lt;/p&gt;
+
+&lt;p&gt;But this wasn?t the only difference to contend with. Foremost was the obvious language barrier. My French is conversational at best, but my Arabic, well, the less said about that the better. As expected, religion is a dominant characteristic of Moroccan life. One frequent annoyance was the misdirection from locals. Their aim isn?t to irritate but to earn some coinage by ?helping? you to get to your destination. Fresh produce is lushious and plentyful, animals are second rate citizens and the children are polite, respectful and sweet. The climate is beautiful (in January) too - luckily for me.&lt;/p&gt;
+
+&lt;p&gt;Surrounded by the sights, smells and culture, Marrakesh got me thinking and as usual my mind turned to work. I found myself considering the similarities between travelling and working with clients, particularly when I was running &lt;a href=&quot;http://www.wearepandr.com&quot;&gt;PANDR&lt;/a&gt; (a web design and devlopment agency). It occurred to me that whilst working with external clients, you experience a lot of the same things you do when travelling:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Cultural differences&lt;/li&gt;
+  &lt;li&gt;Language barriers: agency speak vs client speak&lt;/li&gt;
+  &lt;li&gt;Visiting someone else?s house/town/city/country, or in this case office&lt;/li&gt;
+  &lt;li&gt;Feeling out of your comfort zone&lt;/li&gt;
+  &lt;li&gt;No understanding of how their day to day life works&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With these points in mind I started to consider what the qualities were that required me to travel successfully. It turns out that a lot of these are similar to those skills I consider important for client work.&lt;/p&gt;
+
+&lt;h2 id=&quot;patience&quot;&gt;Patience&lt;/h2&gt;
+&lt;p&gt;First, but also perhaps most importantly; patience. A life skill that is extremely versatile and equally as valuable.&lt;/p&gt;
+
+&lt;p&gt;When travelling, patience allows us to comprehend the queues at the airport. Patience enables us to forgive the hard working staff who got our food order slightly wrong.&lt;/p&gt;
+
+&lt;p&gt;On the flip slide, patience allows us to repeat the same piece of information three times before a client understands. It gives us the power to get excited on the phone about a project at 10pm when all you want to do is go to bed. And it enables us to be sympathetic when all our client wants is the best for their business.&lt;/p&gt;
+
+&lt;h2 id=&quot;articulation&quot;&gt;Articulation&lt;/h2&gt;
+&lt;p&gt;Communication as a skill has become a clich?. Don?t get me wrong it?s extremely important but it?s broad and covers a range of sub-skills. Articulation is one of those. The ability to communicate what you want to say, to be understood and to witness the desired outcome is both fundemental and satisfying.&lt;/p&gt;
+
+&lt;p&gt;When travelling, the ability to articulate is essential. It?s the difference between your host understanding you have a nut allergy and putting you in hospital, for example.&lt;/p&gt;
+
+&lt;p&gt;When it comes to working with a client, an inability to articulate your advice along with what is workable can immediately misalign expectations. The result: disappointment upon project delivery.&lt;/p&gt;
+
+&lt;h2 id=&quot;an-open-mind&quot;&gt;An Open Mind&lt;/h2&gt;
+&lt;p&gt;You can witness all sorts whilst travelling. But to expose yourself to the best experience possible you must open your mind.&lt;/p&gt;
+
+&lt;p&gt;Exploring new places by foot and allowing yourself to go off map only touches the surface of what you can do. But small changes like these will propel your experience whilst travelling. The same goes for client work.&lt;/p&gt;
+
+&lt;p&gt;Improving your availability to work on projects you?d have said no to in the past, unbinds you from your own self-imposed restraints. The results are often unexpected and serendipitous. Landing your dream client or that chance meeting with an investor who loves your side project are a few possibilities. Free yourself from limitations and open your mind to the possibilities.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-sense-of-adventure&quot;&gt;A Sense Of Adventure&lt;/h2&gt;
+&lt;p&gt;Adventures lead us to unexpected places. Sometimes those places aren?t quite what you expected. But regularly, those places far exceed what you could have ever imagined. By stepping outside of your comfort zone you can experience amazing things. Luckily, travelling is inherently adventurous.&lt;/p&gt;
+
+&lt;p&gt;Getting on a plane to visit another continent opens up a world of amazing possibilities. Possibilities that include meeting inspiring new people, trying different foods and adopting a different routine altogether. From my experience, applying the same adventurous spirit to client work can affect the outcome in different ways too.&lt;/p&gt;
+
+&lt;p&gt;Seeking out clients from different walks of life, who have products you?ve never experienced is eye opening. Through understanding a clients ambitions, their struggles and their requirements we become well rounded people.&lt;/p&gt;
+
+&lt;p&gt;In parallel, being adventurous with your creativity can be just as positive. Make the decision to accept new sources of inspiration into your life and the results are compounded. By listening to a new genre of music, attending a different meetup or even something as simple as picking up a different newspaper, we open ourselves up to alternative perspectives that can bring a fresh approach to our work.&lt;/p&gt;
+
+&lt;h2 id=&quot;respect&quot;&gt;Respect&lt;/h2&gt;
+&lt;p&gt;Respect is always important but when you?re travelling it?s paramount. It?s likely things are done differently to how you?re used to. This doesn?t make them wrong, they?re just different. It?s important to remember that you?re in another town/city/country/continent now - you?re the tourist, not the guide. Respect how things are done, how people live and what their routines are and you?ll find that your new environment starts to fit better. You?ll understand why people do what they do and why they do it in the way that they do. This applies to client work too.&lt;/p&gt;
+
+&lt;p&gt;Be respectful of what your client does, the skills they?ve acquired doing what they do and what their aims are. Paint a picture of what they see, witness and experience and you?ll understand what it is they need from you as a service provider.&lt;/p&gt;
+
+&lt;h2 id=&quot;loose-connections&quot;&gt;Loose Connections&lt;/h2&gt;
+&lt;p&gt;The skills i?ve described are general, i?ll be the first to admit. Their connection through travelling and client work is loose because of their versatile nature. But this doesn?t detract from their importance. Being self-aware and reflective of your ability to execute upon these skills is a talent in itself. So long as we?re self-aware we can improve ourselves.&lt;/p&gt;
+
+&lt;p&gt;When was the last time you successfully delivered on any of the aforementioned skills?&lt;/p&gt;
+</description>
+        <pubDate>Sat, 07 Feb 2015 00:00:00 +0000</pubDate>
+        <link>http://peteroome.com/2015/02/07/5-skills-you-practice-whilst-travelling-that-will-help-you-when-working-with-clients.html</link>
+        <guid isPermaLink="true">http://peteroome.com/2015/02/07/5-skills-you-practice-whilst-travelling-that-will-help-you-when-working-with-clients.html</guid>
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="html">{{.Title | html}}</title>
+  <id>{{.Id | html}}</id>
+  <updated>{{.Updated | html}}</updated>
+  <link href="{{.AtomURL|html}}" rel="self" />
+  <link href="{{.MetaURL|html}}" />
+  {{ range .Items }}
+  <entry>
+    <title type="html">{{.Title | html }}</title>
+    <id>{{.URL | html}}</id>
+    <author>
+      <name>{{.ActorName | html}}</name>
+    </author>
+    <content type="html">
+      {{.Content | html}}
+      {{ range .Attachments }}
+      {{ if .IsVideo }}
+      <div style="text-align:center;">
+        <object>
+          <param name="movie" value="{{.URL | html}}"></param>
+          <!-- google+ api lies. so we guess that its flash for now -->
+          <embed src="{{.URL | html}}" type="application/x-shockwave-flash"></embed>
+        </object>
+      </div>
+      <br clear="both" style="clear:both;" />
+      {{end}}
+      {{ if .IsPhoto }}
+      <a href="{{.FullImage.URL|html}}"><img src="{{.Image.URL|html}}"/></a>
+      {{end}}
+      {{ if .IsArticle }}
+      <p>Article: <a href="{{.URL|html}}">{{.DisplayName}}</a></p>
+      {{end}}
+      {{end}}
+    </content>
+    <updated>{{.Updated | html}}</updated>
+    <published>{{.Published | html }}</published>
+    <link href="{{.URL | html }}" />
+  </entry>{{end}}
+</feed>

@@ -1,0 +1,45 @@
+
+<application name="<?=$app_name;?>">
+
+  <properties>
+    <property name="web.session" value="true" />
+    <property name="plugin.autodiscovery" value="true" />
+    <!-- 
+      change the path to plugins here. complete path with / at the end
+      <property name="plugin.path"          value="vendor/plugins/" />
+    -->
+  </properties>
+ 
+  <routes>
+    <!-- /* => /:controller/:action/:id -->
+    <route name="__default" value=":controller/:action/:id" />
+  </routes>
+
+  <!-- environment specific settings -->
+  <environments>
+    <environment name="localhost">
+      <properties>
+        <!-- should be "document_root" -->
+        <property name="base" value="<?=$app_name;?>" />
+      </properties>
+      <logger>
+        <formatter>default</formatter>
+        <outputters>
+          <outputter name="file" level="0">
+            <property name="path" value="<?=$app_real_path;?>/log/localhost.log" />
+          </outputter>
+        </outputters>
+      </logger> <!-- /logger -->
+    </environment>
+
+    <environment name="test">
+      <logger>
+        <formatter>default</formatter>
+        <outputters>
+          <outputter name="stdout" level="0" />
+        </outputters>
+      </logger>
+    </environment>
+  </environments>
+
+</application>
