@@ -7,6 +7,8 @@ reflective of the time spent making the change.
 One of the challenges faced was how to identify the language of the file. File extensions are a good way of 
 identifying the language that has been used but there are some situations when a developer uses a nonstandard file extension, such as the name of the component it relates to or doesn’t add a file extension at all. This makes it hard, in these cases, to know which parser should be used to gather the static metrics.
 
+We need to creater a folder name FileTypeData which should the files of various programming languages such as cpp,groovy,pyhton,json,xml,yml etc. Greater the data set provided greater will the f1-score produced.
+
 # Folder Strcuture
 1. FileTypeData – Folder 
 2. FileTypeData_Test – Folder
